@@ -2,7 +2,8 @@
 
 > ## 维护规则（强制）
 >
-> - 本文件是项目的**唯一命令清单**。任何新增/修改命令（训练、评测、打标、数据工具、GUI 工具）**必须同步更新本表**；更新时同时核对 `PROGRESS.md`（两者一起维护）。
+> - 本文件是项目的**命令清单**，主要给用户看，可以直接从这里拿命令去运行。
+> - 任何新增/修改命令同步更新本表。
 > - 命令参数若与实测不符（版本、路径、超参），先修本表再执行，避免用旧参数。
 
 ## 约定
@@ -45,15 +46,14 @@ nvidia-smi
 
 ## 4. 自动打标
 
-**最简单的用法（和你以前一样，只给图片目录，其余全部用默认）：**
+**简单用法：**
 
 ```powershell
 & D:\yolo\.venv\Scripts\python.exe D:\yolo\autolabel.py --source D:\新图片目录
 ```
-
 - 效果：对目录里每张图用默认模型（`runs\detect\first500\yolo11m\weights\best.pt`，conf=0.25）检测，标签写到 `<图片目录>\..\labels`，每图一个 5 列 txt；没检测到就写**空 txt**（负样本），并自动生成 `data.yaml`。
 
-**可选参数（方括号里的都是可选的，不写就用默认值；反引号 ` 只是 PowerShell 换行符，想写一行就去掉它）：**
+**可选参数：**
 
 ```powershell
 & D:\yolo\.venv\Scripts\python.exe D:\yolo\autolabel.py --source <图片目录> `
@@ -69,14 +69,12 @@ nvidia-smi
 | `--overwrite` | 不加：跳过已有标签 | 已打过标、想重新打时加上 |
 | `--labels-out <目录>` | `<source>\..\labels` | 想把标签放到别处时 |
 
-**常用示例：**
+**示例：**
 
 ```powershell
 # 换模型 + 放宽阈值 + 重新打标
 & D:\yolo\.venv\Scripts\python.exe D:\yolo\autolabel.py --source D:\新图片目录 --model D:\yolo\runs\detect\first500\yolov8m\weights\best.pt --conf 0.3 --overwrite
 ```
-
-> 备注：`--cvat-dir` 是已弃用的 CVAT 打包参数，勿用。
 
 ## 5. 标注 GUI（人工复核）
 
@@ -91,7 +89,7 @@ D:\yolo\annotator\stop_server.bat [port]
 & D:\yolo\.venv\Scripts\python.exe D:\yolo\annotator\annotator.py [--port 8085] [--model <best.pt>]
 ```
 
-已支持：打开/导入数据集、画框编辑、保存回 YOLO 5 列格式、模型补检、导出 zip。CVAT 复核路线已弃用。
+已支持：打开/导入数据集、画框编辑、保存回 YOLO 5 列格式、模型补检、导出 zip。
 
 ## 6. 划分与数据
 
@@ -106,11 +104,11 @@ Remove-Item D:\gas_cylinders\first500\labels.cache -ErrorAction SilentlyContinue
 ## 7. Git
 
 ```powershell
-# 工作区已初始化仓库（分支 main，初始提交 6868027）。大文件已由 .gitignore 排除（.venv/runs/weights/_trash/.tmp/截图）。
+# 工作区已初始化仓库（分支 main，初始提交 82f6c65）；远程 origin = https://github.com/ReedZhang47/gas-cylinder-yolo.git 已推送并跟踪（origin/main 同步，GCM 凭据已存于 Windows 凭据管理器，日常直接 add/commit/push 即可）。大文件已由 .gitignore 排除（.venv/runs/weights/_trash/.tmp/截图）。
 git status                 # 查看改动
 git add <文件或目录>        # 暂存（勿用 git add . 之外的全量 add 前先看 status）
 git commit -m "<说明>"      # 提交
-git push -u origin main    # 首次推送（需先配置远程，见下）
+git push                   # 推送（origin 已配置，凭据已存）
 ```
 
 ⚠️ `.gitignore` **不支持行内注释**（`#` 只认行首），规则每行一条纯模式，行内注释会让整条规则失效（2026-08-31 踩过）。
@@ -120,4 +118,3 @@ git push -u origin main    # 首次推送（需先配置远程，见下）
 | 日期 | 变更 |
 |---|---|
 | 2026-08-31 | 建立本表（环境/训练/评测/打标/GUI/划分命令），与 PROGRESS.md 同步维护 |
-| 2026-08-31 | §4 自动打标改写为「最简单用法 + 可选参数表 + 示例」通俗版 |

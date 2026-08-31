@@ -79,7 +79,7 @@
 | 文件/目录 | 内容 |
 |---|---|
 | `PROGRESS.md` | **本文件**：总账本，随进度更新（见文首维护规则） |
-| git 仓库 | `D:\yolo` 已 `git init`（分支 `main`，初始提交 `6868027`）；`.gitignore` 排除 .venv/runs/weights/_trash/.tmp/截图，远程仓库未配置，push 见 `COMMANDS.md` §8 |
+| git 仓库 | `D:\yolo` 已 `git init`（分支 `main`，初始提交 `82f6c65`，17 文件）；**已推送** `https://github.com/ReedZhang47/gas-cylinder-yolo.git`，本地 `main` 跟踪 `origin/main`；认证走 GCM（Windows 凭据管理器已存 ReedZhang47 凭据，无需手动授权）；日常 `add`+`commit`+`push` 即可，详见 `COMMANDS.md` §7；`.gitignore` 排除 .venv/runs/weights/_trash/.tmp/截图 |
 | `COMMANDS.md` | **命令表**：环境/训练/评测/打标/GUI/划分，随命令变化更新 |
 | `autolabel.py` | 自动打标 + CVAT 打包脚本（当前只用自动打标部分） |
 | `annotator\` | 本地 GUI 标注工具：`annotator.py` + `static\` + `start_annotator.bat` / `stop_server.bat`；`server.log` 为运行日志（可随时清理） |
