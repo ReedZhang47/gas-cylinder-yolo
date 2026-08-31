@@ -45,14 +45,38 @@ nvidia-smi
 
 ## 4. 自动打标
 
+**最简单的用法（和你以前一样，只给图片目录，其余全部用默认）：**
+
 ```powershell
-& D:\yolo\.venv\Scripts\python.exe D:\yolo\autolabel.py --source <图片目录> `
-    [--model D:\yolo\runs\detect\first500\yolo11m\weights\best.pt] `
-    [--conf 0.25] [--iou 0.45] [--imgsz 640] [--overwrite] [--labels-out <目录>] [--cvat-dir <目录>]
+& D:\yolo\.venv\Scripts\python.exe D:\yolo\autolabel.py --source D:\新图片目录
 ```
 
-- 标签输出默认 `<source>\..\labels`，每图一个 5 列 txt（class cx cy w h 归一化），无检测出**空 txt**（负样本，1:1 对应），并写 `data.yaml`。
-- `--overwrite` 才会重新打标已有标签；`--cvat-dir` 为已弃用的 CVAT 路线所用，勿用。
+- 效果：对目录里每张图用默认模型（`runs\detect\first500\yolo11m\weights\best.pt`，conf=0.25）检测，标签写到 `<图片目录>\..\labels`，每图一个 5 列 txt；没检测到就写**空 txt**（负样本），并自动生成 `data.yaml`。
+
+**可选参数（方括号里的都是可选的，不写就用默认值；反引号 ` 只是 PowerShell 换行符，想写一行就去掉它）：**
+
+```powershell
+& D:\yolo\.venv\Scripts\python.exe D:\yolo\autolabel.py --source <图片目录> `
+    [--model <best.pt>] [--conf 0.25] [--iou 0.45] [--imgsz 640] [--overwrite] [--labels-out <目录>]
+```
+
+| 参数 | 默认值 | 什么时候用 |
+|---|---|---|
+| `--model <best.pt>` | yolo11m 的 best.pt | 想换别的权重打标时 |
+| `--conf 0.25` | 0.25 | 框太多→调高（如 0.3）；漏框→调低（如 0.1） |
+| `--iou 0.45` | 0.45 | 一般不用动 |
+| `--imgsz 640` | 640 | 一般不用动 |
+| `--overwrite` | 不加：跳过已有标签 | 已打过标、想重新打时加上 |
+| `--labels-out <目录>` | `<source>\..\labels` | 想把标签放到别处时 |
+
+**常用示例：**
+
+```powershell
+# 换模型 + 放宽阈值 + 重新打标
+& D:\yolo\.venv\Scripts\python.exe D:\yolo\autolabel.py --source D:\新图片目录 --model D:\yolo\runs\detect\first500\yolov8m\weights\best.pt --conf 0.3 --overwrite
+```
+
+> 备注：`--cvat-dir` 是已弃用的 CVAT 打包参数，勿用。
 
 ## 5. 标注 GUI（人工复核）
 
@@ -96,3 +120,4 @@ git push -u origin main    # 首次推送（需先配置远程，见下）
 | 日期 | 变更 |
 |---|---|
 | 2026-08-31 | 建立本表（环境/训练/评测/打标/GUI/划分命令），与 PROGRESS.md 同步维护 |
+| 2026-08-31 | §4 自动打标改写为「最简单用法 + 可选参数表 + 示例」通俗版 |
