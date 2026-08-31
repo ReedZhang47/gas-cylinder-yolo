@@ -1,0 +1,21 @@
+# 大文件 / 可再生文件：禁止入库（本文件每行一个纯模式，勿加行内注释，gitignore 不支持行内 # 注释）
+.venv/
+runs/
+weights/
+_trash/
+.tmp/
+annotator_demo_data/
+
+# 日志
+*.log
+
+# GUI 验证截图（过程产物）
+shot*.png
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+__pycache__/
+*.pyc
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,55 @@
+html, body { height: 100%; margin: 0; font: 13px/1.5 "Segoe UI", "Microsoft YaHei", sans-serif; }
+body { display: flex; flex-direction: column; background: #1e1f22; color: #e6e6e6; }
+
+#topbar { flex: 0 0 auto; display: flex; align-items: center; gap: 8px; padding: 8px 12px;
+  background: #2b2d31; border-bottom: 1px solid #000; }
+.brand { font-weight: 700; color: #7aa2f7; margin-right: 6px; }
+#rootInput { flex: 0 1 640px; background: #1e1f22; color: #e6e6e6;
+  border: 1px solid #444; border-radius: 4px; padding: 5px 8px; }
+button { background: #3a3d42; color: #e6e6e6; border: 1px solid #555; border-radius: 4px;
+  padding: 5px 12px; cursor: pointer; }
+button:hover { background: #4a4e55; }
+button:disabled { opacity: .45; cursor: default; }
+button.danger { background: #4a2f33; border-color: #a0555f; }
+button.danger:hover { background: #633f45; }
+.sep { flex: 1; }
+
+#mainRow { flex: 1 1 auto; display: flex; min-height: 0; }
+main#stage { flex: 1 1 auto; position: relative; overflow: hidden; background: #141517; min-width: 0; }
+aside { flex: 0 0 auto; overflow-y: auto; }
+
+#sidebar { width: 250px; background: #242528; border-right: 1px solid #000; }
+.hint { padding: 10px; color: #9aa0a6; font-size: 12px; }
+#imageList .item { padding: 3px 10px; cursor: pointer; display: flex; gap: 6px;
+  border-left: 3px solid transparent; align-items: baseline; }
+#imageList .item:hover { background: #2f3238; }
+#imageList .item.active { background: #33415e; border-left-color: #7aa2f7; }
+#imageList .item .n { color: #9aa0a6; font-size: 12px; margin-left: auto; }
+#imageList .item.isdirty .n { color: #e0af68; }
+
+#canvasWrap { position: absolute; inset: 0; }
+#cv { position: absolute; inset: 0; width: 100%; height: 100%; cursor: crosshair; }
+#cv.panning { cursor: grab; }
+
+#panel { width: 280px; background: #242528; border-left: 1px solid #000; padding: 8px 10px; }
+#panel h3 { margin: 8px 0 6px; font-size: 13px; color: #9aa0a6; }
+.boxlist { max-height: 180px; overflow-y: auto; }
+.boxitem { padding: 2px 6px; cursor: pointer; border-radius: 3px; display: flex; gap: 6px; }
+.boxitem:hover { background: #2f3238; }
+.boxitem.sel { background: #33415e; }
+.editor label { display: flex; align-items: center; gap: 6px; margin: 4px 0; }
+.editor input, .editor select { flex: 1; background: #1e1f22; color: #e6e6e6;
+  border: 1px solid #444; border-radius: 3px; padding: 3px 6px; }
+.hints { margin-top: 10px; color: #9aa0a6; font-size: 11px; line-height: 1.8; }
+
+#statusbar { flex: 0 0 auto; display: flex; gap: 18px; padding: 4px 12px; background: #2b2d31;
+  border-top: 1px solid #000; color: #9aa0a6; font-size: 12px; }
+
+#toast { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%);
+  background: #33415ecc; color: #fff; padding: 6px 14px; border-radius: 4px;
+  opacity: 0; transition: opacity .2s; pointer-events: none; z-index: 5; }
+#toast.show { opacity: 1; }
+
+#selftest-report { position: fixed; top: 52px; right: 12px; z-index: 99; max-width: 420px;
+  background: #000d; color: #9f9; padding: 8px 10px; font: 11px/1.5 monospace;
+  border-radius: 4px; white-space: pre-wrap; }

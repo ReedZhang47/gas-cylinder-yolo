@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>YOLO 标注工具</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header id="topbar">
+  <span class="brand">YOLO 标注</span>
+  <input id="rootInput" type="text" placeholder="数据集根目录（含 images/ + labels/ 或图片文件）" spellcheck="false">
+  <button id="btnOpen">打开</button>
+  <button id="btnImport">导入 Zip…</button>
+  <input id="zipInput" type="file" accept=".zip" hidden>
+  <span class="sep"></span>
+  <button id="btnDetect">模型补检当前图</button>
+  <button id="btnSave">保存</button>
+  <button id="btnSaveAll">保存全部</button>
+  <button id="btnExport">导出 CVAT Zip</button>
+  <button id="btnStop" class="danger">停止服务</button>
+</header>
+
+<div id="mainRow">
+  <aside id="sidebar">
+    <div id="rootHint" class="hint">输入含图片的目录，回车打开</div>
+    <div id="imageList"></div>
+  </aside>
+
+  <main id="stage">
+    <div id="canvasWrap">
+      <canvas id="cv"></canvas>
+      <div id="toast"></div>
+    </div>
+  </main>
+
+  <aside id="panel">
+    <h3>当前图框</h3>
+    <div id="boxList" class="boxlist"></div>
+    <h3 id="selTitle">选中框（无）</h3>
+    <div id="editor" class="editor">
+      <label>类别
+        <select id="edClass"></select>
+      </label>
+      <label>cx <input id="edCx" type="number" step="0.001" min="0" max="1" disabled></label>
+      <label>cy <input id="edCy" type="number" step="0.001" min="0" max="1" disabled></label>
+      <label>w&nbsp; <input id="edW"  type="number" step="0.001" min="0" max="1" disabled></label>
+      <label>h&nbsp; <input id="edH"  type="number" step="0.001" min="0" max="1" disabled></label>
+      <button id="btnDel" disabled>删除选中</button>
+    </div>
+    <div id="hints" class="hints">
+      ←→ 切换图（自动保存） · Del 删除框 · Esc 取消<br>
+      滚轮缩放 · 空白处拖拽画框 · Space+拖拽平移<br>
+      拖动框移动 · 拖角缩放 · Ctrl+S 保存
+    </div>
+  </aside>
+</div>
+
+<footer id="statusbar">
+  <span id="stImage">未打开数据集</span>
+  <span id="stCount"></span>
+  <span id="stZoom"></span>
+  <span id="stModel"></span>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>
