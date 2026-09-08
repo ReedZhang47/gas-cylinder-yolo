@@ -1,12 +1,12 @@
 r"""local YOLO detection annotation GUI server (stdlib only).
 
 Serves a browser GUI at http://127.0.0.1:<port> for viewing/editing flatted YOLO
-detection labels (class cx cy w h, normalized), with import (folder/zip) and
-export (CVAT-importable zip). Optional per-image re-detection with a trained
-weight.
+detection labels (class cx cy w h, normalized), drawing new boxes, adding new
+class names into data.yaml, with import (folder/zip) and export (CVAT-importable
+zip).
 
 Run:
-  & D:\yolo\.venv\Scripts\python.exe D:\yolo\annotator\annotator.py [--port 8085] [--model <best.pt>]
+  & D:\yolo\.venv\Scripts\python.exe D:\yolo\annotator\annotator.py [--port 8085]
 """
 import argparse
 import io
@@ -25,25 +25,12 @@ STATIC = HERE / "static"
 IMAGES_EXTS = {".png", ".jpg", ".jpeg", ".webp", ".bmp", ".tif", ".tiff"}
 LABEL_RE = re.compile(r"^(\d+)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s*$")
 DEFAULT_NAMES = {0: "Upside-down"}
-MODEL_ARG = None
-_MODEL = None
-_MODEL_LOCK = threading.Lock()
 SRV = None
 
 MIME = {
     ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
     ".webp": "image/webp", ".bmp": "image/bmp", ".tif": "image/tiff", ".tiff": "image/tiff",
 }
-
-
-def get_model():
-    global _MODEL
-    if _MODEL is None:
-        with _MODEL_LOCK:
-            if _MODEL is None:
-                from ultralytics import YOLO
-                _MODEL = YOLO(MODEL_ARG)
-    return _MODEL
 
 
 def names_for(root: str) -> dict:
@@ -71,6 +58,31 @@ def names_for(root: str) -> dict:
             elif in_names and re.match(r"^\S", line):
                 break
     return names if names else dict(DEFAULT_NAMES)
+
+
+def write_data_yaml(root: str, names: dict) -> None:
+    """Rewrite root/data.yaml keeping other keys, with names as {id: name} + nc."""
+    p = Path(root) / "data.yaml"
+    data = {}
+    if p.exists():
+        try:
+            import yaml
+            data = yaml.safe_load(p.read_text(encoding="utf-8-sig")) or {}
+        except Exception:
+            data = {}
+        if not isinstance(data, dict):
+            data = {}
+    clean = {int(k): str(v) for k, v in sorted(names.items())}
+    data["names"] = clean
+    data["nc"] = len(clean)
+    try:
+        import yaml
+        text = yaml.safe_dump(data, allow_unicode=True, sort_keys=False, default_flow_style=False)
+    except Exception:
+        lines = ["names:"] + [f"  {k}: {v}" for k, v in clean.items()]
+        lines += [f"{k}: {v}" for k, v in data.items() if k not in ("names", "nc")]
+        text = "\n".join(lines) + "\n"
+    p.write_text(text, encoding="utf-8")
 
 
 def find_dirs(root: Path) -> tuple[Path, Path]:
@@ -206,6 +218,7 @@ class Handler(BaseHTTPRequestHandler):
         body = json.dumps(obj, ensure_ascii=False).encode("utf-8")
         self.send_response(code)
         self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Cache-Control", "no-store")
         self.send_header("Content-Length", str(len(body)))
         self.end_headers()
         self.wfile.write(body)
@@ -213,6 +226,7 @@ class Handler(BaseHTTPRequestHandler):
     def _bytes(self, body, ctype, filename=None, code=200):
         self.send_response(code)
         self.send_header("Content-Type", ctype)
+        self.send_header("Cache-Control", "no-store")
         if filename:
             self.send_header("Content-Disposition", f'attachment; filename="{filename}"')
         self.send_header("Content-Length", str(len(body)))
@@ -338,25 +352,31 @@ class Handler(BaseHTTPRequestHandler):
                 return
             self._json({"ok": True, "saved": len(boxes), "path": str(label_path_for(lab_dir, name))})
             return
-        if path == "/api/detect":
+        if path == "/api/classes":
             data = json.loads(body)
-            img, _ = self._img_path(data)
-            if img is None or not img.is_file():
-                self._json({"error": "image not found"}, 404)
-                return
+            root = data.get("root", "")
+            cname = str(data.get("name", "")).strip()
             try:
-                res = get_model().predict(str(img), conf=data.get("conf", 0.25),
-                                          verbose=False)[0]
-                boxes = []
-                if res.boxes is not None and len(res.boxes):
-                    cls = res.boxes.cls.cpu().numpy().astype(int)
-                    xywhn = res.boxes.xywhn.cpu().numpy()
-                    for c, (cx, cy, w, h) in zip(cls, xywhn):
-                        boxes.append({"class": int(c), "cx": float(cx), "cy": float(cy),
-                                      "w": float(w), "h": float(h)})
-                self._json({"boxes": boxes})
+                info = scan_dataset(root)
             except Exception as e:
-                self._json({"error": f"detect failed: {e}"}, 500)
+                self._json({"error": str(e)}, 400)
+                return
+            if not cname or "\n" in cname or len(cname) > 60:
+                self._json({"error": "invalid class name"}, 400)
+                return
+            names = info["names"]
+            for cid, existing in names.items():
+                if str(existing).strip().lower() == cname.lower():
+                    self._json({"error": f"类别已存在: {cid}: {existing}"}, 400)
+                    return
+            nid = (max(names) + 1) if names else 0
+            names[nid] = cname
+            try:
+                write_data_yaml(info["root"], names)
+            except Exception as e:
+                self._json({"error": f"write data.yaml failed: {e}"}, 400)
+                return
+            self._json({"ok": True, "added": nid, "name": cname, "names": names})
             return
         if path == "/api/import_zip":
             try:
@@ -370,14 +390,12 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main():
-    global MODEL_ARG, SRV
+    global SRV
     ap = argparse.ArgumentParser(description="local YOLO detection annotator GUI")
     ap.add_argument("--port", type=int, default=8085)
-    ap.add_argument("--model", default=r"D:\yolo\runs\detect\first500\yolo11m\weights\best.pt")
     args = ap.parse_args()
-    MODEL_ARG = args.model
     SRV = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
-    print(f"annotator GUI: http://127.0.0.1:{args.port}  (model: {MODEL_ARG})", flush=True)
+    print(f"annotator GUI: http://127.0.0.1:{args.port}", flush=True)
     SRV.serve_forever()
     print("server stopped", flush=True)
 

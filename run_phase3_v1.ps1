@@ -1,13 +1,16 @@
-# Phase 3: sequential training of 6 weights, 100 epochs each
-# OOM retry with batch=8 once. Logs per-run to phase3_<tag>.log, summary to phase3_train.log
+# Phase 3 v1: sequential training of 6 weights on the 93 real photos (labeler model)
+# Unified hyperparams (same as v0): epochs=100 imgsz=640 batch=16 device=0
+# Data: D:\gas_cylinders\real_photo\93_real_photos\data.yaml (v1_split train/val)
+# Logs per-run to phase3_v1_<tag>.log, summary to phase3_v1_train.log
 $weights = @('yolov8s','yolov8m','yolo11s','yolo11m','yolo26s','yolo26m')
-$logMain = 'D:\yolo\logs\phase3_train.log'
+$data = 'D:\gas_cylinders\real_photo\93_real_photos\data.yaml'
+$logMain = 'D:\yolo\logs\phase3_v1_train.log'
 "START $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" | Out-File -FilePath $logMain -Encoding utf8
 
 foreach ($w in $weights) {
-  $out = "D:\yolo\logs\phase3_$w.log"
+  $out = "D:\yolo\logs\phase3_v1_$w.log"
   "=== $w start $(Get-Date -Format 'HH:mm:ss') batch16 ===" | Out-File -FilePath $logMain -Append -Encoding utf8
-  & D:\yolo\.venv\Scripts\yolo.exe detect train model="weights\$w.pt" data=D:\yolo\splits\data.yaml epochs=100 imgsz=640 batch=16 device=0 name="first500/$w" *> $out
+  & D:\yolo\.venv\Scripts\yolo.exe detect train model="D:\yolo\weights\$w.pt" data=$data epochs=100 imgsz=640 batch=16 device=0 name="real93/$w" *> $out
   $code = $LASTEXITCODE
   if ($code -eq 0) {
     "$w OK batch16 $(Get-Date -Format 'HH:mm:ss')" | Out-File -FilePath $logMain -Append -Encoding utf8
@@ -15,7 +18,7 @@ foreach ($w in $weights) {
     $tail = Get-Content $out -Tail 40 | Out-String
     if ($tail -match 'out.of.memory|OutOfMemory|CUDA') {
       "--- $w OOM at batch16, retry batch8 ---" | Out-File -FilePath $logMain -Append -Encoding utf8
-      & D:\yolo\.venv\Scripts\yolo.exe detect train model="weights\$w.pt" data=D:\yolo\splits\data.yaml epochs=100 imgsz=640 batch=8 device=0 name="first500/$w" *> $out
+      & D:\yolo\.venv\Scripts\yolo.exe detect train model="D:\yolo\weights\$w.pt" data=$data epochs=100 imgsz=640 batch=8 device=0 name="real93/$w" *> $out
       $code2 = $LASTEXITCODE
       if ($code2 -eq 0) { "$w OK batch8(OOM) $(Get-Date -Format 'HH:mm:ss')" | Out-File -FilePath $logMain -Append -Encoding utf8 }
       else { "$w FAILED even batch8 exit=$code2 $(Get-Date -Format 'HH:mm:ss')" | Out-File -FilePath $logMain -Append -Encoding utf8 }

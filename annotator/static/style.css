@@ -2,12 +2,13 @@ html, body { height: 100%; margin: 0; font: 13px/1.5 "Segoe UI", "Microsoft YaHe
 body { display: flex; flex-direction: column; background: #1e1f22; color: #e6e6e6; }
 
 #topbar { flex: 0 0 auto; display: flex; align-items: center; gap: 8px; padding: 8px 12px;
-  background: #2b2d31; border-bottom: 1px solid #000; }
-.brand { font-weight: 700; color: #7aa2f7; margin-right: 6px; }
-#rootInput { flex: 0 1 640px; background: #1e1f22; color: #e6e6e6;
+  background: #2b2d31; border-bottom: 1px solid #000; flex-wrap: wrap; }
+.brand { font-weight: 700; color: #7aa2f7; margin-right: 6px; white-space: nowrap; }
+#topbar button { flex: 0 0 auto; }
+#rootInput { flex: 1 1 320px; min-width: 160px; background: #1e1f22; color: #e6e6e6;
   border: 1px solid #444; border-radius: 4px; padding: 5px 8px; }
 button { background: #3a3d42; color: #e6e6e6; border: 1px solid #555; border-radius: 4px;
-  padding: 5px 12px; cursor: pointer; }
+  padding: 5px 12px; cursor: pointer; white-space: nowrap; }
 button:hover { background: #4a4e55; }
 button:disabled { opacity: .45; cursor: default; }
 button.danger { background: #4a2f33; border-color: #a0555f; }
@@ -40,10 +41,22 @@ aside { flex: 0 0 auto; overflow-y: auto; }
 .editor label { display: flex; align-items: center; gap: 6px; margin: 4px 0; }
 .editor input, .editor select { flex: 1; background: #1e1f22; color: #e6e6e6;
   border: 1px solid #444; border-radius: 3px; padding: 3px 6px; }
+.classlist { margin-bottom: 6px; }
+.classlist .clsrow { display: flex; align-items: center; gap: 6px; padding: 2px 6px; border-radius: 3px; }
+.classlist .clsrow:hover { background: #2f3238; }
+.classlist .swatch { width: 10px; height: 10px; border-radius: 2px; flex: 0 0 auto; }
+.addclass, .newboxrow { display: flex; gap: 6px; align-items: center; margin-bottom: 6px; }
+.addclass input { flex: 1; min-width: 0; background: #1e1f22; color: #e6e6e6;
+  border: 1px solid #444; border-radius: 3px; padding: 3px 6px; }
+.newboxrow { margin: 0 0 6px; }
+.newboxrow label { display: flex; align-items: center; gap: 6px; flex: 1; min-width: 0; }
+.newboxrow select { flex: 1; min-width: 0; background: #1e1f22; color: #e6e6e6;
+  border: 1px solid #444; border-radius: 3px; padding: 3px 6px; }
 .hints { margin-top: 10px; color: #9aa0a6; font-size: 11px; line-height: 1.8; }
 
 #statusbar { flex: 0 0 auto; display: flex; gap: 18px; padding: 4px 12px; background: #2b2d31;
   border-top: 1px solid #000; color: #9aa0a6; font-size: 12px; }
+#statusbar span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 
 #toast { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%);
   background: #33415ecc; color: #fff; padding: 6px 14px; border-radius: 4px;

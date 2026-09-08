@@ -9,6 +9,7 @@ const S = {
   root: null, info: null,
   images: [], idx: -1,
   boxes: [], sel: -1,
+  drawClass: 0,   // class id assigned to newly drawn/created boxes
   dirty: false,
   img: null, imgW: 0, imgH: 0,
   s: 1, ox: 0, oy: 0, base: 1,
@@ -40,7 +41,7 @@ function setStatus() {
   $("stImage").textContent = S.root ? `${S.idx + 1} / ${S.images.length}   ${S.images[S.idx] || ""}` : "未打开数据集";
   $("stCount").textContent = S.boxes.length ? `框: ${S.boxes.length}` : "";
   $("stZoom").textContent = `缩放 ${Math.round(S.zoom * 100)}%`;
-  $("stModel").textContent = `模型: ${(S.info && S.info.names && S.info.names[0]) || "Upside-down"}`;
+  $("stNames").textContent = `标签: ${Object.values(S.names).join("、")}`;
 }
 
 /* ---------------- dataset loading ---------------- */
@@ -52,7 +53,8 @@ async function openRoot(root) {
     S.names = info.names || {0: "Upside-down"};
     S.boxCache = {}; S.dirtyAt = {};
     S.idx = -1;
-    renderList(); buildClassOptions();
+    renderList(); buildClassOptions(); renderClassList();
+    $("newClassName").disabled = false; $("btnAddClass").disabled = false;
     $("rootHint").hidden = true;
     if (S.images.length) goto(0, false);
     toast(`已打开 ${info.image_count} 张图 · 标注目录 ${info.labels_dir}`);
@@ -261,7 +263,7 @@ cv.addEventListener("mouseup", (e) => {
     const x1 = Math.min(Math.max(S.drag.start[0], 0), S.imgW), y1 = Math.min(Math.max(S.drag.start[1], 0), S.imgH);
     const x2 = Math.min(Math.max(ix, 0), S.imgW), y2 = Math.min(Math.max(iy, 0), S.imgH);
     if (Math.abs(x2 - x1) > 4 / S.s && Math.abs(y2 - y1) > 4 / S.s) {
-      S.boxes.push({ class: 0, cx: (x1 + x2) / 2 / S.imgW, cy: (y1 + y2) / 2 / S.imgH,
+      S.boxes.push({ class: S.drawClass, cx: (x1 + x2) / 2 / S.imgW, cy: (y1 + y2) / 2 / S.imgH,
                      w: Math.abs(x2 - x1) / S.imgW, h: Math.abs(y2 - y1) / S.imgH });
       S.sel = S.boxes.length - 1;
       markDirty();
@@ -295,6 +297,7 @@ document.addEventListener("keydown", (e) => {
   else if (e.key === " ") { e.preventDefault(); S.space = true; }
   else if (e.key === "+" || e.key === "=") zoomBy(1.2);
   else if (e.key === "-") zoomBy(1 / 1.2);
+  else if (e.key === "n" || e.key === "N") { newBoxAtCenter(); }
   else if ((e.ctrlKey || e.metaKey) && e.key === "s") { e.preventDefault(); saveNow(); }
   else if (e.key === "q") { if (S.idx >= 0) goto(S.idx); } // reload current image
 });
@@ -343,22 +346,6 @@ async function saveAll() {
   renderList();
 }
 
-async function detectCurrent() {
-  if (!S.root || S.idx < 0) return;
-  toast("模型推理中…");
-  try {
-    const r = await api(`/api/detect`, {
-      method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ root: S.root, img: S.images[S.idx], conf: 0.25 }),
-    });
-    S.boxes = (await r.json()).boxes || [];
-    S.boxCache[S.idx] = S.boxes;
-    S.sel = -1; markDirty();
-    renderBoxList(); syncEditor(); draw();
-    toast(`模型给出 ${S.boxes.length} 框（未保存，可直接修改）`);
-  } catch (e) { toast("检测失败: " + e.message); }
-}
-
 async function exportCvat() {
   if (!S.root) return;
   if (S.dirty) await saveNow();
@@ -383,13 +370,59 @@ async function importZip(file) {
 
 /* ---------------- panels ---------------- */
 function buildClassOptions() {
-  const sel = $("edClass");
-  sel.innerHTML = "";
-  for (const [cid, cname] of Object.entries(S.names)) {
-    const o = document.createElement("option");
-    o.value = cid; o.textContent = `${cid}: ${cname}`;
-    sel.append(o);
+  for (const id of ["edClass", "drawClass"]) {
+    const sel = $(id);
+    sel.innerHTML = "";
+    for (const [cid, cname] of Object.entries(S.names)) {
+      const o = document.createElement("option");
+      o.value = cid; o.textContent = `${cid}: ${cname}`;
+      sel.append(o);
+    }
   }
+  if (S.names[S.drawClass] === undefined) S.drawClass = +Object.keys(S.names)[0] || 0;
+  $("drawClass").value = S.drawClass;
+}
+
+function renderClassList() {
+  const el = $("classList");
+  el.innerHTML = "";
+  for (const [cid, cname] of Object.entries(S.names)) {
+    const d = document.createElement("div");
+    d.className = "clsrow";
+    const sw = document.createElement("span");
+    sw.className = "swatch";
+    sw.style.background = PALETTE[(+cid) % PALETTE.length] || "#fff";
+    const t = document.createElement("span");
+    t.textContent = `${cid}: ${cname}`;
+    d.append(sw, t);
+    el.append(d);
+  }
+}
+
+async function addClass() {
+  const name = $("newClassName").value.trim();
+  if (!S.root) { toast("请先打开数据集"); return; }
+  if (!name) { toast("请输入类别名"); return; }
+  try {
+    const r = await api("/api/classes", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ root: S.root, name }),
+    });
+    const { added, name: cname, names } = await r.json();
+    S.names = names;
+    S.drawClass = added;
+    buildClassOptions(); renderClassList();
+    $("newClassName").value = "";
+    toast(`已添加类别 ${added}: ${cname}（已写入 data.yaml）`);
+  } catch (e) { toast("添加失败: " + e.message); }
+}
+
+function newBoxAtCenter() {
+  if (!S.imgW) { toast("图片未加载"); return; }
+  S.boxes.push({ class: S.drawClass, cx: 0.5, cy: 0.5, w: 0.3, h: 0.3 });
+  S.sel = S.boxes.length - 1;
+  markDirty();
+  renderBoxList(); syncEditor(); draw();
 }
 
 function renderBoxList() {
@@ -432,7 +465,11 @@ function onUserEdit(input, apply) {
   markDirty();
   renderBoxList(); draw();
 }
-$("edClass").onchange = (e) => { if (S.sel >= 0 && e.target.value !== "") { S.boxes[S.sel].class = +e.target.value; markDirty(); renderBoxList(); draw(); } };
+$("edClass").onchange = (e) => { if (S.sel >= 0 && e.target.value !== "") { S.boxes[S.sel].class = +e.target.value; S.drawClass = +e.target.value; $("drawClass").value = S.drawClass; markDirty(); renderBoxList(); draw(); } };
+$("drawClass").onchange = (e) => { S.drawClass = +e.target.value; };
+$("btnNewBox").onclick = newBoxAtCenter;
+$("btnAddClass").onclick = addClass;
+$("newClassName").addEventListener("keydown", (e) => { if (e.key === "Enter") addClass(); });
 $("edCx").oninput = (e) => onUserEdit(e.target, (b, v) => { b.cx = v; });
 $("edCy").oninput = (e) => onUserEdit(e.target, (b, v) => { b.cy = v; });
 $("edW").oninput = (e) => onUserEdit(e.target, (b, v) => { b.w = Math.max(v, 0.001); });
@@ -444,7 +481,6 @@ $("btnOpen").onclick = () => { if ($("rootInput").value.trim()) openRoot($("root
 $("rootInput").addEventListener("keydown", (e) => { if (e.key === "Enter" && $("rootInput").value.trim()) openRoot($("rootInput").value.trim()); });
 $("btnSave").onclick = saveNow;
 $("btnSaveAll").onclick = saveAll;
-$("btnDetect").onclick = detectCurrent;
 $("btnExport").onclick = exportCvat;
 $("btnImport").onclick = () => $("zipInput").click();
 $("zipInput").onchange = (e) => { if (e.target.files[0]) importZip(e.target.files[0]); e.target.value = ""; };
@@ -526,6 +562,14 @@ async function runSelfTest() {
     items[items.length - 1].dispatchEvent(new MouseEvent("click", { bubbles: true }));
     ok("select via panel", S.sel === S.boxes.length - 1, `sel=${S.sel}`);
     S.boxes.pop();
+    const nCls = S.boxes.length;
+    $("btnNewBox").click();
+    ok("new box button", S.boxes.length === nCls + 1 && S.boxes[S.boxes.length - 1].class === S.drawClass,
+       `class=${S.boxes[S.boxes.length - 1].class} draw=${S.drawClass}`);
+    document.dispatchEvent(new KeyboardEvent("keydown", { key: "n", bubbles: true }));
+    ok("new box key N", S.boxes.length === nCls + 2, `n=${S.boxes.length}`);
+    S.boxes.splice(nCls, 2); S.sel = -1;
+    renderBoxList(); syncEditor(); draw();
     if (S.dirty) await loadImage(); // discard selftest edits
   } catch (err) {
     rep.push("EXCEPTION " + (err && err.message));

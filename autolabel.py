@@ -3,7 +3,7 @@ r"""auto-label gas-cylinder images with a trained weight -> YOLO-format labels.
 Output convention matches the first500 dataset:
   - one .txt per image, same basename, 5 columns: class cx cy w h (normalized)
   - images with no detection get an EMPTY .txt (negative sample / keep 1:1 correspondence)
-  - default labels dir: <source>/../labels ; class id comes from the model (0: Upside-down)
+  - default labels dir: <source>/../labels ; class ids/names come from the model's data.yaml
   - a data.yaml (names/nc/path/train) is always written into the labels output dir
 
 CVAT import (Ultralytics YOLO): use --cvat-dir <dir> to assemble the full dataset
@@ -35,11 +35,11 @@ def write_yaml(path: Path, names: dict):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Auto-label gas cylinder images (Upside-down class 0)")
+    ap = argparse.ArgumentParser(description="Auto-label images with a YOLO model (class ids/names from the model)")
     ap.add_argument("--source", required=True, help="directory containing new images")
     ap.add_argument("--labels-out", default=None, help="label output dir (default: <source>/../labels)")
     ap.add_argument("--cvat-dir", default=None, help="also assemble a CVAT-importable dataset into this dir")
-    ap.add_argument("--model", default=r"D:\yolo\runs\detect\first500\yolo11m\weights\best.pt")
+    ap.add_argument("--model", default=r"D:\yolo\runs\detect\real93_all\yolo26s\weights\best.pt")
     ap.add_argument("--conf", type=float, default=0.25, help="detection confidence threshold")
     ap.add_argument("--iou", type=float, default=0.45, help="NMS IoU threshold")
     ap.add_argument("--imgsz", type=int, default=640)

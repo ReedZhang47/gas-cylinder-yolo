@@ -1,95 +1,120 @@
-# PROGRESS.md — 气瓶检测项目工作进度总览
+# PROGRESS.md — 工地危险样本扩充项目工作进度总览（v1）
+
+> ## ⚠️ prompt 约定
+>
+> - 所有需求与 prompt 统一写入 `D:\yolo\Prompt.md`（每次对话由用户全量删除重写）；对话中用户只发简单指令。
+> - **`Prompt.md` 对任何 AI agent 只读、严禁编辑**，仅用户本人可编辑。
 
 > ## 文档维护规则（强制）
 >
-> - 本文件是项目的**唯一进度台账**。每一轮后续工作（数据、训练、评测、打标、工具改动）完成并验证后，**必须立即同步更新本文件**：进展、结果数字、产物路径、下一步、新踩的坑。
+> - 本文件是项目的**唯一进度台账**。每一轮后续工作完成并验证后，**立即同步更新本文件**：进展、结果数字、产物路径、下一步、新踩的坑。
 > - 本文件**禁止出现指向不存在文件的引用**；文件名、路径、命令改动后先核对这里。
-> - 命令如发生变化，**必须同步更新 `COMMANDS.md`**（命令表，与本文件同时维护）。
+> - 命令如发生变化，**必须同步更新 `COMMANDS.md`**（命令表）。
 > - 修改本文件前先读当前版本，改完把「截止」行的时间刷新。
+> - 上一版（v0）全文保留在 `PROGRESS_v0.md`，本文件保留了摘要与教训。
 
-> 截止：首个 500 张合成数据训练完成 + A 类过程文件清理（2026-08-31）。不含后续「新数据自动打标」部分。
+> 截止（2026-09-08）：**打标一键工具已重做**：`prepare_labeling_workspace.bat` 输入一个图片文件夹即完成建工作区 + real93_all 最佳权重自动预打标；**`COMMANDS.md` 重写为 AI agent 用精简版**。
 
 ## 一、项目一句话
 
-用本地生成式数据增强补足稀有类别「倒放气瓶（Upside-down）」：合成图片规模化扩量 → 自动打标 + 人工复核 → 重训，假设扩量可稳定提升 mAP 且跨 6 个 YOLO 权重成立。当前已完成 **500 张基线**。
+根据最新安全巡检：施工文明程度提高 → 工地不规范行为减少 → 危险样本（违规场景照片）自然稀缺，而故意摆拍有真实安全风险和道德问题 → 用**本地大模型生图 / 编辑真实照片**，在不牺牲真实性的前提下扩充稀缺危险样本 → 最终做成**多目标检测**。第一步：**有「放置问题」的气瓶**；第二步：**不带安全帽的工人**；做完再探索其它稀缺危险目标。
 
-## 二、环境（已实测，PowerShell）
+## 二、动机与必要性（主故事线）
 
-| 项 | 值 |
-|---|---|
-| venv | `D:\yolo\.venv`（Py 3.13，torch 2.8.0+cu129，ultralytics **8.4.135**） |
-| GPU | RTX 5070 Ti Laptop 11.9 GB（12 GB 显存，batch16 @ m 级无压力，峰值 ~4.7G） |
-| 权重 | `weights\`：yolov8/11/26 × s/m 共 6 个（另 `yolo26n.pt` 未参与方案，可删） |
-| 命令 | 见 `COMMANDS.md`（唯一命令清单） |
+1. **样本稀缺是趋势性的**：文明施工水平不断提高，工地不规范行为持续减少，危险样本在真实巡检中越来越难收集（本次 93 张气瓶相关照片里倾倒的只有三四张即是例证）。但是仍存在，且危害大，有必要检测。
+2. **摆拍不可行**：故意布置违规场景（如故意放倒气瓶）本身有安全风险，也有道德问题。
+3. **生成式扩充是出路**：本地大模型文生图 + 编辑真实照片，在**不牺牲真实性**的前提下把稀缺危险样本扩量。真实性是红线——生成分布必须贴近工地实拍。
+4. **不限于气瓶**：这是一条通用管线，聚焦多种稀缺危险目标，后续做成多目标检测。气瓶放置问题是第一步，验证管线跑通后再扩展。
 
-## 三、数据集 first500（`D:\gas_cylinders\first500`，工作区外）
+## 三、v1 第一步：检测目标定义
 
-- 500 张合成图、**单类 `0: Upside-down`**；496 非空标注 + **4 空标图**（负样本，归入 train）。
-- 布局：`images/`+ 压平 `labels/`+ `train.txt`（相对路径）已就绪，ultralytics 可直接读。
-- **划分（已冻结，勿改）**：80/10/10 = **400/50/50**；按 25 个「颜色×组」前缀**组内分层 16/2/2**；**seed=42**；test 集冻结，供后续 500 vs 1000 对比复用。
-- 划分产出：`D:\yolo\splits\`（`data.yaml` + `make_split.py` + `train/val/test.txt`，绝对路径）。
-- 坑：源 `train.txt` 带 UTF-8 BOM（读用 `utf-8-sig`）；ultralytics 扫描会在数据集目录写 `labels.cache`（良性，可删后重建）。
+- **检测目标**：Placement Issues（有「放置问题」的气瓶）——只要**没有放置在气瓶专用固定架上**（无论倒地与否）即为目标。
+- **口径来源**：监理实际把倾倒气瓶统一归入「放置问题」中的「未固定」子项，比 v0 的「倒地」口径更贴合巡检实际。
+- **正负样本**：正样本 = 自由放置（未固定）的气瓶；负样本 = 放置在专用固定架上的闲置气瓶，或使用中且放置在手推车上的气瓶。合成数据时两者随机组合出现在同一批图里，逼模型学会区分。（固定架气瓶是否单设显式类别、还是仅作背景，在标注规范阶段定。）
+- **旧目标弃用**：v0 的单类 `0: Upside-down` 及 first500 500 张合成图**整体弃用**（文件仅保留在磁盘，不再使用；`PROGRESS_v0.md`保留在工作区_trash，非必要不读）。
 
-## 四、首 500 基线结果
+## 四、数据现状（`D:\gas_cylinders\`，工作区外）
 
-数据：test 集 50 图 / 202 实例。统一超参：epochs=100 / imgsz=640 / batch=16 / device=0 / optimizer=auto（AdamW lr0=0.002）。6 权重全通过，无 OOM。实验日期 2026-08-31。
+### 4.1 v1 核心真实数据：`real_photo\93_real_photos\`（人工标注完成，2026-09-02）
 
-### test 集（最终结论指标）
+- 布局：`real_photo\` 下含 `93_real_photos\`（标注集：`images\` 93 张 png + `labels\` 93 个 YOLO 5 列 txt + `data.yaml` + `train.txt` 93 行）、`Construction_Supervision_Notice\`（监理 docx 原始文件）、`convert_to_png.py`（原始照片 → `real_photo_N.png` 转码/摆正/重命名脚本）。
+- 类别：单类 **`0: Placement Issues`**（气瓶未放置在专用固定架或手推车上）。
+- **57 张含目标，共 180 个框**；**36 张负样本图**（图内气瓶全部规范放置），ultralytics 按背景图处理，可直接训练。
+- **划分已解决（2026-09-02）**：分层 train/val 划分完成（seed=42，train 75 = 46 正 + 29 负；val 18 = 11 正 + 7 负共 28 框），清单与 `split_info.json` 在 `v1_split\`，脚本 `D:\yolo\splits_v1\make_split_v1.py`；`data.yaml` 已补 `val` 键（`path` 用绝对路径）。同目录另有 `all.txt`（93 行全量绝对路径清单）+ `data_all93.yaml`（全量重训配置，train=val=全量）。无 test 集属设计决策：后续生成式数据统一用 93 张真实照片的 mAP 评质量，93 张绝不参与生成式数据训练。
 
-| 权重 | 家族/尺寸 | 参数量 | mAP50 | **mAP50-95** | P | R |
-|---|---|---|---|---|---|---|
-| yolov8s | v8 / s | 11.2 M | 0.909 | 0.753 | 0.936 | 0.803 |
-| yolov8m | v8 / m | 25.9 M | **0.935** | 0.762 | 0.859 | 0.886 |
-| yolo11s | 11 / s | 9.5 M | 0.924 | 0.751 | 0.907 | 0.868 |
-| yolo11m | 11 / m | 20.1 M | 0.927 | **0.774** | 0.917 | 0.847 |
-| yolo26s | 26 / s | 10.0 M | 0.916 | 0.770 | 0.834 | 0.868 |
-| yolo26m | 26 / m | 21.9 M | 0.920 | 0.753 | 0.855 | 0.861 |
+### 4.2 Roboflow 真实气瓶数据集（两个，均 CC BY 4.0，来源可追溯）
 
-### 训练末轮 val 指标（results.csv 第 100 行，参考）
+- 两个数据集。两者都只含「气瓶」检测框，不含位姿/放置信息，与 v1 目标（Placement Issues）口径不同。
+- `CylinDeRS_new2.v16i.yolov11\`：单类 `gas_cylinder`，train 4915 / valid 1434 / test 711（共 **7060** 张）。来源：universe.roboflow.com/cylindersnew/cylinders_new2/dataset/16
+- `garrafas.v1i.yolov11\`：2 类 `['- Cyldet - 2023-11-30 1-56pm', 'gas_cylinder']`（第一个类名是 roboflow 项目名残留，复用前需改名/合并），train 4765 / valid 1331 / test 654（共 **6750** 张）。来源：universe.roboflow.com/garrafas/garrafas-khs2q/dataset/1
+- 用途待定。
 
-| 权重 | val mAP50 | val mAP50-95 | 训练耗时 |
-|---|---|---|---|
-| yolov8s | 0.916 | 0.743 | 407.6 s |
-| yolov8m | 0.906 | 0.738 | 818.8 s |
-| yolo11s | 0.909 | 0.748 | 414.3 s |
-| yolo11m | 0.916 | 0.744 | 843.2 s |
-| yolo26s | 0.904 | 0.751 | 515.7 s |
-| yolo26m | 0.912 | 0.754 | 973.2 s |
+### 4.3 其它目录
 
-### 结论
+| 目录 | 内容 | v1 状态 |
+|---|---|---|
+| `first500\` | v0 的 500 张倒放合成图（单类 Upside-down） | **弃用**（文件保留，仅作 v0 复现） |
+| `501-1000\` | v0 扩量占位目录（空） | 弃用，可删 |
+| `安全帽\` | 2 张真实图片 | 第二步「不带安全帽的工人」的早期素材 |
 
-1. **最佳权重**：test mAP50-95 最高 **yolo11m（0.774）**；test mAP50 最高 **yolov8m（0.935）**。
-2. m 级在 mAP50-95 上普遍不劣于 s 级（yolo26 例外），差距约 1-2 个点。
-3. 三家族收敛水平接近（0.751–0.774），「跨权重泛化」前提成立——后续增强数据对比沿用这套 6 权重 × 统一超参方案。
-4. 检测质量已较高（mAP50 ≈ 0.91–0.94），500→1000 扩量对比的增益空间集中在 mAP50-95 的精细定位。
+## 五、新数据生成计划
 
-## 五、沙箱经验（Windows 下必读，别再踩）
+**合成口径**：正样本 = 自由气瓶，负样本 = 放在固定架上的气瓶，**随机组合生成**（同图可混合出现，场景贴近工地实拍）。
 
-- 受限模式下 `yolo` 训练/评测**必失败**：ultralytics 多进程（ThreadPool/DataLoader）要开**命名管道**（WinError 5），且要写**数据集目录**的 `labels.cache` → 命令需以 `danger-full-access` 单次升级运行（一次性覆盖整组串行训练/评测脚本）。
-- 纯数据脚本（划分、格式检查）在工作区 `workspace-write` 下可跑；跨盘写（如往 `D:\gas_cylinders` 写新文件）也要升级。
+**生图工具链（三条并行）**：
 
-## 六、下一步（按优先级）
+| 工具 | 用法 | 状态 |
+|---|---|---|
+| **z-image-turbo** | 纯 prompt 文生图（v0 已用） | 沿用 |
+| **qwen-image-edit-2509** | 编辑真实照片（把真实巡检照片改造成目标样本） | 待接入；**授权已确认无问题，仅需引用 Qwen 官方论文** |
+| **ControlNet + canny** | 以真实照片的 canny 边缘图做控制条件生图 | 试验项，验证对图像质量的帮助 |
 
-1. **扩量 500 → 1000**：生成/标注新增图片 → 并入训练集（**新数据不入已冻结的 test 集**）→ 同超参重训 6 权重 → 与基线比 mAP，验证「数据量效应」假设。
-2. **自动打标闭环**（脚本：`autolabel.py`）：yolo11m 打标 → 人工复核（**自建 GUI 标注工具 `D:\yolo\annotator\`**，见 COMMANDS.md）→ 复核后并入重训。CVAT 导入反复报 yaml/结构错误，**已弃用 CVAT 复核路线**（`.tmp\dm*` datumaro 调试产物已清理）。
-3. 若需「无增强基线」对照（假设 1）：用真实照片集（直立/倒放混合、倒放稀少）另行训练一组。
+**质量红线（v0 教训，生成 prompt/流程必须落实）**：
 
-## 七、文件地图
+- **气瓶不宜过于干净**。93 张真实照片里没有一个气瓶是干净的，生成图必须带**喷漆磨损、污渍、锈迹**等使用痕迹。
+- v0 的倒放检测模型在真实照片上表现不好——几张**明显倒地**的气瓶都未被检出，怀疑与 first500 合成图过于干净有关（domain gap）。v1 生成时把「真实感/脏污」当作硬性要求，并在打标复核时专门检查生成图是否「太干净」。
+
+## 六、路线图（按优先级）
+
+1. **真实数据打底** ✅（2026-09-02）：93 张真实照片人工标注完成（单类 Placement Issues：57 张有框共 180 框 + 36 张固定架负样本空标图）。
+2. **生图管线搭建**：qwen-image-edit-2509 编辑真实照片；z-image-turbo 文生图；canny ControlNet 试验。产出小批量样图先人工评估真实感，再批量生成。
+3. **批量合成 → 自动打标 → 人工复核 → 训练**：打标模型 v1 已就绪——划分对比最佳 yolo26s + 93 张全量版 real93_all/yolo26s（autolabel 默认；⚠️ real93_all 版 train=val 自评虚高，模型对比只能看划分版 val 指标）；每批生成图用 `prepare_labeling_workspace.bat` **一键建工作区 + 自动预打标**（2026-09-08 重做，输入图片文件夹即可）→ annotator 复核；与「仅真实数据」基线对比验证生成数据的增益。
+4. **多目标扩展**：第二步引入「不带安全帽的工人」（`安全帽\` 素材已起步），管线复用，做完再探索其它稀缺危险目标。
+
+## 七、沿用资产（v0 已验证有效，直接复用）
+
+- **环境**：`D:\yolo\.venv`（Py 3.13，torch 2.8.0+cu129，ultralytics 8.4.135）；GPU RTX 5070 Ti Laptop 11.9 GB（batch16 @ m 级无压力）；权重源 `weights\`（v8/11/26 × s/m 共 6 个）。
+- **评测方案**：6 权重 × 统一超参（epochs=100 / imgsz=640 / batch=16 / device=0）+ `run_phase3.ps1` / `run_phase4.ps1` 串行脚本，v1 对比实验沿用。
+- **自动打标**：`autolabel.py`（默认模型 2026-09-02 起为 93 张全量版 real93_all/yolo26s best.pt，conf=0.25；模型/conf 可调，多类别 5 列标签直接写出）。
+- **标注 GUI**：`annotator\`（画框、多类别编辑、新增类别写 data.yaml、zip 导入导出）。
+- **沙箱经验**：训练/评测/autolabel 需 `danger-full-access` 单次升级运行；纯数据脚本 `workspace-write` 可跑；跨盘写（`D:\gas_cylinders`）也要升级。
+
+## 八、v0 历史摘要与教训
+
+- **做了什么**（2026-08-31）：500 张倒放合成图（单类 Upside-down）→ 冻结 80/10/10 划分 → 6 权重统一超参训练 + test 评测。最佳 test mAP50-95 **yolo11m 0.774**、mAP50 **yolov8m 0.935**，三家族水平接近。
+- **教训 1（真实感缺失）**：合成图过干净，v0 best.pt 在真实照片上漏检明显倒放气瓶 → v1 质量红线（见第五节）。
+- **教训 2（口径脱离实际）**：「倒地」不是监理的实际管理口径，「放置问题（未固定）」才是 → 检测目标重构。
+- **产物处置**：`runs\detect\first500\` 仅保留 6 个 `weights\best.pt`；`splits\` 冻结划分，准备替换；first500 数据弃用不删。
+
+## 九、文件地图
 
 | 文件/目录 | 内容 |
 |---|---|
-| `PROGRESS.md` | **本文件**：总账本，随进度更新（见文首维护规则） |
-| git 仓库 | `D:\yolo` 已 `git init`（分支 `main`，初始提交 `82f6c65`，17 文件）；**已推送** `https://github.com/ReedZhang47/gas-cylinder-yolo.git`，本地 `main` 跟踪 `origin/main`；认证走 GCM（Windows 凭据管理器已存 ReedZhang47 凭据，无需手动授权）；日常 `add`+`commit`+`push` 即可，详见 `COMMANDS.md` §7；`.gitignore` 排除 .venv/runs/weights/_trash/.tmp/截图 |
-| `COMMANDS.md` | **命令表**：环境/训练/评测/打标/GUI/划分，随命令变化更新 |
-| `autolabel.py` | 自动打标 + CVAT 打包脚本（当前只用自动打标部分） |
-| `annotator\` | 本地 GUI 标注工具：`annotator.py` + `static\` + `start_annotator.bat` / `stop_server.bat`；`server.log` 为运行日志（可随时清理） |
+| `PROGRESS.md` | **本文件**：总账本（v1），随进度更新（见文首维护规则） |
+| `PROGRESS_v0.md` | v0 全文（倒放检测 + first500 基线），只读存档（实际在 `_trash\PROGRESS_v0.md`） |
+| `COMMANDS.md` | **命令表**（2026-09-08 重写为 **AI agent 用**精简速查表：可运行命令 + 环境事实 + 已知坑；v0 命令仅作复现标注） |
+| `autolabel.py` | 自动打标脚本（多类别可用；默认模型 = 93 张全量版 real93_all/yolo26s best.pt，2026-09-02 已切换并同步 COMMANDS.md） |
+| `annotator\` | 本地 GUI 标注工具：`annotator.py` + `static\` + `start_annotator.bat` / `stop_server.bat`；`server.log`/`server.err.log` 为运行日志（可随时清理）。**2026-09-01 改动（画新框、新增类别、移除模型补检）尚未 commit** |
 | `annotator_demo_data\` | GUI 演示/复测数据（10 图 + 标注 + data.yaml，可删） |
-| `splits\` | 冻结划分：`data.yaml` + `train/val/test.txt` + `make_split.py`（复现脚本，源划分勿重跑覆盖） |
-| `runs\detect\first500\<tag>\` | 6 组训练产物；**仅 `weights\best.pt` 必须保留**（autolabel 默认模型 = `first500\yolo11m\weights\best.pt`）；`last.pt`、results.csv、曲线、批次图可清理 |
-| `runs\detect\val` ~ `val-6` | phase4 test 评测图（指标已入第四节，可清理） |
-| `weights\` | 6 个预训练源权重（s/m）+ `yolo26n.pt`（未用，可删） |
-| `run_phase3.ps1` / `run_phase4.ps1` | 6 权重串行训练 / test 评测脚本（OOM 自动降 batch=8） |
-| `_trash\` | 2026-08-31 A 类过程文件清理备份（GUI 测试产物、datumaro 残留、浏览器 profile、旧结果明细等；确认无用后可整目录删除） |
-| `.tmp\pip-*` | 4 个空 pip 临时目录（删除被系统拒绝，留待重启或管理员权限处理） |
-
-> 历史：`results_first500.md`（基线明细）已并入第四节，原文件在 `_trash\results_first500.md`。
+| `splits\` | v0 冻结划分（data.yaml + train/val/test.txt + make_split.py），仅作 v0 复现 |
+| `splits_v1\` | v1 划分脚本 `make_split_v1.py`（分层 80/20，seed=42；产物写数据集 `v1_split\`；内含绝对路径踩坑注释） |
+| `runs\detect\first500\<tag>\` | v0 训练产物，仅 `weights\best.pt` 保留；`runs\detect\val*` 为 v0 评测图（可清理） |
+| `runs\detect\real93\<tag>\` + `real93_all\` + `runs\detect\real93_val\` | v1 打标模型训练产物（划分版 6 权重 + 93 张全量版 yolo26s）与 val 评测图 |
+| `logs\` + `phase4_v1_summary.json` | 全部训练/评测日志（2026-09-02 起统一在 `logs\`，三个 .ps1 日志输出已指向此处；`*.log` 被 .gitignore 忽略）与评测汇总 |
+| `prepare_labeling_workspace.bat` | **打标一键工具**：双击输入图片文件夹 → 自动建工作区（散图自动移入 images\，data.yaml 已存在不覆盖）→ 用 real93_all/yolo26s best.pt 自动预打标（已有标签跳过） |
+| `run_phase3_v1.ps1` / `eval_v1_val.py` | v1 6 权重串行训练 / val 评测脚本（Windows 下评测脚本须 __main__ 守卫 + workers=0） |
+| `weights\` | 6 个预训练源权重（v8/11/26 × s/m）+ `yolo26n.pt`（未用，可删） |
+| `run_phase3.ps1` / `run_phase4.ps1` | 6 权重串行训练 / test 评测脚本（v0 遗留，仅复现） |
+| `logs\phase3*.log` / `logs\phase4*.log` | v0 训练/评测日志（留作追溯，可清理） |
+| `_trash\` | 放置确认删除的文件（删除前先把文件移进来，勿直接删） |
+| `D:\gas_cylinders\` | 数据区（工作区外），现状见第四节 |

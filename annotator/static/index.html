@@ -13,7 +13,6 @@
   <button id="btnImport">导入 Zip…</button>
   <input id="zipInput" type="file" accept=".zip" hidden>
   <span class="sep"></span>
-  <button id="btnDetect">模型补检当前图</button>
   <button id="btnSave">保存</button>
   <button id="btnSaveAll">保存全部</button>
   <button id="btnExport">导出 CVAT Zip</button>
@@ -34,7 +33,19 @@
   </main>
 
   <aside id="panel">
+    <h3>标签类型（data.yaml）</h3>
+    <div id="classList" class="classlist"></div>
+    <div class="addclass">
+      <input id="newClassName" type="text" placeholder="新类别名称，如 Leak" spellcheck="false" disabled>
+      <button id="btnAddClass" disabled title="追加到 data.yaml 的 names，保存后训练/导出即可用">添加类别</button>
+    </div>
     <h3>当前图框</h3>
+    <div class="newboxrow">
+      <label>新框类别
+        <select id="drawClass"></select>
+      </label>
+      <button id="btnNewBox" title="在图中央新建一个框（快捷键 N），选中后拖动/拖角调整">新建框</button>
+    </div>
     <div id="boxList" class="boxlist"></div>
     <h3 id="selTitle">选中框（无）</h3>
     <div id="editor" class="editor">
@@ -48,9 +59,10 @@
       <button id="btnDel" disabled>删除选中</button>
     </div>
     <div id="hints" class="hints">
-      ←→ 切换图（自动保存） · Del 删除框 · Esc 取消<br>
-      滚轮缩放 · 空白处拖拽画框 · Space+拖拽平移<br>
-      拖动框移动 · 拖角缩放 · Ctrl+S 保存
+      ←→ / A D 切换图（自动保存）<br>
+      空白处拖拽画框 · N 新建框 · Del 删框<br>
+      拖框移动 · 拖角缩放 · Esc 取消<br>
+      滚轮缩放 · Space+拖拽平移 · Ctrl+S 保存
     </div>
   </aside>
 </div>
@@ -59,7 +71,7 @@
   <span id="stImage">未打开数据集</span>
   <span id="stCount"></span>
   <span id="stZoom"></span>
-  <span id="stModel"></span>
+  <span id="stNames"></span>
 </footer>
 
 <script src="/app.js"></script>
