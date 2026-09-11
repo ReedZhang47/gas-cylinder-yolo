@@ -9,9 +9,9 @@ rem         - folder named "images"      -> workspace = its parent
 rem         - folder containing images\  -> workspace = the folder
 rem         - folder with loose pictures -> pictures are moved
 rem                                         into a new images\
-rem    2. auto-label every image with the best weight trained on
-rem       the 93 real photos:
-rem         runs\detect\real93_all\yolo26s\weights\best.pt
+rem    2. auto-label every image with the best labeler weight
+rem       (trained on all 593 = 500 generated + 93 real photos):
+rem         runs\detect\mix593_all\yolo26s\weights\best.pt
 rem       labels go to labels\ ; a root data.yaml is created when
 rem       missing (never overwritten - GUI-added classes are safe)
 rem
@@ -22,7 +22,7 @@ setlocal
 
 set "PY=D:\yolo\.venv\Scripts\python.exe"
 set "AUTOLABEL=D:\yolo\autolabel.py"
-set "MODEL=D:\yolo\runs\detect\real93_all\yolo26s\weights\best.pt"
+set "MODEL=D:\yolo\runs\detect\mix593_all\yolo26s\weights\best.pt"
 set "CONF=0.25"
 
 if not exist "%PY%" goto err_nopy
@@ -74,7 +74,7 @@ echo   0: Placement Issues
 echo [OK] data.yaml created: "%WS%\data.yaml"
 :have_yaml
 
-rem ---- step 2: auto-label with the best real93 weight ----
+rem ---- step 2: auto-label with the best mix593 labeler weight ----
 echo.
 echo [..] auto-labeling "%IMGDIR%"
 echo      model: %MODEL%  conf=%CONF%
@@ -112,7 +112,7 @@ exit /b 1
 :err_nomodel
 echo.
 echo [ERROR] best weight not found: "%MODEL%"
-echo         Train the real93_all yolo26s model first (see D:\yolo\PROGRESS.md).
+echo         Train the mix593_all yolo26s model first (see D:\yolo\PROGRESS.md).
 pause
 exit /b 1
 

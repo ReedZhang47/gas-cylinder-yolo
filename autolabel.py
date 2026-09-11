@@ -39,7 +39,7 @@ def main():
     ap.add_argument("--source", required=True, help="directory containing new images")
     ap.add_argument("--labels-out", default=None, help="label output dir (default: <source>/../labels)")
     ap.add_argument("--cvat-dir", default=None, help="also assemble a CVAT-importable dataset into this dir")
-    ap.add_argument("--model", default=r"D:\yolo\runs\detect\real93_all\yolo26s\weights\best.pt")
+    ap.add_argument("--model", default=r"D:\yolo\runs\detect\mix593_all\yolo26s\weights\best.pt")
     ap.add_argument("--conf", type=float, default=0.25, help="detection confidence threshold")
     ap.add_argument("--iou", type=float, default=0.45, help="NMS IoU threshold")
     ap.add_argument("--imgsz", type=int, default=640)
