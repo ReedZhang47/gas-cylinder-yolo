@@ -10,8 +10,8 @@ rem         - folder containing images\  -> workspace = the folder
 rem         - folder with loose pictures -> pictures are moved
 rem                                         into a new images\
 rem    2. auto-label every image with the best labeler weight
-rem       (trained on all 593 = 500 generated + 93 real photos):
-rem         runs\detect\mix593_all\yolo26s\weights\best.pt
+rem       (trained on all 586 = 493 generated + 93 real photos):
+rem         runs\detect\mix586_all\yolo26s\weights\best.pt
 rem       labels go to labels\ ; a root data.yaml is created when
 rem       missing (never overwritten - GUI-added classes are safe)
 rem
@@ -21,8 +21,8 @@ rem ============================================================
 setlocal
 
 set "PY=D:\yolo\.venv\Scripts\python.exe"
-set "AUTOLABEL=D:\yolo\autolabel.py"
-set "MODEL=D:\yolo\runs\detect\mix593_all\yolo26s\weights\best.pt"
+set "AUTOLABEL=D:\yolo\scripts\autolabel.py"
+set "MODEL=D:\yolo\runs\detect\mix586_all\yolo26s\weights\best.pt"
 set "CONF=0.25"
 
 if not exist "%PY%" goto err_nopy
@@ -93,7 +93,7 @@ echo   run D:\yolo\annotator\start_annotator.bat and load "%WS%"
 echo.
 echo Tips: to re-label from scratch, delete labels\*.txt and run this script
 echo again (or run autolabel.py with --overwrite); to tune confidence / switch
-echo model: re-run autolabel.py with --conf / --model (script: D:\yolo\autolabel.py).
+echo model: re-run autolabel.py with --conf / --model (script: D:\yolo\scripts\autolabel.py).
 pause
 exit /b 0
 
@@ -112,7 +112,7 @@ exit /b 1
 :err_nomodel
 echo.
 echo [ERROR] best weight not found: "%MODEL%"
-echo         Train the mix593_all yolo26s model first (see D:\yolo\PROGRESS.md).
+echo         Train the mix586_all yolo26s model first (see D:\yolo\PROGRESS.md).
 pause
 exit /b 1
 

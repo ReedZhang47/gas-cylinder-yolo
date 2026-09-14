@@ -1,0 +1,5 @@
+names:
+  0: Placement Issues
+path: D:/yolo/scripts/mix586
+train: all586.txt
+val: all586.txt

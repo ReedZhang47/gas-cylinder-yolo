@@ -1,5 +1,0 @@
-names:
-  0: Upside-down
-train: D:/yolo/splits/train.txt
-val:   D:/yolo/splits/val.txt
-test:  D:/yolo/splits/test.txt

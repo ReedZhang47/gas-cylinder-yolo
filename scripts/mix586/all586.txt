@@ -105,7 +105,6 @@ D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0104.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0105.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0106.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0107.png
-D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0108.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0109.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0110.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0111.png
@@ -113,7 +112,6 @@ D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0112.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0113.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0114.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0115.png
-D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0116.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0117.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0118.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0119.png
@@ -168,7 +166,6 @@ D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0167.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0168.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0169.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0170.png
-D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0171.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0172.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0173.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0174.png
@@ -278,7 +275,6 @@ D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0277.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0278.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0279.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0280.png
-D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0281.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0282.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0283.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0284.png
@@ -306,7 +302,6 @@ D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0305.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0306.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0307.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0308.png
-D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0309.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0310.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0311.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0312.png
@@ -431,7 +426,6 @@ D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0430.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0431.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0432.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0433.png
-D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0434.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0435.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0436.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0437.png
@@ -471,7 +465,6 @@ D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0470.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0471.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0472.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0473.png
-D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0474.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0475.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0476.png
 D:/gas_cylinders/Placement_Issues/images/Placement_Issues_0477.png

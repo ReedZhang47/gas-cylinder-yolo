@@ -6,6 +6,12 @@ _trash/
 .tmp/
 annotator_demo_data/
 
+# 私有 prompt 台账
+Prompt.md
+
+# 大二进制（论文 PDF / 文献库 PDF 等本地缓存）
+*.pdf
+
 # 日志
 *.log
 

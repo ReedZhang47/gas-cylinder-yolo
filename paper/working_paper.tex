@@ -1,0 +1,220 @@
+%% ==========================================================================
+%% working_paper.tex — 正文工作文件
+%% 首投：Automation in Construction (Elsevier)，模板 elsarticle
+%% 结构说明见 paper/PAPER_PLAN.md；参考文献 paper/references.bib
+%% 编译：latexmk -pdf working_paper.tex（或 pdflatex -> bibtex -> pdflatex x2）
+%% 首投可用 "Your Paper Your Way"（本模板即够）；转投 MDPI 时换模板搬正文
+%% 红线：正文数字一律核 phase6_gen493_summary.json（复核修订版）/ PROGRESS.md 三（结果与结论），
+%%       不在此文件手抄改数（防口径漂移）
+%% ==========================================================================
+\documentclass[preprint,12pt]{elsarticle}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+
+% 占位标记：红字 TODO，定稿前全文清零
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+
+\graphicspath{{figures/}}
+
+\journal{Automation in Construction}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{\todo{Title:\\Generative data augmentation for scarce hazardous targets in construction safety: a reviewed pipeline and quantity-over-quality evidence (working title)}}
+
+\author[1]{\todo{Author names}}
+\affiliation[1]{organization={\todo{Institution}}, city={\todo{City}}, country={\todo{Country}}}
+
+\begin{abstract}
+\todo{Abstract (<=200 words): problem (scarce dangerous samples, can't stage violations safely) ->
+pipeline (diffusion generation + auto-labeling + human review) ->
+evidence (YOLO detectors trained on generated data outperform real-only baseline on clean real test;
+quantity-over-quality scaling) -> implication (reusable for other scarce targets).}
+\end{abstract}
+
+\begin{keyword}
+synthetic data \sep data augmentation \sep construction safety \sep
+object detection \sep diffusion models \sep human-in-the-loop annotation
+\end{keyword}
+
+\end{frontmatter}
+
+% ==========================================================================
+\section{Introduction}\label{sec:intro}
+% 写作要点（PAPER_PLAN.md 第二节）：
+%  1) 危险样本稀缺是趋势性的（监管趋严 -> 违规样本减少），但后果严重必须检出
+%  2) 摆拍违规场景有安全/伦理问题，不可行
+%  3) 生成式扩量是出路；真实性是红线（v0 教训：过净合成图 -> 域差）
+%  4) 本文：完整管线 + 干净评测协议 + 数量取胜实证 +（第二目标后）跨目标通用性
+% 贡献列表（等 4.4/4.6 实验完成后定稿；当前占位）：
+%  C1: an end-to-end pipeline (generation -> auto-labeling -> human-in-the-loop review)
+%      for synthesizing scarce hazardous-scenario data, demonstrated on gas cylinders
+%      with placement issues;
+%  C2: a leakage-aware evaluation protocol that keeps all real photos out of training
+%      and quantifies the inflation caused by conventional split leakage;
+%  C3: empirical evidence that increasing the *quantity* of diverse generated samples
+%      improves real-world detection (scaling ablation, \S\ref{sec:scale});
+%  C4 (optional): generality to a second scarce target (helmet non-use, \S\ref{sec:helmet}).
+\todo{英文初稿（依赖文献阅读；引 \cite{nath2020ppe,jeong2026lora,davari2025bcon} 作动机支撑）}
+
+% ==========================================================================
+\section{Related Work}\label{sec:related}
+
+\subsection{Computer vision for construction safety}
+% 已有本地文献：\cite{nath2020ppe} PPE 实时检测；\cite{fang2018nocert} 非持证作业；
+% \cite{zhang2025helmet} 安全帽；数据集 \cite{duan2022soda}。
+% 综述线索：工地 CV 长期受限于数据获取（安全/隐私/成本）。
+\todo{编写：从 PPE/行为检测讲到数据瓶颈}
+
+\subsection{Synthetic and generative data for object detection}
+% 三条线：
+%  a) 图形引擎 sim2real + 域随机化：\cite{richter2016playing, tremblay2018domainrand, lee2023gameengine}
+%  b) 生成模型扩增：扩散基础 \cite{ho2020ddpm, rombach2022ldm, zhang2023controlnet}；
+%     下游增广 \cite{azizi2023synthetic, ghiasi2021copypaste, shorten2019augmentation}
+%  c) 建筑/工业场景就近工作（重点差异化对象）：
+%     \cite{davari2025bcon}（BlendCon+ControlNet，worker 检测，25.6k 图）
+%     \cite{jeong2026lora}（LoRA 微调，危险场景 falls/struck-by/caught-in）
+%     \cite{zhang2026mixing}（真实-合成混合固定预算）
+%     \cite{girella2024diag, li2025steeldefect, liu2025substation, dinh2026ponding}
+% 差异点：本文针对"违规状态"类危险样本（不是 worker 本体），且强调
+%        全自动打标+人工复核闭环 与 干净评测协议+数量缩放实证。
+\todo{编写（这是与最接近竞品划界限的关键小节）}
+
+\subsection{Auto-labeling and human-in-the-loop annotation}
+% \cite{lee2013pseudolabel, xie2020noisystudent, northcutt2021labelerrors}
+% 本文闭环：打标模型预标注 -> GUI 人工复核（复核率 100%），人工复核是质量门。
+\todo{编写}
+
+% ==========================================================================
+\section{Methodology}\label{sec:method}
+
+\subsection{Target definition and problem statement}
+% "Placement Issues" 口径（监理实际管理口径）：气瓶未放置在专用固定架/手推车上
+% 即为正样本（无论倒地与否）；规范放置=负样本（背景图）。
+\todo{编写（素材：PROGRESS.md 一（项目与目标））}
+
+\subsection{Real seed data and annotation}
+% 93 张真实巡检照片：57 正（179 框）+ 36 负（空标），人工标注；
+% 数据来源与合规说明。
+\todo{编写（素材：PROGRESS.md 二.1）}
+
+\subsection{Generative expansion pipeline}
+% z-image-turbo 文生图；qwen-image-edit-2509 编辑真实照片；
+% canny ControlNet 试验。真实性红线：必须带喷漆磨损/污渍/锈迹（v0 教训）。
+\todo{编写（素材：PROGRESS.md 一（项目与目标）；工具引用 \cite{zimage2026, qwenimage2025, qwenimageedit2025, zhang2023controlnet}）}
+
+\subsection{Auto-labeling with human-in-the-loop review}
+% 打标模型（yolo26s，586 全量训练 \cite{ultralytics2025}）预标注 ->
+% annotator GUI 逐张人工复核 -> 已复核生成数据（493 张：380 正/1062 框 + 113 负；复核删 7）。
+\todo{编写（素材：PROGRESS.md 二.2 与 三（打标模型））}
+
+\subsection{Evaluation protocol}\label{sec:protocol}
+% 关键设计（本文方法学贡献之一）：
+%  - 生成数据内部分层 80/20（seed=42），val 仅用于选型；
+%  - 93 张真实照片绝不参与训练与选型（干净 test）；
+%  - 双口径报告：93 全量 vs val18 干净子集 + 泄露量分析。
+\todo{编写（素材：PROGRESS.md 三（设置与结果））}
+
+\begin{figure}[t]
+  \centering
+  \fbox{\parbox{0.92\linewidth}{\centering
+    \todo{Fig.~1 管线总图\\（先用 \texttt{paper/fig1\_pipeline.md} 的 mermaid 草图记录思路；\\
+    定稿前用 TikZ 正式重绘并替换 \texttt{\textbackslash includegraphics\{fig1\_pipeline.pdf\}}）}}}
+  \caption{\todo{Overview of the proposed pipeline: real-photo seeding, generative
+  expansion, auto-labeling with human-in-the-loop review, and leakage-aware
+  training/evaluation; the loop re-instantiates for other scarce hazardous targets.}}
+  \label{fig:pipeline}
+\end{figure}
+
+% ==========================================================================
+\section{Experiments and Results}\label{sec:exp}
+
+\subsection{Experimental setup}
+% 6 个检测器（YOLOv8/v11/v26 x s/m），统一超参 epochs=100 / imgsz=640 /
+% batch=16 / device=0；硬件 RTX 5070 Ti Laptop (12 GB)；各类计数。
+\todo{编写（素材：PROGRESS.md 三（结果）；引用 \cite{redmon2016yolo,
+bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralytics2025}）}
+
+\subsection{Labeler baselines and leakage-aware comparison}
+% 93 全量口径 vs val18 干净口径；real93 基线（75 真实图训练）含 75/93
+% 记忆图 -> 虚高分析（0.857 vs 0.646 实例）。
+\todo{编写 + 表（素材：PROGRESS.md 三（双口径对比））}
+
+\subsection{Effect of generated data on real-world detection}\label{sec:main}
+% 主结果：gen493 六权重 vs real93 六权重，val18 干净口径两轮 6/6 全胜。
+% 表：主对比表。
+\begin{table}[t]
+  \centering
+  \caption{\todo{Detection performance on the clean real-photo test subset (val18).}}
+  \begin{tabular}{lcccc}
+  \toprule
+  Detector & \multicolumn{2}{c}{Real-only baseline} & \multicolumn{2}{c}{Generated-data (ours)} \\
+  \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+   & mAP50 & mAP50--95 & mAP50 & mAP50--95 \\
+  \midrule
+  \todo{6 行数据} & & & & \\
+  \bottomrule
+  \end{tabular}
+  \label{tab:main}
+\end{table}
+
+\subsection{Data-scale ablation}\label{sec:scale}
+\todo{待实验：250 vs 500（+扩容到 1000）。当前证据：400 生成 vs 75 真实
+（约 5.3x 量差）在 val18 上 6/6 全胜；正文主张「quantity over quality」前必须补本小节。}
+
+\subsection{Inference resolution analysis}
+% imgsz 扫描：640/960/1280/1536；640 峰值；真实照片 17% 框在 640 等效下 <20px。
+% 表 + 讨论小目标因素（\cite{cheng2023smallobject, akyon2022sahi}）。
+\todo{编写（素材：PROGRESS.md 三（imgsz 结论④））}
+
+\subsection{Cross-target generalization: helmet non-use}\label{sec:helmet}
+\todo{待实验：安全帽第二目标（管线复用）。三级定位第 2 级的门槛，见 PAPER_PLAN 第五节。}
+
+\subsection{Comparison with classical augmentation and public datasets}
+\todo{待实验：经典增广对照（flip/mosaic/copy-paste @ 75 真实图，
+\cite{ghiasi2021copypaste, shorten2019augmentation}）；公开数据对照
+（\cite{rfcylinders, rfgarrafas}）。审稿人必问两项。}
+
+% ==========================================================================
+\section{Discussion}\label{sec:discussion}
+% 要点：
+%  1) domain gap 两个来源：合成图"过净"（v0 教训）+ 小目标被分辨率压缩（本工作发现）
+%  2) 评测协议启示：数据扩增类论文的泄露陷阱（\cite{kaufman2012leakage, northcutt2021labelerrors}）
+%  3) 伦理与合规：生成式 AI 使用披露、生成数据不用于冒充真实证据；标注人工复核质量门
+%  4) 通用性愿景（勿 overclaim）：can be re-instantiated for other scarce targets;
+%     跨行业图像识别数据稀缺皆适用（Discussion/future work 口径，见 PAPER_PLAN 第五节三级定位）
+\todo{编写}
+
+% ==========================================================================
+\section{Conclusions}\label{sec:conclusion}
+\todo{最后写：3~5 句 + 局限 + future work}
+
+% ==========================================================================
+% AiC 投稿要求的声明节（占位，投稿前完善）
+\section*{CRediT authorship contribution statement}
+\todo{roles: conceptualization / methodology / software / ...}
+
+\section*{Declaration of competing interest}
+The authors declare that they have no known competing financial interests or
+personal relationships that could have appeared to influence the work reported
+in this paper.
+
+\section*{Data availability}
+\todo{state what can be shared: annotation protocols, splits, model weights;
+generated datasets may be released upon request / with the paper.}
+
+% ==========================================================================
+\bibliographystyle{elsarticle-num}
+\bibliography{references}
+
+\end{document}

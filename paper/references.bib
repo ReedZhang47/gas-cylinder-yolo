@@ -1,0 +1,263 @@
+% ============================================================================
+% references.bib - master bibliography for working_paper.tex
+% 首投：Automation in Construction (Elsevier, elsarticle)
+% 组成：本地文献库 12 篇（reference/ 下 md/pdf，Crossref/DOI 核验）
+%      + 基础文献（Crossref/DataCite 逐条核验）
+%      + 生成模型论文（用户提供的 arXiv 导出）
+% ⚠️ 本文件已人工校对。paper/fetch_refs.py 是半自动助手，重跑会覆盖本文件，
+%    需要重做人工修正（修正记录见 references_audit.md 末尾）。
+% 来源标记： [CR]=Crossref  [DC]=DataCite(arXiv DOI)  [LK]=本地库  [MAN]=手工
+% ============================================================================
+
+% ---------------------------------------------------------------------------
+% 1. Generative models & image generation tools
+% ---------------------------------------------------------------------------
+
+% Qwen-Image 技术报告 [LK]（管线使用 Qwen-Image-Edit-2509 属该模型族）
+@misc{qwenimage2025,
+      title={Qwen-Image Technical Report},
+      author={Wu, Chenfei and Li, Jiahao and Zhou, Jingren and Lin, Junyang and Gao, Kaiyuan and Yan, Kun and Yin, Sheng-ming and Bai, Shuai and Xu, Xiao and Chen, Yilei and Chen, Yuxiang and Tang, Zecheng and Zhang, Zekai and Wang, Zhengyi and Yang, An and Yu, Bowen and Cheng, Chen and Liu, Dayiheng and Li, Deqing and Zhang, Hang and Meng, Hao and Wei, Hu and Ni, Jingyuan and Chen, Kai and Cao, Kuan and Peng, Liang and Qu, Lin and Wu, Minggang and Wang, Peng and Yu, Shuting and Wen, Tingkun and Feng, Wensen and Xu, Xiaoxiao and Wang, Yi and Zhang, Yichang and Zhu, Yongqiang and Wu, Yujia and Cai, Yuxuan and Liu, Zenan},
+      year={2025},
+      eprint={2508.02324},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2508.02324},
+}
+
+% Qwen-Image-Edit-2509 模型卡 [MAN]（无独立论文；引用技术报告 + 模型卡）
+@misc{qwenimageedit2025,
+      title={{Qwen-Image-Edit-2509}},
+      author={{Qwen Team}},
+      year={2025},
+      howpublished={Hugging Face model card},
+      url={https://huggingface.co/Qwen/Qwen-Image-Edit-2509},
+      note={See also the Qwen-Image Technical Report (arXiv:2508.02324)},
+}
+
+% Z-Image 生成基础模型 [LK]
+@misc{zimage2026,
+      title={Z-Image: An Efficient Image Generation Foundation Model with Single-Stream Diffusion Transformer},
+      author={Z-Image Team and Cai, Huanqia and Cao, Sihan and Du, Ruoyi and Gao, Peng and Hao, Aiming and Hoi, Steven and Hou, Zhaohui and Huang, Shijie and Jiang, Dengyang and Jiang, Yuming and Jin, Xin and Li, Liangchen and Li, Zhen and Li, Zhong-Yu and Liu, David and Liu, Dongyang and Wu, Qilong and Yu, Feng and Zhan, Zechao and Zhang, Chi and Zhang, Shifeng and Zhou, Ruikai and Zhou, Shilin},
+      year={2026},
+      eprint={2511.22699},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2511.22699},
+}
+
+% DMD 蒸馏（生成效率方向） [LK]
+@misc{jiang2026dmd,
+      title={Distribution Matching Distillation Meets Reinforcement Learning},
+      author={Jiang, Dengyang and Liu, Dongyang and Wang, Zanyi and Wu, Qilong and Li, Liuzhuozheng and Li, Hengzhuang and Jin, Xin and Liu, David and Lu, Changsheng and Li, Zhen and Zhang, Bo and Wang, Mengmeng and Hoi, Steven and Gao, Peng and Yang, Harry},
+      year={2026},
+      eprint={2511.13649},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2511.13649},
+}
+
+% Decoupled DMD [LK]
+@misc{liu2025dmd,
+      title={Decoupled {DMD}: {CFG} Augmentation as the Spear, Distribution Matching as the Shield},
+      author={Liu, Dongyang and Gao, Peng and Liu, David and Du, Ruoyi and Li, Zhen and Wu, Qilong and Jin, Xin and Cao, Sihan and Zhang, Shifeng and Li, Hongsheng and Hoi, Steven},
+      year={2025},
+      eprint={2511.22677},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2511.22677},
+}
+
+@misc{ho2020ddpm,
+      title={Denoising Diffusion Probabilistic Models},
+      author={Ho, Jonathan and Jain, Ajay and Abbeel, Pieter},
+      year={2020},
+      eprint={2006.11239},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2006.11239},
+}
+
+@inproceedings{rombach2022ldm, title={High-Resolution Image Synthesis with Latent Diffusion Models}, url={http://dx.doi.org/10.1109/cvpr52688.2022.01042}, DOI={10.1109/cvpr52688.2022.01042}, booktitle={2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, publisher={IEEE}, author={Rombach, Robin and Blattmann, Andreas and Lorenz, Dominik and Esser, Patrick and Ommer, Bjorn}, year={2022}, month=June, pages={10674–10685} }
+
+@misc{podell2023sdxl,
+      title={SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis},
+      author={Podell, Dustin and English, Zion and Lacey, Kyle and Blattmann, Andreas and Dockhorn, Tim and M{\"u}ller, Jonas and Penna, Joe and Rombach, Robin},
+      year={2023},
+      eprint={2307.01952},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2307.01952},
+}
+
+@inproceedings{zhang2023controlnet, title={Adding Conditional Control to Text-to-Image Diffusion Models}, url={http://dx.doi.org/10.1109/iccv51070.2023.00355}, DOI={10.1109/iccv51070.2023.00355}, booktitle={2023 IEEE/CVF International Conference on Computer Vision (ICCV)}, publisher={IEEE}, author={Zhang, Lvmin and Rao, Anyi and Agrawala, Maneesh}, year={2023}, month=Oct, pages={3813–3824} }
+
+@inproceedings{brooks2023instructpix2pix, title={InstructPix2Pix: Learning to Follow Image Editing Instructions}, url={http://dx.doi.org/10.1109/cvpr52729.2023.01764}, DOI={10.1109/cvpr52729.2023.01764}, booktitle={2023 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, publisher={IEEE}, author={Brooks, Tim and Holynski, Aleksander and Efros, Alexei A.}, year={2023}, month=June, pages={18392–18402} }
+
+@inproceedings{ruiz2023dreambooth, title={DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation}, url={http://dx.doi.org/10.1109/cvpr52729.2023.02155}, DOI={10.1109/cvpr52729.2023.02155}, booktitle={2023 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, publisher={IEEE}, author={Ruiz, Nataniel and Li, Yuanzhen and Jampani, Varun and Pritch, Yael and Rubinstein, Michael and Aberman, Kfir}, year={2023}, month=June, pages={22500–22510} }
+
+% ---------------------------------------------------------------------------
+% 2. Synthetic data & augmentation (foundations)
+% ---------------------------------------------------------------------------
+
+@inproceedings{tremblay2018domainrand, title={Training Deep Networks with Synthetic Data: Bridging the Reality Gap by Domain Randomization}, url={http://dx.doi.org/10.1109/cvprw.2018.00143}, DOI={10.1109/cvprw.2018.00143}, booktitle={2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)}, publisher={IEEE}, author={Tremblay, Jonathan and Prakash, Aayush and Acuna, David and Brophy, Mark and Jampani, Varun and Anil, Cem and To, Thang and Cameracci, Eric and Boochoon, Shaad and Birchfield, Stan}, year={2018}, month=June, pages={1082–10828} }
+
+@inbook{richter2016playing, title={Playing for Data: Ground Truth from Computer Games}, ISBN={9783319464756}, ISSN={1611-3349}, url={http://dx.doi.org/10.1007/978-3-319-46475-6_7}, DOI={10.1007/978-3-319-46475-6_7}, booktitle={Computer Vision – ECCV 2016}, publisher={Springer International Publishing}, author={Richter, Stephan R. and Vineet, Vibhav and Roth, Stefan and Koltun, Vladlen}, year={2016}, pages={102–118} }
+
+@inproceedings{ghiasi2021copypaste, title={Simple Copy-Paste is a Strong Data Augmentation Method for Instance Segmentation}, url={http://dx.doi.org/10.1109/cvpr46437.2021.00294}, DOI={10.1109/cvpr46437.2021.00294}, booktitle={2021 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, publisher={IEEE}, author={Ghiasi, Golnaz and Cui, Yin and Srinivas, Aravind and Qian, Rui and Lin, Tsung-Yi and Cubuk, Ekin D. and Le, Quoc V. and Zoph, Barret}, year={2021}, month=June, pages={2917–2927} }
+
+@article{shorten2019augmentation, title={A survey on Image Data Augmentation for Deep Learning}, volume={6}, ISSN={2196-1115}, url={http://dx.doi.org/10.1186/s40537-019-0197-0}, DOI={10.1186/s40537-019-0197-0}, number={1}, journal={Journal of Big Data}, publisher={Springer Science and Business Media LLC}, author={Shorten, Connor and Khoshgoftaar, Taghi M.}, year={2019}, month=July }
+
+@misc{azizi2023synthetic,
+      title={Synthetic Data from Diffusion Models Improves {ImageNet} Classification},
+      author={Azizi, Shekoofeh and Kornblith, Simon and Saharia, Chitwan and Norouzi, Mohammad and Fleet, David J.},
+      year={2023},
+      eprint={2304.08466},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2304.08466},
+}
+
+% ---------------------------------------------------------------------------
+% 3. Construction safety / construction data scarcity (core related work)
+% ---------------------------------------------------------------------------
+
+@article{nath2020ppe, title={Deep learning for site safety: Real-time detection of personal protective equipment}, volume={112}, ISSN={0926-5805}, url={http://dx.doi.org/10.1016/j.autcon.2020.103085}, DOI={10.1016/j.autcon.2020.103085}, journal={Automation in Construction}, publisher={Elsevier BV}, author={Nath, Nipun D. and Behzadan, Amir H. and Paal, Stephanie G.}, year={2020}, month=Apr, pages={103085} }
+
+@article{fang2018nocert, title={A deep learning-based method for detecting non-certified work on construction sites}, volume={35}, ISSN={1474-0346}, url={http://dx.doi.org/10.1016/j.aei.2018.01.001}, DOI={10.1016/j.aei.2018.01.001}, journal={Advanced Engineering Informatics}, publisher={Elsevier BV}, author={Fang, Qi and Li, Heng and Luo, Xiaochun and Ding, Lieyun and Rose, Timothy M. and An, Wangpeng and Yu, Yantao}, year={2018}, month=Jan, pages={56–68} }
+
+@article{duan2022soda, title={SODA: A large-scale open site object detection dataset for deep learning in construction}, volume={142}, ISSN={0926-5805}, url={http://dx.doi.org/10.1016/j.autcon.2022.104499}, DOI={10.1016/j.autcon.2022.104499}, journal={Automation in Construction}, publisher={Elsevier BV}, author={Duan, Rui and Deng, Hui and Tian, Mao and Deng, Yichuan and Lin, Jiarui}, year={2022}, month=Oct, pages={104499} }
+
+@article{zhang2025helmet, title={Detection of helmet use among construction workers via helmet-head region matching and state tracking}, volume={171}, ISSN={0926-5805}, url={http://dx.doi.org/10.1016/j.autcon.2025.105987}, DOI={10.1016/j.autcon.2025.105987}, journal={Automation in Construction}, publisher={Elsevier BV}, author={Zhang, Yi and Huang, Shize and Qin, Jinzhe and Li, Xingying and Zhang, Zhaoxin and Fan, Qianhui and Tan, Qunyao}, year={2025}, month=Mar, pages={105987} }
+
+% [LK] 游戏引擎合成数据（worker 监测）
+@article{lee2023gameengine, title={Game engine-driven synthetic data generation for computer vision-based safety monitoring of construction workers}, volume={155}, ISSN={0926-5805}, url={http://dx.doi.org/10.1016/j.autcon.2023.105060}, DOI={10.1016/j.autcon.2023.105060}, journal={Automation in Construction}, publisher={Elsevier BV}, author={Lee, Heejae and Jeon, Jongmoo and Lee, Doyeop and Park, Chansik and Kim, Jinwoo and Lee, Dongmin}, year={2023}, month=Nov, pages={105060} }
+
+% [LK] BCon: BlendCon + ControlNet 域适应（Sim2Real 增强，worker 检测）
+@article{davari2025bcon, title={ControlNet-based domain adaptation for synthetic construction images via graphical simulation and generative AI}, volume={180}, ISSN={0926-5805}, url={http://dx.doi.org/10.1016/j.autcon.2025.106562}, DOI={10.1016/j.autcon.2025.106562}, journal={Automation in Construction}, publisher={Elsevier BV}, author={Davari, Sina and Kim, Daeho and Tohidifar, Ali}, year={2025}, month=Dec, pages={106562} }
+
+% [LK] LoRA 微调 T2I 生成危险场景（falls/struck-by/caught-in）
+@article{jeong2026lora, title={Addressing data scarcity in construction safety monitoring using low-rank adaptation (LoRA)-tuned domain-specific image generation}, volume={183}, ISSN={0926-5805}, url={http://dx.doi.org/10.1016/j.autcon.2026.106786}, DOI={10.1016/j.autcon.2026.106786}, journal={Automation in Construction}, publisher={Elsevier BV}, author={Jeong, Insoo and Kim, Junghoon and Lim, Seungmo and Hwang, Jeongbin and Chi, Seokho}, year={2026}, month=Mar, pages={106786} }
+
+% [LK] 真实-合成固定预算混合研究（PPE 检测）
+@article{zhang2026mixing, title={A Fixed-Budget Study of Real–Synthetic Data Mixing for PPE Detection in Construction}, volume={16}, ISSN={2075-5309}, url={http://dx.doi.org/10.3390/buildings16102034}, DOI={10.3390/buildings16102034}, number={10}, journal={Buildings}, publisher={MDPI AG}, author={Zhang, Ziqi and Zhang, Yu and Shide, Kazuya}, year={2026}, month=May, pages={2034} }
+
+% [LK] 变电站巡检合成数据 + 时空动作检测
+@article{liu2025substation, title={Substation Inspection Safety Risk Identification Based on Synthetic Data and Spatiotemporal Action Detection}, volume={25}, ISSN={1424-8220}, url={http://dx.doi.org/10.3390/s25092720}, DOI={10.3390/s25092720}, number={9}, journal={Sensors}, publisher={MDPI AG}, author={Liu, Chengcheng and Zhang, Weihua and Xu, Weijin and Lu, Bo and Li, Weijie and Zhao, Xuefeng}, year={2025}, month=Apr, pages={2720} }
+
+% [LK] 积水检测：生成式 inpainting 合成数据（保洁场景）
+@inproceedings{dinh2026ponding, series={ISARC2026}, title={Enhancing Water-Ponding Detection in Housekeeping Using Generative AI Inpainting-Based Synthetic Data}, ISSN={2413-5844}, url={http://dx.doi.org/10.22260/isarc2026/0067}, DOI={10.22260/isarc2026/0067}, booktitle={Proceedings of the 43rd International Symposium on Automation and Robotics in Construction}, publisher={International Association for Automation and Robotics in Construction (IAARC)}, author={Dinh, Quang Duy and Zhu, Xuming and Tian, Jing and Goh, Yang Miang}, year={2026}, month=June, collection={ISARC2026} }
+
+% ---------------------------------------------------------------------------
+% 4. Industrial / defect detection with diffusion augmentation
+% ---------------------------------------------------------------------------
+
+% [LK] DIAG：免训练 in-distribution 扩散增广（表面缺陷）
+@inproceedings{girella2024diag, title={Leveraging Latent Diffusion Models for Training-Free in-Distribution Data Augmentation for Surface Defect Detection}, url={http://dx.doi.org/10.1109/cbmi62980.2024.10858875}, DOI={10.1109/cbmi62980.2024.10858875}, booktitle={2024 International Conference on Content-Based Multimedia Indexing (CBMI)}, publisher={IEEE}, author={Girella, Federico and Liu, Ziyue and Fummi, Franco and Setti, Francesco and Cristani, Marco and Capogrosso, Luigi}, year={2024}, month=Sept, pages={1–7} }
+
+% [LK] 少样本钢材表面缺陷生成（扩散模型）
+@article{li2025steeldefect, title={A Few-Shot Steel Surface Defect Generation Method Based on Diffusion Models}, volume={25}, ISSN={1424-8220}, url={http://dx.doi.org/10.3390/s25103038}, DOI={10.3390/s25103038}, number={10}, journal={Sensors}, publisher={MDPI AG}, author={Li, Hongjie and Liu, Yang and Liu, Chuni and Pang, Hongxuan and Xu, Ke}, year={2025}, month=May, pages={3038} }
+
+% ---------------------------------------------------------------------------
+% 5. Object detectors (YOLO family)
+% ---------------------------------------------------------------------------
+
+@inproceedings{redmon2016yolo, title={You Only Look Once: Unified, Real-Time Object Detection}, url={http://dx.doi.org/10.1109/cvpr.2016.91}, DOI={10.1109/cvpr.2016.91}, booktitle={2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, publisher={IEEE}, author={Redmon, Joseph and Divvala, Santosh and Girshick, Ross and Farhadi, Ali}, year={2016}, month=June, pages={779–788} }
+
+@misc{bochkovskiy2020yolov4,
+      title={YOLOv4: Optimal Speed and Accuracy of Object Detection},
+      author={Bochkovskiy, Alexey and Wang, Chien-Yao and Liao, Hong-Yuan Mark},
+      year={2020},
+      eprint={2004.10934},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2004.10934},
+}
+
+@inproceedings{wang2023yolov7, title={YOLOv7: Trainable Bag-of-Freebies Sets New State-of-the-Art for Real-Time Object Detectors}, url={http://dx.doi.org/10.1109/cvpr52729.2023.00721}, DOI={10.1109/cvpr52729.2023.00721}, booktitle={2023 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, publisher={IEEE}, author={Wang, Chien-Yao and Bochkovskiy, Alexey and Liao, Hong-Yuan Mark}, year={2023}, month=June, pages={7464–7475} }
+
+@inbook{wang2024yolov9, title={YOLOv9: Learning What You Want to Learn Using Programmable Gradient Information}, ISBN={9783031727511}, ISSN={1611-3349}, url={http://dx.doi.org/10.1007/978-3-031-72751-1_1}, DOI={10.1007/978-3-031-72751-1_1}, booktitle={Computer Vision – ECCV 2024}, publisher={Springer Nature Switzerland}, author={Wang, Chien-Yao and Yeh, I-Hau and Mark Liao, Hong-Yuan}, year={2024}, month=Oct, pages={1–21} }
+
+@inproceedings{wang2024yolov10, series={NeurIPS 2024}, title={YOLOv10: Real-Time End-to-End Object Detection}, url={http://dx.doi.org/10.52202/079017-3429}, DOI={10.52202/079017-3429}, booktitle={Advances in Neural Information Processing Systems 37}, publisher={Neural Information Processing Systems Foundation, Inc. (NeurIPS)}, author={Wang, Ao and Chen, Hui and Liu, Lihao and Chen, Kai and Lin, Zijia and Han, Jungong and Ding, Guiguang}, year={2024}, pages={107984–108011}, collection={NeurIPS 2024} }
+
+% Ultralytics 实现（YOLOv8 / YOLO11 / YOLO26 无独立论文，引用软件）
+@misc{ultralytics2025,
+      title={{Ultralytics YOLO}},
+      author={{Ultralytics}},
+      year={2025},
+      howpublished={GitHub repository},
+      url={https://github.com/ultralytics/ultralytics},
+      note={Software (YOLOv8 / YOLO11 / YOLO26 implementations, v8.4)},
+}
+
+% ---------------------------------------------------------------------------
+% 6. Small-object detection & resolution
+% ---------------------------------------------------------------------------
+
+@article{cheng2023smallobject, title={Towards Large-Scale Small Object Detection: Survey and Benchmarks}, ISSN={1939-3539}, url={http://dx.doi.org/10.1109/tpami.2023.3290594}, DOI={10.1109/tpami.2023.3290594}, journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Cheng, Gong and Yuan, Xiang and Yao, Xiwen and Yan, Kebing and Zeng, Qinghua and Xie, Xingxing and Han, Junwei}, year={2023}, pages={1–20} }
+
+@inproceedings{akyon2022sahi, title={Slicing Aided Hyper Inference and Fine-Tuning for Small Object Detection}, url={http://dx.doi.org/10.1109/icip46576.2022.9897990}, DOI={10.1109/icip46576.2022.9897990}, booktitle={2022 IEEE International Conference on Image Processing (ICIP)}, publisher={IEEE}, author={Akyon, Fatih Cagatay and Onur Altinuc, Sinan and Temizel, Alptekin}, year={2022}, month=Oct, pages={966–970} }
+
+% ---------------------------------------------------------------------------
+% 7. Auto-labeling / semi-supervised learning / label quality
+% ---------------------------------------------------------------------------
+
+@inproceedings{lee2013pseudolabel,
+      title={Pseudo-Label: The Simple and Efficient Semi-Supervised Learning Method for Deep Neural Networks},
+      author={Lee, Dong-Hyun},
+      booktitle={ICML Workshop on Challenges in Representation Learning},
+      volume={3},
+      pages={896},
+      year={2013},
+}
+
+@inproceedings{xie2020noisystudent, title={Self-Training With Noisy Student Improves ImageNet Classification}, url={http://dx.doi.org/10.1109/cvpr42600.2020.01070}, DOI={10.1109/cvpr42600.2020.01070}, booktitle={2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, publisher={IEEE}, author={Xie, Qizhe and Luong, Minh-Thang and Hovy, Eduard and Le, Quoc V.}, year={2020}, month=June, pages={10684–10695} }
+
+@misc{northcutt2021labelerrors,
+      title={Pervasive Label Errors in Test Sets Destabilize Machine Learning Benchmarks},
+      author={Northcutt, Curtis G. and Athalye, Anish and Mueller, Jonas},
+      year={2021},
+      eprint={2103.14749},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2103.14749},
+}
+
+% ---------------------------------------------------------------------------
+% 8. Evaluation rigor / leakage
+% ---------------------------------------------------------------------------
+
+@article{kaufman2012leakage, title={Leakage in data mining: Formulation, detection, and avoidance}, volume={6}, ISSN={1556-472X}, url={http://dx.doi.org/10.1145/2382577.2382579}, DOI={10.1145/2382577.2382579}, number={4}, journal={ACM Transactions on Knowledge Discovery from Data}, publisher={Association for Computing Machinery (ACM)}, author={Kaufman, Shachar and Rosset, Saharon and Perlich, Claudia and Stitelman, Ori}, year={2012}, month=Dec, pages={1–21} }
+
+% ---------------------------------------------------------------------------
+% 9. Datasets & annotation tooling
+% ---------------------------------------------------------------------------
+
+@inbook{lin2014coco, title={Microsoft COCO: Common Objects in Context}, ISBN={9783319106021}, ISSN={1611-3349}, url={http://dx.doi.org/10.1007/978-3-319-10602-1_48}, DOI={10.1007/978-3-319-10602-1_48}, booktitle={Computer Vision – ECCV 2014}, publisher={Springer International Publishing}, author={Lin, Tsung-Yi and Maire, Michael and Belongie, Serge and Hays, James and Perona, Pietro and Ramanan, Deva and Dollár, Piotr and Zitnick, C. Lawrence}, year={2014}, pages={740–755} }
+
+% Roboflow 公开气瓶数据集（仅"气瓶"框，无放置口径；对照实验用）
+@misc{rfcylinders,
+      title={{CylinDeRS\_new2} Dataset (Version 16, YOLOv11 format)},
+      author={{CylindersNew (Roboflow Universe)}},
+      year={2024},
+      howpublished={Roboflow Universe},
+      url={https://universe.roboflow.com/cylindersnew/cylinders_new2/dataset/16},
+      note={CC BY 4.0},
+}
+
+@misc{rfgarrafas,
+      title={{Garrafas} Dataset (Version 1, YOLOv11 format)},
+      author={{Garrafas (Roboflow Universe)}},
+      year={2023},
+      howpublished={Roboflow Universe},
+      url={https://universe.roboflow.com/garrafas/garrafas-khs2q/dataset/1},
+      note={CC BY 4.0},
+}
+
+@misc{cvat2025,
+      title={{CVAT}: Computer Vision Annotation Tool},
+      author={{CVAT.ai Corporation}},
+      year={2025},
+      howpublished={GitHub repository},
+      url={https://github.com/cvat-ai/cvat},
+      note={Software},
+}
