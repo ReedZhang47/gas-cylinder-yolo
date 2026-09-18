@@ -23,7 +23,7 @@ ROOTS = [Path(r"D:/gas_cylinders/Placement_Issues"),
          Path(r"D:/gas_cylinders/Placement_Issues_2")]
 OUT = Path(r"D:/gas_cylinders/gen1085_split")
 GAS_ROOT = Path(r"D:/gas_cylinders")
-TEST_TXT = r"D:/gas_cylinders/real_photo/93_real_photos/v1_split/all.txt"
+TEST_TXT = r"D:/gas_cylinders/v3/test61.txt"   # v3: independent web-image test
 SEED = 42
 VAL_RATIO = 0.2
 EXPECTED = 1085
@@ -60,7 +60,7 @@ assert len(set(train) & set(val)) == 0
 assert len(train) + len(val) == EXPECTED
 
 test_lines = [l.strip().replace("\\", "/") for l in Path(TEST_TXT).read_text(encoding="utf-8-sig").splitlines() if l.strip()]
-assert len(test_lines) == 93, f"expected 93 test lines, got {len(test_lines)}"
+assert len(test_lines) == 61, f"expected 61 test lines, got {len(test_lines)}"
 assert not (set(test_lines) & set(train + val)), "test images leaked into train/val"
 
 OUT.mkdir(parents=True, exist_ok=True)
@@ -84,7 +84,7 @@ info = {
     "train": {"total": len(train), "pos": len(pos_tr), "neg": len(neg_tr), "boxes": n_boxes(train)},
     "val": {"total": len(val), "pos": len(pos_va), "neg": len(neg_va), "boxes": n_boxes(val)},
     "test": {"total": len(test_lines), "source": TEST_TXT,
-             "note": "93 real photos, all.txt, never trained on"},
+             "note": "v3 test: 61 independent web images, never in any training source"},
 }
 (OUT / "split_info.json").write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -100,4 +100,4 @@ yaml_text = (
 
 print(f"train={len(train)} (pos {len(pos_tr)} / neg {len(neg_tr)}), boxes={info['train']['boxes']}")
 print(f"val  ={len(val)} (pos {len(pos_va)} / neg {len(neg_va)}), boxes={info['val']['boxes']}")
-print(f"test =93 real photos, data.yaml written to {OUT / 'data.yaml'}")
+print(f"test = v3 test61 ({len(test_lines)} images), data.yaml written to {OUT / 'data.yaml'}")
