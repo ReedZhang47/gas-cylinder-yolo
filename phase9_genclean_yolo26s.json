@@ -1,0 +1,46 @@
+{
+  "date": "2026-09-18",
+  "experiment": "leak-free generated pool (gen_clean, 474 imgs / train 379) -> yolo26s, 100 epochs, last.pt",
+  "protocol": "v2: test33 (33 held-out real photos, never edit sources) is the only clean test",
+  "results": {
+    "gen_clean_yolo26s_test33": {
+      "P": 0.676,
+      "R": 0.621,
+      "mAP50": 0.6106,
+      "mAP50-95": 0.3768
+    },
+    "gen_clean_yolo26s_test93_ref": {
+      "P": 0.908,
+      "R": 0.718,
+      "mAP50": 0.8288,
+      "mAP50-95": 0.6643
+    }
+  },
+  "comparison_test33_mAP50_mAP50-95": {
+    "real60_100ep": [
+      0.479,
+      0.268
+    ],
+    "real60_300ep": [
+      0.52,
+      0.286
+    ],
+    "gen_clean_379": [
+      0.611,
+      0.377
+    ],
+    "gen493_394_leaky": [
+      0.778,
+      0.548
+    ],
+    "gen1085_868_leaky": [
+      0.842,
+      0.674
+    ]
+  },
+  "notes": [
+    "single weight (yolo26s), single seed, test33 has 66 boxes -> noisy; do not over-read",
+    "leaky rows are kept only to show how much of the earlier gain was leakage",
+    "gen_clean pool derives from 60 source photos (train60) only, so the gain is 'state editing of 60 photos'"
+  ]
+}

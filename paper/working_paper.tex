@@ -120,10 +120,13 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 
 \subsection{Evaluation protocol}\label{sec:protocol}
 % 关键设计（本文方法学贡献之一）：
-%  - 生成数据内部分层 80/20（seed=42），val 仅用于选型；
-%  - 93 张真实照片绝不参与训练与选型（干净 test）；
-%  - 双口径报告：93 全量 vs val18 干净子集 + 泄露量分析。
-\todo{编写（素材：PROGRESS.md 三（设置与结果））}
+%  - 生成数据内部分层 80/20（seed=42）；val 只作训练日志监控，不作选权；
+%  - 真实照片 v2 分层划分 train 60 / test 33：test33 绝不参与训练与选权
+%    （唯一干净口径，取代 v1 的 val18；33 图 / 约 60 框）；
+%  - 全篇统一：固定 100 epoch、报最后一轮（last.pt），不做验证集选权
+%    （三臂比较因此完全对称；实测 best vs last 差 ≤0.02）；
+%  - 双口径报告：93 全量 vs test33 干净子集 + 泄露量分析。
+\todo{编写（素材：PROGRESS.md 三（设置与结果）；口径见 List_of_Experiments.md）}
 
 \begin{figure}[t]
   \centering
@@ -141,21 +144,23 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 
 \subsection{Experimental setup}
 % 6 个检测器（YOLOv8/v11/v26 x s/m），统一超参 epochs=100 / imgsz=640 /
-% batch=16 / device=0；硬件 RTX 5070 Ti Laptop (12 GB)；各类计数。
+% batch=16 / device=0，报最后一轮（last.pt，不做验证集选权）；
+% 硬件 RTX 5070 Ti Laptop (12 GB)；各类计数。
 \todo{编写（素材：PROGRESS.md 三（结果）；引用 \cite{redmon2016yolo,
 bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralytics2025}）}
 
 \subsection{Labeler baselines and leakage-aware comparison}
-% 93 全量口径 vs val18 干净口径；real93 基线（75 真实图训练）含 75/93
-% 记忆图 -> 虚高分析（0.857 vs 0.646 实例）。
+% 93 全量口径 vs test33 干净口径；真实基线（v2 train60 训练）含 60/93
+% 记忆图 -> 虚高分析（v1 实例：0.857 vs 0.646；v2 按 last.pt 重算后回填）。
 \todo{编写 + 表（素材：PROGRESS.md 三（双口径对比））}
 
 \subsection{Effect of generated data on real-world detection}\label{sec:main}
-% 主结果：gen493 六权重 vs real93 六权重，val18 干净口径两轮 6/6 全胜。
+% 主结果：gen493 六权重 vs 真实基线六权重（v2 train60），test33 干净口径
+% （v1 下两轮 6/6 全胜；v2 按 last.pt 重算后回填）。
 % 表：主对比表。
 \begin{table}[t]
   \centering
-  \caption{\todo{Detection performance on the clean real-photo test subset (val18).}}
+  \caption{\todo{Detection performance on the clean real-photo test subset (test33, v2 split).}}
   \begin{tabular}{lcccc}
   \toprule
   Detector & \multicolumn{2}{c}{Real-only baseline} & \multicolumn{2}{c}{Generated-data (ours)} \\
@@ -169,8 +174,9 @@ bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralyt
 \end{table}
 
 \subsection{Data-scale ablation}\label{sec:scale}
-\todo{待实验：250 vs 500（+扩容到 1000）。当前证据：400 生成 vs 75 真实
-（约 5.3x 量差）在 val18 上 6/6 全胜；正文主张「quantity over quality」前必须补本小节。}
+\todo{待实验：250 vs 493（+扩容到 1085）。当前证据：394 生成 vs 60~75 真实
+（约 6x 量差）在干净口径上 6/6 全胜（v1 val18；v2 按 test33 + last.pt 重算）；
+正文主张「quantity over quality」前必须补本小节。}
 
 \subsection{Inference resolution analysis}
 % imgsz 扫描：640/960/1280/1536；640 峰值；真实照片 17% 框在 640 等效下 <20px。
@@ -181,9 +187,10 @@ bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralyt
 \todo{待实验：安全帽第二目标（管线复用）。三级定位第 2 级的门槛，见 PAPER_PLAN 第五节。}
 
 \subsection{Comparison with classical augmentation and public datasets}
-\todo{待实验：经典增广对照（flip/mosaic/copy-paste @ 75 真实图，
-\cite{ghiasi2021copypaste, shorten2019augmentation}）；公开数据对照
-（\cite{rfcylinders, rfgarrafas}）。审稿人必问两项。}
+\todo{待实验：经典增广三臂对照（v2）——A 真实 60 张（v2 train60）/ B 离线增广至 600（60×10）/
+C 生成 600（1085 池按正/负比例抽样），同超参、固定轮数报 last.pt，统一 test33 评测
+（\cite{ghiasi2021copypaste, shorten2019augmentation}）；设计见 PAPER_PLAN 第四节 3。公开数据：已查证两个 Roboflow 气瓶数据集无放置位姿标注、
+不可用（\cite{rfcylinders, rfgarrafas}），改为 Introduction/Discussion 论据。}
 
 % ==========================================================================
 \section{Discussion}\label{sec:discussion}
