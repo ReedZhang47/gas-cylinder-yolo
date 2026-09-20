@@ -1,0 +1,6 @@
+names:
+  0: Placement Issues
+path: D:/gas_cylinders/Placement_Issues
+train: gen493_split/train.txt
+val: gen493_split/val.txt
+test: D:/gas_cylinders/v3/test61.txt

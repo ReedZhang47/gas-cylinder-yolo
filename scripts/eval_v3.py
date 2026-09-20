@@ -2,7 +2,9 @@ r"""v3 evaluation (2026-09-19): every arm on the independent v3 test set.
 
 Arms (add rows to ARMS as they are trained):
   C_gen1085      -> runs/detect/gen1085   synthesis arm (train 868)
-  C_gen493_scale -> runs/detect/gen493    first scale point (train 394)
+  C_gen493_scale -> runs/detect/gen493v3  first scale point (train 394, v3 protocol)
+  C_gen493_v1    -> runs/detect/gen493    same point trained under the v1 protocol
+                                          (kept for the protocol-difference note)
   A_real93       -> runs/detect/real93v3  real-only arm (train 93)   [after training]
   B_aug93        -> runs/detect/aug93     real + classical aug (868) [after training]
 
@@ -19,7 +21,8 @@ OUT = Path(r"D:\yolo\phase10_v3_main.json")
 WEIGHTS = ["yolov8s", "yolov8m", "yolo11s", "yolo11m", "yolo26s", "yolo26m"]
 ARMS = {
     "C_gen1085": Path(r"D:\yolo\runs\detect\gen1085"),
-    "C_gen493_scale": Path(r"D:\yolo\runs\detect\gen493"),
+    "C_gen493_scale": Path(r"D:\yolo\runs\detect\gen493v3"),
+    "C_gen493_v1proto": Path(r"D:\yolo\runs\detect\gen493"),
     # "A_real93": Path(r"D:\yolo\runs\detect\real93v3"),
     # "B_aug93": Path(r"D:\yolo\runs\detect\aug93"),
 }
