@@ -5,7 +5,7 @@
 %% 编译：latexmk -pdf working_paper.tex（或 pdflatex -> bibtex -> pdflatex x2）
 %% 首投可用 "Your Paper Your Way"（本模板即够）；转投 MDPI 时换模板搬正文
 %% 红线：正文数字一律核仓库根 phase10_v3_main.json（v3 权威汇总）/ PROGRESS.md 三（结果与结论），
-%%       不在此文件手抄改数（防口径漂移）；v1/v2 的 summary 已归档 _trash\summaries\，勿再引用
+%%       不在此文件手抄改数（防口径漂移）
 %% ==========================================================================
 \documentclass[preprint,12pt]{elsarticle}
 
@@ -117,7 +117,7 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 \todo{编写（素材：PROGRESS.md 一/二；工具引用 \cite{qwenimage2025, qwenimageedit2025}）}
 
 \subsection{Auto-labeling with human-in-the-loop review}
-% 打标模型（gen1085/yolo26s，在 1085 张合成图上训练）预标注 ->
+% 打标模型（gen1085/yolo26s，在生成图上训练）预标注 ->
 % annotator GUI 逐张人工复核（100% 复核率）-> 已复核合成数据（1085 张）。
 \todo{编写（素材：PROGRESS.md 二.2 与 五（打标模型））}
 

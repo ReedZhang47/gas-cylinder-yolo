@@ -1,4 +1,4 @@
-# Figure 1 — 管线总图（mermaid 草图，v3 口径；v1/v2 旧版见 `_trash\paper\fig1_pipeline_v2legacy.md`）
+# Figure 1 — 管线总图（mermaid 草图，v3 口径）
 
 > 用途：先用 mermaid 把思路直观记下来；定稿前用 TikZ 正式重绘为 `figures/fig1_pipeline.pdf`，替换 `working_paper.tex` 中 Fig.1 占位。
 > 红线：图只表达流程；具体数字不写进图（数字以 `PROGRESS.md` 三（结果与结论）为准）。

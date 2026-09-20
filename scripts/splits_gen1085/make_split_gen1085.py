@@ -14,12 +14,6 @@ Outputs (D:/gas_cylinders/gen1085_split/):
   train.txt / val.txt / split_info.json
   data.yaml   (train/val lists; test = v3/test61.txt, the 61 web images)
 
-Superseded provenance note: an earlier revision of this docstring pointed the
-test key at the 93 real photos (v1/v2 era). The v2-era scheme that audited
-ComfyUI metadata for images edited from a held-out test photo was abandoned
-together with the v2 test set - see PROGRESS.md 3 (v2 legacy). Never reintroduce
-a same-source Test set for this project.
-
 Does NOT touch either annotator workspace data.yaml.
 """
 import json

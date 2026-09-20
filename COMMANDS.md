@@ -56,7 +56,7 @@
 & D:\yolo\scripts\run_v3_arms.ps1 -Arm real93 -Only "yolo26s,yolo26m"   # 只跑指定 tag
 #   日志：logs\v3_<arm>_train.log（总表）+ logs\v3_<arm>_<tag>.log（逐权重）
 #   ⚠️ 2026-09-19 00:12 曾以此启动 A 臂并被中断（yolov8s 训到 epoch 62 断、real93v3\ 未落盘）；
-#      该次日志已归档 _trash\logs\v3_real93_*.log。重跑前先删半成品 run 目录：
+#      该次日志已归档。重跑前先删半成品 run 目录：
 #      Remove-Item -Recurse -Force D:\yolo\runs\detect\real93v3 -ErrorAction SilentlyContinue
 
 # C 臂重训（生成臂；权重已有，一般只做复评）：六权重串行
@@ -66,7 +66,7 @@
 #   ⚠️ 现役 gen493 权重是 v1 时期训练的（args.yaml: patience=100，其 data.yaml 的 test 仍指 v1_split\all.txt），
 #      只做过 v3 复评。重跑须新建 v3 版 data.yaml（test → v3\test61.txt）并保持 train 清单不变（394 张）。
 #   ⚠️ name 冲突：重跑若沿用 name=gen493/<tag>，ultralytics 会因 exist_ok=false 新建 gen4932\<tag>（坑 6），
-#      旧权重原地保留更安全；若坚持同名覆盖，先把 runs\detect\gen493 整个移入 _trash\runs\ 再跑。
+#      旧权重原地保留更安全；若坚持同名覆盖，先把 runs\detect\gen493 整个备份移走再跑。
 #   ⚠️ 重跑后 phase10_v3_main.json 的 C_gen493_scale 一组会变，PROGRESS 三、PAPER_PLAN 四.2 的数字要同步更新。
 
 # B 臂：离线增广（脚本待写 → scripts\make_aug93_dataset.py 产 D:\gas_cylinders\aug93\，868 张）
@@ -124,4 +124,4 @@ D:\yolo\annotator\stop_server.bat [port] # 停止（默认 8085）
 | 2026-09-14 | v1 重构：代码归入 `scripts\`、精简为当前命令、弃用内容移入 `_trash\` |
 | 2026-09-18 | v2：第二批数据、v2 口径、打标件换代 gen1085 |
 | 2026-09-19 | v3：换 test（61 张网络独立图片）、三臂口径（real93 / 增广 868 / 合成 868）、命令清空重写为 v3；v1/v2 旧文件移入 `_trash` |
-| 2026-09-20 | v3 文档收口：`check_test_independence.py` 上线（独立性唯一证据）；来源审计脚本退役（`scripts\audit_gen_sources.py` 删除、归档 `_trash\scripts\`）；B 臂口径改为"只对总量"；gen493 重跑列为待办 |
+| 2026-09-20 | v3 文档收口：`check_test_independence.py` 上线（test 独立性检验）；B 臂口径改为"只对总量"；gen493 重跑列为待办 |

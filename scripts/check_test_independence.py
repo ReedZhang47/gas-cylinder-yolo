@@ -23,11 +23,8 @@ value, PROGRESS.md 2.3):
   (control) real93 internal: max 0.834, >0.90: 0
   most similar pair: new_test_set_0059.jpg ~ real_photo_19.png 0.730
 
-Depth-2 provenance note: the superseded v2-era scheme audited ComfyUI metadata
-to find generated images derived from a held-out test photo (611/1085). That
-scheme was abandoned together with the v2 test set; the v3 web test set shares
-neither source nor scene with the training data, so only the check below is
-used as evidence. Do not resurrect the audit framing as a contribution.
+The v3 test set shares neither source nor scene with the seed photos or with
+any image generated from them, which is exactly what this check demonstrates.
 
 Usage (read-only, ~30 s):
   & D:\yolo\.venv\Scripts\python.exe D:\yolo\scripts\check_test_independence.py

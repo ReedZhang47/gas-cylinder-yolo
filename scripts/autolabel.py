@@ -6,6 +6,12 @@ Output convention matches the first500 dataset:
   - default labels dir: <source>/../labels ; class ids/names come from the model's data.yaml
   - a data.yaml (names/nc/path/train) is always written into the labels output dir
 
+Source check for a new generated batch (do this BEFORE labeling): each generated PNG
+carries its ComfyUI workflow in the PNG 'prompt' metadata chunk, whose LoadImage nodes
+name the seed photo(s) it was edited from; `D:\gas_cylinders\gen_sources.json` is the
+aggregated per-image record of that (see PROGRESS.md 2.6). Use it to confirm every new
+image has a traceable source and to spot seed photos that were reused too often.
+
 CVAT import (Ultralytics YOLO): use --cvat-dir <dir> to assemble the full dataset
   structure required by CVAT (images/train + labels/train + data.yaml + train.txt),
   then zip that dir and upload it to CVAT. NOTE: the CVAT review route was dropped
