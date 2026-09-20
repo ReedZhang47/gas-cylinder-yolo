@@ -176,11 +176,9 @@ bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralyt
 \end{table}
 
 \subsection{Data-scale ablation}\label{sec:scale}
-% ✅ 已完成（2026-09-19）：gen493（train 394）vs gen1085（train 868）在新 test 上，
-% 六权重 mAP50-95 全涨 +0.07~+0.15（yolo26s 0.557→0.698）。
-% ⚠️ 协议脚注（必须写进正文/表注）：gen493 六权重是 v1 时期训练的（patience=100，
-%    其 data.yaml 的 test 指 v1_split），只把评测统一到 v3；六权重都跑满 100 轮、
-%    早停未触发，故对比成立。待办：按 v3 协议重跑 gen493 后以新数字为准。
+% ✅ 已完成（2026-09-20）：gen493（train 394，按 v3 协议重跑）vs gen1085（train 868）
+% 在新 test 上，六权重 mAP50-95 全涨 +0.07~+0.15（yolo26s 0.557→0.698）；两点同协议
+% （重跑与旧点等价：test 指标逐位相同、PR 曲线逐点最大差 0）。
 \todo{编写：规模曲线 + 小表（素材：phase10_v3_main.json）}
 
 \subsection{Cross-target generalization: helmet non-use}\label{sec:helmet}

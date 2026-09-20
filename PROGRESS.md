@@ -6,11 +6,12 @@
 > - 命令/路径变化同步 `COMMANDS.md`；全文禁止引用不存在的文件。
 > - 弃用文件一律移入 `_trash\`（勿真删）。
 
-> 截止（2026-09-20，v3 文档收口 + 一处数字更正）：
-> - **v3 结果主体已出**——C 臂（gen1085 train 868）六权重在新 test 上完成复评 + 规模曲线（gen493 394 张）复评，数字见 `phase10_v3_main.json`。
+> 截止（2026-09-20，gen493 已按 v3 协议重跑，规模曲线两点同协议）：
+> - **v3 结果主体已出**——C 臂（gen1085 train 868）六权重在新 test 上完成复评；规模曲线第一点 gen493（train 394）已按 v3 协议**重跑**并复评，数字见 `phase10_v3_main.json`。
+> - **重跑结论：与旧点完全等价**——六权重 test 指标（P / mAP50 / mAP50-95）逐位相同，PR 曲线逐点最大差 **0.000e+00**，训练自评曲线亦逐位吻合。据此两点同协议、旧配置点（v1 协议训练的那份 run）已归档。
 > - **A/B 两臂仍未出**：A 臂 2026-09-19 00:12 误启动，已中断（日志已归档）；B 臂增广脚本 `make_aug93_dataset.py` 尚未写。三臂对照成套前，main 表停留在 C 臂单臂。
 > - B 臂只要求**总量与 C 臂一致（868 张）**，不按"单图有无标签"配正负比——**标注单位是框**，一张图上可同时有违规气瓶与规范气瓶（混合样本）。
-> - **本次文档修订要点**：① test 独立性证据固定为**缩略图相关性实测**（脚本 `scripts\check_test_independence.py`，复跑数字与 2026-09-19 一致）；② 主结果表补上 gen493 的协议脚注并把"按 v3 重跑"列为待办；③ Fig.1 草图与论文口径升到 v3（三臂同源 + 外部 test）。
+> - **本次文档修订要点**：① test 独立性证据固定为**缩略图相关性实测**（脚本 `scripts\check_test_independence.py`）；② gen493 重跑完成、规模曲线口径统一；③ 训练脚本新增 `gen493` 臂与 `normalize_runs.ps1` 收尾工具。
 
 ## 一、项目与目标
 
@@ -33,7 +34,7 @@
 - 两批：`Placement_Issues\`（493 张 = 380 张有框/1062 框 + 113 张空标）、`Placement_Issues_2\`（592 张 = 414 张有框/1129 框 + 178 张空标）；合计 **794 张有框（2191 框）+ 291 张空标**。
 - 来源：全部是 93 张真实照片的 Qwen-Image-Edit 编辑版，编辑源覆盖 93/93 张。
 - 划分（seed=42 分层 80/20，`gen1085_split\`）：**train 868（635 张有框/1768 框 + 233 张空标）/ val 217**；test key 已指向 v3 test（见 2.3）。
-- 训练产物：`runs\detect\gen1085\`（六权重，COCO 预训练、100 轮、报 last.pt）；`runs\detect\gen493\`（第一批 394 张的旧点，可复用作规模曲线第一点）。
+- 训练产物：`runs\detect\gen1085\`（六权重，COCO 预训练、100 轮、报 last.pt）；`runs\detect\gen493v3\`（第一批 394 张，2026-09-20 按 v3 协议重跑，作规模曲线第一点）。
 
 ### 2.3 新 test 集 61 张（v3 唯一评测口径）
 - `new_test_set\`：**61 张网络来源图**（与 93 张巡检照片及其全部编辑产物无来源/场景重叠，见下）= **30 张有框（72 框）+ 31 张空标**；**全部与气瓶有关**（规范放置的不标，不规范的标框）。
@@ -68,7 +69,7 @@
 | yolo26m | 0.876 / 0.661 | 0.717 / 0.510 | **+0.151** |
 
 - **规模效应成立**：合成数据 394 → 868 张，六权重 mAP50-95 全涨（+0.07~+0.15），且是在与训练数据完全独立的 test 上取得 ——「扩量有效」在 v3 有了扎实证据；最优权重 yolo26s（0.927 / 0.698）。
-- ⚠️ **gen493 列的协议脚注**：gen493 六权重是 **v1 时期训练**的（其 `args.yaml` 为 `patience: 100`、`data.yaml` 的 test 仍指 `v1_split\all.txt`），本次只把**评测**统一到 v3（独立 test / imgsz 640 / 报 last.pt）。已核 `results.csv`：六权重**都恰好跑满 100 轮**、早停未触发，故与 gen1085（`patience: 0`）的对比成立；但严格同协议需按 v3 重跑 gen493（待办，见 `List_of_Experiments.md`）。
+- **两点同协议（2026-09-20 重跑）**：gen493 已按 v3 协议（`patience=0` + `test → v3\test61.txt` + `val = gen493_split\val.txt`）重跑六权重。与旧点（v1 时期训练）对比：test 指标逐位相同、PR 曲线逐点最大差 0.000e+00、训练自评曲线逐位吻合 → **等价**，旧 run 已归档。重跑同时证明：`val` 指向 train 还是 hold-out（99 张）**不影响本协议下的权重**（早停关闭、报 last.pt，val 只用于打印指标）。
 - A 臂（real93 全量 93 张）与 B 臂（93 × N → 868 增广）待训，三臂对比完成后成主表。
 - 沿革见下。
 - **沿革（v1/v2 一句话，仅备查）**：v1 建立 93 张真实照 + 493 张生成图的六权重评测闭环；v2 补第二批生成到 1085 张、全篇改 last.pt 协议、并把 test 从同源真实照片换成外部独立图源 → 促成 v3；v3 起 93 张真实照片全量作 A/B 臂训练集。v1/v2 的 run 目录、summary JSON 与日志已归档，不再使用。
@@ -77,7 +78,7 @@
 
 1. ✅ 换 test：61 张独立网络图片 + v3 配置落地。
 2. **三臂对照成套**：A 真实 93 / B 真实+传统增广 868 / C 编辑合成 868，六权重 × 统一协议 → 主结果表。
-3. 规模曲线：gen493（394）vs gen1085（868）在新 test 上复评（C 臂内部）已完成；**待办：把 gen493 六权重按 v3 协议（patience=0 + v3 test 配置）重跑一遍**，让曲线两点完全同协议（现 gen493 为 v1 时期训练，见三节脚注）；之后可选再扩生成到 1500+，或补一个 gen250（200）节点。
+3. ✅ 规模曲线：gen493（394）vs gen1085（868）在新 test 上复评完成；**2026-09-20 已把 gen493 按 v3 协议重跑**，两点完全同协议（结果与旧点等价）。可选再扩生成到 1500+，或补一个 gen250（200）节点。
 4. 方法学补充：复核价值消融、负样本消融、多随机种子、工作点 PR、误差分析图（见 `List_of_Experiments.md`）。
 5. 多目标扩展：安全帽（第二目标）。
 6. 论文：按 v3 口径改写 Methodology（编辑合成 = 状态级增广）与 Experiments；投稿策略见 `paper\PAPER_PLAN.md`。
@@ -85,9 +86,9 @@
 ## 五、资产与踩坑
 
 - **环境**：`D:\yolo\.venv`（Py 3.13 / torch 2.8.0+cu129 / ultralytics 8.4.135）；GPU RTX 5070 Ti Laptop 11.9 GB；预训练权重 `weights\`（v8/11/26 × s/m）。
-- **代码**（`scripts\`）：`autolabel.py` + `prepare_labeling_workspace.bat`（打标，默认模型见下）、`splits_gen1085\`（生成臂划分）、`run_phase8_gen1085.ps1`（生成臂训练）、`make_v3_configs.py`（v3 配置）、`eval_v3.py`（v3 成套评测）、`check_test_independence.py`（test 独立性检验）、`run_v3_arms.ps1`（A/B 两臂训练）。
+- **代码**（`scripts\`）：`autolabel.py` + `prepare_labeling_workspace.bat`（打标，默认模型见下）、`splits_gen1085\`（生成臂划分）、`run_phase8_gen1085.ps1`（生成臂训练）、`make_v3_configs.py`（v3 配置）、`eval_v3.py`（v3 成套评测）、`check_test_independence.py`（test 独立性检验）、`run_v3_arms.ps1`（A/B 两臂 + gen493 训练）、`normalize_runs.ps1`（run 目录规范化收尾）。
 - **打标模型（生产件）**：`runs\detect\gen1085\yolo26s\weights\last.pt`（2026-09-18 选定：在 119 张未见过的生成图上的自评 mAP50-95 0.932 / P 0.970 / R 0.958，随 `autolabel.py` 一并交付；属工具件指标，不进论文结果表）；`autolabel.py` 与一键 bat 默认已指向它。
-- **run 目录**（`runs\detect\`）：`gen1085\`（生成臂六权重）、`gen493\`（规模曲线第一点）、`v3\`（v3 评测输出）、`v3_check\`（体检）。
+- **run 目录**（`runs\detect\`）：`gen1085\`（生成臂六权重）、`gen493v3\`（规模曲线第一点，v3 协议）、`v3\`（v3 评测输出）、`v3_check\`（体检）。
 - **沙箱**：训练/评测/autolabel 需 danger-full-access；跨盘写（`D:\gas_cylinders`）也要升级。
 - **踩坑（含 v1/v2 教训，v3 继续适用）**：
   1. 固定轮数协议必须 `patience=0` 关早停（小数据臂可能被 self-val fitness 误截断）。
@@ -107,9 +108,10 @@
 | `Prompt.md` | 用户 prompt（私有，不入库） |
 | `scripts\` | 全部代码（见五节） |
 | `scripts\check_test_independence.py` | **test 独立性检验**（缩略图相关性，论文独立性主张的复现入口） |
-| `scripts\run_v3_arms.ps1` | A/B 两臂六权重训练（v3 协议，可断点续跑） |
+| `scripts\run_v3_arms.ps1` | 六权重训练（v3 协议，`-Arm real93 / aug93 / gen493`，可断点续跑） |
+| `scripts\normalize_runs.ps1` | run 目录收尾：把中断遗留的 `xxx-2` 归位、删空壳与 best.pt（可复用） |
 | `annotator\` | 标注 GUI（`start_annotator.bat` / `stop_server.bat`） |
-| `runs\detect\` | `gen1085\`（生成臂六权重）、`gen493\`（规模曲线第一点）、`v3\`（v3 评测输出）、`v3_check\`（体检） |
+| `runs\detect\` | `gen1085\`（生成臂六权重）、`gen493v3\`（规模曲线第一点）、`v3\`（v3 评测输出）、`v3_check\`（体检） |
 | `phase10_v3_main.json` | **v3 结果汇总（权威数字）**：各臂 × 六权重 × 新 test |
 | `weights\` | 预训练源权重（v8/11/26 × s/m） |
 | `paper\` | 论文工作区（PAPER_PLAN / working_paper.tex / references.bib / reference\ 文献库） |

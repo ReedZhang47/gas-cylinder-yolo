@@ -30,7 +30,7 @@
 ## 评测（v3）
 
 ```powershell
-# 成套评测：C 臂 gen1085 六权重 + 规模曲线点 gen493 → phase10_v3_main.json
+# 成套评测：C 臂 gen1085 六权重 + 规模曲线点 gen493v3 → phase10_v3_main.json
 & D:\yolo\.venv\Scripts\python.exe D:\yolo\scripts\eval_v3.py
 
 # 单权重（示例）
@@ -42,7 +42,7 @@
 & D:\yolo\.venv\Scripts\python.exe D:\yolo\scripts\check_test_independence.py
 ```
 
-- 各臂 run 目录约定：`runs\detect\gen1085\`（C 臂）、`runs\detect\gen493\`（规模曲线旧点）、`runs\detect\real93v3\`（A 臂，待训）、`runs\detect\aug93\`（B 臂，待建）。
+- 各臂 run 目录约定：`runs\detect\gen1085\`（C 臂）、`runs\detect\gen493v3\`（规模曲线第一点，v3 协议）、`runs\detect\real93v3\`（A 臂，待训）、`runs\detect\aug93\`（B 臂，待建）。
 
 ## 训练（v3 各臂）
 
@@ -50,24 +50,25 @@
 # A 臂：real93 全量 93 张（train=val=93，test → 新 test）
 & D:\yolo\.venv\Scripts\yolo.exe detect train model=D:\yolo\weights\<tag>.pt data=D:\gas_cylinders\v3\data_real93.yaml epochs=100 patience=0 imgsz=640 batch=16 device=0 name=real93v3/<tag>
 
-# A/B 两臂成套训练（六权重串行、OOM 自动降 batch8、可断点续跑）
+# 成套训练（六权重串行、OOM 自动降 batch8、可断点续跑）
 & D:\yolo\scripts\run_v3_arms.ps1 -Arm real93                 # A 臂 → runs\detect\real93v3\<tag>
 & D:\yolo\scripts\run_v3_arms.ps1 -Arm aug93                  # B 臂 → runs\detect\aug93\<tag>（等增广集）
+& D:\yolo\scripts\run_v3_arms.ps1 -Arm gen493                 # 规模曲线第一点 → runs\detect\gen493v3\<tag>
 & D:\yolo\scripts\run_v3_arms.ps1 -Arm real93 -Only "yolo26s,yolo26m"   # 只跑指定 tag
 #   日志：logs\v3_<arm>_train.log（总表）+ logs\v3_<arm>_<tag>.log（逐权重）
 #   ⚠️ 2026-09-19 00:12 曾以此启动 A 臂并被中断（yolov8s 训到 epoch 62 断、real93v3\ 未落盘）；
 #      该次日志已归档。重跑前先删半成品 run 目录：
 #      Remove-Item -Recurse -Force D:\yolo\runs\detect\real93v3 -ErrorAction SilentlyContinue
+#   ⚠️ 训练完用收尾脚本规范化目录（把中断遗留的 xxx-2 归位、删空壳与 best.pt）：
+& D:\yolo\scripts\normalize_runs.ps1 -Arm real93
 
 # C 臂重训（生成臂；权重已有，一般只做复评）：六权重串行
 & D:\yolo\scripts\run_phase8_gen1085.ps1
 
-# gen493 重跑（待办：把规模曲线第一点统一到 v3 协议；394 张清单沿用 Placement_Issues\gen493_split\）
-#   ⚠️ 现役 gen493 权重是 v1 时期训练的（args.yaml: patience=100，其 data.yaml 的 test 仍指 v1_split\all.txt），
-#      只做过 v3 复评。重跑须新建 v3 版 data.yaml（test → v3\test61.txt）并保持 train 清单不变（394 张）。
-#   ⚠️ name 冲突：重跑若沿用 name=gen493/<tag>，ultralytics 会因 exist_ok=false 新建 gen4932\<tag>（坑 6），
-#      旧权重原地保留更安全；若坚持同名覆盖，先把 runs\detect\gen493 整个备份移走再跑。
-#   ⚠️ 重跑后 phase10_v3_main.json 的 C_gen493_scale 一组会变，PROGRESS 三、PAPER_PLAN 四.2 的数字要同步更新。
+# gen493 数据配置（规模曲线第一点，2026-09-20 已按 v3 协议重跑完成）
+#   yaml = scripts\splits_gen1085\data_gen493_v3.yaml：train/val 沿用 Placement_Issues\gen493_split\
+#   的 394 / 99 张清单（v1 建的划分），test → v3\test61.txt，训练时 patience=0。
+#   结论：与 v1 旧点完全等价（test 指标逐位相同、PR 曲线逐点最大差 0），旧 run 已归档。
 
 # B 臂：离线增广（脚本待写 → scripts\make_aug93_dataset.py 产 D:\gas_cylinders\aug93\，868 张）
 #   增广规则：hflip / ±10° 旋转 / 缩放平移 / 亮度对比度 HSV，几何变换同步变框；不用上下翻转；
@@ -107,8 +108,8 @@ D:\yolo\annotator\stop_server.bat [port] # 停止（默认 8085）
 2. 独立 python 脚本跑 ultralytics 推理/评测：必须 `if __name__ == "__main__"` 守卫 + `workers=0`（Windows spawn 重导入会崩）；用 `yolo.exe` CLI 训练/评测不受此限（默认 `workers=8`）。
 3. `.gitignore` 不支持行内注释（`#` 只认行首）。
 4. 打标工作区根 `data.yaml`（`path: .` + `train: images`）仅供 annotator GUI 使用，勿用于训练配置。
-5. 固定轮数协议必须显式 `patience=0`：ultralytics 默认 patience=100（实现为 `patience or inf`，即 0=关闭）；小数据臂的 self-val fitness 受随机初值影响会误触发早停（实测 300 轮跑在第 105 轮被截断）。100 轮协议碰不到，300 轮及以上必须关。**gen493 旧权重就是 `patience=100` 训的**（虽跑满 100 轮），按 v3 重跑时务必带上 `patience=0`。
-6. 评测/训练输出名带 `/`（如 `name=v3/C_gen1085_yolo26s`）会建子目录，`exist_ok` 默认 false → 同名重跑会**递增后缀**（`..._yolo26s2`），别误读成新结果。
+5. 固定轮数协议必须显式 `patience=0`：ultralytics 默认 patience=100（实现为 `patience or inf`，即 0=关闭）；小数据臂的 self-val fitness 受随机初值影响会误触发早停（实测 300 轮跑在第 105 轮被截断）。100 轮协议碰不到，300 轮及以上必须关。
+6. 输出目录重名会**递增后缀**：训练/评测目录已存在（`exist_ok=false`）时，ultralytics 会另建 `name2` / `name-2`。**中断或失败的 run 会留下只含 `args.yaml` 的空壳目录**，下次同名训练就会静默写进 `<tag>-2`，导致权重分散、评测按固定路径找不到。对策：重跑前删掉空壳目录，或用 `scripts\normalize_runs.ps1 -Arm <arm>` 收尾（归位 `-2` + 删空壳/`best.pt`）。评测输出同理（`runs\detect\v3\...-2`），重跑评测前可先清空 `runs\detect\v3`。
 
 ## Git
 
@@ -124,4 +125,5 @@ D:\yolo\annotator\stop_server.bat [port] # 停止（默认 8085）
 | 2026-09-14 | v1 重构：代码归入 `scripts\`、精简为当前命令、弃用内容移入 `_trash\` |
 | 2026-09-18 | v2：第二批数据、v2 口径、打标件换代 gen1085 |
 | 2026-09-19 | v3：换 test（61 张网络独立图片）、三臂口径（real93 / 增广 868 / 合成 868）、命令清空重写为 v3；v1/v2 旧文件移入 `_trash` |
-| 2026-09-20 | v3 文档收口：`check_test_independence.py` 上线（test 独立性检验）；B 臂口径改为"只对总量"；gen493 重跑列为待办 |
+| 2026-09-20 | v3 文档收口：`check_test_independence.py` 上线（test 独立性检验）；B 臂口径改为"只对总量" |
+| 2026-09-20 | gen493 按 v3 协议重跑六权重并复评（结论：与旧点等价，test 指标逐位相同、PR 曲线逐点最大差 0）；规模曲线两点同协议；新增 `normalize_runs.ps1`；`run_v3_arms.ps1` 增加 `-Arm gen493`；旧 run 归档 |

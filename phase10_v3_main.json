@@ -1,6 +1,6 @@
 {
   "meta": {
-    "date": "2026-09-19",
+    "date": "2026-09-20",
     "protocol": "v3: test = new_test_set (61 web images, independent); last.pt, 100-epoch fixed schedule, imgsz 640"
   },
   "C_gen1085": [
