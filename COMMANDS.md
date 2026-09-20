@@ -1,7 +1,7 @@
 # COMMANDS.md — 操作命令表（AI agent 用，v3）
 
 > 维护规则：只记当前可运行命令（路径 / 超参 / name 约定 / 环境 / 已知坑）；命令或路径变化先改本表再执行；与 `PROGRESS.md` 同步；弃用命令移入 `_trash\` 后从本表移除。
-> **v3 口径**：test = `D:\gas_cylinders\new_test_set\`（61 张网络图；与 93 张巡检照片及其全部编辑产物无来源/场景重叠，独立性检验见「评测」节）；各臂只差训练数据来源；统一 100 epoch / imgsz 640 / batch 16，**固定轮数报 last.pt**（`patience=0` 关早停）、不做验证集选权。
+> **v3 口径**：test = `D:\gas_cylinders\new_test_set\`（61 张网络图；与 93 张巡检照片及其全部编辑产物无来源/场景重叠，独立性检验见「评测」节）；各臂只差训练数据来源；统一 **300 epoch** / imgsz 640 / batch 16，**固定轮数报 last.pt**（`patience=0` 关早停）、不做验证集选权（61val 方案为 L2 对照，见 `EXPERIMENTS.md`）。
 
 ## 环境
 
@@ -44,16 +44,26 @@
 
 - 各臂 run 目录约定：`runs\detect\gen1085\`（C 臂）、`runs\detect\gen493v3\`（规模曲线第一点，v3 协议）、`runs\detect\real93v3\`（A 臂，待训）、`runs\detect\aug93\`（B 臂，待建）。
 
-## 训练（v3 各臂）
+## 训练（v3 各臂；**统一 300 轮**）
+
+> 协议：**epochs=300 / patience=0 / imgsz 640 / batch 16 / device 0 / 全量训练（不划自评 val，yaml 的 `val:` 指向 train 自己）/ 快照 `save_period=10`**。
+> 300 轮的依据与耗时模型见 `EXPERIMENTS.md` 二、五节。实验线划分（L1 主线 / L2 P2 / L3 支撑）见同文件一节。
 
 ```powershell
-# A 臂：real93 全量 93 张（train=val=93，test → 新 test）
-& D:\yolo\.venv\Scripts\yolo.exe detect train model=D:\yolo\weights\<tag>.pt data=D:\gas_cylinders\v3\data_real93.yaml epochs=100 patience=0 imgsz=640 batch=16 device=0 name=real93v3/<tag>
+# 三臂数据配置（均为全量）
+#   A 臂：D:\gas_cylinders\v3\data_real93.yaml                       （93 张）
+#   B 臂：D:\gas_cylinders\aug93\data_aug93.yaml                     （增广到 1085 张，脚本待写）
+#   C 臂：D:\yolo\scripts\splits_gen1085\data_gen1085_full_v3.yaml  （1085 全量，清单 gen1085_full_train.txt）
+#   规模曲线点（394，不进三臂主表）：D:\yolo\scripts\splits_gen1085\data_gen493_v3.yaml
+
+# 单臂单权重（示例：C 臂 yolo26s，300 轮 + 每 10 轮快照）
+& D:\yolo\.venv\Scripts\yolo.exe detect train model=D:\yolo\weights\yolo26s.pt `
+    data=D:\yolo\scripts\splits_gen1085\data_gen1085_full_v3.yaml `
+    epochs=300 patience=0 save_period=10 imgsz=640 batch=16 device=0 name=gen1085v3/yolo26s
 
 # 成套训练（六权重串行、OOM 自动降 batch8、可断点续跑）
-& D:\yolo\scripts\run_v3_arms.ps1 -Arm real93                 # A 臂 → runs\detect\real93v3\<tag>
-& D:\yolo\scripts\run_v3_arms.ps1 -Arm aug93                  # B 臂 → runs\detect\aug93\<tag>（等增广集）
-& D:\yolo\scripts\run_v3_arms.ps1 -Arm gen493                 # 规模曲线第一点 → runs\detect\gen493v3\<tag>
+& D:\yolo\scripts\run_v3_arms.ps1 -Arm real93 -Epochs 300       # A 臂 → runs\detect\real93v3\<tag>
+& D:\yolo\scripts\run_v3_arms.ps1 -Arm aug93  -Epochs 300       # B 臂 → runs\detect\aug93\<tag>（等增广集）
 & D:\yolo\scripts\run_v3_arms.ps1 -Arm real93 -Only "yolo26s,yolo26m"   # 只跑指定 tag
 #   日志：logs\v3_<arm>_train.log（总表）+ logs\v3_<arm>_<tag>.log（逐权重）
 #   ⚠️ 2026-09-19 00:12 曾以此启动 A 臂并被中断（yolov8s 训到 epoch 62 断、real93v3\ 未落盘）；
@@ -62,18 +72,18 @@
 #   ⚠️ 训练完用收尾脚本规范化目录（把中断遗留的 xxx-2 归位、删空壳与 best.pt）：
 & D:\yolo\scripts\normalize_runs.ps1 -Arm real93
 
-# C 臂重训（生成臂；权重已有，一般只做复评）：六权重串行
-& D:\yolo\scripts\run_phase8_gen1085.ps1
+# C 臂重训（旧 100 轮产物在 runs\detect\gen1085；300 轮全量重训归 P2，见下）
 
-# gen493 数据配置（规模曲线第一点，2026-09-20 已按 v3 协议重跑完成）
-#   yaml = scripts\splits_gen1085\data_gen493_v3.yaml：train/val 沿用 Placement_Issues\gen493_split\
-#   的 394 / 99 张清单（v1 建的划分），test → v3\test61.txt，训练时 patience=0。
-#   结论：与 v1 旧点完全等价（test 指标逐位相同、PR 曲线逐点最大差 0），旧 run 已归档。
+# P2（L2）：三臂训练完 → 每个权重有 30 个快照 → 逐快照评 61 张 → 一条曲线读两种口径
+#   61test = 末轮值；61val = 曲线最大值。参见 EXPERIMENTS.md 四节与 PLAN_61VAL.md。
 
-# B 臂：离线增广（脚本待写 → scripts\make_aug93_dataset.py 产 D:\gas_cylinders\aug93\，868 张）
+# 规模曲线点 gen493（394 张，已完成：与 v1 旧点等价）
+#   yaml = scripts\splits_gen1085\data_gen493_v3.yaml（train/val 沿用 394/99 清单，test → v3\test61.txt）
+
+# B 臂：离线增广（脚本待写 → scripts\make_aug93_dataset.py 产 D:\gas_cylinders\aug93\，**1085 张**）
 #   增广规则：hflip / ±10° 旋转 / 缩放平移 / 亮度对比度 HSV，几何变换同步变框；不用上下翻转；
-#   总量与 C 臂一致（868 张）即可，**不按"单图有无标签"配正负比**——标注单位是框、一张图上可混合。
-#   训练命令同 A 臂，data 换成 aug93 的 yaml（待建）。
+#   总量与 C 臂一致（**1085 张**，按独立图片数对齐；gen493 是 gen1085 子集，**不可合并计数**）即可，
+#   不按"单图有无标签"配正负比——标注单位是框、一张图上可混合。
 ```
 
 ## 自动打标
@@ -127,3 +137,4 @@ D:\yolo\annotator\stop_server.bat [port] # 停止（默认 8085）
 | 2026-09-19 | v3：换 test（61 张网络独立图片）、三臂口径（real93 / 增广 868 / 合成 868）、命令清空重写为 v3；v1/v2 旧文件移入 `_trash` |
 | 2026-09-20 | v3 文档收口：`check_test_independence.py` 上线（test 独立性检验）；B 臂口径改为"只对总量" |
 | 2026-09-20 | gen493 按 v3 协议重跑六权重并复评（结论：与旧点等价，test 指标逐位相同、PR 曲线逐点最大差 0）；规模曲线两点同协议；新增 `normalize_runs.ps1`；`run_v3_arms.ps1` 增加 `-Arm gen493`；旧 run 归档 |
+| 2026-09-20 | **预算定为 300 轮**（L3 试点：独立集合 400 轮后无系统增益）；训练命令整节改写为全量 + 300 轮 + 快照；C 臂 yaml 改指 `data_gen1085_full_v3.yaml`（1085 全量）；B 臂目标量 868→**1085**（按独立图片数对齐；gen493 为 gen1085 子集不可合并）；`runs` 整理 12.2 GB→0.48 GB；新增 `EXPERIMENTS.md` 实验总纲 |
