@@ -1,4 +1,4 @@
-r"""gen1085 split (2026-09-18; test key migrated to the v3 test set): merge the two
+r"""Legacy v3 gen1085 train/val split generator. Originally merged the two
 reviewed generated batches (Placement_Issues 493 + Placement_Issues_2 592) ->
 stratified train/val (80/20, seed=42); test = the v3 independent web-image test
 (`v3/test61.txt`, 61 images that share neither source nor scene with the seed

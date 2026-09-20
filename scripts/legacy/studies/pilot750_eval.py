@@ -1,4 +1,4 @@
-r"""Extended saturation pilot: 750-epoch run, sparse snapshot scoring.
+r"""Legacy v3 extended saturation pilot.
 
 Follow-up to the 450-epoch pilot (which showed +0.0435 mAP50-95 gained between
 epochs 300 and 400 on the 61-image set - i.e. still not saturated). Same setup,

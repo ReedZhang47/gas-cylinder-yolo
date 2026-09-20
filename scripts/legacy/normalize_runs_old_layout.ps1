@@ -1,4 +1,4 @@
-# Run-directory tidy-up for a trained arm (v3).
+# Legacy old-layout run-directory tidy-up. Do not use for current nested run folders.
 #
 # Why: ultralytics refuses to reuse an existing run dir (exist_ok=false), so an
 # interrupted or failed attempt that left a directory containing only args.yaml

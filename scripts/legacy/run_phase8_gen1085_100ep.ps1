@@ -1,4 +1,5 @@
-# Phase 8 gen1085 (2026-09-18): retrain the six unified weights on the merged
+# Legacy 100-epoch protocol: train six weights on the split generated dataset.
+# Originally used to retrain the six unified weights on the merged
 # reviewed generated set (batch 1 493 + batch 2 592 = 1085 images) - second
 # point of the quantity-vs-performance curve (first point: gen493 / 394 train).
 #

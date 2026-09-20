@@ -1,4 +1,4 @@
-r"""P1 add-on: honest cross-split selection gap.
+r"""Legacy v3 P1 add-on: two-half checkpoint-selection study.
 
 The main P1 number ("max over snapshots on the 61 images") is an upper bound on what
 the 61val scheme can report, because it selects and reports on the SAME set. The

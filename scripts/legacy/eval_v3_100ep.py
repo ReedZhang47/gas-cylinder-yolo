@@ -1,4 +1,4 @@
-r"""v3 evaluation (2026-09-20): every arm on the independent v3 test set.
+r"""Legacy 100-epoch evaluation on the independent v3 test set.
 
 Arms (add rows to ARMS as they are trained):
   C_gen1085      -> runs/detect/gen1085   synthesis arm (train 868)

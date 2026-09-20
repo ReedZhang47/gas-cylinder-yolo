@@ -1,4 +1,4 @@
-r"""Saturation pilot analysis: is 300 epochs the budget, or does more training still help?
+r"""Legacy v3 saturation pilot analysis.
 
 Input: the 450-epoch run produced by scripts\pilot_saturation.ps1 (A arm real93 full,
 yolo26s, patience=0, save_period=10). Every snapshot is scored on the 61-image network

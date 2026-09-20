@@ -1,4 +1,4 @@
-# List_of_Experiments.md — 待做实验清单（v3）
+# List_of_Experiments.md — 实验清单存档（v3）
 
 > 怎么用这份清单：**第一节是"现在要跑的"**，跑完把状态改成 ✅；第二节是"以后可以加"；第三节是"已经跑完、不用再管"。
 > 实验线的划分（主线 / 协议对照 / 支撑试点）见 `EXPERIMENTS.md`；命令见 `COMMANDS.md`；数字见 `PROGRESS.md`。

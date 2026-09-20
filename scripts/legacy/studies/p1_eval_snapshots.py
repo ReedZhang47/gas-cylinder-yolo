@@ -1,8 +1,9 @@
-r"""P1 snapshot evaluation: score every training snapshot on the 61-image network set.
+r"""Legacy v3 P1 snapshot evaluation.
 
 Called by scripts\p1_run.ps1 after a 300-epoch run with save_period=10. For each
 snapshot (epoch10.pt ... epoch300.pt) plus last.pt it records mAP50 / mAP50-95 on
-the v3 test list, then derives the three quantities PLAN_61VAL.md asks for:
+the v3 test list, then derives the three quantities documented in
+docs/archive/PLAN_61VAL.md:
 
   1. 61test reading  - value of the final checkpoint (what the last.pt protocol reports)
   2. 61val reading   - max over snapshots (what the val-selection protocol would report),

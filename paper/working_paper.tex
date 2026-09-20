@@ -4,7 +4,7 @@
 %% 结构说明见 paper/PAPER_PLAN.md；参考文献 paper/references.bib
 %% 编译：latexmk -pdf working_paper.tex（或 pdflatex -> bibtex -> pdflatex x2）
 %% 首投可用 "Your Paper Your Way"（本模板即够）；转投 MDPI 时换模板搬正文
-%% 红线：正文数字一律核仓库根 phase10_v3_main.json（v3 权威汇总）/ PROGRESS.md 三（结果与结论），
+%% 红线：正文数字以 experiments/ 中当前正式实验汇总和 PROGRESS.md 为准，
 %%       不在此文件手抄改数（防口径漂移）
 %% ==========================================================================
 \documentclass[preprint,12pt]{elsarticle}
@@ -60,9 +60,9 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 %  C1: an end-to-end pipeline (generation -> auto-labeling -> human-in-the-loop review)
 %      for synthesizing scarce hazardous-scenario data, demonstrated on gas cylinders
 %      with placement issues;
-%  C2: an evaluation protocol built on a test set that shares neither source nor scene
-%      with the seed photos OR with the generated images edited from them, together with
-%      a reproducible independence check (thumbnail-correlation, \S\ref{sec:protocol});
+%  C2: an independently sourced development benchmark, a reproducible source-independence
+%      check, and cross-fitted held-out evaluation for checkpoint/model selection
+%      under a severe evaluation-data constraint (\S\ref{sec:protocol});
 %  C3: empirical evidence that increasing the *quantity* of diverse generated samples
 %      improves real-world detection (scaling ablation, \S\ref{sec:scale});
 %  C4 (optional): generality to a second scarce target (helmet non-use, \S\ref{sec:helmet}).
@@ -123,15 +123,19 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 
 \subsection{Evaluation protocol}\label{sec:protocol}
 % 关键设计：
-%  - test = 61 张网络来源图（72 框）：与 93 张巡检照片、以及由它们编辑出的全部
+%  - dev61 = 61 张网络来源图（72 框）：与 93 张巡检照片、以及由它们编辑出的全部
 %    1085 张生成图，既无来源关系也无场景重叠 —— 合成数据的编辑源就是种子照片，
 %    所以"留出真实照片当 test"必然泄漏，必须换成外部 test；
 %  - 独立性可复现：缩略图（48x48 灰度、去均值、余弦）相关性检验 ——
 %    test<->real93 max 0.730 / test<->生成图抽样 max 0.732，对照 real93 内部 0.834，
-%    0 对 >0.90（scripts/check_test_independence.py，数字见 PROGRESS.md 二.3）；
-%  - 全篇统一：固定 100 epoch / imgsz 640 / batch 16、报 last.pt、不做选权；
+%    0 对 >0.90；dev61 内部最大 0.678、0 对 >0.90
+%    （scripts/check_dev_independence.py，数字见 PROGRESS.md）；
+%  - dev61 已参与预算/协议判断，不称 sealed final test；
+%  - 三层报告：last.pt fixed-endpoint benchmark；分层 5-fold cross-fitted pooled OOF AP
+%    作为选权泛化估计；全 dev61 选出的 detector/checkpoint 仅作部署，分数为 development score；
+%  - detector 与 checkpoint 的联合选择必须一起放进内层选择，不能事后挑最高 detector；
 %  - 三臂同源对照（同一批 93 张真实照片：原样 / 传统增广 / 编辑合成）。
-\todo{编写（素材：PROGRESS.md 二/三；口径见 List_of_Experiments.md）}
+\todo{编写（素材：PROGRESS.md；口径见 EXPERIMENTS.md）}
 
 \begin{figure}[t]
   \centering
@@ -140,7 +144,8 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
     定稿前用 TikZ 正式重绘并替换 \texttt{\textbackslash includegraphics\{fig1\_pipeline.pdf\}}）}}}
   \caption{\todo{Overview of the proposed pipeline: real-photo seeding, generative
   expansion, auto-labeling with human-in-the-loop review, and training/evaluation on
-  an independently sourced test set; the loop re-instantiates for other scarce
+  an independently sourced development benchmark with cross-fitted held-out evaluation;
+  the loop re-instantiates for other scarce
   hazardous targets.}}
   \label{fig:pipeline}
 \end{figure}
@@ -149,25 +154,25 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 \section{Experiments and Results}\label{sec:exp}
 
 \subsection{Experimental setup}
-% 6 个检测器（YOLOv8/v11/v26 x s/m），统一超参 epochs=100 / imgsz=640 /
-% batch=16 / device=0，报最后一轮（last.pt，不做验证集选权）；
-% 硬件 RTX 5070 Ti Laptop (12 GB)；各类计数。
+% 6 个检测器（YOLOv8/v11/v26 x s/m），统一超参 epochs=300 / imgsz=640 /
+% batch=16 / device=0 / patience=0 / save_period=10；硬件 RTX 5070 Ti Laptop。
+% 预注册 5 折（seed 42，有框/空标分层）和三点平滑选权规则。
 \todo{编写（素材：PROGRESS.md 三（结果）；引用 \cite{redmon2016yolo,
 bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralytics2025}）}
 
 \subsection{Main comparison: three same-source arms}\label{sec:main}
-% 主结果表：三臂 × 六权重 × 新 test（A/B 训完后汇总；表格列位已按 A/B/C 排好）。
-% 当前已有：C 臂六权重 + gen493 规模点；A 真实 93 张 / B 传统增广 868 待训。
+% 主结果表：每 detector、每 arm 各报 fixed endpoint 和 pooled OOF mAP50-95。
+% v4 待完成：A 真实 93 / B 传统增广 1085 / C 编辑合成 1085，统一协议。
 \begin{table}[t]
   \centering
-  \caption{\todo{Detection performance on the independent test set (61 web images).
-  A: real-only (93 photos); B: classical offline augmentation (868); C: state-editing
-  synthesis (868). All arms share hyperparameters and report last.pt.}}
+  \caption{\todo{Detection performance on dev61 (61 independently sourced web images).
+  A: real-only (93 photos); B: classical offline augmentation (1085); C: state-editing
+  synthesis (1085). Report fixed endpoint and pooled out-of-fold estimates separately.}}
   \begin{tabular}{lcccccc}
   \toprule
-  Detector & \multicolumn{2}{c}{A: real 93} & \multicolumn{2}{c}{B: aug 868} & \multicolumn{2}{c}{C: synth 868} \\
+  Detector & \multicolumn{2}{c}{A: real 93} & \multicolumn{2}{c}{B: aug 1085} & \multicolumn{2}{c}{C: synth 1085} \\
   \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
-   & mAP50 & mAP50--95 & mAP50 & mAP50--95 & mAP50 & mAP50--95 \\
+   & Fixed & OOF & Fixed & OOF & Fixed & OOF \\
   \midrule
   \todo{6 行数据} & & & & & & \\
   \bottomrule
@@ -175,20 +180,35 @@ bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralyt
   \label{tab:main}
 \end{table}
 
+\begin{table}[t]
+  \centering
+  \caption{\todo{Arm-level nested selection over both detector and checkpoint. OOF is
+  computed once from pooled held-out predictions. Deployment scores are measured on
+  the same dev61 set used for selection and are not generalization estimates.}}
+  \begin{tabular}{lcccc}
+  \toprule
+  Arm & OOF mAP50 & OOF mAP50--95 & Deployment detector & Epoch \\
+  \midrule
+  A: real 93 & & & & \\
+  B: aug 1085 & & & & \\
+  C: synth 1085 & & & & \\
+  \bottomrule
+  \end{tabular}
+  \label{tab:nested-selection}
+\end{table}
+
 \subsection{Data-scale ablation}\label{sec:scale}
-% ✅ 已完成（2026-09-20）：gen493（train 394，按 v3 协议重跑）vs gen1085（train 868）
-% 在新 test 上，六权重 mAP50-95 全涨 +0.07~+0.15（yolo26s 0.557→0.698）；两点同协议
-% （重跑与旧点等价：test 指标逐位相同、PR 曲线逐点最大差 0）。
-\todo{编写：规模曲线 + 小表（素材：phase10_v3_main.json）}
+% v4 待完成：gen493 全量 vs gen1085 全量，统一 300 轮与三层评估。
+\todo{编写：规模曲线 + fixed endpoint / pooled OOF 小表（素材：experiments/v4_protocol/）}
 
 \subsection{Cross-target generalization: helmet non-use}\label{sec:helmet}
 \todo{待实验：安全帽第二目标（管线复用）。三级定位第 2 级的门槛，见 PAPER_PLAN 第五节。}
 
 \subsection{Comparison with classical augmentation and public datasets}
 % 与 4.2 主对照同源，写作时可直接并入 4.2 叙述（本小节保留以备拆分投稿版本）。
-\todo{待实验：传统增广臂（B）= 93 张离线增广到 868（**总量与 C 臂一致即可，不按
-"单图有无标签"配正负比** —— 标注单位是框、一张图上可混合），
-统一协议与新 test（\cite{ghiasi2021copypaste, shorten2019augmentation}）；
+\todo{待实验：传统增广臂（B）= 93 张离线增广到 1085（总量与 C 臂一致，不按
+"单图有无标签"配正负比，标注单位是框、一张图上可混合），
+统一训练与 v4 交叉拟合评估（\cite{ghiasi2021copypaste, shorten2019augmentation}）；
 设计见 PAPER_PLAN 第四节 1。公开数据：两个 Roboflow 气瓶数据集无放置位姿标注、
 不可用（\cite{rfcylinders, rfgarrafas}），改为 Introduction/Discussion 论据。}
 
@@ -196,9 +216,9 @@ bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralyt
 \section{Discussion}\label{sec:discussion}
 % 要点：
 %  1) domain gap 两个来源：合成图"过净"（v0 教训）+ 小目标被分辨率压缩（本工作发现）
-%  2) 评测协议启示：数据扩增类论文的 test 独立性陷阱 —— 合成图的编辑源就是种子
-%     照片，用同源照片当 test 必然泄漏；外部 test + 缩略图独立性检验这条经验
-%     （相关文献：\cite{kaufman2012leakage, northcutt2021labelerrors}）
+%  2) 评测协议启示：同源照片不能评估编辑合成；独立来源 dev 仍不能同时选权和提供
+%     无偏同集成绩。讨论 fixed endpoint / pooled OOF / deployment score 三者角色，
+%     以及新增 sealed test 的必要性（\cite{kaufman2012leakage, northcutt2021labelerrors}）
 %  3) 伦理与合规：生成式 AI 使用披露、生成数据不用于冒充真实证据；标注人工复核质量门
 %  4) 通用性愿景（勿 overclaim）：can be re-instantiated for other scarce targets;
 %     跨行业图像识别数据稀缺皆适用（Discussion/future work 口径，见 PAPER_PLAN 第五节三级定位）
