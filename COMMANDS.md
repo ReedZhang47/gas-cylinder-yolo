@@ -30,7 +30,7 @@
 ## 评测（v3）
 
 ```powershell
-# 成套评测：C 臂 gen1085 六权重 + 规模曲线点 gen493v3 → phase10_v3_main.json
+# 成套评测（旧口径，保留供复现）：C 臂 gen1085 六权重 + gen493v3 → phase10_v3_main.json
 & D:\yolo\.venv\Scripts\python.exe D:\yolo\scripts\eval_v3.py
 
 # 单权重（示例）
@@ -54,7 +54,7 @@
 #   A 臂：D:\gas_cylinders\v3\data_real93.yaml                       （93 张）
 #   B 臂：D:\gas_cylinders\aug93\data_aug93.yaml                     （增广到 1085 张，脚本待写）
 #   C 臂：D:\yolo\scripts\splits_gen1085\data_gen1085_full_v3.yaml  （1085 全量，清单 gen1085_full_train.txt）
-#   规模曲线点（394，不进三臂主表）：D:\yolo\scripts\splits_gen1085\data_gen493_v3.yaml
+#   规模曲线 493 点：D:\yolo\scripts\splits_gen1085\data_gen493_full_v3.yaml（1085 点用上面的 C 臂）
 
 # 单臂单权重（示例：C 臂 yolo26s，300 轮 + 每 10 轮快照）
 & D:\yolo\.venv\Scripts\yolo.exe detect train model=D:\yolo\weights\yolo26s.pt `
@@ -77,8 +77,10 @@
 # P2（L2）：三臂训练完 → 每个权重有 30 个快照 → 逐快照评 61 张 → 一条曲线读两种口径
 #   61test = 末轮值；61val = 曲线最大值。参见 EXPERIMENTS.md 四节与 PLAN_61VAL.md。
 
-# 规模曲线点 gen493（394 张，已完成：与 v1 旧点等价）
-#   yaml = scripts\splits_gen1085\data_gen493_v3.yaml（train/val 沿用 394/99 清单，test → v3\test61.txt）
+# 规模曲线（**新口径：493 vs 1085，均 300 轮**；1085 点复用 L1 的 C 臂，不额外训练）
+#   493 点：yaml = scripts\splits_gen1085\data_gen493_full_v3.yaml（batch-1 全量 493 张，清单 gen493_full_train.txt）
+#   命令：yolo detect train ... data=<上面 yaml> epochs=300 patience=0 save_period=10 name=gen493full/<tag>
+#   ⚠️ 旧口径（394 vs 868、100 轮）已作废；其 run runs\detect\gen493v3 留档，不再使用。
 
 # B 臂：离线增广（脚本待写 → scripts\make_aug93_dataset.py 产 D:\gas_cylinders\aug93\，**1085 张**）
 #   增广规则：hflip / ±10° 旋转 / 缩放平移 / 亮度对比度 HSV，几何变换同步变框；不用上下翻转；
@@ -138,3 +140,4 @@ D:\yolo\annotator\stop_server.bat [port] # 停止（默认 8085）
 | 2026-09-20 | v3 文档收口：`check_test_independence.py` 上线（test 独立性检验）；B 臂口径改为"只对总量" |
 | 2026-09-20 | gen493 按 v3 协议重跑六权重并复评（结论：与旧点等价，test 指标逐位相同、PR 曲线逐点最大差 0）；规模曲线两点同协议；新增 `normalize_runs.ps1`；`run_v3_arms.ps1` 增加 `-Arm gen493`；旧 run 归档 |
 | 2026-09-20 | **预算定为 300 轮**（L3 试点：独立集合 400 轮后无系统增益）；训练命令整节改写为全量 + 300 轮 + 快照；C 臂 yaml 改指 `data_gen1085_full_v3.yaml`（1085 全量）；B 臂目标量 868→**1085**（按独立图片数对齐；gen493 为 gen1085 子集不可合并）；`runs` 整理 12.2 GB→0.48 GB；新增 `EXPERIMENTS.md` 实验总纲 |
+| 2026-09-20 | **规模曲线改口径：493 vs 1085、均 300 轮**（1085 点复用 C 臂）→ 新增 `data_gen493_full_v3.yaml` + `gen493_full_train.txt`；实验原始数据移入入库目录 `experiments\`（原先在 `runs\` 内、不入库）；`run_v3_arms.ps1` 默认 300 轮 + 快照、新增 `-Arm gen1085`；`List_of_Experiments.md` 全表重写 |

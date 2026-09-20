@@ -1,0 +1,6 @@
+names:
+  0: Placement Issues
+path: D:/gas_cylinders
+train: D:\yolo\scripts\splits_gen1085\gen493_full_train.txt
+val: D:\yolo\scripts\splits_gen1085\gen493_full_train.txt
+test: D:/gas_cylinders/v3/test61.txt

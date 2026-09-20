@@ -6,7 +6,7 @@
 > - 命令/路径变化同步 `COMMANDS.md`；全文禁止引用不存在的文件。
 > - 弃用文件一律移入 `_trash\`（勿真删）。
 
-> 截止（2026-09-20，预算定为 300 轮；runs 已整理；实验线分离入档）：
+> 截止（2026-09-20，预算 300 轮；runs 已整理；实验线分离入档；规模曲线改 493 vs 1085；**新会话入口 = `EXPERIMENTS.md`**）：
 > - **实验线总纲见 `EXPERIMENTS.md`（新）**：L1 主线三臂对照（变"训练数据"）/ L2 方法学线 P2（变"评测口径"，复用 L1 产物）/ L3 支撑线预算与噪声实验（✅ 已完成）。**P2 不是第四个臂**。
 > - **统一 300 轮（今后所有重训）**：L3 实测独立集合 400 轮后无系统增益；自评曲线不可判饱和。
 > - **L3 结论（已完成）**：选权增益稳定 **+0.055~+0.058**（三次独立训练）；重训噪声逐点 std 0.067~0.086；61val 方案的价值已被证实。
@@ -52,7 +52,7 @@
 - **遗留（勿用于 v3）**：`real_photo\93_real_photos\` 下另有 `v1_split\`、`v2_split\` 与根 `data.yaml`。其中 `v1_split\all.txt` 仍是 `make_v3_configs.py` 生成 real93 清单的**输入**，故保留；其余仅备查。
 
 ### 2.6 数据侧存档
-- `D:\gas_cylinders\gen_sources.json`：1085 张生成图的**逐图来源记录**（ComfyUI 元数据里的 LoadImage 源照片名，即每张图由哪几张真实照片编辑而来）。**仅作数据管理**：新批次做重复/来源体检、查"某张生成图从哪来"时用；不进论文。
+- `D:\gas_cylinders\gen_sources.json`：1085 张生成图的**逐图来源记录**（ComfyUI 元数据里的 LoadImage 源照片名）。**仅作数据管理**用、不进论文。⚠️ **2026-09-20 实测该文件已不在数据区根目录**，现存副本在 `_trash\summaries\gen_sources.json`（数据区的文件被清理时一并移走或删除；如需重建，可用 `_trash\scripts\audit_gen_sources.py` 的思路从 PNG 元数据重新生成）。
 
 ## 三、结果与结论（v3）
 
@@ -124,7 +124,7 @@
 | `Prompt.md` | 用户 prompt（私有，不入库） |
 | `scripts\` | 全部代码（见五节） |
 | `scripts\check_test_independence.py` | **test 独立性检验**（缩略图相关性，论文独立性主张的复现入口） |
-| `scripts\run_v3_arms.ps1` | 六权重训练（v3 协议，`-Arm real93 / aug93 / gen493`，可断点续跑） |
+| `scripts\run_v3_arms.ps1` | 六权重训练（v3 协议，默认 300 轮 + 快照；`-Arm real93 / aug93 / gen1085 / gen493`，可断点续跑） |
 | `scripts\normalize_runs.ps1` | run 目录收尾：把中断遗留的 `xxx-2` 归位、删空壳与 best.pt（可复用） |
 | `annotator\` | 标注 GUI（`start_annotator.bat` / `stop_server.bat`） |
 | `runs\detect\` | `gen1085\`（C 臂六权重）、`gen493v3\`（规模曲线第一点）、`v3\`（评测输出）、`v3_check\`（体检）——共 0.48 GB |
@@ -136,6 +136,6 @@
 | `D:\gas_cylinders\v3\` | v3 配置（test61 / real93_train / 各臂 yaml） |
 | `D:\gas_cylinders\gen1085_split\` | 生成臂划分（train 868 / val 217） |
 | `D:\gas_cylinders\real_photo\93_real_photos\` | 93 张真实照片（real 臂 + 编辑源）；根目录另有 `v1_split\`/`v2_split\`，仅 `v1_split\all.txt` 仍被 v3 配置脚本读取 |
-| `D:\gas_cylinders\Placement_Issues[_2]\` | 两批编辑合成图（493 + 592）；`Placement_Issues\gen493_split\` 为规模曲线第一点的 394 张划分（v1 建，重跑时沿用） |
-| `D:\gas_cylinders\gen_sources.json` | 1085 张生成图的逐图来源记录（数据管理用，见二.6） |
+| `D:\gas_cylinders\Placement_Issues[_2]\` | 两批编辑合成图（493 + 592）；`Placement_Issues\gen493_split\` 为 v1 时期的 394/99 划分（旧口径遗留，仅备查） |
+| `experiments\` | **实验原始数据（入库）**：`p1_61val_vs_61test\`（快照曲线 + 交叉验证）、`saturation_pilot\`（450/750 轮试点 + SHA256） |
 | `D:\gas_cylinders\Hardhat\` | 第二目标素材 |
