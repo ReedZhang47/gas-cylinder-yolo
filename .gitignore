@@ -18,6 +18,16 @@ Prompt.md
 # GUI 验证截图（过程产物）
 shot*.png
 
+# LaTeX 编译中间产物（.log / .pdf 已被上面的通用规则覆盖）
+*.aux
+*.out
+*.spl
+*.synctex.gz
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+
 # 编辑器 / 系统
 .vscode/
 .idea/

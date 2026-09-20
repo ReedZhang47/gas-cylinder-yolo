@@ -4,8 +4,8 @@
 %% 结构说明见 paper/PAPER_PLAN.md；参考文献 paper/references.bib
 %% 编译：latexmk -pdf working_paper.tex（或 pdflatex -> bibtex -> pdflatex x2）
 %% 首投可用 "Your Paper Your Way"（本模板即够）；转投 MDPI 时换模板搬正文
-%% 红线：正文数字一律核 phase6_gen493_summary.json（复核修订版）/ PROGRESS.md 三（结果与结论），
-%%       不在此文件手抄改数（防口径漂移）
+%% 红线：正文数字一律核仓库根 phase10_v3_main.json（v3 权威汇总）/ PROGRESS.md 三（结果与结论），
+%%       不在此文件手抄改数（防口径漂移）；v1/v2 的 summary 已归档 _trash\summaries\，勿再引用
 %% ==========================================================================
 \documentclass[preprint,12pt]{elsarticle}
 
@@ -56,12 +56,13 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 %  2) 摆拍违规场景有安全/伦理问题，不可行
 %  3) 生成式扩量是出路；真实性是红线（v0 教训：过净合成图 -> 域差）
 %  4) 本文：完整管线 + 干净评测协议 + 数量取胜实证 +（第二目标后）跨目标通用性
-% 贡献列表（等 4.4/4.6 实验完成后定稿；当前占位）：
+% 贡献列表（等 A/B 两臂与 4.6 消融完成后定稿；当前占位）：
 %  C1: an end-to-end pipeline (generation -> auto-labeling -> human-in-the-loop review)
 %      for synthesizing scarce hazardous-scenario data, demonstrated on gas cylinders
 %      with placement issues;
-%  C2: a leakage-aware evaluation protocol that keeps all real photos out of training
-%      and quantifies the inflation caused by conventional split leakage;
+%  C2: an evaluation protocol built on a test set that shares neither source nor scene
+%      with the seed photos OR with the generated images edited from them, together with
+%      a reproducible independence check (thumbnail-correlation, \S\ref{sec:protocol});
 %  C3: empirical evidence that increasing the *quantity* of diverse generated samples
 %      improves real-world detection (scaling ablation, \S\ref{sec:scale});
 %  C4 (optional): generality to a second scarce target (helmet non-use, \S\ref{sec:helmet}).
@@ -110,8 +111,9 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 
 \subsection{State-editing synthesis pipeline}
 % Qwen-Image-Edit-2509 图生图编辑真实巡检照片 -> 合成"违规状态"样本
-% （两批共 1085 张，全部源自 93 张真实照片；逐图来源可审计）。
-% 真实性红线：必须带喷漆磨损/污渍/锈迹（v0 教训）；来源记录 = 方法学贡献之一。
+% （两批共 1085 张，全部源自 93 张真实照片）。
+% 真实性红线：必须带喷漆磨损/污渍/锈迹（v0 教训）。
+% 逐图来源记录（ComfyUI 元数据留档）只作数据管理，不写成方法学贡献。
 \todo{编写（素材：PROGRESS.md 一/二；工具引用 \cite{qwenimage2025, qwenimageedit2025}）}
 
 \subsection{Auto-labeling with human-in-the-loop review}
@@ -120,13 +122,16 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 \todo{编写（素材：PROGRESS.md 二.2 与 五（打标模型））}
 
 \subsection{Evaluation protocol}\label{sec:protocol}
-% 关键设计（本文方法学贡献之一）：
-%  - test = 61 张网络来源图（72 框），与所有训练数据来源完全独立；
-%  - 合成数据的来源审计协议：逐图记录编辑源，test 图片不得作为生成源
-%    （v2 曾因此泄漏 611/1085 张，公开该教训与审计工具）；
+% 关键设计：
+%  - test = 61 张网络来源图（72 框）：与 93 张巡检照片、以及由它们编辑出的全部
+%    1085 张生成图，既无来源关系也无场景重叠 —— 合成数据的编辑源就是种子照片，
+%    所以"留出真实照片当 test"必然泄漏，必须换成外部 test；
+%  - 独立性可复现：缩略图（48x48 灰度、去均值、余弦）相关性检验 ——
+%    test<->real93 max 0.730 / test<->生成图抽样 max 0.732，对照 real93 内部 0.834，
+%    0 对 >0.90（scripts/check_test_independence.py，数字见 PROGRESS.md 二.3）；
 %  - 全篇统一：固定 100 epoch / imgsz 640 / batch 16、报 last.pt、不做选权；
 %  - 三臂同源对照（同一批 93 张真实照片：原样 / 传统增广 / 编辑合成）。
-\todo{编写（素材：PROGRESS.md 三（设置与结果）；口径见 List_of_Experiments.md）}
+\todo{编写（素材：PROGRESS.md 二/三；口径见 List_of_Experiments.md）}
 
 \begin{figure}[t]
   \centering
@@ -134,8 +139,9 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
     \todo{Fig.~1 管线总图\\（先用 \texttt{paper/fig1\_pipeline.md} 的 mermaid 草图记录思路；\\
     定稿前用 TikZ 正式重绘并替换 \texttt{\textbackslash includegraphics\{fig1\_pipeline.pdf\}}）}}}
   \caption{\todo{Overview of the proposed pipeline: real-photo seeding, generative
-  expansion, auto-labeling with human-in-the-loop review, and leakage-aware
-  training/evaluation; the loop re-instantiates for other scarce hazardous targets.}}
+  expansion, auto-labeling with human-in-the-loop review, and training/evaluation on
+  an independently sourced test set; the loop re-instantiates for other scarce
+  hazardous targets.}}
   \label{fig:pipeline}
 \end{figure}
 
@@ -149,24 +155,21 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 \todo{编写（素材：PROGRESS.md 三（结果）；引用 \cite{redmon2016yolo,
 bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralytics2025}）}
 
-\subsection{Main comparison: three same-source arms}
-% A 真实 93 张 / B 传统增广 868 / C 编辑合成 868，全部只差训练数据来源，
-% 统一在新 test 上评测（六权重）。C 臂已出（0.768~0.927 mAP50）；A/B 待训。
-\todo{编写 + 表（素材：phase10_v3_main.json + PROGRESS.md 三）}
-
-\subsection{Effect of generated data on real-world detection}\label{sec:main}
-% 主结果表：三臂 × 六权重 × 新 test（A/B 训完后汇总）。
-% 当前已有：C 臂六权重 + gen493 规模点。
+\subsection{Main comparison: three same-source arms}\label{sec:main}
+% 主结果表：三臂 × 六权重 × 新 test（A/B 训完后汇总；表格列位已按 A/B/C 排好）。
+% 当前已有：C 臂六权重 + gen493 规模点；A 真实 93 张 / B 传统增广 868 待训。
 \begin{table}[t]
   \centering
-  \caption{\todo{Detection performance on the independent test set (61 web images).}}
-  \begin{tabular}{lcccc}
+  \caption{\todo{Detection performance on the independent test set (61 web images).
+  A: real-only (93 photos); B: classical offline augmentation (868); C: state-editing
+  synthesis (868). All arms share hyperparameters and report last.pt.}}
+  \begin{tabular}{lcccccc}
   \toprule
-  Detector & \multicolumn{2}{c}{Real-only (A)} & \multicolumn{2}{c}{Synthesis (C)} \\
-  \cmidrule(lr){2-3}\cmidrule(lr){4-5}
-   & mAP50 & mAP50--95 & mAP50 & mAP50--95 \\
+  Detector & \multicolumn{2}{c}{A: real 93} & \multicolumn{2}{c}{B: aug 868} & \multicolumn{2}{c}{C: synth 868} \\
+  \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+   & mAP50 & mAP50--95 & mAP50 & mAP50--95 & mAP50 & mAP50--95 \\
   \midrule
-  \todo{6 行数据} & & & & \\
+  \todo{6 行数据} & & & & & & \\
   \bottomrule
   \end{tabular}
   \label{tab:main}
@@ -175,18 +178,18 @@ bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralyt
 \subsection{Data-scale ablation}\label{sec:scale}
 % ✅ 已完成（2026-09-19）：gen493（train 394）vs gen1085（train 868）在新 test 上，
 % 六权重 mAP50-95 全涨 +0.07~+0.15（yolo26s 0.557→0.698）。
+% ⚠️ 协议脚注（必须写进正文/表注）：gen493 六权重是 v1 时期训练的（patience=100，
+%    其 data.yaml 的 test 指 v1_split），只把评测统一到 v3；六权重都跑满 100 轮、
+%    早停未触发，故对比成立。待办：按 v3 协议重跑 gen493 后以新数字为准。
 \todo{编写：规模曲线 + 小表（素材：phase10_v3_main.json）}
-
-\subsection{Inference resolution analysis}
-% imgsz 扫描：640/960/1280/1536；640 峰值；真实照片 17% 框在 640 等效下 <20px。
-% 表 + 讨论小目标因素（\cite{cheng2023smallobject, akyon2022sahi}）。
-\todo{编写（素材：PROGRESS.md 三（imgsz 结论④））}
 
 \subsection{Cross-target generalization: helmet non-use}\label{sec:helmet}
 \todo{待实验：安全帽第二目标（管线复用）。三级定位第 2 级的门槛，见 PAPER_PLAN 第五节。}
 
 \subsection{Comparison with classical augmentation and public datasets}
-\todo{待实验：传统增广臂（B）= 93 张离线增广到 868（与 C 臂对齐张数与正负比），
+% 与 4.2 主对照同源，写作时可直接并入 4.2 叙述（本小节保留以备拆分投稿版本）。
+\todo{待实验：传统增广臂（B）= 93 张离线增广到 868（**总量与 C 臂一致即可，不按
+"单图有无标签"配正负比** —— 标注单位是框、一张图上可混合），
 统一协议与新 test（\cite{ghiasi2021copypaste, shorten2019augmentation}）；
 设计见 PAPER_PLAN 第四节 1。公开数据：两个 Roboflow 气瓶数据集无放置位姿标注、
 不可用（\cite{rfcylinders, rfgarrafas}），改为 Introduction/Discussion 论据。}
@@ -195,7 +198,9 @@ bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralyt
 \section{Discussion}\label{sec:discussion}
 % 要点：
 %  1) domain gap 两个来源：合成图"过净"（v0 教训）+ 小目标被分辨率压缩（本工作发现）
-%  2) 评测协议启示：数据扩增类论文的泄露陷阱（\cite{kaufman2012leakage, northcutt2021labelerrors}）
+%  2) 评测协议启示：数据扩增类论文的 test 独立性陷阱 —— 合成图的编辑源就是种子
+%     照片，用同源照片当 test 必然泄漏；外部 test + 缩略图独立性检验这条经验
+%     （相关文献：\cite{kaufman2012leakage, northcutt2021labelerrors}）
 %  3) 伦理与合规：生成式 AI 使用披露、生成数据不用于冒充真实证据；标注人工复核质量门
 %  4) 通用性愿景（勿 overclaim）：can be re-instantiated for other scarce targets;
 %     跨行业图像识别数据稀缺皆适用（Discussion/future work 口径，见 PAPER_PLAN 第五节三级定位）

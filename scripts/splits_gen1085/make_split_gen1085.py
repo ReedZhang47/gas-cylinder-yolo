@@ -1,6 +1,8 @@
-r"""gen1085 split (2026-09-18): merge the two reviewed generated batches
-(Placement_Issues 493 + Placement_Issues_2 592) -> stratified train/val
-(80/20, seed=42); test = the 93 real photos (never used in training).
+r"""gen1085 split (2026-09-18; test key migrated to the v3 test set): merge the two
+reviewed generated batches (Placement_Issues 493 + Placement_Issues_2 592) ->
+stratified train/val (80/20, seed=42); test = the v3 independent web-image test
+(`v3/test61.txt`, 61 images that share neither source nor scene with the seed
+photos or with any image edited from them).
 
 Second point of the quantity-vs-performance curve (first point: gen493).
 
@@ -10,7 +12,13 @@ pitfall 1), one data.yaml covering train/val/test.
 
 Outputs (D:/gas_cylinders/gen1085_split/):
   train.txt / val.txt / split_info.json
-  data.yaml   (train/val lists; test = v1_split/all.txt, the 93 real photos)
+  data.yaml   (train/val lists; test = v3/test61.txt, the 61 web images)
+
+Superseded provenance note: an earlier revision of this docstring pointed the
+test key at the 93 real photos (v1/v2 era). The v2-era scheme that audited
+ComfyUI metadata for images edited from a held-out test photo was abandoned
+together with the v2 test set - see PROGRESS.md 3 (v2 legacy). Never reintroduce
+a same-source Test set for this project.
 
 Does NOT touch either annotator workspace data.yaml.
 """
@@ -95,8 +103,7 @@ yaml_text = (
     "train: gen1085_split/train.txt\n"
     "val: gen1085_split/val.txt\n"
     f"test: {TEST_TXT.replace(os.sep, '/')}\n"
-)
-(OUT / "data.yaml").write_text(yaml_text, encoding="utf-8")
+)(OUT / "data.yaml").write_text(yaml_text, encoding="utf-8")
 
 print(f"train={len(train)} (pos {len(pos_tr)} / neg {len(neg_tr)}), boxes={info['train']['boxes']}")
 print(f"val  ={len(val)} (pos {len(pos_va)} / neg {len(neg_va)}), boxes={info['val']['boxes']}")

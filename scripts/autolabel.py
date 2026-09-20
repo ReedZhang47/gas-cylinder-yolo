@@ -8,10 +8,12 @@ Output convention matches the first500 dataset:
 
 CVAT import (Ultralytics YOLO): use --cvat-dir <dir> to assemble the full dataset
   structure required by CVAT (images/train + labels/train + data.yaml + train.txt),
-  then zip that dir and upload it to CVAT.
+  then zip that dir and upload it to CVAT. NOTE: the CVAT review route was dropped
+  in v1 (yaml/structure errors); human review now happens in D:\yolo\annotator\.
+  The flag is kept for completeness only.
 
 Usage:
-  & D:\yolo\.venv\Scripts\python.exe D:\yolo\autolabel.py --source <图片目录> \
+  & D:\yolo\.venv\Scripts\python.exe D:\yolo\scripts\autolabel.py --source <图片目录> \
         [--model <best.pt>] [--labels-out <目录>] [--cvat-dir <目录>] \
         [--conf 0.25] [--iou 0.45] [--imgsz 640] [--overwrite]
 """
