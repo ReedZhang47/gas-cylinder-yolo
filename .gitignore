@@ -38,3 +38,6 @@ Desktop.ini
 
 # literature PDFs are not tracked (moved here 2026-09-18)
 paper/reference/
+
+# agent 运行日志与一次性测量产物
+logs/
