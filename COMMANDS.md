@@ -9,7 +9,7 @@ git status --short
 & D:\yolo\.venv\Scripts\python.exe -c "import torch; print(torch.cuda.is_available(), torch.cuda.get_device_name(0))"
 & D:\yolo\.venv\Scripts\python.exe -m py_compile `
   D:\yolo\scripts\make_v4_configs.py `
-  D:\yolo\scripts\make_aug93_dataset.py `
+  D:\yolo\scripts\make_aug1085_dataset.py `
   D:\yolo\scripts\eval_v4_protocol.py
 ```
 
@@ -19,8 +19,8 @@ git status --short
 # 生成 D:\gas_cylinders\v4\dev61.txt、data_dev61.yaml、data_real93.yaml
 & D:\yolo\.venv\Scripts\python.exe D:\yolo\scripts\make_v4_configs.py
 
-# 生成 B 臂：93 -> 1085；会重写 D:\gas_cylinders\aug93\images 和 labels
-& D:\yolo\.venv\Scripts\python.exe D:\yolo\scripts\make_aug93_dataset.py
+# 生成 B 臂：93 -> 1085；会重写 D:\gas_cylinders\aug1085\images 和 labels
+& D:\yolo\.venv\Scripts\python.exe D:\yolo\scripts\make_aug1085_dataset.py
 
 # 来源独立性检查；dev61 图片变化后必须重跑
 & D:\yolo\.venv\Scripts\python.exe D:\yolo\scripts\check_dev_independence.py
@@ -30,7 +30,7 @@ git status --short
 
 ```powershell
 & D:\yolo\scripts\run_v4_arms.ps1 -Arm real93  -Epochs 300 -SavePeriod 10
-& D:\yolo\scripts\run_v4_arms.ps1 -Arm aug93   -Epochs 300 -SavePeriod 10
+& D:\yolo\scripts\run_v4_arms.ps1 -Arm aug1085 -Epochs 300 -SavePeriod 10
 & D:\yolo\scripts\run_v4_arms.ps1 -Arm gen1085 -Epochs 300 -SavePeriod 10
 & D:\yolo\scripts\run_v4_arms.ps1 -Arm gen493  -Epochs 300 -SavePeriod 10
 
@@ -42,7 +42,7 @@ git status --short
 
 ```text
 runs\detect\real93v4\<weight>\
-runs\detect\aug93v4\<weight>\
+runs\detect\aug1085v4\<weight>\
 runs\detect\gen1085v4\<weight>\
 runs\detect\gen493v4\<weight>\
 ```

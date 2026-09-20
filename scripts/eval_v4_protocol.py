@@ -48,12 +48,12 @@ N_FOLDS = 5
 WEIGHTS = ["yolov8s", "yolov8m", "yolo11s", "yolo11m", "yolo26s", "yolo26m"]
 ARM_LABELS = {
     "real93v4": "A_real93",
-    "aug93v4": "B_aug93",
+    "aug1085v4": "B_aug1085",
     "gen1085v4": "C_gen1085",
     "gen493v4": "scale_gen493",
 }
-MAIN_ARMS = ["real93v4", "aug93v4", "gen1085v4"]
-TRAIN_SIZES = {"real93v4": 93, "aug93v4": 1085, "gen1085v4": 1085, "gen493v4": 493}
+MAIN_ARMS = ["real93v4", "aug1085v4", "gen1085v4"]
+TRAIN_SIZES = {"real93v4": 93, "aug1085v4": 1085, "gen1085v4": 1085, "gen493v4": 493}
 
 
 class CaptureValidator(DetectionValidator):

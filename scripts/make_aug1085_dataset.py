@@ -1,4 +1,4 @@
-r"""B arm dataset: classical offline augmentation of the 93 real photos -> 1085 images.
+r"""B arm dataset: classical offline augmentation of 93 real photos -> 1085 images.
 
 Purpose (L1 main experiment): the B arm answers "why not just use free classical
 augmentation instead of state-editing synthesis". It must therefore start from the
@@ -26,11 +26,11 @@ augmenting the two classes differently would be meaningless. All 93 seeds are tr
 identically (12 variants each) and the surplus is trimmed at random. The script
 verifies afterwards that every seed photo is still represented in the final 1085.
 
-Output (D:\gas_cylinders\aug93\):
-  images\aug93_XXXX.png      augmented images (all 1085 are augments of the seed set)
-  labels\aug93_XXXX.txt      YOLO labels, 1:1 with images
+Output (D:\gas_cylinders\aug1085\):
+  images\aug1085_XXXX.png    augmented images (all 1085 are augments of the seed set)
+  labels\aug1085_XXXX.txt    YOLO labels, 1:1 with images
   train.txt                  absolute image paths for all 1085
-  data_aug93.yaml            ultralytics config: train=val=train.txt, test=v4 dev61
+  data_aug1085.yaml          ultralytics config: train=val=train.txt, test=v4 dev61
 
 Run with the venv python; needs write access to D:\gas_cylinders (cross-drive).
 """
@@ -46,7 +46,7 @@ GAS = Path(r"D:/gas_cylinders")
 SRC = GAS / "real_photo" / "93_real_photos"
 SRC_IMAGES = SRC / "images"
 SRC_LABELS = SRC / "labels"
-OUT = GAS / "aug93"
+OUT = GAS / "aug1085"
 DEV_TXT = "D:/gas_cylinders/v4/dev61.txt"
 TARGET = 1085
 
@@ -163,7 +163,7 @@ def main():
                 img, new_rows = augment(base, rows, rng)
                 dropped_boxes += max(0, len(rows) - len(new_rows))
                 if pool_index not in drop_idx:
-                    name = f"aug93_{kept_count:04d}"
+                    name = f"aug1085_{kept_count:04d}"
                     img.save(OUT / "images" / f"{name}.png")
                     (OUT / "labels" / f"{name}.txt").write_text(
                         "".join(f"{int(c)} {x:.6f} {y:.6f} {w:.6f} {h:.6f}\n"
@@ -189,15 +189,15 @@ def main():
     imgs = sorted((OUT / "images").glob("*.png"))
     lines = [str(p).replace("\\", "/") for p in imgs]
     (OUT / "train.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    (OUT / "data_aug93.yaml").write_text(
-        "names:\n  0: Placement Issues\npath: D:/gas_cylinders/aug93\n"
+    (OUT / "data_aug1085.yaml").write_text(
+        "names:\n  0: Placement Issues\npath: D:/gas_cylinders/aug1085\n"
         "train: train.txt\nval: train.txt\n"
         f"test: {DEV_TXT}\n", encoding="utf-8")
 
     n_empty = sum(1 for p in imgs if not (OUT / "labels" / f"{p.stem}.txt").read_text(
         encoding="utf-8").strip())
     print(f"final: {len(imgs)} images  ({len(imgs) - n_empty} with boxes, {n_empty} empty)")
-    print(f"wrote {OUT}/train.txt and data_aug93.yaml")
+    print(f"wrote {OUT}/train.txt and data_aug1085.yaml")
 
 
 if __name__ == "__main__":

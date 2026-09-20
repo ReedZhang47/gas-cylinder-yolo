@@ -18,7 +18,7 @@
 | 臂 | 训练数据 | 数量 | 配置 |
 |---|---|---:|---|
 | A | 真实照片 | 93 | `D:\gas_cylinders\v4\data_real93.yaml` |
-| B | 传统离线增广 | 1085 | `D:\gas_cylinders\aug93\data_aug93.yaml` |
+| B | 传统离线增广 | 1085 | `D:\gas_cylinders\aug1085\data_aug1085.yaml` |
 | C | 编辑合成 | 1085 | `scripts\splits_gen1085\data_gen1085_full_v4.yaml` |
 
 61 张外部网络图在 v4 中称为 `dev61`。它与训练来源独立，但已经参与过预算与协议判断，因此不再宣称是一次性封存的最终 test。v4 同时报告：
@@ -57,6 +57,6 @@
 
 ```powershell
 git status --short
-& D:\yolo\.venv\Scripts\python.exe -m py_compile scripts\make_aug93_dataset.py scripts\eval_v4_protocol.py
+& D:\yolo\.venv\Scripts\python.exe -m py_compile scripts\make_aug1085_dataset.py scripts\eval_v4_protocol.py
 & D:\yolo\.venv\Scripts\python.exe -c "import torch; print(torch.cuda.is_available(), torch.cuda.get_device_name(0))"
 ```

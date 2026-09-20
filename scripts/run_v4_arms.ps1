@@ -2,7 +2,7 @@
 # comparison (L1 main experiment) or for the scale-curve point (gen493).
 #
 #   -Arm real93  : train = all 93 real photos                  -> runs\detect\real93v4\<tag>
-#   -Arm aug93   : train = offline-augmented 1085 imgs         -> runs\detect\aug93v4\<tag>
+#   -Arm aug1085 : train = offline-augmented 1085 imgs         -> runs\detect\aug1085v4\<tag>
 #   -Arm gen1085 : train = the full generated pool, 1085 imgs  -> runs\detect\gen1085v4\<tag>
 #                  (the C arm: full data, no self-val split)
 #   -Arm gen493  : train = first generated batch, 493 imgs     -> runs\detect\gen493v4\<tag>
@@ -24,18 +24,18 @@
 # Resumable: -Only "yolo26s,yolo26m" trains just those tags.
 # Logs: logs\v4_<arm>_train.log (summary) + logs\v4_<arm>_<tag>.log (per weight)
 param(
-  [Parameter(Mandatory = $true)][ValidateSet('real93', 'aug93', 'gen1085', 'gen493')][string]$Arm,
+  [Parameter(Mandatory = $true)][ValidateSet('real93', 'aug1085', 'gen1085', 'gen493')][string]$Arm,
   [string]$Only = '',
   [int]$Epochs = 300,
   [int]$SavePeriod = 10
 )
 $data = @{
   real93  = 'D:\gas_cylinders\v4\data_real93.yaml'
-  aug93   = 'D:\gas_cylinders\aug93\data_aug93.yaml'
+  aug1085 = 'D:\gas_cylinders\aug1085\data_aug1085.yaml'
   gen1085 = 'D:\yolo\scripts\splits_gen1085\data_gen1085_full_v4.yaml'
   gen493  = 'D:\yolo\scripts\splits_gen1085\data_gen493_full_v4.yaml'
 }[$Arm]
-$runPrefix = @{ real93 = 'real93v4'; aug93 = 'aug93v4'; gen1085 = 'gen1085v4'; gen493 = 'gen493v4' }[$Arm]
+$runPrefix = @{ real93 = 'real93v4'; aug1085 = 'aug1085v4'; gen1085 = 'gen1085v4'; gen493 = 'gen493v4' }[$Arm]
 $weights = if ($Only -ne '') { $Only -split ',' } else { @('yolov8s','yolov8m','yolo11s','yolo11m','yolo26s','yolo26m') }
 $logMain = "D:\yolo\logs\v4_${Arm}_train.log"
 $skip = @{}

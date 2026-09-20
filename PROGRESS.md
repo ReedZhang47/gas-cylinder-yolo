@@ -25,7 +25,7 @@
 |---|---:|---|
 | real93 | 93 | 已标注，可训练 |
 | gen1085 | 1085 | 已标注，可训练 |
-| aug93 | 1085 | 生成脚本已实现；v4 正式训练前重建并核对 |
+| aug1085 | 1085 | 生成脚本已实现；v4 正式训练前重建并核对 |
 | dev61 | 61 张 / 72 框 | 30 有框、31 空标；来源独立性检查已通过 |
 | 安全帽素材 | 2 张 | 暂不启动第二目标 |
 
@@ -44,7 +44,7 @@ v4 配置写入 `D:\gas_cylinders\v4\`。`D:\gas_cylinders\v3\` 保留用于复�
 
 ## 运行约定
 
-- v4 run：`runs\detect\real93v4|aug93v4|gen1085v4|gen493v4\<weight>\`。
+- v4 run：`runs\detect\real93v4|aug1085v4|gen1085v4|gen493v4\<weight>\`。
 - 可复核 v4 结果：`experiments\v4_protocol\`。
 - `runs/` 和 `logs/` 中的数字只有写入 `experiments/` 并核验后才算完成。
 - v3 run 和脚本只用于复现，不作为 v4 正式结果。
@@ -54,7 +54,7 @@ v4 配置写入 `D:\gas_cylinders\v4\`。`D:\gas_cylinders\v3\` 保留用于复�
 | 路径 | 作用 |
 |---|---|
 | `scripts/make_v4_configs.py` | 生成 dev61 与 real93 的 v4 外部配置 |
-| `scripts/make_aug93_dataset.py` | 生成 B 臂 1085 张传统增广数据 |
+| `scripts/make_aug1085_dataset.py` | 生成 B 臂 1085 张传统增广数据 |
 | `scripts/run_v4_arms.ps1` | 按臂训练六个 detector |
 | `scripts/eval_v4_protocol.py` | 三层评估、pooled OOF、联合 detector/checkpoint 选择 |
 | `scripts/check_dev_independence.py` | 复核 dev61 与训练来源及 dev61 内部的相似性 |

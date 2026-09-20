@@ -3,7 +3,7 @@
 # 步骤：
 #   0) 建 B 臂数据集：93 张真实照片离线增广到 1085 张
 #   1) A 臂 real93（93 张）      x 6 权重 x 300 轮  -> runs\detect\real93v4\<tag>
-#   2) B 臂 aug93（1085 张）     x 6 权重 x 300 轮  -> runs\detect\aug93v4\<tag>
+#   2) B 臂 aug1085（1085 张）   x 6 权重 x 300 轮  -> runs\detect\aug1085v4\<tag>
 #   3) C 臂 gen1085（1085 张）   x 6 权重 x 300 轮  -> runs\detect\gen1085v4\<tag>
 #   4) v4 三层评测：固定终点 / 5 折交叉拟合 / 全 dev61 部署选权
 #
@@ -13,10 +13,10 @@ $ErrorActionPreference = 'Stop'
 $py = 'D:\yolo\.venv\Scripts\python.exe'
 
 Write-Host "===== [0/4] 建 B 臂数据集（93 -> 1085）====="
-& $py D:\yolo\scripts\make_aug93_dataset.py *> D:\yolo\logs\step0_augment.log
+& $py D:\yolo\scripts\make_aug1085_dataset.py *> D:\yolo\logs\step0_augment.log
 if ($LASTEXITCODE -ne 0) { throw "B-arm dataset generation failed: exit=$LASTEXITCODE" }
 Get-Content D:\yolo\logs\step0_augment.log -Tail 6
-if (-not (Test-Path 'D:\gas_cylinders\aug93\data_aug93.yaml')) {
+if (-not (Test-Path 'D:\gas_cylinders\aug1085\data_aug1085.yaml')) {
   Write-Host "  !! B 臂数据集未建成，中止"; exit 1
 }
 
@@ -24,9 +24,9 @@ Write-Host "===== [1/4] A 臂 real93（93 张）====="
 & D:\yolo\scripts\run_v4_arms.ps1 -Arm real93 -Epochs 300 -SavePeriod 10
 if ($LASTEXITCODE -ne 0) { throw "real93 training failed: exit=$LASTEXITCODE" }
 
-Write-Host "===== [2/4] B 臂 aug93（1085 张）====="
-& D:\yolo\scripts\run_v4_arms.ps1 -Arm aug93 -Epochs 300 -SavePeriod 10
-if ($LASTEXITCODE -ne 0) { throw "aug93 training failed: exit=$LASTEXITCODE" }
+Write-Host "===== [2/4] B 臂 aug1085（1085 张）====="
+& D:\yolo\scripts\run_v4_arms.ps1 -Arm aug1085 -Epochs 300 -SavePeriod 10
+if ($LASTEXITCODE -ne 0) { throw "aug1085 training failed: exit=$LASTEXITCODE" }
 
 Write-Host "===== [3/4] C 臂 gen1085（1085 张）====="
 & D:\yolo\scripts\run_v4_arms.ps1 -Arm gen1085 -Epochs 300 -SavePeriod 10

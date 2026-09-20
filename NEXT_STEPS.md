@@ -10,14 +10,14 @@
 
 - [ ] 运行 `scripts\make_v4_configs.py`，确认 `D:\gas_cylinders\v4\dev61.txt` 为 61 行。
 - [ ] 核对 `experiments\v4_protocol\protocol.json` 与 `EXPERIMENTS.md` 的预注册规则一致。
-- [ ] 重建并核对 `D:\gas_cylinders\aug93\` 为 1085 张，`data_aug93.yaml` 指向 v4 dev61。
+- [ ] 重建并核对 `D:\gas_cylinders\aug1085\` 为 1085 张，`data_aug1085.yaml` 指向 v4 dev61。
 - [ ] 核对 `runs\detect\*v4\`；只复用协议、轮数和目录完整一致的 run。
 - [ ] 保留 v3 结果作为历史资料，不复制或重命名成 v4 正式结果。
 
 ## 主批次 L1/L2
 
 - [ ] A 臂：`scripts\run_v4_arms.ps1 -Arm real93 -Epochs 300 -SavePeriod 10`
-- [ ] B 臂：`scripts\run_v4_arms.ps1 -Arm aug93 -Epochs 300 -SavePeriod 10`
+- [ ] B 臂：`scripts\run_v4_arms.ps1 -Arm aug1085 -Epochs 300 -SavePeriod 10`
 - [ ] C 臂：`scripts\run_v4_arms.ps1 -Arm gen1085 -Epochs 300 -SavePeriod 10`
 - [ ] 评测：`scripts\eval_v4_protocol.py --arm all`
 - [ ] 验证每个 detector 都包含 fixed endpoint、5 折 pooled OOF、全 dev61 部署 epoch。
