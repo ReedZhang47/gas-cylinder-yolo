@@ -53,13 +53,16 @@ dev61 上的 mAP50-95，来源 `experiments/v4_protocol/v4_protocol_real93v4.jso
 | dev61 | 61 张 / 72 框 | 30 有框、31 空标；来源独立性检查已通过 |
 | 安全帽素材 | 2 张 | 暂不启动第二目标 |
 
+标注口径备注（2026-09-21 只备注，不做分析）：整图/大面积框与常见小框并存是各集的既有约定差异——real93 的 179 框中 1 个面积为 1.0（real_photo_17，整图框），框面积中位数 0.021；dev61 的 72 框中有 2 个 >0.9（7 个 >0.5）；生成集 1062 框中有 10 个 >0.9。引用 dev61 指标时需知晓这一构成，判定为可接受、暂不设敏感性分析。
+
 v4 配置写入 `D:\gas_cylinders\v4\`。`D:\gas_cylinders\v3\` 保留用于复现旧结果。
 
 ## 已确认的方法依据
 
 | 项目 | 结论 | 数据 |
 |---|---|---|
-| 来源独立性 | dev61 对 real93 最大相关 0.730，对生成图抽样最大相关 0.732，均无 >0.90 配对 | `scripts/check_dev_independence.py` |
+| 来源独立性 | dev61 对 real93 最大相关 0.730，对生成图抽样最大相关 0.732，均无 >0.90 配对 | `scripts/check_dev_independence.py` → `experiments/dev_independence.json`（2026-09-21 起落盘） |
+| 生成图来源 | 1085 张合成图的底图全部来自 real93（92/93 张种子有变体，单张最多 88）；**无一以 dev61 图为底图或参考图** | `scripts/audit_gen_sources.py` → `experiments/gen1085_sources.json`（2026-09-21 提升进库） |
 | 300 轮试点 | 末轮 mAP50-95 0.3938；同集合最优快照 0.4487 | `experiments/p1_61val_vs_61test/snapshot_curve.json` |
 | 分半试点 | held-out 选权增益两次为 +0.013 和 +0.062，显示收益存在但不稳定 | `experiments/p1_61val_vs_61test/cross_split.json` |
 | 450/750 轮试点 | 约 400 轮后无稳定增益；同源自评曲线不能判断泛化饱和 | `experiments/saturation_pilot/` |
@@ -81,7 +84,9 @@ v4 配置写入 `D:\gas_cylinders\v4\`。`D:\gas_cylinders\v3\` 保留用于复�
 | `scripts/make_aug1085_dataset.py` | 生成 B 臂 1085 张传统增广数据 |
 | `scripts/run_v4_arms.ps1` | 按臂训练六个 detector |
 | `scripts/eval_v4_protocol.py` | 三层评估、pooled OOF、联合 detector/checkpoint 选择（2026-09-21 修复：候选过滤 epoch≥10，对齐预注册） |
+| `scripts/bootstrap_paired.py` | 逐图行 dump 与配对聚类 bootstrap；`--dump` 逐项断言与官方 JSON 一致；已在 A 臂验证 |
 | `scripts/check_dev_independence.py` | 复核 dev61 与训练来源及 dev61 内部的相似性 |
+| `scripts/audit_gen_sources.py` | 逐图解析 ComfyUI 元数据，区分底图与参考图，核对生成图来源不含开发集（v4 口径写 `experiments/gen1085_sources.json`） |
 | `scripts/autolabel.py` / `annotator/` | 自动预标注与人工复核 |
 
 ## 主批次完成后更新

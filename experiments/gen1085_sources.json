@@ -1,0 +1,8124 @@
+{
+ "date": "2026-09-21",
+ "development_set": "D:\\gas_cylinders\\v4\\dev61.txt",
+ "method": "base = LoadImage feeding FluxKontextImageScale; other LoadImage nodes are references",
+ "verdict": "ok",
+ "counts": {
+  "total": 1085,
+  "no_base": 0,
+  "ambiguous": 0,
+  "derived_from_development": 0,
+  "referenced_development": 0
+ },
+ "base_counter": {
+  "real_photo_2": 40,
+  "real_photo_14": 88,
+  "real_photo_47": 30,
+  "real_photo_30": 44,
+  "real_photo_18": 20,
+  "real_photo_3": 10,
+  "real_photo_4": 10,
+  "real_photo_5": 10,
+  "real_photo_6": 20,
+  "real_photo_7": 15,
+  "real_photo_8": 10,
+  "real_photo_9": 10,
+  "real_photo_10": 14,
+  "real_photo_11": 10,
+  "real_photo_12": 9,
+  "real_photo_13": 10,
+  "real_photo_15": 10,
+  "real_photo_16": 15,
+  "real_photo_17": 10,
+  "real_photo_19": 10,
+  "real_photo_20": 10,
+  "real_photo_21": 10,
+  "real_photo_22": 5,
+  "real_photo_23": 10,
+  "real_photo_24": 10,
+  "real_photo_25": 9,
+  "real_photo_26": 10,
+  "real_photo_27": 10,
+  "real_photo_28": 10,
+  "real_photo_29": 9,
+  "real_photo_31": 5,
+  "real_photo_32": 10,
+  "real_photo_33": 9,
+  "real_photo_34": 10,
+  "real_photo_35": 9,
+  "real_photo_36": 9,
+  "real_photo_37": 10,
+  "real_photo_38": 10,
+  "real_photo_39": 10,
+  "real_photo_40": 10,
+  "real_photo_41": 10,
+  "real_photo_42": 10,
+  "real_photo_43": 10,
+  "real_photo_44": 10,
+  "real_photo_45": 10,
+  "real_photo_46": 5,
+  "real_photo_48": 10,
+  "real_photo_49": 10,
+  "real_photo_50": 10,
+  "real_photo_51": 10,
+  "real_photo_52": 9,
+  "real_photo_53": 10,
+  "real_photo_54": 10,
+  "real_photo_55": 10,
+  "real_photo_56": 10,
+  "real_photo_57": 10,
+  "real_photo_58": 10,
+  "real_photo_59": 10,
+  "real_photo_60": 10,
+  "real_photo_61": 10,
+  "real_photo_62": 10,
+  "real_photo_63": 10,
+  "real_photo_64": 10,
+  "real_photo_65": 10,
+  "real_photo_66": 8,
+  "real_photo_67": 10,
+  "real_photo_68": 10,
+  "real_photo_69": 7,
+  "real_photo_70": 10,
+  "real_photo_71": 9,
+  "real_photo_72": 10,
+  "real_photo_73": 10,
+  "real_photo_74": 10,
+  "real_photo_75": 10,
+  "real_photo_76": 10,
+  "real_photo_77": 10,
+  "real_photo_78": 10,
+  "real_photo_79": 10,
+  "real_photo_80": 10,
+  "real_photo_81": 10,
+  "real_photo_82": 10,
+  "real_photo_83": 10,
+  "real_photo_84": 10,
+  "real_photo_85": 10,
+  "real_photo_86": 10,
+  "real_photo_87": 10,
+  "real_photo_88": 10,
+  "real_photo_89": 10,
+  "real_photo_90": 10,
+  "real_photo_91": 7,
+  "real_photo_92": 10,
+  "real_photo_93": 10
+ },
+ "reference_counter": {
+  "real_photo_6": 40,
+  "real_photo_30": 95,
+  "real_photo_44": 48,
+  "real_photo_47": 35,
+  "real_photo_18": 9,
+  "real_photo_4": 10,
+  "real_photo_7": 25,
+  "real_photo_29": 15,
+  "real_photo_19": 15,
+  "real_photo_22": 19,
+  "real_photo_14": 10,
+  "real_photo_86": 5,
+  "real_photo_5": 14,
+  "real_photo_80": 5,
+  "real_photo_33": 9,
+  "real_photo_35": 10,
+  "real_photo_11": 10,
+  "real_photo_54": 5,
+  "real_photo_16": 10,
+  "real_photo_45": 23,
+  "real_photo_42": 5,
+  "real_photo_52": 5,
+  "real_photo_36": 5,
+  "real_photo_68": 4,
+  "real_photo_40": 5,
+  "real_photo_38": 20,
+  "real_photo_53": 15,
+  "real_photo_43": 5,
+  "real_photo_34": 5,
+  "real_photo_32": 25,
+  "real_photo_37": 5,
+  "real_photo_2": 5,
+  "real_photo_82": 5,
+  "real_photo_15": 5,
+  "real_photo_56": 24,
+  "real_photo_1": 40,
+  "real_photo_72": 5,
+  "images": 5,
+  "real_photo_74": 19,
+  "real_photo_26": 9,
+  "real_photo_28": 10,
+  "real_photo_62": 10,
+  "real_photo_81": 20,
+  "real_photo_79": 9,
+  "real_photo_60": 10,
+  "real_photo_27": 10,
+  "real_photo_55": 10,
+  "real_photo_31": 10,
+  "real_photo_20": 10
+ },
+ "records": {
+  "Placement_Issues_0001": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0002": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0003": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0004": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0005": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0006": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0007": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0008": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0009": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0010": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0011": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0012": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0013": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0014": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0015": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0016": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0017": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0018": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0019": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0020": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0021": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0022": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0023": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0024": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0025": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0026": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0027": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0028": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0029": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0030": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0031": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0032": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0033": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0034": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0035": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0036": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0037": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0038": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0039": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0040": {
+   "batch": "b1",
+   "base": "real_photo_2",
+   "references": [
+    "real_photo_6"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0041": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0042": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0043": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0044": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0045": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0046": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0047": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0048": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0049": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0050": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0051": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0052": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0053": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0054": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0055": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0056": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0057": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0058": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0059": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0060": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0061": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0062": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0063": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0064": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0065": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0066": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0067": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0068": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0069": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0070": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0071": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0072": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0073": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0074": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0075": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0076": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0077": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0078": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0079": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0080": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0081": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0082": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0083": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0084": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0085": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0086": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0087": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0088": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0089": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0090": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0091": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0092": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0093": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0094": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0095": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0096": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0097": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0098": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0099": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0100": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0101": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0102": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0103": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0104": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0105": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0106": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0107": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0109": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0110": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0111": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0112": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0113": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0114": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0115": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0117": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0118": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0119": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0120": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0121": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0122": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0123": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0124": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0125": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0126": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0127": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0128": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0129": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0130": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0131": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0132": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0133": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0134": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0135": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0136": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0137": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0138": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0139": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0140": {
+   "batch": "b1",
+   "base": "real_photo_47",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0141": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0142": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0143": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0144": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0145": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0146": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0147": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0148": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0149": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0150": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0151": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0152": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0153": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0154": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0155": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0156": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0157": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0158": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0159": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0160": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0161": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0162": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0163": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0164": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0165": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0166": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0167": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0168": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0169": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0170": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0172": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_18"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0173": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_18"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0174": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_18"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0175": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_18"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0176": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_18"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0177": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_18"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0178": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_18"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0179": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_18"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0180": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_18"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0181": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0182": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0183": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0184": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0185": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0186": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0187": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0188": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0189": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0190": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0191": {
+   "batch": "b1",
+   "base": "real_photo_3",
+   "references": [
+    "real_photo_4"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0192": {
+   "batch": "b1",
+   "base": "real_photo_3",
+   "references": [
+    "real_photo_4"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0193": {
+   "batch": "b1",
+   "base": "real_photo_3",
+   "references": [
+    "real_photo_4"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0194": {
+   "batch": "b1",
+   "base": "real_photo_3",
+   "references": [
+    "real_photo_4"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0195": {
+   "batch": "b1",
+   "base": "real_photo_3",
+   "references": [
+    "real_photo_4"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0196": {
+   "batch": "b1",
+   "base": "real_photo_3",
+   "references": [
+    "real_photo_4"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0197": {
+   "batch": "b1",
+   "base": "real_photo_3",
+   "references": [
+    "real_photo_4"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0198": {
+   "batch": "b1",
+   "base": "real_photo_3",
+   "references": [
+    "real_photo_4"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0199": {
+   "batch": "b1",
+   "base": "real_photo_3",
+   "references": [
+    "real_photo_4"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0200": {
+   "batch": "b1",
+   "base": "real_photo_3",
+   "references": [
+    "real_photo_4"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0201": {
+   "batch": "b1",
+   "base": "real_photo_4",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0202": {
+   "batch": "b1",
+   "base": "real_photo_4",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0203": {
+   "batch": "b1",
+   "base": "real_photo_4",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0204": {
+   "batch": "b1",
+   "base": "real_photo_4",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0205": {
+   "batch": "b1",
+   "base": "real_photo_4",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0206": {
+   "batch": "b1",
+   "base": "real_photo_4",
+   "references": [
+    "real_photo_29"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0207": {
+   "batch": "b1",
+   "base": "real_photo_4",
+   "references": [
+    "real_photo_29"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0208": {
+   "batch": "b1",
+   "base": "real_photo_4",
+   "references": [
+    "real_photo_29"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0209": {
+   "batch": "b1",
+   "base": "real_photo_4",
+   "references": [
+    "real_photo_29"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0210": {
+   "batch": "b1",
+   "base": "real_photo_4",
+   "references": [
+    "real_photo_29"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0211": {
+   "batch": "b1",
+   "base": "real_photo_5",
+   "references": [
+    "real_photo_19"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0212": {
+   "batch": "b1",
+   "base": "real_photo_5",
+   "references": [
+    "real_photo_19"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0213": {
+   "batch": "b1",
+   "base": "real_photo_5",
+   "references": [
+    "real_photo_19"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0214": {
+   "batch": "b1",
+   "base": "real_photo_5",
+   "references": [
+    "real_photo_19"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0215": {
+   "batch": "b1",
+   "base": "real_photo_5",
+   "references": [
+    "real_photo_19"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0216": {
+   "batch": "b1",
+   "base": "real_photo_5",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0217": {
+   "batch": "b1",
+   "base": "real_photo_5",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0218": {
+   "batch": "b1",
+   "base": "real_photo_5",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0219": {
+   "batch": "b1",
+   "base": "real_photo_5",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0220": {
+   "batch": "b1",
+   "base": "real_photo_5",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0221": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0222": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0223": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0224": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0225": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0226": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_14"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0227": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_14"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0228": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_14"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0229": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_14"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0230": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_14"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0231": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0232": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0233": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0234": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0235": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0236": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_86"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0237": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_86"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0238": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_86"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0239": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_86"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0240": {
+   "batch": "b1",
+   "base": "real_photo_6",
+   "references": [
+    "real_photo_86"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0241": {
+   "batch": "b1",
+   "base": "real_photo_7",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0242": {
+   "batch": "b1",
+   "base": "real_photo_7",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0243": {
+   "batch": "b1",
+   "base": "real_photo_7",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0244": {
+   "batch": "b1",
+   "base": "real_photo_7",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0245": {
+   "batch": "b1",
+   "base": "real_photo_7",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0246": {
+   "batch": "b1",
+   "base": "real_photo_7",
+   "references": [
+    "real_photo_5"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0247": {
+   "batch": "b1",
+   "base": "real_photo_7",
+   "references": [
+    "real_photo_5"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0248": {
+   "batch": "b1",
+   "base": "real_photo_7",
+   "references": [
+    "real_photo_5"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0249": {
+   "batch": "b1",
+   "base": "real_photo_7",
+   "references": [
+    "real_photo_5"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0250": {
+   "batch": "b1",
+   "base": "real_photo_7",
+   "references": [
+    "real_photo_5"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0251": {
+   "batch": "b1",
+   "base": "real_photo_7",
+   "references": [
+    "real_photo_80"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0252": {
+   "batch": "b1",
+   "base": "real_photo_7",
+   "references": [
+    "real_photo_80"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0253": {
+   "batch": "b1",
+   "base": "real_photo_7",
+   "references": [
+    "real_photo_80"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0254": {
+   "batch": "b1",
+   "base": "real_photo_7",
+   "references": [
+    "real_photo_80"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0255": {
+   "batch": "b1",
+   "base": "real_photo_7",
+   "references": [
+    "real_photo_80"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0256": {
+   "batch": "b1",
+   "base": "real_photo_8",
+   "references": [
+    "real_photo_33"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0257": {
+   "batch": "b1",
+   "base": "real_photo_8",
+   "references": [
+    "real_photo_33"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0258": {
+   "batch": "b1",
+   "base": "real_photo_8",
+   "references": [
+    "real_photo_33"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0259": {
+   "batch": "b1",
+   "base": "real_photo_8",
+   "references": [
+    "real_photo_33"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0260": {
+   "batch": "b1",
+   "base": "real_photo_8",
+   "references": [
+    "real_photo_33"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0261": {
+   "batch": "b1",
+   "base": "real_photo_8",
+   "references": [
+    "real_photo_35"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0262": {
+   "batch": "b1",
+   "base": "real_photo_8",
+   "references": [
+    "real_photo_35"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0263": {
+   "batch": "b1",
+   "base": "real_photo_8",
+   "references": [
+    "real_photo_35"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0264": {
+   "batch": "b1",
+   "base": "real_photo_8",
+   "references": [
+    "real_photo_35"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0265": {
+   "batch": "b1",
+   "base": "real_photo_8",
+   "references": [
+    "real_photo_35"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0266": {
+   "batch": "b1",
+   "base": "real_photo_9",
+   "references": [
+    "real_photo_11"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0267": {
+   "batch": "b1",
+   "base": "real_photo_9",
+   "references": [
+    "real_photo_11"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0268": {
+   "batch": "b1",
+   "base": "real_photo_9",
+   "references": [
+    "real_photo_11"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0269": {
+   "batch": "b1",
+   "base": "real_photo_9",
+   "references": [
+    "real_photo_11"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0270": {
+   "batch": "b1",
+   "base": "real_photo_9",
+   "references": [
+    "real_photo_11"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0271": {
+   "batch": "b1",
+   "base": "real_photo_9",
+   "references": [
+    "real_photo_54"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0272": {
+   "batch": "b1",
+   "base": "real_photo_9",
+   "references": [
+    "real_photo_54"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0273": {
+   "batch": "b1",
+   "base": "real_photo_9",
+   "references": [
+    "real_photo_54"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0274": {
+   "batch": "b1",
+   "base": "real_photo_9",
+   "references": [
+    "real_photo_54"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0275": {
+   "batch": "b1",
+   "base": "real_photo_9",
+   "references": [
+    "real_photo_54"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0276": {
+   "batch": "b1",
+   "base": "real_photo_10",
+   "references": [
+    "real_photo_16"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0277": {
+   "batch": "b1",
+   "base": "real_photo_10",
+   "references": [
+    "real_photo_16"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0278": {
+   "batch": "b1",
+   "base": "real_photo_10",
+   "references": [
+    "real_photo_16"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0279": {
+   "batch": "b1",
+   "base": "real_photo_10",
+   "references": [
+    "real_photo_16"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0280": {
+   "batch": "b1",
+   "base": "real_photo_10",
+   "references": [
+    "real_photo_16"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0282": {
+   "batch": "b1",
+   "base": "real_photo_10",
+   "references": [
+    "real_photo_33"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0283": {
+   "batch": "b1",
+   "base": "real_photo_10",
+   "references": [
+    "real_photo_33"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0284": {
+   "batch": "b1",
+   "base": "real_photo_10",
+   "references": [
+    "real_photo_33"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0285": {
+   "batch": "b1",
+   "base": "real_photo_10",
+   "references": [
+    "real_photo_33"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0286": {
+   "batch": "b1",
+   "base": "real_photo_10",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0287": {
+   "batch": "b1",
+   "base": "real_photo_10",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0288": {
+   "batch": "b1",
+   "base": "real_photo_10",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0289": {
+   "batch": "b1",
+   "base": "real_photo_10",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0290": {
+   "batch": "b1",
+   "base": "real_photo_10",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0291": {
+   "batch": "b1",
+   "base": "real_photo_11",
+   "references": [
+    "real_photo_42"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0292": {
+   "batch": "b1",
+   "base": "real_photo_11",
+   "references": [
+    "real_photo_42"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0293": {
+   "batch": "b1",
+   "base": "real_photo_11",
+   "references": [
+    "real_photo_42"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0294": {
+   "batch": "b1",
+   "base": "real_photo_11",
+   "references": [
+    "real_photo_42"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0295": {
+   "batch": "b1",
+   "base": "real_photo_11",
+   "references": [
+    "real_photo_42"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0296": {
+   "batch": "b1",
+   "base": "real_photo_11",
+   "references": [
+    "real_photo_52"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0297": {
+   "batch": "b1",
+   "base": "real_photo_11",
+   "references": [
+    "real_photo_52"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0298": {
+   "batch": "b1",
+   "base": "real_photo_11",
+   "references": [
+    "real_photo_52"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0299": {
+   "batch": "b1",
+   "base": "real_photo_11",
+   "references": [
+    "real_photo_52"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0300": {
+   "batch": "b1",
+   "base": "real_photo_11",
+   "references": [
+    "real_photo_52"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0301": {
+   "batch": "b1",
+   "base": "real_photo_12",
+   "references": [
+    "real_photo_36"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0302": {
+   "batch": "b1",
+   "base": "real_photo_12",
+   "references": [
+    "real_photo_36"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0303": {
+   "batch": "b1",
+   "base": "real_photo_12",
+   "references": [
+    "real_photo_36"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0304": {
+   "batch": "b1",
+   "base": "real_photo_12",
+   "references": [
+    "real_photo_36"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0305": {
+   "batch": "b1",
+   "base": "real_photo_12",
+   "references": [
+    "real_photo_36"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0306": {
+   "batch": "b1",
+   "base": "real_photo_12",
+   "references": [
+    "real_photo_68"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0307": {
+   "batch": "b1",
+   "base": "real_photo_12",
+   "references": [
+    "real_photo_68"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0308": {
+   "batch": "b1",
+   "base": "real_photo_12",
+   "references": [
+    "real_photo_68"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0310": {
+   "batch": "b1",
+   "base": "real_photo_12",
+   "references": [
+    "real_photo_68"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0311": {
+   "batch": "b1",
+   "base": "real_photo_13",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0312": {
+   "batch": "b1",
+   "base": "real_photo_13",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0313": {
+   "batch": "b1",
+   "base": "real_photo_13",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0314": {
+   "batch": "b1",
+   "base": "real_photo_13",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0315": {
+   "batch": "b1",
+   "base": "real_photo_13",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0316": {
+   "batch": "b1",
+   "base": "real_photo_13",
+   "references": [
+    "real_photo_40"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0317": {
+   "batch": "b1",
+   "base": "real_photo_13",
+   "references": [
+    "real_photo_40"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0318": {
+   "batch": "b1",
+   "base": "real_photo_13",
+   "references": [
+    "real_photo_40"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0319": {
+   "batch": "b1",
+   "base": "real_photo_13",
+   "references": [
+    "real_photo_40"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0320": {
+   "batch": "b1",
+   "base": "real_photo_13",
+   "references": [
+    "real_photo_40"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0321": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_11"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0322": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_11"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0323": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_11"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0324": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_11"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0325": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_11"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0326": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_16"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0327": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_16"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0328": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_16"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0329": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_16"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0330": {
+   "batch": "b1",
+   "base": "real_photo_14",
+   "references": [
+    "real_photo_16"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0331": {
+   "batch": "b1",
+   "base": "real_photo_15",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0332": {
+   "batch": "b1",
+   "base": "real_photo_15",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0333": {
+   "batch": "b1",
+   "base": "real_photo_15",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0334": {
+   "batch": "b1",
+   "base": "real_photo_15",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0335": {
+   "batch": "b1",
+   "base": "real_photo_15",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0336": {
+   "batch": "b1",
+   "base": "real_photo_15",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0337": {
+   "batch": "b1",
+   "base": "real_photo_15",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0338": {
+   "batch": "b1",
+   "base": "real_photo_15",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0339": {
+   "batch": "b1",
+   "base": "real_photo_15",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0340": {
+   "batch": "b1",
+   "base": "real_photo_15",
+   "references": [
+    "real_photo_47"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0341": {
+   "batch": "b1",
+   "base": "real_photo_16",
+   "references": [
+    "real_photo_53"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0342": {
+   "batch": "b1",
+   "base": "real_photo_16",
+   "references": [
+    "real_photo_53"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0343": {
+   "batch": "b1",
+   "base": "real_photo_16",
+   "references": [
+    "real_photo_53"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0344": {
+   "batch": "b1",
+   "base": "real_photo_16",
+   "references": [
+    "real_photo_53"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0345": {
+   "batch": "b1",
+   "base": "real_photo_16",
+   "references": [
+    "real_photo_53"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0346": {
+   "batch": "b1",
+   "base": "real_photo_16",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0347": {
+   "batch": "b1",
+   "base": "real_photo_16",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0348": {
+   "batch": "b1",
+   "base": "real_photo_16",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0349": {
+   "batch": "b1",
+   "base": "real_photo_16",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0350": {
+   "batch": "b1",
+   "base": "real_photo_16",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0351": {
+   "batch": "b1",
+   "base": "real_photo_16",
+   "references": [
+    "real_photo_43"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0352": {
+   "batch": "b1",
+   "base": "real_photo_16",
+   "references": [
+    "real_photo_43"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0353": {
+   "batch": "b1",
+   "base": "real_photo_16",
+   "references": [
+    "real_photo_43"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0354": {
+   "batch": "b1",
+   "base": "real_photo_16",
+   "references": [
+    "real_photo_43"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0355": {
+   "batch": "b1",
+   "base": "real_photo_16",
+   "references": [
+    "real_photo_43"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0356": {
+   "batch": "b1",
+   "base": "real_photo_17",
+   "references": [
+    "real_photo_34"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0357": {
+   "batch": "b1",
+   "base": "real_photo_17",
+   "references": [
+    "real_photo_34"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0358": {
+   "batch": "b1",
+   "base": "real_photo_17",
+   "references": [
+    "real_photo_34"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0359": {
+   "batch": "b1",
+   "base": "real_photo_17",
+   "references": [
+    "real_photo_34"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0360": {
+   "batch": "b1",
+   "base": "real_photo_17",
+   "references": [
+    "real_photo_34"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0361": {
+   "batch": "b1",
+   "base": "real_photo_17",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0362": {
+   "batch": "b1",
+   "base": "real_photo_17",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0363": {
+   "batch": "b1",
+   "base": "real_photo_17",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0364": {
+   "batch": "b1",
+   "base": "real_photo_17",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0365": {
+   "batch": "b1",
+   "base": "real_photo_17",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0366": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_14"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0367": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_14"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0368": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_14"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0369": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_14"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0370": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_14"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0371": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_53"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0372": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_53"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0373": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_53"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0374": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_53"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0375": {
+   "batch": "b1",
+   "base": "real_photo_18",
+   "references": [
+    "real_photo_53"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0376": {
+   "batch": "b1",
+   "base": "real_photo_19",
+   "references": [
+    "real_photo_53"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0377": {
+   "batch": "b1",
+   "base": "real_photo_19",
+   "references": [
+    "real_photo_53"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0378": {
+   "batch": "b1",
+   "base": "real_photo_19",
+   "references": [
+    "real_photo_53"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0379": {
+   "batch": "b1",
+   "base": "real_photo_19",
+   "references": [
+    "real_photo_53"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0380": {
+   "batch": "b1",
+   "base": "real_photo_19",
+   "references": [
+    "real_photo_53"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0381": {
+   "batch": "b1",
+   "base": "real_photo_19",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0382": {
+   "batch": "b1",
+   "base": "real_photo_19",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0383": {
+   "batch": "b1",
+   "base": "real_photo_19",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0384": {
+   "batch": "b1",
+   "base": "real_photo_19",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0385": {
+   "batch": "b1",
+   "base": "real_photo_19",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0386": {
+   "batch": "b1",
+   "base": "real_photo_20",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0387": {
+   "batch": "b1",
+   "base": "real_photo_20",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0388": {
+   "batch": "b1",
+   "base": "real_photo_20",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0389": {
+   "batch": "b1",
+   "base": "real_photo_20",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0390": {
+   "batch": "b1",
+   "base": "real_photo_20",
+   "references": [
+    "real_photo_44"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0391": {
+   "batch": "b1",
+   "base": "real_photo_20",
+   "references": [
+    "real_photo_5"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0392": {
+   "batch": "b1",
+   "base": "real_photo_20",
+   "references": [
+    "real_photo_5"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0393": {
+   "batch": "b1",
+   "base": "real_photo_20",
+   "references": [
+    "real_photo_5"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0394": {
+   "batch": "b1",
+   "base": "real_photo_20",
+   "references": [
+    "real_photo_5"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0395": {
+   "batch": "b1",
+   "base": "real_photo_20",
+   "references": [
+    "real_photo_5"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0396": {
+   "batch": "b1",
+   "base": "real_photo_21",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0397": {
+   "batch": "b1",
+   "base": "real_photo_21",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0398": {
+   "batch": "b1",
+   "base": "real_photo_21",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0399": {
+   "batch": "b1",
+   "base": "real_photo_21",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0400": {
+   "batch": "b1",
+   "base": "real_photo_21",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0401": {
+   "batch": "b1",
+   "base": "real_photo_21",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0402": {
+   "batch": "b1",
+   "base": "real_photo_21",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0403": {
+   "batch": "b1",
+   "base": "real_photo_21",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0404": {
+   "batch": "b1",
+   "base": "real_photo_21",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0405": {
+   "batch": "b1",
+   "base": "real_photo_21",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0406": {
+   "batch": "b1",
+   "base": "real_photo_22",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0407": {
+   "batch": "b1",
+   "base": "real_photo_22",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0408": {
+   "batch": "b1",
+   "base": "real_photo_22",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0409": {
+   "batch": "b1",
+   "base": "real_photo_22",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0410": {
+   "batch": "b1",
+   "base": "real_photo_22",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0411": {
+   "batch": "b1",
+   "base": "real_photo_23",
+   "references": [
+    "real_photo_37"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0412": {
+   "batch": "b1",
+   "base": "real_photo_23",
+   "references": [
+    "real_photo_37"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0413": {
+   "batch": "b1",
+   "base": "real_photo_23",
+   "references": [
+    "real_photo_37"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0414": {
+   "batch": "b1",
+   "base": "real_photo_23",
+   "references": [
+    "real_photo_37"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0415": {
+   "batch": "b1",
+   "base": "real_photo_23",
+   "references": [
+    "real_photo_37"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0416": {
+   "batch": "b1",
+   "base": "real_photo_23",
+   "references": [
+    "real_photo_2"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0417": {
+   "batch": "b1",
+   "base": "real_photo_23",
+   "references": [
+    "real_photo_2"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0418": {
+   "batch": "b1",
+   "base": "real_photo_23",
+   "references": [
+    "real_photo_2"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0419": {
+   "batch": "b1",
+   "base": "real_photo_23",
+   "references": [
+    "real_photo_2"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0420": {
+   "batch": "b1",
+   "base": "real_photo_23",
+   "references": [
+    "real_photo_2"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0421": {
+   "batch": "b1",
+   "base": "real_photo_24",
+   "references": [
+    "real_photo_82"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0422": {
+   "batch": "b1",
+   "base": "real_photo_24",
+   "references": [
+    "real_photo_82"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0423": {
+   "batch": "b1",
+   "base": "real_photo_24",
+   "references": [
+    "real_photo_82"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0424": {
+   "batch": "b1",
+   "base": "real_photo_24",
+   "references": [
+    "real_photo_82"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0425": {
+   "batch": "b1",
+   "base": "real_photo_24",
+   "references": [
+    "real_photo_82"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0426": {
+   "batch": "b1",
+   "base": "real_photo_24",
+   "references": [
+    "real_photo_15"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0427": {
+   "batch": "b1",
+   "base": "real_photo_24",
+   "references": [
+    "real_photo_15"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0428": {
+   "batch": "b1",
+   "base": "real_photo_24",
+   "references": [
+    "real_photo_15"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0429": {
+   "batch": "b1",
+   "base": "real_photo_24",
+   "references": [
+    "real_photo_15"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0430": {
+   "batch": "b1",
+   "base": "real_photo_24",
+   "references": [
+    "real_photo_15"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0431": {
+   "batch": "b1",
+   "base": "real_photo_25",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0432": {
+   "batch": "b1",
+   "base": "real_photo_25",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0433": {
+   "batch": "b1",
+   "base": "real_photo_25",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0435": {
+   "batch": "b1",
+   "base": "real_photo_25",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0436": {
+   "batch": "b1",
+   "base": "real_photo_25",
+   "references": [
+    "real_photo_35"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0437": {
+   "batch": "b1",
+   "base": "real_photo_25",
+   "references": [
+    "real_photo_35"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0438": {
+   "batch": "b1",
+   "base": "real_photo_25",
+   "references": [
+    "real_photo_35"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0439": {
+   "batch": "b1",
+   "base": "real_photo_25",
+   "references": [
+    "real_photo_35"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0440": {
+   "batch": "b1",
+   "base": "real_photo_25",
+   "references": [
+    "real_photo_35"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0441": {
+   "batch": "b1",
+   "base": "real_photo_26",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0442": {
+   "batch": "b1",
+   "base": "real_photo_26",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0443": {
+   "batch": "b1",
+   "base": "real_photo_26",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0444": {
+   "batch": "b1",
+   "base": "real_photo_26",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0445": {
+   "batch": "b1",
+   "base": "real_photo_26",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0446": {
+   "batch": "b1",
+   "base": "real_photo_26",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0447": {
+   "batch": "b1",
+   "base": "real_photo_26",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0448": {
+   "batch": "b1",
+   "base": "real_photo_26",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0449": {
+   "batch": "b1",
+   "base": "real_photo_26",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0450": {
+   "batch": "b1",
+   "base": "real_photo_26",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0451": {
+   "batch": "b1",
+   "base": "real_photo_27",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0452": {
+   "batch": "b1",
+   "base": "real_photo_27",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0453": {
+   "batch": "b1",
+   "base": "real_photo_27",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0454": {
+   "batch": "b1",
+   "base": "real_photo_27",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0455": {
+   "batch": "b1",
+   "base": "real_photo_27",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0456": {
+   "batch": "b1",
+   "base": "real_photo_27",
+   "references": [
+    "real_photo_72"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0457": {
+   "batch": "b1",
+   "base": "real_photo_27",
+   "references": [
+    "real_photo_72"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0458": {
+   "batch": "b1",
+   "base": "real_photo_27",
+   "references": [
+    "real_photo_72"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0459": {
+   "batch": "b1",
+   "base": "real_photo_27",
+   "references": [
+    "real_photo_72"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0460": {
+   "batch": "b1",
+   "base": "real_photo_27",
+   "references": [
+    "real_photo_72"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0461": {
+   "batch": "b1",
+   "base": "real_photo_28",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0462": {
+   "batch": "b1",
+   "base": "real_photo_28",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0463": {
+   "batch": "b1",
+   "base": "real_photo_28",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0464": {
+   "batch": "b1",
+   "base": "real_photo_28",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0465": {
+   "batch": "b1",
+   "base": "real_photo_28",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0466": {
+   "batch": "b1",
+   "base": "real_photo_28",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0467": {
+   "batch": "b1",
+   "base": "real_photo_28",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0468": {
+   "batch": "b1",
+   "base": "real_photo_28",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0469": {
+   "batch": "b1",
+   "base": "real_photo_28",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0470": {
+   "batch": "b1",
+   "base": "real_photo_28",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0471": {
+   "batch": "b1",
+   "base": "real_photo_29",
+   "references": [
+    "real_photo_5"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0472": {
+   "batch": "b1",
+   "base": "real_photo_29",
+   "references": [
+    "real_photo_5"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0473": {
+   "batch": "b1",
+   "base": "real_photo_29",
+   "references": [
+    "real_photo_5"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0475": {
+   "batch": "b1",
+   "base": "real_photo_29",
+   "references": [
+    "real_photo_5"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0476": {
+   "batch": "b1",
+   "base": "real_photo_29",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0477": {
+   "batch": "b1",
+   "base": "real_photo_29",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0478": {
+   "batch": "b1",
+   "base": "real_photo_29",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0479": {
+   "batch": "b1",
+   "base": "real_photo_29",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0480": {
+   "batch": "b1",
+   "base": "real_photo_29",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0481": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0482": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0483": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0484": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0485": {
+   "batch": "b1",
+   "base": "real_photo_30",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0486": {
+   "batch": "b1",
+   "base": "real_photo_31",
+   "references": [
+    "images"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0487": {
+   "batch": "b1",
+   "base": "real_photo_31",
+   "references": [
+    "images"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0488": {
+   "batch": "b1",
+   "base": "real_photo_31",
+   "references": [
+    "images"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0489": {
+   "batch": "b1",
+   "base": "real_photo_31",
+   "references": [
+    "images"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0490": {
+   "batch": "b1",
+   "base": "real_photo_31",
+   "references": [
+    "images"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0491": {
+   "batch": "b1",
+   "base": "real_photo_32",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0492": {
+   "batch": "b1",
+   "base": "real_photo_32",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0493": {
+   "batch": "b1",
+   "base": "real_photo_32",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0494": {
+   "batch": "b1",
+   "base": "real_photo_32",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0495": {
+   "batch": "b1",
+   "base": "real_photo_32",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0496": {
+   "batch": "b1",
+   "base": "real_photo_32",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0497": {
+   "batch": "b1",
+   "base": "real_photo_32",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0498": {
+   "batch": "b1",
+   "base": "real_photo_32",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0499": {
+   "batch": "b1",
+   "base": "real_photo_32",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0500": {
+   "batch": "b1",
+   "base": "real_photo_32",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0501": {
+   "batch": "b2",
+   "base": "real_photo_33",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0502": {
+   "batch": "b2",
+   "base": "real_photo_33",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0503": {
+   "batch": "b2",
+   "base": "real_photo_33",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0504": {
+   "batch": "b2",
+   "base": "real_photo_33",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0505": {
+   "batch": "b2",
+   "base": "real_photo_33",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0506": {
+   "batch": "b2",
+   "base": "real_photo_33",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0507": {
+   "batch": "b2",
+   "base": "real_photo_33",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0508": {
+   "batch": "b2",
+   "base": "real_photo_33",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0510": {
+   "batch": "b2",
+   "base": "real_photo_33",
+   "references": [
+    "real_photo_74"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0511": {
+   "batch": "b2",
+   "base": "real_photo_34",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0512": {
+   "batch": "b2",
+   "base": "real_photo_34",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0513": {
+   "batch": "b2",
+   "base": "real_photo_34",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0514": {
+   "batch": "b2",
+   "base": "real_photo_34",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0515": {
+   "batch": "b2",
+   "base": "real_photo_34",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0516": {
+   "batch": "b2",
+   "base": "real_photo_34",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0517": {
+   "batch": "b2",
+   "base": "real_photo_34",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0518": {
+   "batch": "b2",
+   "base": "real_photo_34",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0519": {
+   "batch": "b2",
+   "base": "real_photo_34",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0520": {
+   "batch": "b2",
+   "base": "real_photo_34",
+   "references": [
+    "real_photo_38"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0521": {
+   "batch": "b2",
+   "base": "real_photo_35",
+   "references": [
+    "real_photo_26"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0522": {
+   "batch": "b2",
+   "base": "real_photo_35",
+   "references": [
+    "real_photo_26"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0523": {
+   "batch": "b2",
+   "base": "real_photo_35",
+   "references": [
+    "real_photo_26"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0525": {
+   "batch": "b2",
+   "base": "real_photo_35",
+   "references": [
+    "real_photo_26"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0526": {
+   "batch": "b2",
+   "base": "real_photo_35",
+   "references": [
+    "real_photo_26"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0527": {
+   "batch": "b2",
+   "base": "real_photo_35",
+   "references": [
+    "real_photo_26"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0528": {
+   "batch": "b2",
+   "base": "real_photo_35",
+   "references": [
+    "real_photo_26"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0529": {
+   "batch": "b2",
+   "base": "real_photo_35",
+   "references": [
+    "real_photo_26"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0530": {
+   "batch": "b2",
+   "base": "real_photo_35",
+   "references": [
+    "real_photo_26"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0531": {
+   "batch": "b2",
+   "base": "real_photo_36",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0532": {
+   "batch": "b2",
+   "base": "real_photo_36",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0533": {
+   "batch": "b2",
+   "base": "real_photo_36",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0534": {
+   "batch": "b2",
+   "base": "real_photo_36",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0535": {
+   "batch": "b2",
+   "base": "real_photo_36",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0536": {
+   "batch": "b2",
+   "base": "real_photo_36",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0537": {
+   "batch": "b2",
+   "base": "real_photo_36",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0538": {
+   "batch": "b2",
+   "base": "real_photo_36",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0539": {
+   "batch": "b2",
+   "base": "real_photo_36",
+   "references": [
+    "real_photo_22"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0541": {
+   "batch": "b2",
+   "base": "real_photo_37",
+   "references": [
+    "real_photo_28"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0542": {
+   "batch": "b2",
+   "base": "real_photo_37",
+   "references": [
+    "real_photo_28"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0543": {
+   "batch": "b2",
+   "base": "real_photo_37",
+   "references": [
+    "real_photo_28"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0544": {
+   "batch": "b2",
+   "base": "real_photo_37",
+   "references": [
+    "real_photo_28"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0545": {
+   "batch": "b2",
+   "base": "real_photo_37",
+   "references": [
+    "real_photo_28"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0546": {
+   "batch": "b2",
+   "base": "real_photo_37",
+   "references": [
+    "real_photo_28"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0547": {
+   "batch": "b2",
+   "base": "real_photo_37",
+   "references": [
+    "real_photo_28"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0548": {
+   "batch": "b2",
+   "base": "real_photo_37",
+   "references": [
+    "real_photo_28"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0549": {
+   "batch": "b2",
+   "base": "real_photo_37",
+   "references": [
+    "real_photo_28"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0550": {
+   "batch": "b2",
+   "base": "real_photo_37",
+   "references": [
+    "real_photo_28"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0551": {
+   "batch": "b2",
+   "base": "real_photo_38",
+   "references": [
+    "real_photo_29"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0552": {
+   "batch": "b2",
+   "base": "real_photo_38",
+   "references": [
+    "real_photo_29"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0553": {
+   "batch": "b2",
+   "base": "real_photo_38",
+   "references": [
+    "real_photo_29"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0554": {
+   "batch": "b2",
+   "base": "real_photo_38",
+   "references": [
+    "real_photo_29"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0555": {
+   "batch": "b2",
+   "base": "real_photo_38",
+   "references": [
+    "real_photo_29"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0556": {
+   "batch": "b2",
+   "base": "real_photo_38",
+   "references": [
+    "real_photo_29"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0557": {
+   "batch": "b2",
+   "base": "real_photo_38",
+   "references": [
+    "real_photo_29"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0558": {
+   "batch": "b2",
+   "base": "real_photo_38",
+   "references": [
+    "real_photo_29"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0559": {
+   "batch": "b2",
+   "base": "real_photo_38",
+   "references": [
+    "real_photo_29"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0560": {
+   "batch": "b2",
+   "base": "real_photo_38",
+   "references": [
+    "real_photo_29"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0561": {
+   "batch": "b2",
+   "base": "real_photo_39",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0562": {
+   "batch": "b2",
+   "base": "real_photo_39",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0563": {
+   "batch": "b2",
+   "base": "real_photo_39",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0564": {
+   "batch": "b2",
+   "base": "real_photo_39",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0565": {
+   "batch": "b2",
+   "base": "real_photo_39",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0566": {
+   "batch": "b2",
+   "base": "real_photo_39",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0567": {
+   "batch": "b2",
+   "base": "real_photo_39",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0568": {
+   "batch": "b2",
+   "base": "real_photo_39",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0569": {
+   "batch": "b2",
+   "base": "real_photo_39",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0570": {
+   "batch": "b2",
+   "base": "real_photo_39",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0571": {
+   "batch": "b2",
+   "base": "real_photo_40",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0572": {
+   "batch": "b2",
+   "base": "real_photo_40",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0573": {
+   "batch": "b2",
+   "base": "real_photo_40",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0574": {
+   "batch": "b2",
+   "base": "real_photo_40",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0575": {
+   "batch": "b2",
+   "base": "real_photo_40",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0576": {
+   "batch": "b2",
+   "base": "real_photo_40",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0577": {
+   "batch": "b2",
+   "base": "real_photo_40",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0578": {
+   "batch": "b2",
+   "base": "real_photo_40",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0579": {
+   "batch": "b2",
+   "base": "real_photo_40",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0580": {
+   "batch": "b2",
+   "base": "real_photo_40",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0581": {
+   "batch": "b2",
+   "base": "real_photo_41",
+   "references": [
+    "real_photo_62"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0582": {
+   "batch": "b2",
+   "base": "real_photo_41",
+   "references": [
+    "real_photo_62"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0583": {
+   "batch": "b2",
+   "base": "real_photo_41",
+   "references": [
+    "real_photo_62"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0584": {
+   "batch": "b2",
+   "base": "real_photo_41",
+   "references": [
+    "real_photo_62"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0585": {
+   "batch": "b2",
+   "base": "real_photo_41",
+   "references": [
+    "real_photo_62"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0586": {
+   "batch": "b2",
+   "base": "real_photo_41",
+   "references": [
+    "real_photo_62"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0587": {
+   "batch": "b2",
+   "base": "real_photo_41",
+   "references": [
+    "real_photo_62"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0588": {
+   "batch": "b2",
+   "base": "real_photo_41",
+   "references": [
+    "real_photo_62"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0589": {
+   "batch": "b2",
+   "base": "real_photo_41",
+   "references": [
+    "real_photo_62"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0590": {
+   "batch": "b2",
+   "base": "real_photo_41",
+   "references": [
+    "real_photo_62"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0591": {
+   "batch": "b2",
+   "base": "real_photo_42",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0592": {
+   "batch": "b2",
+   "base": "real_photo_42",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0593": {
+   "batch": "b2",
+   "base": "real_photo_42",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0594": {
+   "batch": "b2",
+   "base": "real_photo_42",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0595": {
+   "batch": "b2",
+   "base": "real_photo_42",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0596": {
+   "batch": "b2",
+   "base": "real_photo_42",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0597": {
+   "batch": "b2",
+   "base": "real_photo_42",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0598": {
+   "batch": "b2",
+   "base": "real_photo_42",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0599": {
+   "batch": "b2",
+   "base": "real_photo_42",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0600": {
+   "batch": "b2",
+   "base": "real_photo_42",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0601": {
+   "batch": "b2",
+   "base": "real_photo_43",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0602": {
+   "batch": "b2",
+   "base": "real_photo_43",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0603": {
+   "batch": "b2",
+   "base": "real_photo_43",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0604": {
+   "batch": "b2",
+   "base": "real_photo_43",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0605": {
+   "batch": "b2",
+   "base": "real_photo_43",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0606": {
+   "batch": "b2",
+   "base": "real_photo_43",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0607": {
+   "batch": "b2",
+   "base": "real_photo_43",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0608": {
+   "batch": "b2",
+   "base": "real_photo_43",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0609": {
+   "batch": "b2",
+   "base": "real_photo_43",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0610": {
+   "batch": "b2",
+   "base": "real_photo_43",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0611": {
+   "batch": "b2",
+   "base": "real_photo_44",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0612": {
+   "batch": "b2",
+   "base": "real_photo_44",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0613": {
+   "batch": "b2",
+   "base": "real_photo_44",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0614": {
+   "batch": "b2",
+   "base": "real_photo_44",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0615": {
+   "batch": "b2",
+   "base": "real_photo_44",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0616": {
+   "batch": "b2",
+   "base": "real_photo_44",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0617": {
+   "batch": "b2",
+   "base": "real_photo_44",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0618": {
+   "batch": "b2",
+   "base": "real_photo_44",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0619": {
+   "batch": "b2",
+   "base": "real_photo_44",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0620": {
+   "batch": "b2",
+   "base": "real_photo_44",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0621": {
+   "batch": "b2",
+   "base": "real_photo_45",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0622": {
+   "batch": "b2",
+   "base": "real_photo_45",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0623": {
+   "batch": "b2",
+   "base": "real_photo_45",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0624": {
+   "batch": "b2",
+   "base": "real_photo_45",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0625": {
+   "batch": "b2",
+   "base": "real_photo_45",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0626": {
+   "batch": "b2",
+   "base": "real_photo_45",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0627": {
+   "batch": "b2",
+   "base": "real_photo_45",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0628": {
+   "batch": "b2",
+   "base": "real_photo_45",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0629": {
+   "batch": "b2",
+   "base": "real_photo_45",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0630": {
+   "batch": "b2",
+   "base": "real_photo_45",
+   "references": [
+    "real_photo_81"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0631": {
+   "batch": "b2",
+   "base": "real_photo_46",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0634": {
+   "batch": "b2",
+   "base": "real_photo_46",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0638": {
+   "batch": "b2",
+   "base": "real_photo_46",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0639": {
+   "batch": "b2",
+   "base": "real_photo_46",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0640": {
+   "batch": "b2",
+   "base": "real_photo_46",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0641": {
+   "batch": "b2",
+   "base": "real_photo_47",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0642": {
+   "batch": "b2",
+   "base": "real_photo_47",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0643": {
+   "batch": "b2",
+   "base": "real_photo_47",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0644": {
+   "batch": "b2",
+   "base": "real_photo_47",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0645": {
+   "batch": "b2",
+   "base": "real_photo_47",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0646": {
+   "batch": "b2",
+   "base": "real_photo_47",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0647": {
+   "batch": "b2",
+   "base": "real_photo_47",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0648": {
+   "batch": "b2",
+   "base": "real_photo_47",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0649": {
+   "batch": "b2",
+   "base": "real_photo_47",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0650": {
+   "batch": "b2",
+   "base": "real_photo_47",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0651": {
+   "batch": "b2",
+   "base": "real_photo_48",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0652": {
+   "batch": "b2",
+   "base": "real_photo_48",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0653": {
+   "batch": "b2",
+   "base": "real_photo_48",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0654": {
+   "batch": "b2",
+   "base": "real_photo_48",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0655": {
+   "batch": "b2",
+   "base": "real_photo_48",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0656": {
+   "batch": "b2",
+   "base": "real_photo_48",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0657": {
+   "batch": "b2",
+   "base": "real_photo_48",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0658": {
+   "batch": "b2",
+   "base": "real_photo_48",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0659": {
+   "batch": "b2",
+   "base": "real_photo_48",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0660": {
+   "batch": "b2",
+   "base": "real_photo_48",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0661": {
+   "batch": "b2",
+   "base": "real_photo_49",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0662": {
+   "batch": "b2",
+   "base": "real_photo_49",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0663": {
+   "batch": "b2",
+   "base": "real_photo_49",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0664": {
+   "batch": "b2",
+   "base": "real_photo_49",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0665": {
+   "batch": "b2",
+   "base": "real_photo_49",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0666": {
+   "batch": "b2",
+   "base": "real_photo_49",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0667": {
+   "batch": "b2",
+   "base": "real_photo_49",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0668": {
+   "batch": "b2",
+   "base": "real_photo_49",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0669": {
+   "batch": "b2",
+   "base": "real_photo_49",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0670": {
+   "batch": "b2",
+   "base": "real_photo_49",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0671": {
+   "batch": "b2",
+   "base": "real_photo_50",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0672": {
+   "batch": "b2",
+   "base": "real_photo_50",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0673": {
+   "batch": "b2",
+   "base": "real_photo_50",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0674": {
+   "batch": "b2",
+   "base": "real_photo_50",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0675": {
+   "batch": "b2",
+   "base": "real_photo_50",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0676": {
+   "batch": "b2",
+   "base": "real_photo_50",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0677": {
+   "batch": "b2",
+   "base": "real_photo_50",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0678": {
+   "batch": "b2",
+   "base": "real_photo_50",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0679": {
+   "batch": "b2",
+   "base": "real_photo_50",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0680": {
+   "batch": "b2",
+   "base": "real_photo_50",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0681": {
+   "batch": "b2",
+   "base": "real_photo_51",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0682": {
+   "batch": "b2",
+   "base": "real_photo_51",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0683": {
+   "batch": "b2",
+   "base": "real_photo_51",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0684": {
+   "batch": "b2",
+   "base": "real_photo_51",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0685": {
+   "batch": "b2",
+   "base": "real_photo_51",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0686": {
+   "batch": "b2",
+   "base": "real_photo_51",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0687": {
+   "batch": "b2",
+   "base": "real_photo_51",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0688": {
+   "batch": "b2",
+   "base": "real_photo_51",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0689": {
+   "batch": "b2",
+   "base": "real_photo_51",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0690": {
+   "batch": "b2",
+   "base": "real_photo_51",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0691": {
+   "batch": "b2",
+   "base": "real_photo_52",
+   "references": [
+    "real_photo_79"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0692": {
+   "batch": "b2",
+   "base": "real_photo_52",
+   "references": [
+    "real_photo_79"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0693": {
+   "batch": "b2",
+   "base": "real_photo_52",
+   "references": [
+    "real_photo_79"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0694": {
+   "batch": "b2",
+   "base": "real_photo_52",
+   "references": [
+    "real_photo_79"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0695": {
+   "batch": "b2",
+   "base": "real_photo_52",
+   "references": [
+    "real_photo_79"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0696": {
+   "batch": "b2",
+   "base": "real_photo_52",
+   "references": [
+    "real_photo_79"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0698": {
+   "batch": "b2",
+   "base": "real_photo_52",
+   "references": [
+    "real_photo_79"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0699": {
+   "batch": "b2",
+   "base": "real_photo_52",
+   "references": [
+    "real_photo_79"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0700": {
+   "batch": "b2",
+   "base": "real_photo_52",
+   "references": [
+    "real_photo_79"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0701": {
+   "batch": "b2",
+   "base": "real_photo_53",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0702": {
+   "batch": "b2",
+   "base": "real_photo_53",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0703": {
+   "batch": "b2",
+   "base": "real_photo_53",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0704": {
+   "batch": "b2",
+   "base": "real_photo_53",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0705": {
+   "batch": "b2",
+   "base": "real_photo_53",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0706": {
+   "batch": "b2",
+   "base": "real_photo_53",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0707": {
+   "batch": "b2",
+   "base": "real_photo_53",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0708": {
+   "batch": "b2",
+   "base": "real_photo_53",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0709": {
+   "batch": "b2",
+   "base": "real_photo_53",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0710": {
+   "batch": "b2",
+   "base": "real_photo_53",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0711": {
+   "batch": "b2",
+   "base": "real_photo_54",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0712": {
+   "batch": "b2",
+   "base": "real_photo_54",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0713": {
+   "batch": "b2",
+   "base": "real_photo_54",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0714": {
+   "batch": "b2",
+   "base": "real_photo_54",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0715": {
+   "batch": "b2",
+   "base": "real_photo_54",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0716": {
+   "batch": "b2",
+   "base": "real_photo_54",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0717": {
+   "batch": "b2",
+   "base": "real_photo_54",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0718": {
+   "batch": "b2",
+   "base": "real_photo_54",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0719": {
+   "batch": "b2",
+   "base": "real_photo_54",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0720": {
+   "batch": "b2",
+   "base": "real_photo_54",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0721": {
+   "batch": "b2",
+   "base": "real_photo_55",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0722": {
+   "batch": "b2",
+   "base": "real_photo_55",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0723": {
+   "batch": "b2",
+   "base": "real_photo_55",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0724": {
+   "batch": "b2",
+   "base": "real_photo_55",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0725": {
+   "batch": "b2",
+   "base": "real_photo_55",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0726": {
+   "batch": "b2",
+   "base": "real_photo_55",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0727": {
+   "batch": "b2",
+   "base": "real_photo_55",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0728": {
+   "batch": "b2",
+   "base": "real_photo_55",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0729": {
+   "batch": "b2",
+   "base": "real_photo_55",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0730": {
+   "batch": "b2",
+   "base": "real_photo_55",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0731": {
+   "batch": "b2",
+   "base": "real_photo_56",
+   "references": [
+    "real_photo_60"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0732": {
+   "batch": "b2",
+   "base": "real_photo_56",
+   "references": [
+    "real_photo_60"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0733": {
+   "batch": "b2",
+   "base": "real_photo_56",
+   "references": [
+    "real_photo_60"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0734": {
+   "batch": "b2",
+   "base": "real_photo_56",
+   "references": [
+    "real_photo_60"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0735": {
+   "batch": "b2",
+   "base": "real_photo_56",
+   "references": [
+    "real_photo_60"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0736": {
+   "batch": "b2",
+   "base": "real_photo_56",
+   "references": [
+    "real_photo_60"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0737": {
+   "batch": "b2",
+   "base": "real_photo_56",
+   "references": [
+    "real_photo_60"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0738": {
+   "batch": "b2",
+   "base": "real_photo_56",
+   "references": [
+    "real_photo_60"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0739": {
+   "batch": "b2",
+   "base": "real_photo_56",
+   "references": [
+    "real_photo_60"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0740": {
+   "batch": "b2",
+   "base": "real_photo_56",
+   "references": [
+    "real_photo_60"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0741": {
+   "batch": "b2",
+   "base": "real_photo_57",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0742": {
+   "batch": "b2",
+   "base": "real_photo_57",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0743": {
+   "batch": "b2",
+   "base": "real_photo_57",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0744": {
+   "batch": "b2",
+   "base": "real_photo_57",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0745": {
+   "batch": "b2",
+   "base": "real_photo_57",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0746": {
+   "batch": "b2",
+   "base": "real_photo_57",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0747": {
+   "batch": "b2",
+   "base": "real_photo_57",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0748": {
+   "batch": "b2",
+   "base": "real_photo_57",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0749": {
+   "batch": "b2",
+   "base": "real_photo_57",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0750": {
+   "batch": "b2",
+   "base": "real_photo_57",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0751": {
+   "batch": "b2",
+   "base": "real_photo_58",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0752": {
+   "batch": "b2",
+   "base": "real_photo_58",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0753": {
+   "batch": "b2",
+   "base": "real_photo_58",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0754": {
+   "batch": "b2",
+   "base": "real_photo_58",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0755": {
+   "batch": "b2",
+   "base": "real_photo_58",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0756": {
+   "batch": "b2",
+   "base": "real_photo_58",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0757": {
+   "batch": "b2",
+   "base": "real_photo_58",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0758": {
+   "batch": "b2",
+   "base": "real_photo_58",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0759": {
+   "batch": "b2",
+   "base": "real_photo_58",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0760": {
+   "batch": "b2",
+   "base": "real_photo_58",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0761": {
+   "batch": "b2",
+   "base": "real_photo_59",
+   "references": [
+    "real_photo_27"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0762": {
+   "batch": "b2",
+   "base": "real_photo_59",
+   "references": [
+    "real_photo_27"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0763": {
+   "batch": "b2",
+   "base": "real_photo_59",
+   "references": [
+    "real_photo_27"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0764": {
+   "batch": "b2",
+   "base": "real_photo_59",
+   "references": [
+    "real_photo_27"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0765": {
+   "batch": "b2",
+   "base": "real_photo_59",
+   "references": [
+    "real_photo_27"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0766": {
+   "batch": "b2",
+   "base": "real_photo_59",
+   "references": [
+    "real_photo_27"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0767": {
+   "batch": "b2",
+   "base": "real_photo_59",
+   "references": [
+    "real_photo_27"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0768": {
+   "batch": "b2",
+   "base": "real_photo_59",
+   "references": [
+    "real_photo_27"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0769": {
+   "batch": "b2",
+   "base": "real_photo_59",
+   "references": [
+    "real_photo_27"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0770": {
+   "batch": "b2",
+   "base": "real_photo_59",
+   "references": [
+    "real_photo_27"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0771": {
+   "batch": "b2",
+   "base": "real_photo_60",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0772": {
+   "batch": "b2",
+   "base": "real_photo_60",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0773": {
+   "batch": "b2",
+   "base": "real_photo_60",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0774": {
+   "batch": "b2",
+   "base": "real_photo_60",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0775": {
+   "batch": "b2",
+   "base": "real_photo_60",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0776": {
+   "batch": "b2",
+   "base": "real_photo_60",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0777": {
+   "batch": "b2",
+   "base": "real_photo_60",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0778": {
+   "batch": "b2",
+   "base": "real_photo_60",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0779": {
+   "batch": "b2",
+   "base": "real_photo_60",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0780": {
+   "batch": "b2",
+   "base": "real_photo_60",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0781": {
+   "batch": "b2",
+   "base": "real_photo_61",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0782": {
+   "batch": "b2",
+   "base": "real_photo_61",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0783": {
+   "batch": "b2",
+   "base": "real_photo_61",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0784": {
+   "batch": "b2",
+   "base": "real_photo_61",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0785": {
+   "batch": "b2",
+   "base": "real_photo_61",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0786": {
+   "batch": "b2",
+   "base": "real_photo_61",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0787": {
+   "batch": "b2",
+   "base": "real_photo_61",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0788": {
+   "batch": "b2",
+   "base": "real_photo_61",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0789": {
+   "batch": "b2",
+   "base": "real_photo_61",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0790": {
+   "batch": "b2",
+   "base": "real_photo_61",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0791": {
+   "batch": "b2",
+   "base": "real_photo_62",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0792": {
+   "batch": "b2",
+   "base": "real_photo_62",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0793": {
+   "batch": "b2",
+   "base": "real_photo_62",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0794": {
+   "batch": "b2",
+   "base": "real_photo_62",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0795": {
+   "batch": "b2",
+   "base": "real_photo_62",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0796": {
+   "batch": "b2",
+   "base": "real_photo_62",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0797": {
+   "batch": "b2",
+   "base": "real_photo_62",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0798": {
+   "batch": "b2",
+   "base": "real_photo_62",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0799": {
+   "batch": "b2",
+   "base": "real_photo_62",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0800": {
+   "batch": "b2",
+   "base": "real_photo_62",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0801": {
+   "batch": "b2",
+   "base": "real_photo_63",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0802": {
+   "batch": "b2",
+   "base": "real_photo_63",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0803": {
+   "batch": "b2",
+   "base": "real_photo_63",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0804": {
+   "batch": "b2",
+   "base": "real_photo_63",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0805": {
+   "batch": "b2",
+   "base": "real_photo_63",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0806": {
+   "batch": "b2",
+   "base": "real_photo_63",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0807": {
+   "batch": "b2",
+   "base": "real_photo_63",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0808": {
+   "batch": "b2",
+   "base": "real_photo_63",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0809": {
+   "batch": "b2",
+   "base": "real_photo_63",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0810": {
+   "batch": "b2",
+   "base": "real_photo_63",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0811": {
+   "batch": "b2",
+   "base": "real_photo_64",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0812": {
+   "batch": "b2",
+   "base": "real_photo_64",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0813": {
+   "batch": "b2",
+   "base": "real_photo_64",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0814": {
+   "batch": "b2",
+   "base": "real_photo_64",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0815": {
+   "batch": "b2",
+   "base": "real_photo_64",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0816": {
+   "batch": "b2",
+   "base": "real_photo_64",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0817": {
+   "batch": "b2",
+   "base": "real_photo_64",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0818": {
+   "batch": "b2",
+   "base": "real_photo_64",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0819": {
+   "batch": "b2",
+   "base": "real_photo_64",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0820": {
+   "batch": "b2",
+   "base": "real_photo_64",
+   "references": [
+    "real_photo_1"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0821": {
+   "batch": "b2",
+   "base": "real_photo_65",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0822": {
+   "batch": "b2",
+   "base": "real_photo_65",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0823": {
+   "batch": "b2",
+   "base": "real_photo_65",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0824": {
+   "batch": "b2",
+   "base": "real_photo_65",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0825": {
+   "batch": "b2",
+   "base": "real_photo_65",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0826": {
+   "batch": "b2",
+   "base": "real_photo_65",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0827": {
+   "batch": "b2",
+   "base": "real_photo_65",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0828": {
+   "batch": "b2",
+   "base": "real_photo_65",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0829": {
+   "batch": "b2",
+   "base": "real_photo_65",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0830": {
+   "batch": "b2",
+   "base": "real_photo_65",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0831": {
+   "batch": "b2",
+   "base": "real_photo_66",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0832": {
+   "batch": "b2",
+   "base": "real_photo_66",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0833": {
+   "batch": "b2",
+   "base": "real_photo_66",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0834": {
+   "batch": "b2",
+   "base": "real_photo_66",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0835": {
+   "batch": "b2",
+   "base": "real_photo_66",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0836": {
+   "batch": "b2",
+   "base": "real_photo_66",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0838": {
+   "batch": "b2",
+   "base": "real_photo_66",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0839": {
+   "batch": "b2",
+   "base": "real_photo_66",
+   "references": [
+    "real_photo_45"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0841": {
+   "batch": "b2",
+   "base": "real_photo_67",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0842": {
+   "batch": "b2",
+   "base": "real_photo_67",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0843": {
+   "batch": "b2",
+   "base": "real_photo_67",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0844": {
+   "batch": "b2",
+   "base": "real_photo_67",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0845": {
+   "batch": "b2",
+   "base": "real_photo_67",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0846": {
+   "batch": "b2",
+   "base": "real_photo_67",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0847": {
+   "batch": "b2",
+   "base": "real_photo_67",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0848": {
+   "batch": "b2",
+   "base": "real_photo_67",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0849": {
+   "batch": "b2",
+   "base": "real_photo_67",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0850": {
+   "batch": "b2",
+   "base": "real_photo_67",
+   "references": [
+    "real_photo_30"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0851": {
+   "batch": "b2",
+   "base": "real_photo_68",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0852": {
+   "batch": "b2",
+   "base": "real_photo_68",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0853": {
+   "batch": "b2",
+   "base": "real_photo_68",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0854": {
+   "batch": "b2",
+   "base": "real_photo_68",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0855": {
+   "batch": "b2",
+   "base": "real_photo_68",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0856": {
+   "batch": "b2",
+   "base": "real_photo_68",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0857": {
+   "batch": "b2",
+   "base": "real_photo_68",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0858": {
+   "batch": "b2",
+   "base": "real_photo_68",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0859": {
+   "batch": "b2",
+   "base": "real_photo_68",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0860": {
+   "batch": "b2",
+   "base": "real_photo_68",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0861": {
+   "batch": "b2",
+   "base": "real_photo_69",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0862": {
+   "batch": "b2",
+   "base": "real_photo_69",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0863": {
+   "batch": "b2",
+   "base": "real_photo_69",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0864": {
+   "batch": "b2",
+   "base": "real_photo_69",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0865": {
+   "batch": "b2",
+   "base": "real_photo_69",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0866": {
+   "batch": "b2",
+   "base": "real_photo_69",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0869": {
+   "batch": "b2",
+   "base": "real_photo_69",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0871": {
+   "batch": "b2",
+   "base": "real_photo_70",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0872": {
+   "batch": "b2",
+   "base": "real_photo_70",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0873": {
+   "batch": "b2",
+   "base": "real_photo_70",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0874": {
+   "batch": "b2",
+   "base": "real_photo_70",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0875": {
+   "batch": "b2",
+   "base": "real_photo_70",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0876": {
+   "batch": "b2",
+   "base": "real_photo_70",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0877": {
+   "batch": "b2",
+   "base": "real_photo_70",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0878": {
+   "batch": "b2",
+   "base": "real_photo_70",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0879": {
+   "batch": "b2",
+   "base": "real_photo_70",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0880": {
+   "batch": "b2",
+   "base": "real_photo_70",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0881": {
+   "batch": "b2",
+   "base": "real_photo_71",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0882": {
+   "batch": "b2",
+   "base": "real_photo_71",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0884": {
+   "batch": "b2",
+   "base": "real_photo_71",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0885": {
+   "batch": "b2",
+   "base": "real_photo_71",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0886": {
+   "batch": "b2",
+   "base": "real_photo_71",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0887": {
+   "batch": "b2",
+   "base": "real_photo_71",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0888": {
+   "batch": "b2",
+   "base": "real_photo_71",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0889": {
+   "batch": "b2",
+   "base": "real_photo_71",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0890": {
+   "batch": "b2",
+   "base": "real_photo_71",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0891": {
+   "batch": "b2",
+   "base": "real_photo_72",
+   "references": [
+    "real_photo_55"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0892": {
+   "batch": "b2",
+   "base": "real_photo_72",
+   "references": [
+    "real_photo_55"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0893": {
+   "batch": "b2",
+   "base": "real_photo_72",
+   "references": [
+    "real_photo_55"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0894": {
+   "batch": "b2",
+   "base": "real_photo_72",
+   "references": [
+    "real_photo_55"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0895": {
+   "batch": "b2",
+   "base": "real_photo_72",
+   "references": [
+    "real_photo_55"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0896": {
+   "batch": "b2",
+   "base": "real_photo_72",
+   "references": [
+    "real_photo_55"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0897": {
+   "batch": "b2",
+   "base": "real_photo_72",
+   "references": [
+    "real_photo_55"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0898": {
+   "batch": "b2",
+   "base": "real_photo_72",
+   "references": [
+    "real_photo_55"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0899": {
+   "batch": "b2",
+   "base": "real_photo_72",
+   "references": [
+    "real_photo_55"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0900": {
+   "batch": "b2",
+   "base": "real_photo_72",
+   "references": [
+    "real_photo_55"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0901": {
+   "batch": "b2",
+   "base": "real_photo_73",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0902": {
+   "batch": "b2",
+   "base": "real_photo_73",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0903": {
+   "batch": "b2",
+   "base": "real_photo_73",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0904": {
+   "batch": "b2",
+   "base": "real_photo_73",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0905": {
+   "batch": "b2",
+   "base": "real_photo_73",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0906": {
+   "batch": "b2",
+   "base": "real_photo_73",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0907": {
+   "batch": "b2",
+   "base": "real_photo_73",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0908": {
+   "batch": "b2",
+   "base": "real_photo_73",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0909": {
+   "batch": "b2",
+   "base": "real_photo_73",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0910": {
+   "batch": "b2",
+   "base": "real_photo_73",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0911": {
+   "batch": "b2",
+   "base": "real_photo_74",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0912": {
+   "batch": "b2",
+   "base": "real_photo_74",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0913": {
+   "batch": "b2",
+   "base": "real_photo_74",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0914": {
+   "batch": "b2",
+   "base": "real_photo_74",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0915": {
+   "batch": "b2",
+   "base": "real_photo_74",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0916": {
+   "batch": "b2",
+   "base": "real_photo_74",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0917": {
+   "batch": "b2",
+   "base": "real_photo_74",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0918": {
+   "batch": "b2",
+   "base": "real_photo_74",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0919": {
+   "batch": "b2",
+   "base": "real_photo_74",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0920": {
+   "batch": "b2",
+   "base": "real_photo_74",
+   "references": [
+    "real_photo_32"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0921": {
+   "batch": "b2",
+   "base": "real_photo_75",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0922": {
+   "batch": "b2",
+   "base": "real_photo_75",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0923": {
+   "batch": "b2",
+   "base": "real_photo_75",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0924": {
+   "batch": "b2",
+   "base": "real_photo_75",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0925": {
+   "batch": "b2",
+   "base": "real_photo_75",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0926": {
+   "batch": "b2",
+   "base": "real_photo_75",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0927": {
+   "batch": "b2",
+   "base": "real_photo_75",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0928": {
+   "batch": "b2",
+   "base": "real_photo_75",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0929": {
+   "batch": "b2",
+   "base": "real_photo_75",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0930": {
+   "batch": "b2",
+   "base": "real_photo_75",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0931": {
+   "batch": "b2",
+   "base": "real_photo_76",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0932": {
+   "batch": "b2",
+   "base": "real_photo_76",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0933": {
+   "batch": "b2",
+   "base": "real_photo_76",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0934": {
+   "batch": "b2",
+   "base": "real_photo_76",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0935": {
+   "batch": "b2",
+   "base": "real_photo_76",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0936": {
+   "batch": "b2",
+   "base": "real_photo_76",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0937": {
+   "batch": "b2",
+   "base": "real_photo_76",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0938": {
+   "batch": "b2",
+   "base": "real_photo_76",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0939": {
+   "batch": "b2",
+   "base": "real_photo_76",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0940": {
+   "batch": "b2",
+   "base": "real_photo_76",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0941": {
+   "batch": "b2",
+   "base": "real_photo_77",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0942": {
+   "batch": "b2",
+   "base": "real_photo_77",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0943": {
+   "batch": "b2",
+   "base": "real_photo_77",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0944": {
+   "batch": "b2",
+   "base": "real_photo_77",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0945": {
+   "batch": "b2",
+   "base": "real_photo_77",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0946": {
+   "batch": "b2",
+   "base": "real_photo_77",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0947": {
+   "batch": "b2",
+   "base": "real_photo_77",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0948": {
+   "batch": "b2",
+   "base": "real_photo_77",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0949": {
+   "batch": "b2",
+   "base": "real_photo_77",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0950": {
+   "batch": "b2",
+   "base": "real_photo_77",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0951": {
+   "batch": "b2",
+   "base": "real_photo_78",
+   "references": [
+    "real_photo_31"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0952": {
+   "batch": "b2",
+   "base": "real_photo_78",
+   "references": [
+    "real_photo_31"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0953": {
+   "batch": "b2",
+   "base": "real_photo_78",
+   "references": [
+    "real_photo_31"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0954": {
+   "batch": "b2",
+   "base": "real_photo_78",
+   "references": [
+    "real_photo_31"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0955": {
+   "batch": "b2",
+   "base": "real_photo_78",
+   "references": [
+    "real_photo_31"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0956": {
+   "batch": "b2",
+   "base": "real_photo_78",
+   "references": [
+    "real_photo_31"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0957": {
+   "batch": "b2",
+   "base": "real_photo_78",
+   "references": [
+    "real_photo_31"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0958": {
+   "batch": "b2",
+   "base": "real_photo_78",
+   "references": [
+    "real_photo_31"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0959": {
+   "batch": "b2",
+   "base": "real_photo_78",
+   "references": [
+    "real_photo_31"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0960": {
+   "batch": "b2",
+   "base": "real_photo_78",
+   "references": [
+    "real_photo_31"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0961": {
+   "batch": "b2",
+   "base": "real_photo_79",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0962": {
+   "batch": "b2",
+   "base": "real_photo_79",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0963": {
+   "batch": "b2",
+   "base": "real_photo_79",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0964": {
+   "batch": "b2",
+   "base": "real_photo_79",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0965": {
+   "batch": "b2",
+   "base": "real_photo_79",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0966": {
+   "batch": "b2",
+   "base": "real_photo_79",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0967": {
+   "batch": "b2",
+   "base": "real_photo_79",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0968": {
+   "batch": "b2",
+   "base": "real_photo_79",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0969": {
+   "batch": "b2",
+   "base": "real_photo_79",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0970": {
+   "batch": "b2",
+   "base": "real_photo_79",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0971": {
+   "batch": "b2",
+   "base": "real_photo_80",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0972": {
+   "batch": "b2",
+   "base": "real_photo_80",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0973": {
+   "batch": "b2",
+   "base": "real_photo_80",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0974": {
+   "batch": "b2",
+   "base": "real_photo_80",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0975": {
+   "batch": "b2",
+   "base": "real_photo_80",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0976": {
+   "batch": "b2",
+   "base": "real_photo_80",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0977": {
+   "batch": "b2",
+   "base": "real_photo_80",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0978": {
+   "batch": "b2",
+   "base": "real_photo_80",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0979": {
+   "batch": "b2",
+   "base": "real_photo_80",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0980": {
+   "batch": "b2",
+   "base": "real_photo_80",
+   "references": [
+    "real_photo_7"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0981": {
+   "batch": "b2",
+   "base": "real_photo_81",
+   "references": [
+    "real_photo_20"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0982": {
+   "batch": "b2",
+   "base": "real_photo_81",
+   "references": [
+    "real_photo_20"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0983": {
+   "batch": "b2",
+   "base": "real_photo_81",
+   "references": [
+    "real_photo_20"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0984": {
+   "batch": "b2",
+   "base": "real_photo_81",
+   "references": [
+    "real_photo_20"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0985": {
+   "batch": "b2",
+   "base": "real_photo_81",
+   "references": [
+    "real_photo_20"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0986": {
+   "batch": "b2",
+   "base": "real_photo_81",
+   "references": [
+    "real_photo_20"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0987": {
+   "batch": "b2",
+   "base": "real_photo_81",
+   "references": [
+    "real_photo_20"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0988": {
+   "batch": "b2",
+   "base": "real_photo_81",
+   "references": [
+    "real_photo_20"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0989": {
+   "batch": "b2",
+   "base": "real_photo_81",
+   "references": [
+    "real_photo_20"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0990": {
+   "batch": "b2",
+   "base": "real_photo_81",
+   "references": [
+    "real_photo_20"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_0991": {
+   "batch": "b2",
+   "base": "real_photo_82",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0992": {
+   "batch": "b2",
+   "base": "real_photo_82",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0993": {
+   "batch": "b2",
+   "base": "real_photo_82",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0994": {
+   "batch": "b2",
+   "base": "real_photo_82",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0995": {
+   "batch": "b2",
+   "base": "real_photo_82",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0996": {
+   "batch": "b2",
+   "base": "real_photo_82",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0997": {
+   "batch": "b2",
+   "base": "real_photo_82",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0998": {
+   "batch": "b2",
+   "base": "real_photo_82",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_0999": {
+   "batch": "b2",
+   "base": "real_photo_82",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1000": {
+   "batch": "b2",
+   "base": "real_photo_82",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1001": {
+   "batch": "b2",
+   "base": "real_photo_83",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1002": {
+   "batch": "b2",
+   "base": "real_photo_83",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1003": {
+   "batch": "b2",
+   "base": "real_photo_83",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1004": {
+   "batch": "b2",
+   "base": "real_photo_83",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1005": {
+   "batch": "b2",
+   "base": "real_photo_83",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1006": {
+   "batch": "b2",
+   "base": "real_photo_83",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1007": {
+   "batch": "b2",
+   "base": "real_photo_83",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1008": {
+   "batch": "b2",
+   "base": "real_photo_83",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1009": {
+   "batch": "b2",
+   "base": "real_photo_83",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1010": {
+   "batch": "b2",
+   "base": "real_photo_83",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1011": {
+   "batch": "b2",
+   "base": "real_photo_84",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1012": {
+   "batch": "b2",
+   "base": "real_photo_84",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1013": {
+   "batch": "b2",
+   "base": "real_photo_84",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1014": {
+   "batch": "b2",
+   "base": "real_photo_84",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1015": {
+   "batch": "b2",
+   "base": "real_photo_84",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1016": {
+   "batch": "b2",
+   "base": "real_photo_84",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1017": {
+   "batch": "b2",
+   "base": "real_photo_84",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1018": {
+   "batch": "b2",
+   "base": "real_photo_84",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1019": {
+   "batch": "b2",
+   "base": "real_photo_84",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1020": {
+   "batch": "b2",
+   "base": "real_photo_84",
+   "references": [
+    "real_photo_56"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1021": {
+   "batch": "b2",
+   "base": "real_photo_85",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1022": {
+   "batch": "b2",
+   "base": "real_photo_85",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1023": {
+   "batch": "b2",
+   "base": "real_photo_85",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1024": {
+   "batch": "b2",
+   "base": "real_photo_85",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1025": {
+   "batch": "b2",
+   "base": "real_photo_85",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1026": {
+   "batch": "b2",
+   "base": "real_photo_85",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1027": {
+   "batch": "b2",
+   "base": "real_photo_85",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1028": {
+   "batch": "b2",
+   "base": "real_photo_85",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1029": {
+   "batch": "b2",
+   "base": "real_photo_85",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1030": {
+   "batch": "b2",
+   "base": "real_photo_85",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1031": {
+   "batch": "b2",
+   "base": "real_photo_86",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1032": {
+   "batch": "b2",
+   "base": "real_photo_86",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1033": {
+   "batch": "b2",
+   "base": "real_photo_86",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1034": {
+   "batch": "b2",
+   "base": "real_photo_86",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1035": {
+   "batch": "b2",
+   "base": "real_photo_86",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1036": {
+   "batch": "b2",
+   "base": "real_photo_86",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1037": {
+   "batch": "b2",
+   "base": "real_photo_86",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1038": {
+   "batch": "b2",
+   "base": "real_photo_86",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1039": {
+   "batch": "b2",
+   "base": "real_photo_86",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1040": {
+   "batch": "b2",
+   "base": "real_photo_86",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1041": {
+   "batch": "b2",
+   "base": "real_photo_87",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1042": {
+   "batch": "b2",
+   "base": "real_photo_87",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1043": {
+   "batch": "b2",
+   "base": "real_photo_87",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1044": {
+   "batch": "b2",
+   "base": "real_photo_87",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1045": {
+   "batch": "b2",
+   "base": "real_photo_87",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1046": {
+   "batch": "b2",
+   "base": "real_photo_87",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1047": {
+   "batch": "b2",
+   "base": "real_photo_87",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1048": {
+   "batch": "b2",
+   "base": "real_photo_87",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1049": {
+   "batch": "b2",
+   "base": "real_photo_87",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1050": {
+   "batch": "b2",
+   "base": "real_photo_87",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1051": {
+   "batch": "b2",
+   "base": "real_photo_88",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1052": {
+   "batch": "b2",
+   "base": "real_photo_88",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1053": {
+   "batch": "b2",
+   "base": "real_photo_88",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1054": {
+   "batch": "b2",
+   "base": "real_photo_88",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1055": {
+   "batch": "b2",
+   "base": "real_photo_88",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1056": {
+   "batch": "b2",
+   "base": "real_photo_88",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1057": {
+   "batch": "b2",
+   "base": "real_photo_88",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1058": {
+   "batch": "b2",
+   "base": "real_photo_88",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1059": {
+   "batch": "b2",
+   "base": "real_photo_88",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1060": {
+   "batch": "b2",
+   "base": "real_photo_88",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1061": {
+   "batch": "b2",
+   "base": "real_photo_89",
+   "references": [
+    "real_photo_19"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1062": {
+   "batch": "b2",
+   "base": "real_photo_89",
+   "references": [
+    "real_photo_19"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1063": {
+   "batch": "b2",
+   "base": "real_photo_89",
+   "references": [
+    "real_photo_19"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1064": {
+   "batch": "b2",
+   "base": "real_photo_89",
+   "references": [
+    "real_photo_19"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1065": {
+   "batch": "b2",
+   "base": "real_photo_89",
+   "references": [
+    "real_photo_19"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1066": {
+   "batch": "b2",
+   "base": "real_photo_89",
+   "references": [
+    "real_photo_19"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1067": {
+   "batch": "b2",
+   "base": "real_photo_89",
+   "references": [
+    "real_photo_19"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1068": {
+   "batch": "b2",
+   "base": "real_photo_89",
+   "references": [
+    "real_photo_19"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1069": {
+   "batch": "b2",
+   "base": "real_photo_89",
+   "references": [
+    "real_photo_19"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1070": {
+   "batch": "b2",
+   "base": "real_photo_89",
+   "references": [
+    "real_photo_19"
+   ],
+   "ambiguous": false
+  },
+  "Placement_Issues_1071": {
+   "batch": "b2",
+   "base": "real_photo_90",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1072": {
+   "batch": "b2",
+   "base": "real_photo_90",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1073": {
+   "batch": "b2",
+   "base": "real_photo_90",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1074": {
+   "batch": "b2",
+   "base": "real_photo_90",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1075": {
+   "batch": "b2",
+   "base": "real_photo_90",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1076": {
+   "batch": "b2",
+   "base": "real_photo_90",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1077": {
+   "batch": "b2",
+   "base": "real_photo_90",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1078": {
+   "batch": "b2",
+   "base": "real_photo_90",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1079": {
+   "batch": "b2",
+   "base": "real_photo_90",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1080": {
+   "batch": "b2",
+   "base": "real_photo_90",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1082": {
+   "batch": "b2",
+   "base": "real_photo_91",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1083": {
+   "batch": "b2",
+   "base": "real_photo_91",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1085": {
+   "batch": "b2",
+   "base": "real_photo_91",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1087": {
+   "batch": "b2",
+   "base": "real_photo_91",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1088": {
+   "batch": "b2",
+   "base": "real_photo_91",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1089": {
+   "batch": "b2",
+   "base": "real_photo_91",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1090": {
+   "batch": "b2",
+   "base": "real_photo_91",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1091": {
+   "batch": "b2",
+   "base": "real_photo_92",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1092": {
+   "batch": "b2",
+   "base": "real_photo_92",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1093": {
+   "batch": "b2",
+   "base": "real_photo_92",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1094": {
+   "batch": "b2",
+   "base": "real_photo_92",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1095": {
+   "batch": "b2",
+   "base": "real_photo_92",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1096": {
+   "batch": "b2",
+   "base": "real_photo_92",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1097": {
+   "batch": "b2",
+   "base": "real_photo_92",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1098": {
+   "batch": "b2",
+   "base": "real_photo_92",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1099": {
+   "batch": "b2",
+   "base": "real_photo_92",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1100": {
+   "batch": "b2",
+   "base": "real_photo_92",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1101": {
+   "batch": "b2",
+   "base": "real_photo_93",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1102": {
+   "batch": "b2",
+   "base": "real_photo_93",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1103": {
+   "batch": "b2",
+   "base": "real_photo_93",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1104": {
+   "batch": "b2",
+   "base": "real_photo_93",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1105": {
+   "batch": "b2",
+   "base": "real_photo_93",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1106": {
+   "batch": "b2",
+   "base": "real_photo_93",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1107": {
+   "batch": "b2",
+   "base": "real_photo_93",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1108": {
+   "batch": "b2",
+   "base": "real_photo_93",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1109": {
+   "batch": "b2",
+   "base": "real_photo_93",
+   "references": [],
+   "ambiguous": false
+  },
+  "Placement_Issues_1110": {
+   "batch": "b2",
+   "base": "real_photo_93",
+   "references": [],
+   "ambiguous": false
+  }
+ }
+}
