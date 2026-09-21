@@ -36,10 +36,13 @@ GEN_DIRS = [Path(r"D:/gas_cylinders/Placement_Issues/images"),
             Path(r"D:/gas_cylinders/Placement_Issues_2/images")]
 WEIGHTS = ["yolov8s", "yolov8m", "yolo11s", "yolo11m", "yolo26s", "yolo26m"]
 METRIC = "mAP50-95"
-# The seed photo used by the committed Fig. 2. Chosen by hand for a legible violation (a
-# cylinder lying on the ground among rebar) and pinned here so re-running the script without
-# arguments reproduces the figure exactly; --seed-photo overrides it.
+# The seed photo and generated samples used by the committed Fig. 2. Chosen by hand for a
+# legible violation (a cylinder lying on the ground among rebar) and pinned here so re-running
+# the script without arguments reproduces the figure exactly; --seed-photo and --generated
+# override them.
 DEFAULT_SEED_PHOTO = "real_photo_30"
+DEFAULT_GENERATED = ["Placement_Issues_0001.png", "Placement_Issues_0554.png",
+                     "Placement_Issues_0515.png"]
 
 sys.path.insert(0, str(SCRIPTS))
 import make_aug1085_dataset as aug  # reuse the arm-B augmentation, never reimplement it
@@ -146,8 +149,29 @@ def pick_seed_photo(name: str | None = None) -> Path:
     return chosen
 
 
-def pick_generated(n: int = 3) -> list[Path]:
-    """Spatially spread, mutually dissimilar generated images (greedy, deterministic)."""
+def resolve_generated(name: str) -> Path:
+    """Locate a generated image by name or stem in either reviewed batch."""
+    stem = name if name.endswith(".png") else f"{name}.png"
+    for directory in GEN_DIRS:
+        candidate = directory / stem
+        if candidate.exists():
+            return candidate
+    raise SystemExit(f"no such generated image: {name} (looked in {[str(d) for d in GEN_DIRS]})")
+
+
+def pick_generated(names: list[str] | None = None, n: int = 3) -> list[Path]:
+    """The generated samples shown in Fig. 2.
+
+    With names (the pinned default, or --generated) the choice is exactly what was asked for.
+    Without any, fall back to a deterministic greedy pick of mutually dissimilar images, which
+    is only a way to explore candidates; the paper uses a hand-picked set.
+    """
+    if names:
+        chosen = [resolve_generated(name) for name in names]
+        for path in chosen:
+            if not aug.read_label(label_path(path)):
+                print(f"note: {path.name} has no annotated box; its panel will show none")
+        return chosen
     pool = positive_images(GEN_DIRS[0], limit=60) + positive_images(GEN_DIRS[1], limit=60)
     chosen = [pool[0]]
     while len(chosen) < n:
@@ -180,12 +204,14 @@ def draw(ax, source, title: str, rows) -> None:
         spine.set_visible(False)
 
 
-def arms_samples(png: str | None, seed_name: str | None) -> None:
+def arms_samples(png: str | None, seed_name: str | None,
+                 generated_names: list[str] | None) -> None:
     seed_photo = pick_seed_photo(seed_name)
     seed_rows = aug.read_label(label_path(seed_photo))
     variants = [aug.augment(Image.open(seed_photo).convert("RGB"), seed_rows,
                             random.Random(seed)) for seed in (1, 2, 3)]
-    generated = pick_generated(3)
+    generated = pick_generated(generated_names if generated_names is not None
+                               else DEFAULT_GENERATED)
 
     fig, top, bottom, note_y = layout(seed_photo, generated)
     draw(fig.add_subplot(top[0, 0]), seed_photo,
@@ -215,6 +241,7 @@ def arms_samples(png: str | None, seed_name: str | None) -> None:
 def layout(seed_photo: Path, generated: list[Path]):
     """Size the canvas from the images' real aspect ratios so no dead band is left over."""
     fig_w, side, head, title, gap, note = 11.0, 0.10, 0.34, 0.26, 0.30, 0.80
+    columns = len(generated)
     with Image.open(seed_photo) as handle:
         seed_aspect = handle.width / handle.height
     aspects = []
@@ -223,7 +250,7 @@ def layout(seed_photo: Path, generated: list[Path]):
             aspects.append(handle.width / handle.height)
     usable = fig_w - 2 * side
     top_h = (usable / 4) / seed_aspect
-    bottom_h = (usable / 3) / min(aspects)
+    bottom_h = (usable / columns) / min(aspects)
     fig_h = head + title + top_h + gap + title + bottom_h + note
     top_bottom = fig_h - head - title - top_h
     bottom_top = top_bottom - gap - title
@@ -231,7 +258,7 @@ def layout(seed_photo: Path, generated: list[Path]):
     fig = plt.figure(figsize=(fig_w, fig_h))
     spans = dict(left=side / fig_w, right=1 - side / fig_w, wspace=0.05)
     top = fig.add_gridspec(1, 4, bottom=top_bottom / fig_h, top=(top_bottom + top_h) / fig_h, **spans)
-    bottom = fig.add_gridspec(1, 3, bottom=bottom_bottom / fig_h,
+    bottom = fig.add_gridspec(1, columns, bottom=bottom_bottom / fig_h,
                               top=(bottom_bottom + bottom_h) / fig_h, **spans)
     return fig, top, bottom, (bottom_bottom - 0.40) / fig_h
 
@@ -306,11 +333,17 @@ def main() -> None:
     parser.add_argument("--png", default=None, help="also write a raster copy to this path")
     parser.add_argument("--seed-photo", default=None,
                         help="arms-samples: seed photo stem, e.g. real_photo_30")
+    parser.add_argument("--generated", default=None,
+                        help="arms-samples: comma-separated generated images for the bottom "
+                             "row (name or stem); default is the pinned paper set, pass '' to "
+                             "fall back to the automatic diverse pick")
     args = parser.parse_args()
     if args.fig == "selection-curve":
         selection_curve(args.png)
     elif args.fig == "arms-samples":
-        arms_samples(args.png, args.seed_photo)
+        names = (None if args.generated is None
+                 else [name.strip() for name in args.generated.split(",") if name.strip()])
+        arms_samples(args.png, args.seed_photo, names)
     else:
         table_selection()
 
