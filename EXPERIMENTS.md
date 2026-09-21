@@ -73,6 +73,27 @@ L2 不增加训练臂，只复用 L1/L3 每 10 轮保存的快照。gen493 是 g
 
 实现入口：`scripts/eval_v4_protocol.py`。结果写入 `experiments/v4_protocol/`。
 
+### 异常 run 的报告规则
+
+异常 run 不得事后排除：六个 detector 在每一臂都全部报告，任何臂、任何结果都不删除 detector。arm 级 detector+checkpoint 联合选择始终把六个 detector 作为候选；分数偏低的 detector 在选权集合上自然落选，但不作人工剔除，也不重跑挑好结果。
+
+- 判据（预注册，不随结果调整）：某臂某 detector 的 fixed endpoint 与 pooled OOF 同时低于该臂六个 detector 中位数的 1/2 时，记为该臂的 `non-convergent` run。表格中标记该行，数值保留。
+- 诊断证据：`non-convergent` run 附 `results.csv` 的自评末轮曲线，仅作训练收敛诊断；该曲线不参与任何选权。
+- 解释口径：记为「该 detector 在稀缺源数据上的训练不稳定性」。若 B/C 臂显示离群 detector 随臂变化（同一 detector 时好时坏），改写为「多 detector × 稀缺数据的训练方差」，不指名单个 detector。
+- 阈值按臂独立判断；阈值与判据在 A 臂结果已知的情况下定稿，且此后不再修改。
+
+### 预注册配对聚类 bootstrap
+
+- 指标：mAP50-95，与选权和主表同一指标。
+- 重抽次数 10000，随机种子 0。参数在 B/C 结果出来之前写定，此后不因结果调整。
+- 聚类单位：dev61 图片（61 个簇）。当前没有来源场景元数据，因此不按场景聚类；72 个框不作为独立样本，每次重抽都以整张图片为单位。
+- 配对设计：同一次重抽的图片集合同时用于两臂，差值在同一批图片上计算；不独立重抽两臂。
+- 每次重抽都汇总逐图预测后重新计算一次 AP，禁止平均各次重抽的 fold mAP。
+- 报告对象：arm 级 detector+checkpoint 联合 OOF（主要主张），以及每 detector 的 fixed endpoint 与 pooled OOF（一致性证据）。
+- 该 bootstrap 只量化 dev61 这一批图片的抽样不确定性；它不消除 dev61 已参与协议判断所带来的偏差，后者只能由新收集的冻结数据解决。
+
+实现入口：`scripts/bootstrap_paired.py`，结果写入 `experiments/v4_protocol/bootstrap_paired.json`；逐图检测行缓存在 `experiments/v4_protocol/per_image/per_image_<arm>.json`。
+
 ## L1 三臂对照
 
 | 臂 | 训练数据 | 数量 |
