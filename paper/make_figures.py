@@ -36,6 +36,10 @@ GEN_DIRS = [Path(r"D:/gas_cylinders/Placement_Issues/images"),
             Path(r"D:/gas_cylinders/Placement_Issues_2/images")]
 WEIGHTS = ["yolov8s", "yolov8m", "yolo11s", "yolo11m", "yolo26s", "yolo26m"]
 METRIC = "mAP50-95"
+# The seed photo used by the committed Fig. 2. Chosen by hand for a legible violation (a
+# cylinder lying on the ground among rebar) and pinned here so re-running the script without
+# arguments reproduces the figure exactly; --seed-photo overrides it.
+DEFAULT_SEED_PHOTO = "real_photo_30"
 
 sys.path.insert(0, str(SCRIPTS))
 import make_aug1085_dataset as aug  # reuse the arm-B augmentation, never reimplement it
@@ -130,25 +134,16 @@ def positive_images(directory: Path, limit: int | None = None) -> list[Path]:
 
 
 def pick_seed_photo(name: str | None = None) -> Path:
-    """The seed photo used as the illustration, or a deterministic default.
+    """The seed photo used by the illustration.
 
-    real93 mixes two annotation conventions: 178 of its 179 boxes are small (median area
-    0.021) while one photo is annotated with a single whole-frame box, so "largest box"
-    picks that anomaly. The default therefore ignores near-whole-frame boxes and takes the
-    largest remaining one; --seed-photo names a specific photo instead, which is what the
-    paper figure uses (the choice is illustrative, not a sample statistic).
+    Pinned by name rather than chosen by a rule: real93 mixes annotation conventions (178 of
+    its 179 boxes are small, median area 0.021, while one photo carries a single whole-frame
+    box), so any automatic "most prominent box" rule picks that anomaly rather than a legible
+    violation.
     """
-    if name:
-        chosen = SEED_IMAGES / f"{name}.png"
-        assert chosen.exists(), f"no such seed photo: {chosen}"
-        return chosen
-    best, best_area = None, -1.0
-    for image in positive_images(SEED_IMAGES):
-        rows = aug.read_label(label_path(image))
-        area = max((w * h for _, _, _, w, h in rows if w * h <= 0.9), default=0.0)
-        if area > best_area:
-            best, best_area = image, area
-    return best
+    chosen = SEED_IMAGES / f"{name or DEFAULT_SEED_PHOTO}.png"
+    assert chosen.exists(), f"no such seed photo: {chosen}"
+    return chosen
 
 
 def pick_generated(n: int = 3) -> list[Path]:

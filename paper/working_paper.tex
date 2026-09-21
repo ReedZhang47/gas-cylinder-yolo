@@ -2,7 +2,9 @@
 %% working_paper.tex — 正文工作文件
 %% 首投：Automation in Construction (Elsevier)，模板 elsarticle
 %% 结构说明见 paper/PAPER_PLAN.md；参考文献 paper/references.bib
-%% 编译：latexmk -pdf working_paper.tex（或 pdflatex -> bibtex -> pdflatex x2）
+%% 编译：latexmk -pdf -bibtex- working_paper.tex
+%%       正文还没有 \cite 与 \bibliography，plain `latexmk -pdf` 会卡在 bibtex 步骤；
+%%       等 Related Work 引入文献后改用 plain `latexmk -pdf`（bibtex 才会生效）。
 %% 首投可用 "Your Paper Your Way"（本模板即够）；转投 MDPI 时换模板搬正文
 %% 红线：正文数字以 experiments/ 中当前正式实验汇总和 PROGRESS.md 为准，
 %%       不在此文件手抄改数（防口径漂移）
@@ -66,7 +68,8 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 %  C3: empirical evidence that increasing the *quantity* of diverse generated samples
 %      improves real-world detection (scaling ablation, \S\ref{sec:scale});
 %  C4 (optional): generality to a second scarce target (helmet non-use, \S\ref{sec:helmet}).
-\todo{英文初稿（依赖文献阅读；引 \cite{nath2020ppe,jeong2026lora,davari2025bcon} 作动机支撑）}
+% 英文初稿（依赖文献阅读；引 \cite{nath2020ppe,jeong2026lora,davari2025bcon} 作动机支撑）
+\todo{TODO}
 
 % ==========================================================================
 \section{Related Work}\label{sec:related}
@@ -75,7 +78,8 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 % 已有本地文献：\cite{nath2020ppe} PPE 实时检测；\cite{fang2018nocert} 非持证作业；
 % \cite{zhang2025helmet} 安全帽；数据集 \cite{duan2022soda}。
 % 综述线索：工地 CV 长期受限于数据获取（安全/隐私/成本）。
-\todo{编写：从 PPE/行为检测讲到数据瓶颈}
+% 编写：从 PPE/行为检测讲到数据瓶颈
+\todo{TODO}
 
 \subsection{Synthetic and generative data for object detection}
 % 三条线：
@@ -89,12 +93,14 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 %     \cite{girella2024diag, li2025steeldefect, liu2025substation, dinh2026ponding}
 % 差异点：本文针对"违规状态"类危险样本（不是 worker 本体），且强调
 %        全自动打标+人工复核闭环 与 干净评测协议+数量缩放实证。
-\todo{编写（这是与最接近竞品划界限的关键小节）}
+% 编写（这是与最接近竞品划界限的关键小节）
+\todo{TODO}
 
 \subsection{Auto-labeling and human-in-the-loop annotation}
 % \cite{lee2013pseudolabel, xie2020noisystudent, northcutt2021labelerrors}
 % 本文闭环：打标模型预标注 -> GUI 人工复核（复核率 100%），人工复核是质量门。
-\todo{编写}
+% 编写
+\todo{TODO}
 
 % ==========================================================================
 \section{Methodology}\label{sec:method}
@@ -102,24 +108,28 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 \subsection{Target definition and problem statement}
 % "Placement Issues" 口径（监理实际管理口径）：气瓶未放置在专用固定架/手推车上
 % 即为正样本（无论倒地与否）；规范放置=负样本（背景图）。
-\todo{编写（素材：PROGRESS.md 一（项目与目标））}
+% 编写（素材：PROGRESS.md 一（项目与目标））
+\todo{TODO}
 
 \subsection{Real seed data and annotation}
 % 93 张真实巡检照片：57 正（179 框）+ 36 负（空标），人工标注；
 % 数据来源与合规说明。
-\todo{编写（素材：PROGRESS.md 二.1）}
+% 编写（素材：PROGRESS.md 二.1）
+\todo{TODO}
 
 \subsection{State-editing synthesis pipeline}
 % Qwen-Image-Edit-2509 图生图编辑真实巡检照片 -> 合成"违规状态"样本
 % （两批共 1085 张，全部源自 93 张真实照片）。
 % 真实性红线：必须带喷漆磨损/污渍/锈迹（v0 教训）。
 % 逐图来源记录（ComfyUI 元数据留档）只作数据管理，不写成方法学贡献。
-\todo{编写（素材：PROGRESS.md 一/二；工具引用 \cite{qwenimage2025, qwenimageedit2025}）}
+% 编写（素材：PROGRESS.md 一/二；工具引用 \cite{qwenimage2025, qwenimageedit2025}）
+\todo{TODO}
 
 \subsection{Auto-labeling with human-in-the-loop review}
 % 打标模型（gen1085/yolo26s，在生成图上训练）预标注 ->
 % annotator GUI 逐张人工复核（100% 复核率）-> 已复核合成数据（1085 张）。
-\todo{编写（素材：PROGRESS.md 二.2 与 五（打标模型））}
+% 编写（素材：PROGRESS.md 二.2 与 五（打标模型））
+\todo{TODO}
 
 \subsection{Evaluation protocol}\label{sec:protocol}
 % 关键设计：
@@ -135,7 +145,8 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 %    作为选权泛化估计；全 dev61 选出的 detector/checkpoint 仅作部署，分数为 development score；
 %  - detector 与 checkpoint 的联合选择必须一起放进内层选择，不能事后挑最高 detector；
 %  - 三臂同源对照（同一批 93 张真实照片：原样 / 传统增广 / 编辑合成）。
-\todo{编写（素材：PROGRESS.md；口径见 EXPERIMENTS.md）}
+% 编写（素材：PROGRESS.md；口径见 EXPERIMENTS.md）
+\todo{TODO}
 
 % Fig.1 由 figures/fig1_pipeline.tex 编译而来（TikZ 重绘，替代早先的 mermaid 草图）。
 \begin{figure}[t]
@@ -160,8 +171,9 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 % 6 个检测器（YOLOv8/v11/v26 x s/m），统一超参 epochs=300 / imgsz=640 /
 % batch=16 / device=0 / patience=0 / save_period=10；硬件 RTX 5070 Ti Laptop。
 % 预注册 5 折（seed 42，有框/空标分层）和三点平滑选权规则。
-\todo{编写（素材：PROGRESS.md 三（结果）；引用 \cite{redmon2016yolo,
-bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralytics2025}）}
+% 编写（素材：PROGRESS.md 三（结果）；引用 \cite{redmon2016yolo,
+% bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralytics2025}）
+\todo{TODO}
 
 % Fig.2 由 paper/make_figures.py --fig arms-samples 生成（--seed-photo 选定源图）。
 \begin{figure}[t]
@@ -193,7 +205,8 @@ bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralyt
   \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
    & Fixed & OOF & Fixed & OOF & Fixed & OOF \\
   \midrule
-  \todo{6 行数据} & & & & & & \\
+  % 6 行数据
+\todo{TODO} & & & & & & \\
   \bottomrule
   \end{tabular}
   \label{tab:main}
@@ -218,7 +231,8 @@ bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralyt
 
 \subsection{Data-scale ablation}\label{sec:scale}
 % v4 待完成：gen493 全量 vs gen1085 全量，统一 300 轮与三层评估。
-\todo{编写：规模曲线 + fixed endpoint / pooled OOF 小表（素材：experiments/v4_protocol/）}
+% 编写：规模曲线 + fixed endpoint / pooled OOF 小表（素材：experiments/v4_protocol/）
+\todo{TODO}
 
 \subsection{Checkpoint-selection stability}\label{sec:stability}
 % 当前只有 A 臂结果；B/C 齐后补同一张表的两行，并核对稳定性结论是否在 1085 张上复现。
@@ -241,7 +255,8 @@ informative. The five folds agree exactly for \texttt{yolov8s} and \texttt{yolo2
 \texttt{yolo11m} selects a different epoch depending on the fold, and that detector is the
 least reliable on this arm in every other respect as well.
 
-\todo{待 B/C 臂：同一图同一表补两行，并核对上述稳定性结论是否在 1085 张训练数据上复现。}
+% 待 B/C 臂：同一图同一表补两行，并核对上述稳定性结论是否在 1085 张训练数据上复现。
+\todo{TODO}
 
 % Fig.3 由 paper/make_figures.py --fig selection-curve 生成；表体由 --fig tab-selection 生成。
 \begin{figure}[t]
@@ -260,15 +275,17 @@ least reliable on this arm in every other respect as well.
 \input{tables/tab_selection.tex}
 
 \subsection{Cross-target generalization: helmet non-use}\label{sec:helmet}
-\todo{待实验：安全帽第二目标（管线复用）。三级定位第 2 级的门槛，见 PAPER_PLAN 第五节。}
+% 待实验：安全帽第二目标（管线复用）。三级定位第 2 级的门槛，见 PAPER_PLAN 第五节。
+\todo{TODO}
 
 \subsection{Comparison with classical augmentation and public datasets}
 % 与 4.2 主对照同源，写作时可直接并入 4.2 叙述（本小节保留以备拆分投稿版本）。
-\todo{待实验：传统增广臂（B）= 93 张离线增广到 1085（总量与 C 臂一致，不按
-"单图有无标签"配正负比，标注单位是框、一张图上可混合），
-统一训练与 v4 交叉拟合评估（\cite{ghiasi2021copypaste, shorten2019augmentation}）；
-设计见 PAPER_PLAN 第四节 1。公开数据：两个 Roboflow 气瓶数据集无放置位姿标注、
-不可用（\cite{rfcylinders, rfgarrafas}），改为 Introduction/Discussion 论据。}
+% 待实验：传统增广臂（B）= 93 张离线增广到 1085（总量与 C 臂一致，不按
+% "单图有无标签"配正负比，标注单位是框、一张图上可混合），
+% 统一训练与 v4 交叉拟合评估（\cite{ghiasi2021copypaste, shorten2019augmentation}）；
+% 设计见 PAPER_PLAN 第四节 1。公开数据：两个 Roboflow 气瓶数据集无放置位姿标注、
+% 不可用（\cite{rfcylinders, rfgarrafas}），改为 Introduction/Discussion 论据。
+\todo{TODO}
 
 % ==========================================================================
 \section{Discussion}\label{sec:discussion}
@@ -280,11 +297,13 @@ least reliable on this arm in every other respect as well.
 %  3) 伦理与合规：生成式 AI 使用披露、生成数据不用于冒充真实证据；标注人工复核质量门
 %  4) 通用性愿景（勿 overclaim）：can be re-instantiated for other scarce targets;
 %     跨行业图像识别数据稀缺皆适用（Discussion/future work 口径，见 PAPER_PLAN 第五节三级定位）
-\todo{编写}
+% 编写
+\todo{TODO}
 
 % ==========================================================================
 \section{Conclusions}\label{sec:conclusion}
-\todo{最后写：3~5 句 + 局限 + future work}
+% 最后写：3~5 句 + 局限 + future work
+\todo{TODO}
 
 % ==========================================================================
 % AiC 投稿要求的声明节（占位，投稿前完善）
