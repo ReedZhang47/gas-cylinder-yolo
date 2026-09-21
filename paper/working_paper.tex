@@ -175,19 +175,21 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 % bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralytics2025}）
 \todo{TODO}
 
-% Fig.2 由 paper/make_figures.py --fig arms-samples 生成（--seed-photo 选定源图）。
+% Fig.2 由 paper/make_figures.py --fig arms-samples 生成（--seed-photo / --generated 选定图）。
+% 图与图注目前由作者手工在 PDF 编辑器里定稿，脚本只作候选生成与复现入口。
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{fig2_arms_samples.pdf}
   \caption{What each same-source arm actually adds. Top: one real seed photo and three
   variants produced by the exact augmentation function used to build the
   classical-augmentation arm, with boxes carried through every geometric transform.
-  Bottom: representative state-editing samples in sampling order; the generation step
-  retained no source-image mapping, so these are not edits of the photo above and the
-  pairing is illustrative only. All boxes are the reviewed human labels. Classical
-  augmentation changes the geometry and colour of a scene that the seed photo already
-  contains, so it cannot introduce a hazard state that was not annotated there, which caps
-  what this arm can teach; state editing can.}
+  Bottom: representative state-editing samples. Every synthesized image is an edit of one of
+  the same seed photographs, but the panels are not a matched set: the samples shown are
+  edits of other seeds rather than of the photo above, so the vertical pairing is
+  illustrative only. No synthesized image derives from the development benchmark. All boxes
+  are the reviewed human labels. Classical augmentation changes the geometry and colour of a
+  scene that the seed photo already contains, so it cannot introduce a hazard state that was
+  not annotated there, which caps what this arm can teach; state editing can.}
   \label{fig:arms}
 \end{figure}
 

@@ -193,6 +193,9 @@ def thumb(path: Path):
 def draw(ax, source, title: str, rows) -> None:
     picture = Image.open(source).convert("RGB") if isinstance(source, (str, Path)) else source
     ax.imshow(picture)
+    # imshow shrinks the axes box to the image aspect; anchoring at the top keeps the panel
+    # titles of a row on one line when the images have different aspect ratios.
+    ax.set_anchor("N")
     width, height = picture.size
     for _, cx, cy, bw, bh in rows:
         ax.add_patch(Rectangle(((cx - bw / 2) * width, (cy - bh / 2) * height),
@@ -205,7 +208,14 @@ def draw(ax, source, title: str, rows) -> None:
 
 
 def arms_samples(png: str | None, seed_name: str | None,
-                 generated_names: list[str] | None) -> None:
+                 generated_names: list[str] | None, force: bool = False) -> None:
+    # Fig. 2 is finalized by hand in a PDF editor after the script picks the panels, so the
+    # script must not silently throw that work away on a re-run.
+    target = FIG_DIR / "fig2_arms_samples.pdf"
+    if target.exists() and not force:
+        raise SystemExit(
+            f"{target.name} already exists and Fig. 2 is hand-finalized; pass --force to "
+            f"overwrite it with a script-generated version.")
     seed_photo = pick_seed_photo(seed_name)
     seed_rows = aug.read_label(label_path(seed_photo))
     variants = [aug.augment(Image.open(seed_photo).convert("RGB"), seed_rows,
@@ -229,11 +239,13 @@ def arms_samples(png: str | None, seed_name: str | None,
              "augmentation function used to build the B arm; boxes are carried through every\n"
              "transform. Rotation and down-scaling pad with grey, so a variant can carry grey "
              "margins - a property of this arm, not a rendering artefact.\n"
-             "Bottom row: generated samples (C) in sampling order - "
+             "Bottom row: generated samples (C) - "
              + ", ".join(image.name for image in generated) + ".\n"
-             "The generation step kept no source-image mapping, so these are not edits of the "
-             "photo above; the pairing is illustrative only. All boxes are the reviewed human "
-             "labels.",
+             "Every synthesized image is an edit of one of the same seed photos, but the "
+             "panels are not a matched set: the samples shown are edits of other seeds,\n"
+             "not of the photo above, so the vertical pairing is illustrative only. No "
+             "synthesized image derives from the development benchmark.\n"
+             "All boxes are the reviewed human labels.",
              ha="center", va="top", fontsize=7.5, color="0.2")
     save(fig, "fig2_arms_samples.pdf", png)
 
@@ -337,13 +349,15 @@ def main() -> None:
                         help="arms-samples: comma-separated generated images for the bottom "
                              "row (name or stem); default is the pinned paper set, pass '' to "
                              "fall back to the automatic diverse pick")
+    parser.add_argument("--force", action="store_true",
+                        help="arms-samples: overwrite the hand-finalized Fig. 2 PDF")
     args = parser.parse_args()
     if args.fig == "selection-curve":
         selection_curve(args.png)
     elif args.fig == "arms-samples":
         names = (None if args.generated is None
                  else [name.strip() for name in args.generated.split(",") if name.strip()])
-        arms_samples(args.png, args.seed_photo, names)
+        arms_samples(args.png, args.seed_photo, names, args.force)
     else:
         table_selection()
 
