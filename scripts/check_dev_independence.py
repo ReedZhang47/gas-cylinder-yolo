@@ -29,18 +29,27 @@ any image generated from them, which is exactly what this check demonstrates.
 
 Usage (read-only, ~30 s):
   & D:\yolo\.venv\Scripts\python.exe D:\yolo\scripts\check_dev_independence.py
+
+Writes the summary to experiments/dev_independence.json (PROGRESS.md cites it); use
+--out to redirect. Only the summary is written, never the full 61 x 1085 matrix.
 """
+import argparse
+import json
+from datetime import date
 from pathlib import Path
 
 import numpy as np
 from PIL import Image
 
+ROOT = Path(r"D:/yolo")
+OUT_PATH = ROOT / "experiments" / "dev_independence.json"
 GAS = Path(r"D:/gas_cylinders")
 DEV_DIR = GAS / "new_test_set" / "images"
 REAL_DIR = GAS / "real_photo" / "93_real_photos" / "images"
 GEN_DIRS = [GAS / "Placement_Issues" / "images", GAS / "Placement_Issues_2" / "images"]
 PER_BATCH = 400          # 400 + 400 = the 800 sampled generated images
 SIZE = (48, 48)
+THRESHOLDS = (0.90, 0.95)
 
 
 def thumbs(paths):
@@ -54,7 +63,18 @@ def thumbs(paths):
     return np.stack(out)
 
 
+def summarize(matrix: np.ndarray, symmetric: bool = False) -> dict:
+    above = {f"above_{t:.2f}": int((matrix > t).sum()) for t in THRESHOLDS}
+    if symmetric:  # a symmetric matrix counts each pair twice
+        above = {key: value // 2 for key, value in above.items()}
+    return {"max": round(float(matrix.max()), 6), **above}
+
+
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--out", default=str(OUT_PATH))
+    args = parser.parse_args()
+
     dev = sorted(DEV_DIR.glob("*"))
     real = sorted(REAL_DIR.glob("*.png"))
     gen = sorted(GEN_DIRS[0].glob("*.png"))[:PER_BATCH] + \
@@ -80,6 +100,46 @@ def main():
     verdict = (dr.max() < rr.max()) and (dg.max() < rr.max()) and not (dd > 0.90).any()
     print(f"\n[{'OK' if verdict else 'CHECK'}] dev-vs-training similarity stays below the "
           f"same-source ceiling ({rr.max():.3f}); dev internal has no pair >0.90.")
+
+    gi, gj = np.unravel_index(dg.argmax(), dg.shape)
+    violating = [[dev[a].name, dev[b].name, round(float(dd[a, b]), 6)]
+                 for a, b in zip(*np.where(np.triu(dd > THRESHOLDS[0], k=1)))]
+    record = {
+        "script": "scripts/check_dev_independence.py",
+        "run_date": date.today().isoformat(),
+        "method": "mean-removed L2-normalised 48x48 grayscale thumbnails, cosine similarity",
+        "config": {"thumbnail": list(SIZE), "gen_per_batch": PER_BATCH,
+                   "thresholds": list(THRESHOLDS)},
+        "inputs": {
+            "dev61": {"dir": str(DEV_DIR), "n": len(dev)},
+            "real93": {"dir": str(REAL_DIR), "n": len(real)},
+            "gen_sampled": {"dirs": [str(d) for d in GEN_DIRS], "n": len(gen)},
+        },
+        "matrices": {
+            "dev61_vs_real93": summarize(dr),
+            "dev61_vs_gen": summarize(dg),
+            "dev61_internal": summarize(dd, symmetric=True),
+            "real93_internal": summarize(rr, symmetric=True),
+        },
+        "most_similar_pair": {
+            "dev61_vs_real93": {"dev": dev[i].name, "real93": real[j].name,
+                                "similarity": round(float(dr.max()), 6)},
+            "dev61_vs_gen": {"dev": dev[gi].name, "gen": gen[gj].name,
+                             "similarity": round(float(dg.max()), 6)},
+        },
+        "dev61_internal_pairs_above_0.90": violating,
+        "verdict": {
+            "same_source_ceiling": round(float(rr.max()), 6),
+            "dev_below_ceiling": bool(dr.max() < rr.max()),
+            "gen_below_ceiling": bool(dg.max() < rr.max()),
+            "no_dev61_pair_above_0.90": not violating,
+            "pass": bool(verdict),
+        },
+    }
+    out = Path(args.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"saved -> {out}")
 
 
 if __name__ == "__main__":

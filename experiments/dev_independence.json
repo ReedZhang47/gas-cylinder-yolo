@@ -1,0 +1,75 @@
+{
+  "script": "scripts/check_dev_independence.py",
+  "run_date": "2026-09-21",
+  "method": "mean-removed L2-normalised 48x48 grayscale thumbnails, cosine similarity",
+  "config": {
+    "thumbnail": [
+      48,
+      48
+    ],
+    "gen_per_batch": 400,
+    "thresholds": [
+      0.9,
+      0.95
+    ]
+  },
+  "inputs": {
+    "dev61": {
+      "dir": "D:\\gas_cylinders\\new_test_set\\images",
+      "n": 61
+    },
+    "real93": {
+      "dir": "D:\\gas_cylinders\\real_photo\\93_real_photos\\images",
+      "n": 93
+    },
+    "gen_sampled": {
+      "dirs": [
+        "D:\\gas_cylinders\\Placement_Issues\\images",
+        "D:\\gas_cylinders\\Placement_Issues_2\\images"
+      ],
+      "n": 800
+    }
+  },
+  "matrices": {
+    "dev61_vs_real93": {
+      "max": 0.729926,
+      "above_0.90": 0,
+      "above_0.95": 0
+    },
+    "dev61_vs_gen": {
+      "max": 0.732356,
+      "above_0.90": 0,
+      "above_0.95": 0
+    },
+    "dev61_internal": {
+      "max": 0.678241,
+      "above_0.90": 0,
+      "above_0.95": 0
+    },
+    "real93_internal": {
+      "max": 0.8336,
+      "above_0.90": 0,
+      "above_0.95": 0
+    }
+  },
+  "most_similar_pair": {
+    "dev61_vs_real93": {
+      "dev": "new_test_set_0059.jpg",
+      "real93": "real_photo_19.png",
+      "similarity": 0.729926
+    },
+    "dev61_vs_gen": {
+      "dev": "new_test_set_0059.jpg",
+      "gen": "Placement_Issues_0384.png",
+      "similarity": 0.732356
+    }
+  },
+  "dev61_internal_pairs_above_0.90": [],
+  "verdict": {
+    "same_source_ceiling": 0.8336,
+    "dev_below_ceiling": true,
+    "gen_below_ceiling": true,
+    "no_dev61_pair_above_0.90": true,
+    "pass": true
+  }
+}

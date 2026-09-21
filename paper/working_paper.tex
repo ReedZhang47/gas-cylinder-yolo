@@ -137,16 +137,19 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 %  - 三臂同源对照（同一批 93 张真实照片：原样 / 传统增广 / 编辑合成）。
 \todo{编写（素材：PROGRESS.md；口径见 EXPERIMENTS.md）}
 
+% Fig.1 由 figures/fig1_pipeline.tex 编译而来（TikZ 重绘，替代早先的 mermaid 草图）。
 \begin{figure}[t]
   \centering
-  \fbox{\parbox{0.92\linewidth}{\centering
-    \todo{Fig.~1 管线总图\\（先用 \texttt{paper/fig1\_pipeline.md} 的 mermaid 草图记录思路；\\
-    定稿前用 TikZ 正式重绘并替换 \texttt{\textbackslash includegraphics\{fig1\_pipeline.pdf\}}）}}}
-  \caption{\todo{Overview of the proposed pipeline: real-photo seeding, generative
-  expansion, auto-labeling with human-in-the-loop review, and training/evaluation on
-  an independently sourced development benchmark with cross-fitted held-out evaluation;
-  the loop re-instantiates for other scarce
-  hazardous targets.}}
+  \includegraphics[width=\linewidth]{fig1_pipeline.pdf}
+  \caption{Overview of the proposed pipeline. A small expert-annotated real seed set is
+  expanded along three same-source arms: no augmentation, classical offline augmentation,
+  and state-editing synthesis. Only the synthesized images pass through auto-labelling with
+  human-in-the-loop review, which is a quality gate rather than a convenience. All arms
+  share one training protocol and are evaluated on an independently sourced development
+  benchmark, reported as a fixed endpoint, cross-fitted held-out predictions pooled for AP,
+  and a separately identified deployment model. Solid arrows are the main flow, dashed
+  arrows are checks and the reuse path, and the two highlighted boxes are the quality gates.
+  Sample counts are given in the text and tables rather than in the figure.}
   \label{fig:pipeline}
 \end{figure}
 
@@ -159,6 +162,22 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 % 预注册 5 折（seed 42，有框/空标分层）和三点平滑选权规则。
 \todo{编写（素材：PROGRESS.md 三（结果）；引用 \cite{redmon2016yolo,
 bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralytics2025}）}
+
+% Fig.2 由 paper/make_figures.py --fig arms-samples 生成（--seed-photo 选定源图）。
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{fig2_arms_samples.pdf}
+  \caption{What each same-source arm actually adds. Top: one real seed photo and three
+  variants produced by the exact augmentation function used to build the
+  classical-augmentation arm, with boxes carried through every geometric transform.
+  Bottom: representative state-editing samples in sampling order; the generation step
+  retained no source-image mapping, so these are not edits of the photo above and the
+  pairing is illustrative only. All boxes are the reviewed human labels. Classical
+  augmentation changes the geometry and colour of a scene that the seed photo already
+  contains, so it cannot introduce a hazard state that was not annotated there, which caps
+  what this arm can teach; state editing can.}
+  \label{fig:arms}
+\end{figure}
 
 \subsection{Main comparison: three same-source arms}\label{sec:main}
 % 主结果表：每 detector、每 arm 各报 fixed endpoint 和 pooled OOF mAP50-95。
@@ -200,6 +219,45 @@ bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralyt
 \subsection{Data-scale ablation}\label{sec:scale}
 % v4 待完成：gen493 全量 vs gen1085 全量，统一 300 轮与三层评估。
 \todo{编写：规模曲线 + fixed endpoint / pooled OOF 小表（素材：experiments/v4_protocol/）}
+
+\subsection{Checkpoint-selection stability}\label{sec:stability}
+% 当前只有 A 臂结果；B/C 齐后补同一张表的两行，并核对稳定性结论是否在 1085 张上复现。
+Each detector is trained once and snapshotted every ten epochs, so the reporting protocol
+has to choose a checkpoint. The pre-registered rule smooths the dev61 mAP50--95 curve over
+three adjacent snapshots and takes its maximum, resolving ties towards the earlier epoch.
+Figure~\ref{fig:selection} shows the curves behind that rule for arm~A, marking for each
+detector the epoch selected on all of dev61 (the deployment choice) and the epoch selected
+by each of the five cross-fitting folds; Table~\ref{tab:selection} lists those choices
+together with the resulting scores.
+
+The fixed-endpoint and pooled-OOF columns must not be read as two models scored on one test
+set. The fixed endpoint is a single checkpoint evaluated on all of dev61, whereas the pooled
+estimate mixes five fold-selected checkpoints, each scored only on the images that were
+excluded when it was chosen. What the pair shows is whether the selection rule earns its
+keep. On this arm it does not do so uniformly: for four of the six detectors the pooled
+estimate falls slightly below the fixed endpoint, while for the two strongest detectors it
+improves on it substantially (Table~\ref{tab:selection}). Selection stability is also itself
+informative. The five folds agree exactly for \texttt{yolov8s} and \texttt{yolo26s}, whereas
+\texttt{yolo11m} selects a different epoch depending on the fold, and that detector is the
+least reliable on this arm in every other respect as well.
+
+\todo{待 B/C 臂：同一图同一表补两行，并核对上述稳定性结论是否在 1085 张训练数据上复现。}
+
+% Fig.3 由 paper/make_figures.py --fig selection-curve 生成；表体由 --fig tab-selection 生成。
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{fig3_selection_curve.pdf}
+  \caption{Checkpoint selection on dev61, arm~A. Grey: each snapshot scored on all 61
+  development images. Blue: the pre-registered three-point smoothed curve whose maximum is
+  selected. Dashed line: the epoch selected on the whole benchmark, i.e.\ the deployment
+  choice. Black ticks: the epoch selected by each of the five cross-fitting folds. Panels
+  have independent y-axes. The same selection rule is applied to the whole benchmark and to
+  each fold's four-fold complement.}
+  \label{fig:selection}
+\end{figure}
+
+% 表体（含 caption/label）由 paper/make_figures.py --fig tab-selection 生成并 \input。
+\input{tables/tab_selection.tex}
 
 \subsection{Cross-target generalization: helmet non-use}\label{sec:helmet}
 \todo{待实验：安全帽第二目标（管线复用）。三级定位第 2 级的门槛，见 PAPER_PLAN 第五节。}

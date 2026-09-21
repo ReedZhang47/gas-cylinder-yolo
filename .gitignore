@@ -11,6 +11,8 @@ Prompt.md
 
 # 大二进制（论文 PDF / 文献库 PDF 等本地缓存）
 *.pdf
+# 例外：论文插图必须入库，否则克隆后 working_paper.tex 编译不出来（反例须写在排除模式之后）
+!paper/figures/*.pdf
 
 # 日志
 *.log
