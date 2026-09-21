@@ -11,6 +11,13 @@
 
 `PROGRESS.md` 是结果台账。旧协议、旧结果和形成最终决策前的讨论分别位于 `scripts/legacy/`、`experiments/archive/` 和 `docs/archive/`。
 
+## 当前进度（2026-09-21）
+
+- 开始前清单全部完成：v4 配置核对、aug1085 重建（1085 张）、预注册协议核对。
+- A 臂 real93 已完成：6 detector × 300 轮训练 + 三层评测，结果在 `experiments/v4_protocol/v4_protocol_real93v4.json`，摘要见 `PROGRESS.md`「v4 阶段性结果」。
+- 评测脚本有一处协议修复：排除 Ultralytics 额外保存的 epoch0.pt（预注册候选为 epoch 10..300）；修复发生在 A 臂正式结果定稿前，含 epoch0 的首版结果隔离于 `_trash/experiments/`。
+- 下一步：B 臂 aug1085 → C 臂 gen1085 → L3 gen493。按臂分块执行（单臂后台训练 + 逐臂评测核验，块间停下等确认），不在一个后台任务里连跑全部。
+
 ## v4 核心协议
 
 训练统一为 300 epochs、imgsz 640、batch 16、`patience=0`、`save_period=10`。三臂同源，只改变数据扩充方式：

@@ -1,29 +1,30 @@
 # Next Steps v4
 
-更新时间：2026-09-21
+更新时间：2026-09-21（A 臂完成并已评测；下一步 B 臂，启动前等用户确认）
 
 ## 当前目标
 
 完成 v4 三臂训练、三层评估和 493 vs 1085 规模实验。当前不扩展安全帽目标，不先根据结果修改选权规则。
 
-## 开始前
+执行策略（用户要求）：按臂分块——每块 = 一个臂的后台训练 + 该臂评测核验，块间停下等确认，不在一个后台任务里连跑全部。A 臂实测：训练 1h16m（6 detector、batch16、无 OOM）；单臂评测约 4–5 分钟（6 detector × 30 快照 × 61 图 dev61 推理）。
 
-- [ ] 运行 `scripts\make_v4_configs.py`，确认 `D:\gas_cylinders\v4\dev61.txt` 为 61 行。
-- [ ] 核对 `experiments\v4_protocol\protocol.json` 与 `EXPERIMENTS.md` 的预注册规则一致。
-- [ ] 重建并核对 `D:\gas_cylinders\aug1085\` 为 1085 张，`data_aug1085.yaml` 指向 v4 dev61。
-- [ ] 核对 `runs\detect\*v4\`；只复用协议、轮数和目录完整一致的 run。
-- [ ] 保留 v3 结果作为历史资料，不复制或重命名成 v4 正式结果。
+## 开始前（已于 2026-09-21 全部完成）
+
+- [x] `make_v4_configs.py` 已跑：dev61.txt=61 行、real93_train.txt=93 行，各训练 yaml 的 test 键均指向 v4 dev61。
+- [x] `protocol.json` 与 `EXPERIMENTS.md` 预注册规则核对一致（折定义与脚本重生成结果相同）。
+- [x] aug1085 已重建并核对：1085 张（654 有框/431 空标），93 源全部有代表（每源 10–12 张变体），`data_aug1085.yaml` 指向 v4 dev61。
+- [x] 训练前 `runs\detect\` 无 v4 残留 run；v3 结果未动。
 
 ## 主批次 L1/L2
 
-- [ ] A 臂：`scripts\run_v4_arms.ps1 -Arm real93 -Epochs 300 -SavePeriod 10`
-- [ ] B 臂：`scripts\run_v4_arms.ps1 -Arm aug1085 -Epochs 300 -SavePeriod 10`
-- [ ] C 臂：`scripts\run_v4_arms.ps1 -Arm gen1085 -Epochs 300 -SavePeriod 10`
-- [ ] 评测：`scripts\eval_v4_protocol.py --arm all`
-- [ ] 验证每个 detector 都包含 fixed endpoint、5 折 pooled OOF、全 dev61 部署 epoch。
-- [ ] 验证每个 arm 都包含 detector+checkpoint 联合 OOF 和部署模型。
+- [x] A 臂：`run_v4_arms.ps1 -Arm real93` 完成，6 detector 全 OK。
+- [x] A 臂评测：`eval_v4_protocol.py --arm real93v4` → `experiments\v4_protocol\v4_protocol_real93v4.json`，核验通过（折定义一致、无 error、三层齐全、候选为 epoch 10..300）。
+- [ ] B 臂：`scripts\run_v4_arms.ps1 -Arm aug1085 -Epochs 300 -SavePeriod 10`（**下一步，启动前等用户确认**；1085 张训练，预计约 5–7 GPU 小时）。
+- [ ] C 臂：`scripts\run_v4_arms.ps1 -Arm gen1085 -Epochs 300 -SavePeriod 10`（预计约 5–7 GPU 小时）。
+- [ ] 逐臂评测：`scripts\eval_v4_protocol.py --arm aug1085v4`、`--arm gen1085v4`（逐臂跑代替一次性 `--arm all`，避免重复推理；单臂约 4–5 分钟）。
+- [ ] 三臂齐后核验：每个 detector 有 fixed endpoint、5 折 pooled OOF、部署 epoch；每个 arm 有联合 OOF 和部署模型；A 臂观察到的 yolo11m 离群是否在 B/C 复现。
 
-训练预计约 18.25 GPU 小时。v4 评测会对 18 个 run 的约 30 个 checkpoint 做 dev61 推理，耗时另计；脚本按 arm 写中间 JSON，可分臂恢复。
+评测注意：Ultralytics 8.4.135 会额外保存 epoch0.pt，`eval_v4_protocol.py` 已于 2026-09-21 修复为只取 epoch 10..300（预注册范围）。
 
 ## 规模实验 L3
 

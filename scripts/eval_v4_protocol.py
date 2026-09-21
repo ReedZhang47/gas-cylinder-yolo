@@ -141,7 +141,10 @@ def epoch_of(path: Path) -> int:
 
 
 def checkpoints(folder: Path) -> dict[int, Path]:
-    found = {epoch_of(path): path for path in folder.glob("weights/epoch*.pt")}
+    # Ultralytics fires `epoch % save_period == 0` from internal epoch 0, so epoch0.pt
+    # also exists; the pre-registered candidate list is epoch 10..300 only.
+    found = {epoch: path for path in folder.glob("weights/epoch*.pt")
+             if (epoch := epoch_of(path)) >= 10}
     last = folder / "weights" / "last.pt"
     if last.exists():
         found[300] = last
