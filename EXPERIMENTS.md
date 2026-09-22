@@ -57,7 +57,7 @@ L2 不增加训练臂，只复用 L1/L3 每 10 轮保存的快照。gen493 是 g
 
 | 层级 | 做法 | 回答的问题 | 论文地位 |
 |---|---|---|---|
-| 固定终点 benchmark | `last.pt`（epoch 300）在全 dev61 上评估，不逐模型选权 | 固定规则下各训练臂如何比较 | 透明基线，不称 sealed test |
+| 固定终点 benchmark | `last.pt`（epoch 300）在全 dev61 上评估，不逐模型选权 | 固定规则下各训练臂如何比较 | 透明基线 |
 | 交叉拟合选权 | 5 折外层划分；4 折选 checkpoint，1 折只报数；汇总五折 held-out 逐图预测后统一计算 AP | 选权流程在新图上的预期表现 | **主要泛化估计** |
 | 全 dev61 部署模型 | 用全 dev61 选择 detector 和 checkpoint | 实际部署应使用哪个权重 | 报 detector/epoch；同集分数标为 development score |
 

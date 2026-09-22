@@ -70,6 +70,22 @@ runs\detect\gen493v4\<weight>\
 3. 结果 JSON 的折定义一致，且没有 `incomplete run`。
 4. fold mAP 只作诊断；论文引用 `official_pooled_oof_metrics`。
 
+## 配对聚类 bootstrap（三臂齐后）
+
+```powershell
+# 必须晚于该臂的 eval_v4_protocol.py：会重做该臂推理，并逐项断言与官方 JSON 一致，
+# 不一致即中止。约 5 分钟/臂（GPU）。
+& D:\yolo\.venv\Scripts\python.exe D:\yolo\scripts\bootstrap_paired.py --dump --arm aug1085v4
+
+# 纯 CPU；10000 次重抽，配对按 dev61 图片聚类。结果写入 experiments\v4_protocol\bootstrap_paired.json。
+& D:\yolo\.venv\Scripts\python.exe D:\yolo\scripts\bootstrap_paired.py --boot --arms real93v4,aug1085v4,gen1085v4
+
+# 离线自检：编码往返无损、行序不影响 AP、自比 Δ 必须为 0。不需要 GPU。
+& D:\yolo\.venv\Scripts\python.exe D:\yolo\scripts\bootstrap_paired.py --self-test
+```
+
+逐图检测行缓存在 `experiments\v4_protocol\per_image\per_image_<arm>.json`；`--arms X,X` 可用于真实数据上的冒烟测试。
+
 ## 单权重检查
 
 ```powershell

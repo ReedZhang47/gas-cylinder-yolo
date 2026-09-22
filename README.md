@@ -11,12 +11,10 @@
 
 `PROGRESS.md` 是结果台账。旧协议、旧结果和形成最终决策前的讨论分别位于 `scripts/legacy/`、`experiments/archive/` 和 `docs/archive/`。
 
-## 当前进度（2026-09-21）
+## 当前进度（2026-09-22）
 
-- 开始前清单全部完成：v4 配置核对、aug1085 重建（1085 张）、预注册协议核对。
-- A 臂 real93 已完成：6 detector × 300 轮训练 + 三层评测，结果在 `experiments/v4_protocol/v4_protocol_real93v4.json`，摘要见 `PROGRESS.md`「v4 阶段性结果」。
-- 评测脚本有一处协议修复：排除 Ultralytics 额外保存的 epoch0.pt（预注册候选为 epoch 10..300）；修复发生在 A 臂正式结果定稿前，含 epoch0 的首版结果隔离于 `_trash/experiments/`。
-- 下一步：B 臂 aug1085 → C 臂 gen1085 → L3 gen493。按臂分块执行（单臂后台训练 + 逐臂评测核验，块间停下等确认），不在一个后台任务里连跑全部。
+- 训练剩余C臂，即将完成；C臂检测待完成。
+- L3，规模曲线的第一点待完成。
 
 ## v4 核心协议
 
@@ -57,13 +55,10 @@
 
 ## 环境
 
-- Windows PowerShell
+- Windows pwsh (7.6.6)
 - Python: `D:\yolo\.venv\Scripts\python.exe`
 - Ultralytics CLI: `D:\yolo\.venv\Scripts\yolo.exe`
 - GPU: RTX 5070 Ti Laptop
 
-```powershell
-git status --short
-& D:\yolo\.venv\Scripts\python.exe -m py_compile scripts\make_aug1085_dataset.py scripts\eval_v4_protocol.py
-& D:\yolo\.venv\Scripts\python.exe -c "import torch; print(torch.cuda.is_available(), torch.cuda.get_device_name(0))"
-```
+## Git
+AI Agent 不再负责git的提交和推送，只负责提醒，用户手动完成。
