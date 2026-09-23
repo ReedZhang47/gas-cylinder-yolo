@@ -1,6 +1,6 @@
 # Next Steps v4
 
-更新时间：2026-09-22（A、B 两臂完成并已评测；C臂即将完成）
+更新时间：2026-09-23（三臂训练、评测、逐图缓存与三臂配对聚类 bootstrap 全部完成；下一步 L3 gen493）
 
 ## 当前目标
 
@@ -20,10 +20,10 @@
 - [x] B 臂：`run_v4_arms.ps1 -Arm aug1085` 完成（14:29:29 → 次日 00:38:49，**10 h 09 m**；六者各 300 轮、batch16 无 OOM；实测 73/123/70/132/80/131 min）。
 - [x] B 臂评测：`eval_v4_protocol.py --arm aug1085v4` → `experiments\v4_protocol\v4_protocol_aug1085v4.json`，核验通过（`protocol.json` 折定义未变、无 error、三层齐全、候选 30 个）。
 - [x] B 臂 per-image dump：`bootstrap_paired.py --dump --arm aug1085v4`，逐项断言与官方 JSON 一致。
-- [ ] C 臂：`scripts\run_v4_arms.ps1 -Arm gen1085 -Epochs 300 -SavePeriod 10`（按 B 臂实测口径预计约 10–11 GPU 小时；**启动前等确认**）。
-- [ ] C 臂评测与 dump：`eval_v4_protocol.py --arm gen1085v4`、`bootstrap_paired.py --dump --arm gen1085v4`。
-- [ ] 三臂齐后核验：每个 detector 有 fixed endpoint、5 折 pooled OOF、部署 epoch；每个 arm 有联合 OOF 和部署模型。
-- [ ] yolo11m 离群结论：A 臂 OOF 0.0611（最低）、B 臂 0.3527（第二高），**未复现且方向翻转**。按 `EXPERIMENTS.md` 预注册规则第二分支，改述为「多 detector × 稀缺数据的训练方差」，不指名单个 detector；等 C 臂确认。
+- [x] C 臂：`run_v4_arms.ps1 -Arm gen1085` 完成（10:44:30 → 20:51:00，**10 h 06 m**；六者各 300 轮、batch16 无 OOM；实测 66/122/66/130/75/141 min）。
+- [x] C 臂评测与 dump：`eval_v4_protocol.py --arm gen1085v4` → `experiments\v4_protocol\v4_protocol_gen1085v4.json`，核验通过（`protocol.json` 折定义未变、无 error、三层齐全、候选 30 个）；`bootstrap_paired.py --dump --arm gen1085v4` 逐项断言与官方 JSON 一致。
+- [x] 三臂齐后核验：三臂各 6 detector 均有 fixed endpoint、5 折 pooled OOF、部署 epoch；每臂均有 detector+checkpoint 联合 OOF 与部署模型；无 missing run。
+- [x] yolo11m 离群结论：A 臂 OOF 0.0611（六者最低）→ B 臂 0.3527（第二高）→ C 臂 0.5637（第四），离群只在 A 臂出现、B/C 未复现。按 `EXPERIMENTS.md` 预注册规则第二分支定为「多 detector × 稀缺数据的训练方差」，不指名单个 detector；B/C 两臂均无 `non-convergent` run。详见 `PROGRESS.md`。
 
 评测注意：Ultralytics 8.4.135 会额外保存 epoch0.pt，`eval_v4_protocol.py` 已于 2026-09-21 修复为只取 epoch 10..300（预注册范围）。
 
@@ -40,7 +40,7 @@
 - [ ] 主表同时给出 fixed endpoint 和 detector 内 OOF。
 - [ ] 若选择最佳 detector，主张依据 arm 级 detector+checkpoint 联合 OOF，不用事后最高 dev61 分数。
 - [ ] 单列部署 detector、epoch 和 development score，并明确不是泛化估计。
-- [ ] 对 A/B/C 成对差值做按图片/场景聚类的 paired bootstrap：脚本已就绪并在 A 臂验证，参数预注册见 `EXPERIMENTS.md`；待 B/C 臂齐后执行。
+- [x] 对 A/B/C 成对差值做按图片/场景聚类的 paired bootstrap：已完成（10000 次重抽、seed 0、图片聚类、配对；参数预注册见 `EXPERIMENTS.md`）。主终点 C−A +0.211、C−B +0.308 均不含 0；B−A −0.097 跨 0。结果 `experiments\v4_protocol\bootstrap_paired.json`，解读见 `PROGRESS.md`。
 - [ ] 将新增、完全冻结的外部 test 数据列为最高价值后续工作。
 
 ## 完成条件

@@ -1,11 +1,12 @@
 # Progress v4
 
-更新时间：2026-09-22
+更新时间：2026-09-23
 
 ## 当前状态
 
-- 三臂训练即将完成。
-- 下一步：得到规模实验的第一个点。执行板见 `NEXT_STEPS.md`。
+- A/B/C 三臂训练与三层评测全部完成，逐图缓存与三臂配对聚类 bootstrap 已落盘。
+- 三臂联合 OOF：C 0.6429 > A 0.4320 > B 0.3349（描述性单点；正式主张见「三臂配对聚类 bootstrap」）。
+- 下一步：规模实验 L3（gen493，约 5–6 GPU 小时）。执行板见 `NEXT_STEPS.md`。
 
 ## v4 决策
 
@@ -34,7 +35,7 @@ dev61 上的 mAP50-95，来源 `experiments/v4_protocol/v4_protocol_real93v4.jso
 
 - 联合 detector+checkpoint OOF：0.4320（五折一致选 yolo26s@280）；部署模型 yolo26s@280，development score 0.4320（非泛化估计）。
 - yolo26s 的交叉拟合选权相对固定终点 +0.038，五折选权全部落在 epoch 280，稳定。
-- yolo11m 明显离群（0.06–0.08），待 B/C 臂观察是否复现。
+- yolo11m 明显离群（0.06–0.08）；后续 B/C 臂未复现且方向翻转，结论见「yolo11m 离群的结论」。
 - 成本实测：A 臂训练 1h16m（6 detector、batch16、无 OOM）；单臂评测约 4–5 分钟。
 
 #### 协议偏离与修复记录
@@ -58,48 +59,55 @@ dev61 上的 mAP50-95，来源 `experiments/v4_protocol/v4_protocol_aug1085v4.js
 - 与 A 臂描述性对照：A 联合 OOF 0.4320（五折一致选 yolo26s@280）> B 0.3349。B 臂选权稳定性低于 A 臂，且 fixed 与 OOF 的排序不一致（OOF 最高为 yolov8m 0.3723，联合选择仍落在 yolo26s）。
 - 成本实测：B 臂训练 10 h 09 m（六者 73/123/70/132/80/131 min，batch16 无 OOM）。
 
-### A-vs-B 配对聚类 bootstrap（interim，2026-09-22）
+### C 臂 gen1085，2026-09-23
 
-按 `EXPERIMENTS.md` 预注册参数（mAP50-95、10000 次重抽、seed 0、按 dev61 图片聚类、配对设计）先跑了两臂对比，结果在 `experiments/v4_protocol/bootstrap_paired_A_vs_B_interim.json`；正式名 `bootstrap_paired.json` 留给三臂齐后的正式运行。Δ 定义为 B − A。
-
-- 主终点（联合 OOF）：Δ = −0.0972，95% CI [−0.197, +0.017]，**跨 0**。95% 水平上不能判定两臂有真实差异。
-- 两臂联合选择都落在 yolo26s（A@280、B@200），故联合 OOF 等于该 detector 的 OOF；联合对比实质上是这一个 detector 的对比。
-- 逐 detector 的 Δ OOF 从 −0.0972（yolo26s）到 +0.2916（yolo11m）。仅 yolo11m [+0.172, +0.392] 与 yolov8m [+0.021, +0.311] 的 CI 不含 0，且方向与主终点相反（均为 B 更好）。事前未指定主要 detector，故不单挑任何一个主张。
-- 结论口径：61 张开发图上，臂间差异小于 detector 选择带来的不确定性；这支持协议要求报告联合 OOF 而非事后最高分。
-
-### yolo11m 离群的结论
-
-A 臂 OOF 0.0611（六者最低）→ B 臂 0.3527（六者第二高）：离群未复现且方向翻转。按 `EXPERIMENTS.md` 预注册规则第二分支，改述为「多 detector × 稀缺数据的训练方差」，不指名单个 detector；等 C 臂确认后定稿。
-
-## v4 阶段性结果（B 臂 aug1085，2026-09-22）
-
-dev61 上的 mAP50-95，来源 `experiments/v4_protocol/v4_protocol_aug1085v4.json`（核验通过：`protocol.json` 折定义与 A 臂完全一致、6 detector 无 error、三层齐全、候选为 epoch 10..300）：
+dev61 上的 mAP50-95，来源 `experiments/v4_protocol/v4_protocol_gen1085v4.json`（核验通过：`protocol.json` 折定义与 A/B 臂完全一致、6 detector 无 error、三层齐全、候选为 epoch 10..300）：
 
 | detector | 固定终点 (ep300) | pooled OOF | 部署 epoch |
 |---|---:|---:|---:|
-| yolov8s | 0.2404 | 0.2253 | 250 |
-| yolov8m | 0.3102 | 0.3723 | 120 |
-| yolo11s | 0.2427 | 0.2658 | 250 |
-| yolo11m | 0.2548 | 0.3527 | 150 |
-| yolo26s | 0.3311 | 0.3349 | 200 |
-| yolo26m | 0.2965 | 0.3142 | 250 |
+| yolov8s | 0.5989 | 0.5989 | 300 |
+| yolov8m | 0.5646 | 0.5554 | 300 |
+| yolo11s | 0.5555 | 0.5561 | 210 |
+| yolo11m | 0.5713 | 0.5637 | 290 |
+| yolo26s | 0.6099 | 0.6429 | 260 |
+| yolo26m | 0.5662 | 0.5606 | 150 |
 
-- 联合 detector+checkpoint OOF：0.3349（五折选 yolo26s，epoch 200/200/180/200/180，非一致）；部署模型 yolo26s@200，development score 0.3728（非泛化估计）。
-- 与 A 臂描述性对照：A 联合 OOF 0.4320（五折一致选 yolo26s@280）> B 0.3349。B 臂选权稳定性低于 A 臂，且 fixed 与 OOF 的排序不一致（OOF 最高为 yolov8m 0.3723，联合选择仍落在 yolo26s）。
-- 成本实测：B 臂训练 10 h 09 m（六者 73/123/70/132/80/131 min，batch16 无 OOM）。
+- 联合 detector+checkpoint OOF：0.6429（五折一致选 yolo26s，epoch 260/240/260/260/270）；部署模型 yolo26s@260，development score 0.6537（非泛化估计）。
+- 三臂描述性排序（联合 OOF）：**C 0.6429 ≫ A 0.4320 > B 0.3349**。正式主张以本次配对聚类 bootstrap 的 CI 为准，不引用这里的单点比较。
+- 六个 detector 相当紧凑（fixed 0.5555–0.6099、OOF 0.5554–0.6429），无 `non-convergent` run；同一 detector 在 A 臂崩溃、在 B/C 臂正常，支持「训练方差」而非 detector 本身的解释。
+- 成本实测：C 臂训练 10 h 06 m（六者 66/122/66/130/75/141 min，batch16 无 OOM）。
 
 ### A-vs-B 配对聚类 bootstrap（interim，2026-09-22）
 
-按 `EXPERIMENTS.md` 预注册参数（mAP50-95、10000 次重抽、seed 0、按 dev61 图片聚类、配对设计）先跑了两臂对比，结果在 `experiments/v4_protocol/bootstrap_paired_A_vs_B_interim.json`；正式名 `bootstrap_paired.json` 留给三臂齐后的正式运行。Δ 定义为 B − A。
+按 `EXPERIMENTS.md` 预注册参数（mAP50-95、10000 次重抽、seed 0、按 dev61 图片聚类、配对设计）先跑了两臂对比，结果在 `experiments/v4_protocol/bootstrap_paired_A_vs_B_interim.json`；三臂版见下节（A-vs-B 数值逐位相同）。Δ 定义为 B − A。
 
 - 主终点（联合 OOF）：Δ = −0.0972，95% CI [−0.197, +0.017]，**跨 0**。95% 水平上不能判定两臂有真实差异。
 - 两臂联合选择都落在 yolo26s（A@280、B@200），故联合 OOF 等于该 detector 的 OOF；联合对比实质上是这一个 detector 的对比。
 - 逐 detector 的 Δ OOF 从 −0.0972（yolo26s）到 +0.2916（yolo11m）。仅 yolo11m [+0.172, +0.392] 与 yolov8m [+0.021, +0.311] 的 CI 不含 0，且方向与主终点相反（均为 B 更好）。事前未指定主要 detector，故不单挑任何一个主张。
-- 结论口径：61 张开发图上，臂间差异小于 detector 选择带来的不确定性；这支持协议要求报告联合 OOF 而非事后最高分。
+- 结论口径：61 张开发图上，臂间差异小于 detector 选择带来的不确定性；这支持协议要求报告联合 OOF 而非事后最高分。（**仅适用于 A/B 两臂**；C 臂加入后差异显著，见下一节。）
+
+### 三臂配对聚类 bootstrap（正式，2026-09-23）
+
+按 `EXPERIMENTS.md` 预注册参数（mAP50-95、10000 次重抽、seed 0、按 dev61 图片聚类、配对设计）做三臂两两比较，结果在 `experiments/v4_protocol/bootstrap_paired.json`（A-vs-B 在 C 臂训练前先跑过一次 interim 版，两者逐位相同）。
+
+主终点（arm 级 detector+checkpoint 联合 OOF）：
+
+| 对比 | Δ | 95% CI | P(Δ>0) | 判定 |
+|---|---:|---|---:|---|
+| C − A | +0.2109 | [+0.112, +0.320] | 1.000 | **C 显著更好** |
+| C − B | +0.3080 | [+0.205, +0.407] | 1.000 | **C 显著更好** |
+| B − A | −0.0972 | [−0.197, +0.017] | 0.046 | 跨 0，无法判定 |
+
+- **C 的主张稳健**：C 相对 A 与 B 的 24 项逐 detector 一致性证据（6 detector × {fixed endpoint, pooled OOF} × 2 对比）CI 全部不含 0、方向全部为正（+0.183 到 +0.503）。即编辑合成在每一个 detector、两种指标上都优于真实基线与等量传统增广。
+- **B 与 A 无法区分**：主终点 CI 跨 0；逐 detector 上 4/6 两指标均跨 0，2/6（yolov8m OOF +0.171 [+0.021,+0.311]、yolo11m OOF +0.292 [+0.172,+0.392]）B 显著更好，没有任何一项显著偏向 A。因此表述为「把 93 张扩到 1085 张传统增广未带来可检测的增益」，**不写成「B 比 A 差」**。
+- 三臂的联合选择都落在 yolo26s（A@280、B@200、C@260），因此主终点对比实质上是 yolo26s 在三臂间的对比；跨 detector 的稳健性由逐 detector 一致性证据提供。
+- 局限：该 bootstrap 只量化 dev61 这 61 张图的抽样不确定性；它不消除 dev61 已参与协议判断所带来的偏差。
 
 ### yolo11m 离群的结论
 
-A 臂 OOF 0.0611（六者最低）→ B 臂 0.3527（六者第二高）：离群未复现且方向翻转。按 `EXPERIMENTS.md` 预注册规则第二分支，改述为「多 detector × 稀缺数据的训练方差」，不指名单个 detector；等 C 臂确认后定稿。
+同一 detector 的 pooled OOF 在三臂上：A 臂 0.0611（六者最低）→ B 臂 0.3527（第二高）→ C 臂 0.5637（第四）。即**离群只在 A 臂出现，B/C 均未复现，且方向翻转**。
+
+按 `EXPERIMENTS.md` 预注册规则第二分支（同一 detector 时好时坏），结论记为「多 detector × 稀缺数据的训练方差」，不指名单个 detector：93 张真实图上单个 detector 可以训崩（0.06），同一 detector 在 1085 张传统增广与 1085 张编辑合成上都正常。B/C 两臂六个 detector 均无 `non-convergent` run。引申含义：A 臂（93 张）的 detector 级数字方差较大，引用需注意。
 
 ## 数据状态
 
