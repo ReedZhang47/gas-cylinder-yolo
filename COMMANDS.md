@@ -77,7 +77,8 @@ runs\detect\gen493v4\<weight>\
 # 不一致即中止。约 5 分钟/臂（GPU）。
 & D:\yolo\.venv\Scripts\python.exe D:\yolo\scripts\bootstrap_paired.py --dump --arm aug1085v4
 
-# 纯 CPU；10000 次重抽，配对按 dev61 图片聚类。结果写入 experiments\v4_protocol\bootstrap_paired.json。
+# 纯 CPU；10000 次重抽，配对按 dev61 图片聚类。一次重抽同时给出 mAP50-95（主指标）
+# 与 mAP50（附加列）的 CI。结果写入 experiments\v4_protocol\bootstrap_paired.json。
 & D:\yolo\.venv\Scripts\python.exe D:\yolo\scripts\bootstrap_paired.py --boot --arms real93v4,aug1085v4,gen1085v4
 
 # 离线自检：编码往返无损、行序不影响 AP、自比 Δ 必须为 0。不需要 GPU。

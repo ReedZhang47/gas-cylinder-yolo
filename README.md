@@ -61,4 +61,4 @@
 - GPU: RTX 5070 Ti Laptop
 
 ## Git
-AI Agent 不再负责git的提交和推送，只负责提醒，用户手动完成。
+

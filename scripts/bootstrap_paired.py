@@ -40,7 +40,10 @@ OUT_DIR = ev.OUT_DIR
 CACHE_DIR = OUT_DIR / "per_image"
 KEYS = ("tp", "conf", "pred_cls", "target_cls")
 NAMES = {0: "Placement Issues"}
-METRIC = "mAP50-95"
+# mAP50-95 stays the primary and selection metric (pre-registered); mAP50 is reported
+# alongside it in the same pass, as COCO-style tables normally do.
+PRIMARY_METRIC = "mAP50-95"
+METRICS = ("mAP50-95", "mAP50")
 N_BOOT = 10000
 BOOT_SEED = 0
 PAIRS = [("real93v4", "aug1085v4"), ("real93v4", "gen1085v4"), ("aug1085v4", "gen1085v4")]
@@ -94,8 +97,8 @@ def metrics_of(rows: list[dict]) -> dict[str, float]:
     result = ap_per_class(arrays["tp"], arrays["conf"], arrays["pred_cls"], arrays["target_cls"], names=NAMES)
     ap = result[5]
     if ap.size == 0:
-        return {"mAP50": 0.0, METRIC: 0.0}
-    return {"mAP50": round(float(np.mean(ap[:, 0])), 6), METRIC: round(float(np.mean(ap)), 6)}
+        return {"mAP50": 0.0, "mAP50-95": 0.0}
+    return {"mAP50": round(float(np.mean(ap[:, 0])), 6), "mAP50-95": round(float(np.mean(ap)), 6)}
 
 
 def load_folds() -> tuple[list[list[str]], set[str]]:
@@ -167,11 +170,12 @@ def dump(arm: str, only_detector: str | None) -> None:
         stats_all[weight] = stats
         if official is not None:
             ref = official["detectors"][weight]
-            check(arm, f"{weight} fixed endpoint",
-                  record["fixed_endpoint"]["metrics"][METRIC], ref["fixed_endpoint"]["metrics"][METRIC])
-            check(arm, f"{weight} pooled OOF",
-                  record["cross_fitted"]["official_pooled_oof_metrics"][METRIC],
-                  ref["cross_fitted"]["official_pooled_oof_metrics"][METRIC])
+            for metric in METRICS:
+                check(arm, f"{weight} fixed endpoint {metric}",
+                      record["fixed_endpoint"]["metrics"][metric], ref["fixed_endpoint"]["metrics"][metric])
+                check(arm, f"{weight} pooled OOF {metric}",
+                      record["cross_fitted"]["official_pooled_oof_metrics"][metric],
+                      ref["cross_fitted"]["official_pooled_oof_metrics"][metric])
             check(arm, f"{weight} deployment epoch",
                   record["deployment"]["selected_epoch"], ref["deployment"]["selected_epoch"])
         cache["detectors"][weight] = {
@@ -189,9 +193,10 @@ def dump(arm: str, only_detector: str | None) -> None:
     joint_folds = joint["cross_fitted_model_selection"]["folds"]
     if official is not None:
         ref = official["joint_detector_and_checkpoint_selection"]
-        check(arm, "joint pooled OOF",
-              joint["cross_fitted_model_selection"]["official_pooled_oof_metrics"][METRIC],
-              ref["cross_fitted_model_selection"]["official_pooled_oof_metrics"][METRIC])
+        for metric in METRICS:
+            check(arm, f"joint pooled OOF {metric}",
+                  joint["cross_fitted_model_selection"]["official_pooled_oof_metrics"][metric],
+                  ref["cross_fitted_model_selection"]["official_pooled_oof_metrics"][metric])
         check(arm, "joint deployment detector",
               joint["deployment_model"]["detector"], ref["deployment_model"]["detector"])
         check(arm, "joint deployment epoch",
@@ -235,27 +240,34 @@ def targets_of(args) -> list[tuple[str, str | None]]:
 
 
 def bootstrap_pair(ordered_a, ordered_b, names: list[str], n_boot: int, seed: int) -> dict:
-    """Paired cluster bootstrap over images; both arms see the same resampled clusters."""
+    """Paired cluster bootstrap over images; both arms see the same resampled clusters.
+
+    Every reported metric is accumulated in the same pass, so carrying a secondary metric
+    costs no extra resampling.
+    """
     rng = np.random.default_rng(seed)
     draws = rng.integers(0, len(names), size=(n_boot, len(names)))
-    deltas = np.empty(n_boot, dtype=float)
+    deltas = {metric: np.empty(n_boot, dtype=float) for metric in METRICS}
     degenerate = 0
     for step, draw in enumerate(draws):
         rows_a = [ordered_a[i] for i in draw]
         rows_b = [ordered_b[i] for i in draw]
-        ma = metrics_of(rows_a)[METRIC]
-        mb = metrics_of(rows_b)[METRIC]
-        if ma == 0.0 and mb == 0.0:
+        ma = metrics_of(rows_a)
+        mb = metrics_of(rows_b)
+        if ma[PRIMARY_METRIC] == 0.0 and mb[PRIMARY_METRIC] == 0.0:
             degenerate += 1
-        deltas[step] = mb - ma
-    low, high = (float(x) for x in np.percentile(deltas, [2.5, 97.5]))
-    return {
-        "mean_delta": round(float(deltas.mean()), 6),
-        "ci95": [round(low, 6), round(high, 6)],
-        "prob_delta_gt0": round(float((deltas > 0).mean()), 6),
-        "n_boot": n_boot,
-        "n_degenerate_resamples": degenerate,
-    }
+        for metric in METRICS:
+            deltas[metric][step] = mb[metric] - ma[metric]
+    out = {"n_boot": n_boot, "n_degenerate_resamples": degenerate}
+    for metric in METRICS:
+        values = deltas[metric]
+        low, high = (float(x) for x in np.percentile(values, [2.5, 97.5]))
+        out[metric] = {
+            "mean_delta": round(float(values.mean()), 6),
+            "ci95": [round(low, 6), round(high, 6)],
+            "prob_delta_gt0": round(float((values > 0).mean()), 6),
+        }
+    return out
 
 
 def boot(arms: list[str], args) -> None:
@@ -265,7 +277,8 @@ def boot(arms: list[str], args) -> None:
         assert caches[arm]["image_names"] == names, f"{arm} image set differs from {arms[0]}"
     result = {
         "params": {
-            "metric": METRIC,
+            "primary_metric": PRIMARY_METRIC,
+            "reported_metrics": list(METRICS),
             "n_boot": args.n_boot,
             "seed": BOOT_SEED,
             "cluster": "dev61 image (no scene-group metadata available; boxes are never resampled alone)",
@@ -278,31 +291,33 @@ def boot(arms: list[str], args) -> None:
         rows = {arm: {name: dec_row(entry) for name, entry in target_rows(caches[arm], target, detector).items()}
                 for arm in arms}
         ordered = {arm: [rows[arm][name] for name in names] for arm in arms}
-        point = {arm: metrics_of(ordered[arm])[METRIC] for arm in arms}
+        point = {arm: metrics_of(ordered[arm]) for arm in arms}
         for arm in arms:
             official = official_arm(arm)
             if official is not None:
-                want = (official["joint_detector_and_checkpoint_selection"]["cross_fitted_model_selection"]
-                        ["official_pooled_oof_metrics"][METRIC] if target == "joint"
-                        else official["detectors"][detector][
-                            "fixed_endpoint" if target == "fixed_endpoint" else "cross_fitted"
-                        ][("metrics" if target == "fixed_endpoint" else "official_pooled_oof_metrics")][METRIC])
-                check(arm, f"{target} {detector or ''} point estimate", point[arm], want)
+                for metric in METRICS:
+                    want = (official["joint_detector_and_checkpoint_selection"]["cross_fitted_model_selection"]
+                            ["official_pooled_oof_metrics"][metric] if target == "joint"
+                            else official["detectors"][detector][
+                                "fixed_endpoint" if target == "fixed_endpoint" else "cross_fitted"
+                            ][("metrics" if target == "fixed_endpoint" else "official_pooled_oof_metrics")][metric])
+                    check(arm, f"{target} {detector or ''} point estimate {metric}", point[arm][metric], want)
         for arm_a, arm_b in [(a, b) for i, a in enumerate(arms) for b in arms[i + 1:]]:
             entry = {
                 "target": target,
                 "detector": detector,
                 "arm_a": arm_a,
                 "arm_b": arm_b,
-                "point_a": point[arm_a],
-                "point_b": point[arm_b],
-                "observed_delta": round(point[arm_b] - point[arm_a], 6),
+                "point_a": {metric: point[arm_a][metric] for metric in METRICS},
+                "point_b": {metric: point[arm_b][metric] for metric in METRICS},
+                "observed_delta": {metric: round(point[arm_b][metric] - point[arm_a][metric], 6)
+                                   for metric in METRICS},
             }
             entry.update(bootstrap_pair(ordered[arm_a], ordered[arm_b], names, args.n_boot, BOOT_SEED))
             result["comparisons"].append(entry)
-            print(f"{target:<15} {str(detector):<8} {arm_b} - {arm_a}: "
-                  f"delta={entry['observed_delta']:+.4f} CI={entry['ci95']} "
-                  f"P(delta>0)={entry['prob_delta_gt0']}", flush=True)
+            detail = "  ".join(f"{metric} {entry['observed_delta'][metric]:+.4f} {entry[metric]['ci95']}"
+                               for metric in METRICS)
+            print(f"{target:<15} {str(detector):<8} {arm_b} - {arm_a}: {detail}", flush=True)
     out = Path(args.out) if Path(args.out).is_absolute() else OUT_DIR / args.out
     out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"saved -> {out}")
@@ -318,20 +333,21 @@ def self_test() -> None:
         tp = (rng.random((n, 10)) > 0.5).astype(bool)
         rows[name] = {"tp": tp, "conf": rng.random(n), "pred_cls": np.zeros(n), "target_cls": np.zeros(int(rng.integers(0, 3)))}
     ordered = [rows[name] for name in names]
-    point = metrics_of(ordered)[METRIC]
+    point = metrics_of(ordered)
     for name in names:
         back = dec_row(enc_row(rows[name]))
         assert np.array_equal(back["tp"], rows[name]["tp"]), f"tp round-trip changed {name}"
         assert np.array_equal(back["conf"], rows[name]["conf"]), f"conf round-trip changed {name}"
         assert back["target_cls"].size == rows[name]["target_cls"].size, name
         assert back["pred_cls"].size == rows[name]["pred_cls"].size, name
-    assert metrics_of([dec_row(enc_row(row)) for row in ordered])[METRIC] == point
+    assert metrics_of([dec_row(enc_row(row)) for row in ordered]) == point
     stats = bootstrap_pair(ordered, ordered, names, 200, 0)
-    assert stats["ci95"] == [0.0, 0.0], stats
-    assert stats["prob_delta_gt0"] == 0.0, stats
     shuffled = list(reversed(ordered))
-    assert abs(metrics_of(shuffled)[METRIC] - point) < 1e-12, "row order must not change AP"
-    print(f"self-test OK (synthetic AP50-95={point})")
+    for metric in METRICS:
+        assert stats[metric]["ci95"] == [0.0, 0.0], stats
+        assert stats[metric]["prob_delta_gt0"] == 0.0, stats
+        assert abs(metrics_of(shuffled)[metric] - point[metric]) < 1e-12, "row order must not change AP"
+    print(f"self-test OK (synthetic {PRIMARY_METRIC}={point[PRIMARY_METRIC]}, mAP50={point['mAP50']})")
 
 
 def main() -> None:

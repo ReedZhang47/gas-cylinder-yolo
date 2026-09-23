@@ -37,10 +37,10 @@
 
 ## 论文结果
 
-- [ ] 主表同时给出 fixed endpoint 和 detector 内 OOF。
+- [ ] 主表同时给出 fixed endpoint 和 detector 内 OOF；每个数字给 mAP50-95（主指标）与 mAP50（附加列，COCO 惯例）。
 - [ ] 若选择最佳 detector，主张依据 arm 级 detector+checkpoint 联合 OOF，不用事后最高 dev61 分数。
 - [ ] 单列部署 detector、epoch 和 development score，并明确不是泛化估计。
-- [x] 对 A/B/C 成对差值做按图片/场景聚类的 paired bootstrap：已完成（10000 次重抽、seed 0、图片聚类、配对；参数预注册见 `EXPERIMENTS.md`）。主终点 C−A +0.211、C−B +0.308 均不含 0；B−A −0.097 跨 0。结果 `experiments\v4_protocol\bootstrap_paired.json`，解读见 `PROGRESS.md`。
+- [x] 对 A/B/C 成对差值做按图片/场景聚类的 paired bootstrap：已完成（10000 次重抽、seed 0、图片聚类、配对；参数预注册见 `EXPERIMENTS.md`）。主终点（mAP50-95）C−A +0.211、C−B +0.308 的 CI 均不含 0；B−A −0.097 跨 0。mAP50 附加列结论同向。结果 `experiments\v4_protocol\bootstrap_paired.json`，解读见 `PROGRESS.md`。
 - [ ] 将新增、完全冻结的外部 test 数据列为最高价值后续工作。
 
 ## 完成条件
