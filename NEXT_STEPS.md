@@ -43,6 +43,16 @@
 - [x] 对 A/B/C 成对差值做按图片/场景聚类的 paired bootstrap：已完成（10000 次重抽、seed 0、图片聚类、配对；参数预注册见 `EXPERIMENTS.md`）。主终点（mAP50-95）C−A +0.211、C−B +0.308 的 CI 均不含 0；B−A −0.097 跨 0。mAP50 附加列结论同向。结果 `experiments\v4_protocol\bootstrap_paired.json`，解读见 `PROGRESS.md`。
 - [ ] 将新增、完全冻结的外部 test 数据列为最高价值后续工作。
 
+## 论文图表（2026-09-23）
+
+- [x] 图三 选权曲线升级为三臂：`paper/make_figures.py --fig selection-curve`（3 臂 × 6 detector，每行独立 y 标尺）→ `paper/figures/fig3_selection_curve.pdf`；已由 `working_paper.tex` 引用，编译通过、无 Overfull。
+- [x] 图四 主结果 CI 图：`--fig bootstrap-ci` → `paper/figures/fig4_bootstrap_ci.pdf`（左＝arm 级联合 OOF 两个指标，右＝三个对比的逐 detector pooled OOF）。**尚未在 `working_paper.tex` 中接线。**
+- [x] 选权表扩到三臂：`--fig tab-selection` → `paper/tables/tab_selection.tex`（tex 已 `\input`，编译通过）。
+- [ ] 图二 去留未定；现为 26 MB，投稿前必须压缩。
+- [ ] 数据构成、生成图来源审计、来源独立性：**写入正文作为表与数字，不做成图**（2026-09-23 决定）。
+- [ ] 三臂主表（fixed endpoint + pooled OOF，含 mAP50 与 mAP50-95，加 arm 级联合行）待生成；它也是图四的表格孪生。
+- [ ] **定性检出图（以后再做）**：目的＝补检测类论文必需的定性证据——同一批 dev61 图上三条臂的预测框与 GT 并排，最好含失败案例，让读者直接看到「编辑合成学到的是违规状态而非场景」。现在画不出：`per_image` 缓存只有 tp/conf，**没有框坐标**。做法＝对三个部署模型（A yolo26s@280、B yolo26s@200、C yolo26s@260）各跑一次 `yolo predict save=True` 或 `plots=True`（约 1–2 分钟 GPU，无需重训），脚本渲染后人工挑图。
+
 ## 完成条件
 
 - [ ] `experiments/v4_protocol/` 和规模实验汇总已入库，无 missing run。
