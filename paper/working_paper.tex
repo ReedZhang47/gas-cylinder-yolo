@@ -231,17 +231,81 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
   \label{tab:nested-selection}
 \end{table}
 
+The three arms differ only in how the 93 seed photographs are expanded; the training recipe,
+the snapshot schedule and the evaluation are shared. Because the same 61 development images
+both choose a checkpoint and report a score, the numbers are separated by role rather than
+merged: a fixed endpoint, a cross-fitted pooled out-of-fold estimate, and a separately
+identified deployment choice, exactly as pre-registered. Figure~\ref{fig:ci} gives the
+arm-level contrasts with paired cluster-bootstrap intervals, together with the same contrasts
+computed detector by detector; Table~\ref{tab:main} lists every detector and
+Table~\ref{tab:nested-selection} gives the arm-level selection.
+
+Two readings matter. First, the edited-synthesis arm improves on both the real-only and the
+classical-augmentation arms, and both intervals stay clear of zero. Second, the
+classical-augmentation arm is not distinguishable from the real-only arm at the arm level:
+expanding 93 photographs to 1085 by geometric and colour transforms buys no detectable gain.
+That second reading is an arm-level statement, not a per-detector one --- the per-detector
+panels show the augmented arm significantly ahead at two of the six detectors and never
+significantly behind, which is exactly why the arm-level estimate, rather than a
+best-detector score, is what gets reported.
+
+% Fig.4 由 paper/make_figures.py --fig bootstrap-ci 生成；区间来自
+% experiments/v4_protocol/bootstrap_paired.json（预注册参数见 EXPERIMENTS.md）。
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{fig4_bootstrap_ci.pdf}
+  \caption{Training-data strategies compared on dev61 with paired cluster-bootstrap
+  intervals (10\,000 resamples, seed 0, whole images resampled). (a) The arm-level estimate,
+  in which detector and checkpoint are selected inside the fit, for both reported metrics.
+  (b)--(d) The same contrasts computed per detector on pooled out-of-fold predictions, one
+  panel per contrast. An interval that meets the zero line does not establish a difference:
+  both edited-synthesis contrasts stay clear of zero, whereas the classical-augmentation
+  contrast against the real-only arm does not. All three arms' joint selection landed on
+  \texttt{yolo26s}, so the panel~(a) contrasts coincide with that detector's out-of-fold
+  estimates; the per-detector panels are what shows whether an ordering survives changing
+  the detector.}
+  \label{fig:ci}
+\end{figure}
+
 \subsection{Data-scale ablation}\label{sec:scale}
-% v4 待完成：gen493 全量 vs gen1085 全量，统一 300 轮与三层评估。
-% 编写：规模曲线 + fixed endpoint / pooled OOF 小表（素材：experiments/v4_protocol/）
-\todo{TODO}
+
+The synthesis arm is the only arm whose data can be scaled cheaply, so it carries the
+data-size experiment: the identical recipe is trained on the first 493 edited images and on
+all 1085. The pooled out-of-fold estimate rises from \num{0.5019} to \num{0.6429} under the
+primary metric and from \num{0.7367} to \num{0.8370} under mAP50 (Figure~\ref{fig:scale}).
+The paired cluster bootstrap puts the 493\,$\rightarrow$\,1085 step at $+0.141$ with a 95\%
+interval of $[+0.060, +0.249]$ in mAP50--95 and at $+0.100$ with $[+0.012, +0.218]$ in
+mAP50, so the gain is detectable under either metric. It is not uniformly detectable
+detector by detector --- all twelve point estimates are positive, five intervals clear zero
+and the rest straddle it --- so the scale effect is an arm-level finding on 61 evaluation
+images rather than a claim about any single detector. A larger pool also steadies the
+selection rule: at 493 images the five folds divide between two detectors and the deployment
+choice lands on \texttt{yolo26m}, whereas at 1085 images they agree on \texttt{yolo26s}.
+
+% 上述数字来源：experiments/v4_protocol/{bootstrap_paired_L3.json, v4_protocol_gen493v4.json,
+% v4_protocol_gen1085v4.json}；逐 detector 规模小表尚未生成，加入后正文应改引该表。
+\todo{Per-detector scale table still to be generated}
+% Fig.6 由 paper/make_figures.py --fig scale-curve 生成；区间来自 bootstrap_paired_L3.json。
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{fig6_scale_curve.pdf}
+  \caption{Training-set size against the pooled out-of-fold estimate, under the primary
+  metric (top) and mAP50 (bottom); both panels share one score axis so the two metrics'
+  slopes can be read against each other. The thick coloured segment is the pre-registered
+  493\,$\rightarrow$\,1085 experiment, both of its points fully synthetic. The 93-image point
+  is arm~A on real photographs: it is context for that comparison, not a point on the same
+  series, and no scale gain is claimed for it. Each point is the arm-level joint
+  detector+checkpoint estimate, so the selected detector is \texttt{yolo26s} at 93 and 1085
+  images and \texttt{yolo26m} at 493.}
+  \label{fig:scale}
+\end{figure}
 
 \subsection{Checkpoint-selection stability}\label{sec:stability}
 % 当前只有 A 臂结果；B/C 齐后补同一张表的两行，并核对稳定性结论是否在 1085 张上复现。
 Each detector is trained once and snapshotted every ten epochs, so the reporting protocol
 has to choose a checkpoint. The pre-registered rule smooths the dev61 mAP50--95 curve over
 three adjacent snapshots and takes its maximum, resolving ties towards the earlier epoch.
-Figure~\ref{fig:selection} shows the curves behind that rule for arm~A, marking for each
+Figure~\ref{fig:selection} shows the curves behind that rule, arm by arm, marking for each
 detector the epoch selected on all of dev61 (the deployment choice) and the epoch selected
 by each of the five cross-fitting folds; Table~\ref{tab:selection} lists those choices
 together with the resulting scores.
@@ -250,7 +314,7 @@ The fixed-endpoint and pooled-OOF columns must not be read as two models scored 
 set. The fixed endpoint is a single checkpoint evaluated on all of dev61, whereas the pooled
 estimate mixes five fold-selected checkpoints, each scored only on the images that were
 excluded when it was chosen. What the pair shows is whether the selection rule earns its
-keep. On this arm it does not do so uniformly: for four of the six detectors the pooled
+keep. On arm~A it does not do so uniformly: for four of the six detectors the pooled
 estimate falls slightly below the fixed endpoint, while for the two strongest detectors it
 improves on it substantially (Table~\ref{tab:selection}). Selection stability is also itself
 informative. The five folds agree exactly for \texttt{yolov8s} and \texttt{yolo26s}, whereas
@@ -264,11 +328,15 @@ least reliable on this arm in every other respect as well.
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{fig3_selection_curve.pdf}
-  \caption{Checkpoint selection on dev61, arm~A. Grey: each snapshot scored on all 61
-  development images. Blue: the pre-registered three-point smoothed curve whose maximum is
-  selected. Dashed line: the epoch selected on the whole benchmark, i.e.\ the deployment
-  choice. Black ticks: the epoch selected by each of the five cross-fitting folds. Panels
-  have independent y-axes. The same selection rule is applied to the whole benchmark and to
+  \caption{Checkpoint selection on dev61, arm by arm (A: 93 real photographs; B: 1085
+  classically augmented; C: 1085 state-edited). Grey: each snapshot scored on all 61
+  development images. Coloured: the pre-registered three-point smoothed curve whose maximum
+  is selected, with the colour identifying the arm. Dashed line: the epoch selected on the
+  whole benchmark, i.e.\ the deployment choice. Black ticks: the epoch selected by each of
+  the five cross-fitting folds, with the folded summary printed in the panel. Each row is
+  drawn on its own mAP50--95 scale, so rows are compared by shape and by how far the five
+  folds agree, not by level. The dagger marks the run flagged \emph{non-convergent} by the
+  rule in the protocol. The same selection rule is applied to the whole benchmark and to
   each fold's four-fold complement.}
   \label{fig:selection}
 \end{figure}

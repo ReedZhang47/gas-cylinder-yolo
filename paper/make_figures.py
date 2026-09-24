@@ -2,6 +2,7 @@ r"""Paper figures, rebuilt from experiments/ JSON so no number is hand-copied in
 
   selection-curve : checkpoint-selection curves (Fig. 3); one row per arm, one column per detector
   bootstrap-ci    : interval plot of the arm contrasts with paired-bootstrap CIs (Fig. 4)
+  scale-curve     : joint OOF against training-set size, both metrics (Fig. 6)
   arms-samples    : qualitative A/B/C sample comparison (Fig. 2)
   detections      : qualitative dev61 predictions, ground truth next to the three deployment models
   tab-selection   : checkpoint-selection table (arm A)
@@ -14,6 +15,7 @@ Usage:
   python paper/make_figures.py --fig selection-curve
   python paper/make_figures.py --fig selection-curve --png $TEMP/fig3.png
   python paper/make_figures.py --fig bootstrap-ci --png $TEMP/fig4.png
+  python paper/make_figures.py --fig scale-curve --png $TEMP/fig6.png
   python paper/make_figures.py --fig arms-samples
   python paper/make_figures.py --fig detections --png $TEMP/fig5.png
   python paper/make_figures.py --fig detections --refresh --png $TEMP/fig5.png
@@ -37,6 +39,7 @@ matplotlib.use("Agg")
 import matplotlib.patheffects as pe
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.lines import Line2D
 from matplotlib.patches import Rectangle
 from PIL import Image
 
@@ -46,6 +49,7 @@ TABLE_DIR = ROOT / "paper" / "tables"
 SCRIPTS = ROOT / "scripts"
 V4_JSON = ROOT / "experiments" / "v4_protocol" / "v4_protocol_real93v4.json"  # cited by the tex figure it backs
 BOOTSTRAP_JSON = ROOT / "experiments" / "v4_protocol" / "bootstrap_paired.json"
+L3_BOOTSTRAP_JSON = ROOT / "experiments" / "v4_protocol" / "bootstrap_paired_L3.json"
 SEED_IMAGES = Path(r"D:/gas_cylinders/real_photo/93_real_photos/images")
 GEN_DIRS = [Path(r"D:/gas_cylinders/Placement_Issues/images"),
             Path(r"D:/gas_cylinders/Placement_Issues_2/images")]
@@ -66,6 +70,11 @@ PAIR_ORDER = [("real93v4", "gen1085v4"), ("aug1085v4", "gen1085v4"), ("real93v4"
 PAIR_COLOR = {("real93v4", "gen1085v4"): "#2a78d6",
               ("aug1085v4", "gen1085v4"): "#eb6834",
               ("real93v4", "aug1085v4"): "#1baf7a"}
+# Data-scale curve (Fig. 6). The pre-registered scale experiment is 493 vs 1085 - both fully
+# synthetic - so the 93-image point (arm A, real photos) is drawn recessive: it is context for
+# that comparison, not a point on the same series. The first element is the training-set size.
+SCALE_POINTS = [(93, "real93v4", False), (493, "gen493v4", True), (1085, "gen1085v4", True)]
+SCALE_L3_PAIR = ("gen493v4", "gen1085v4")
 
 # Chart chrome (dataviz palette, light surface).
 INK = {"text": "#0b0b0b", "secondary": "#52514e", "muted": "#898781",
@@ -296,6 +305,91 @@ def bootstrap_ci(png: str | None) -> None:
                  fontsize=9.5, color=INK["text"])
     fig.tight_layout(rect=(0, 0, 1, 0.90))
     save(fig, "fig4_bootstrap_ci.pdf", png)
+
+
+def scale_curve(png: str | None) -> None:
+    """Joint OOF against training-set size, one panel per metric (Fig. 6).
+
+    The two synthetic points are the pre-registered experiment - the same recipe at 493 and at
+    1085 edited images - and they are joined by a thick segment in the synthesis arm's hue, so
+    the step reads as the single claim it is. The 93-image point is arm A on real photographs:
+    it is drawn hollow, in arm A's hue, and joined to nothing, because arm A is neither part of
+    the scale series nor a waypoint towards 1085. Both panels share one score axis so the two
+    slopes can be read against each other. The step's delta and interval come from the L3
+    bootstrap JSON, never hand-copied.
+    """
+    arms = [load_arm(arm) for _, arm, _ in SCALE_POINTS]
+    counts = [count for count, _, _ in SCALE_POINTS]
+    synthetic = [flag for _, _, flag in SCALE_POINTS]
+    detectors = [arm["joint_detector_and_checkpoint_selection"]["deployment_model"]["detector"]
+                 for arm in arms]
+    values = {metric: [arm["joint_detector_and_checkpoint_selection"]
+                       ["cross_fitted_model_selection"]["official_pooled_oof_metrics"][metric]
+                       for arm in arms]
+              for metric in (METRIC, "mAP50")}
+    step = find_comparison(json.loads(L3_BOOTSTRAP_JSON.read_text(encoding="utf-8"))["comparisons"],
+                           "joint", *SCALE_L3_PAIR)
+    series_color = ARM_COLOR["gen1085v4"]  # both synthetic points are that arm, at two scales
+
+    fig, axes = plt.subplots(2, 1, figsize=(6.9, 4.9), sharex=True, sharey=True)
+    y_lo = min(min(series) for series in values.values()) - 0.050
+    y_hi = max(max(series) for series in values.values()) + 0.070
+    panels = ((METRIC, "(a) mAP50-95   primary metric, and the one the selection rule maximises"),
+              ("mAP50", "(b) mAP50   reported alongside"))
+    for ax, (metric, panel_title) in zip(axes, panels):
+        series = values[metric]
+        ax.plot(counts[1:], series[1:], color=series_color, lw=3.0, zorder=3,
+                solid_capstyle="round")
+        for count, value, is_synthetic in zip(counts, series, synthetic):
+            if is_synthetic:
+                ax.plot([count], [value], marker="o", ms=9, color=series_color,
+                        markeredgecolor=INK["surface"], markeredgewidth=1.6, ls="none", zorder=4)
+            else:
+                ax.plot([count], [value], marker="o", ms=9, mfc=INK["surface"],
+                        mec=ARM_COLOR["real93v4"], mew=1.6, ls="none", zorder=4)
+            ax.annotate(f"{value:.4f}", (count, value), textcoords="offset points",
+                        xytext=(0, 11), ha="center", fontsize=8.5, color=INK["text"])
+        # Label the step where the eye already is: one line tucked under the segment, inside the
+        # panel. A second line would spill past panel (a)'s bottom edge, whose data sits low.
+        delta = step["observed_delta"][metric]
+        low, high = step[metric]["ci95"]
+        ax.annotate(f"Δ(493→1085) {delta:+.3f}     95% CI [{low:+.3f}, {high:+.3f}]",
+                    ((counts[1] + counts[2]) / 2, min(series[1:]) - 0.008),
+                    ha="center", va="top", fontsize=8, color=INK["text"])
+        ax.set_title(panel_title, fontsize=9.5, color=INK["text"], loc="left")
+        ax.set_ylim(y_lo, y_hi)
+        ax.set_yticks([0.4, 0.5, 0.6, 0.7, 0.8, 0.9])
+        ax.set_axisbelow(True)
+        ax.grid(axis="y", lw=0.5, color=INK["grid"])
+        ax.tick_params(labelsize=8.5, colors=INK["secondary"])
+        for side in ("top", "right"):
+            ax.spines[side].set_visible(False)
+        for side in ("left", "bottom"):
+            ax.spines[side].set_color(INK["axis"])
+    axes[0].tick_params(labelbottom=False, bottom=False)
+    axes[1].set_xlim(-45, counts[-1] + 95)
+    axes[1].set_xticks(counts)
+    axes[1].set_xticklabels([f"{count}\n{'edited' if flag else 'real photos'} · {detector}"
+                             for count, flag, detector in zip(counts, synthetic, detectors)],
+                            fontsize=8.5, color=INK["secondary"])
+    axes[1].set_xlabel("training images", fontsize=8.5, color=INK["secondary"])
+    axes[0].legend(handles=[
+        Line2D([], [], color=series_color, lw=3.0, marker="o", ms=8,
+               markeredgecolor=INK["surface"], label="edited, synthetic (the 493 → 1085 experiment)"),
+        Line2D([], [], color=ARM_COLOR["real93v4"], lw=0, marker="o", ms=8, mfc=INK["surface"],
+               mew=1.6, label="real photos, arm A (context only)")],
+        loc="upper left", frameon=False, fontsize=8)
+    fig.suptitle("Joint detector+checkpoint OOF on dev61 against training-set size",
+                 fontsize=9.5, color=INK["text"])
+    fig.text(0.5, 0.005,
+             "Every point is the arm-level joint detector+checkpoint estimate, so each is the "
+             "score of the detector chosen inside that fit. The 493 → 1085\ninterval is the "
+             "paired cluster bootstrap (10 000 resamples, seed 0, clustered by dev61 image); "
+             "both panels share one score axis.",
+             ha="center", va="bottom", fontsize=7.5, color=INK["secondary"])
+    fig.tight_layout(rect=(0, 0.062, 1, 0.935))
+    fig.subplots_adjust(hspace=0.60)
+    save(fig, "fig6_scale_curve.pdf", png)
 
 
 def label_path(image: Path) -> Path:
@@ -664,8 +758,8 @@ def table_selection() -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--fig", required=True,
-                        choices=["selection-curve", "bootstrap-ci", "arms-samples",
-                                 "detections", "tab-selection"])
+                        choices=["selection-curve", "bootstrap-ci", "scale-curve",
+                                 "arms-samples", "detections", "tab-selection"])
     parser.add_argument("--png", default=None, help="also write a raster copy to this path")
     parser.add_argument("--arm", default="all",
                         help="selection-curve: 'all' for the paper figure, or one arm key "
@@ -691,6 +785,8 @@ def main() -> None:
         selection_curve(args.png, args.arm)
     elif args.fig == "bootstrap-ci":
         bootstrap_ci(args.png)
+    elif args.fig == "scale-curve":
+        scale_curve(args.png)
     elif args.fig == "arms-samples":
         names = (None if args.generated is None
                  else [name.strip() for name in args.generated.split(",") if name.strip()])
