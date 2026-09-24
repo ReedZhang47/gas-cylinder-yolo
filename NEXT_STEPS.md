@@ -1,6 +1,6 @@
 # Next Steps v4
 
-更新时间：2026-09-23（三臂训练、评测、逐图缓存与三臂配对聚类 bootstrap 全部完成；下一步 L3 gen493）
+更新时间：2026-09-24（三臂 + L3 规模点全部完成：训练、三层评测、逐图缓存、配对聚类 bootstrap；下一步为论文侧与可选消融）
 
 ## 当前目标
 
@@ -29,11 +29,12 @@
 
 ## 规模实验 L3
 
-- [ ] `scripts\run_v4_arms.ps1 -Arm gen493 -Epochs 300 -SavePeriod 10`
-- [ ] `scripts\eval_v4_protocol.py --arm gen493v4`
-- [ ] 用同一三层协议与 C 臂 1085 张结果比较。
+- [x] `scripts\run_v4_arms.ps1 -Arm gen493 -Epochs 300 -SavePeriod 10`（2026-09-23 18:25:57 → 23:04:56，**4 h 39 m**；六者各 300 轮、batch16 无 OOM；实测 33/57/32/56/37/64 min）。
+- [x] `scripts\eval_v4_protocol.py --arm gen493v4` → `experiments\v4_protocol\v4_protocol_gen493v4.json`，核验通过（`protocol.json` 折定义未变、无 error、三层齐全、候选 30 个）。
+- [x] `scripts\bootstrap_paired.py --dump --arm gen493v4`，逐项断言与官方 JSON 一致。
+- [x] 用同一三层协议与 C 臂 1085 张结果比较：联合 OOF mAP50-95 0.5019 → 0.6429（+0.1410）；配对聚类 bootstrap 主终点 CI [+0.060, +0.249] 不含 0，mAP50 附加列 [+0.012, +0.218] 不含 0。结果 `experiments\v4_protocol\bootstrap_paired_L3.json`，详见 `PROGRESS.md`。
 
-493 张，按 B 臂实测外推约 5–6 GPU 小时（原 4 h 口径低估）。
+实测 4 h 39 m（原 5–6 h 口径略高估）。
 
 ## 论文结果
 
