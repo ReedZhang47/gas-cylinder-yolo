@@ -46,11 +46,11 @@
 |---|---|---|
 | Related Work（全部） | ✅ 可写，需先文献调研 | 检索词：construction site safety detection；synthetic data for object detection；diffusion data augmentation；sim2real；auto-labeling human-in-the-loop |
 | Methodology（3.1~3.5 全部） | ✅ 可写（v4 协议已定稿） | `EXPERIMENTS.md` + `COMMANDS.md` |
-| Experiments 4.1 / 4.2 主结果 | ⛔ 等 A/B/C 三臂统一协议结果 | `NEXT_STEPS.md` + `PROGRESS.md` |
-| Experiments 4.3 规模消融 | ⛔ 等统一 300 轮的 493 点；1085 点复用 C 臂 | `NEXT_STEPS.md` |
-| Experiments 4.4 选权稳定性 | ⛔ 等 v4 OOF 结果 | `experiments/v4_protocol/` |
+| Experiments 4.1 / 4.2 主结果 | ✅ 已完成 | `experiments/v4_protocol/`（三臂三层结果）+ `bootstrap_paired.json`；C−A +0.211、C−B +0.308 的 CI 不含 0，B−A −0.097 跨 0 |
+| Experiments 4.3 规模消融 | ✅ 已完成 | 联合 OOF 0.5019 → 0.6429，Δ +0.1410，CI [+0.060, +0.249]（`bootstrap_paired_L3.json`） |
+| Experiments 4.4 选权稳定性 | ✅ 已完成 | 各臂五折选权与部署 epoch：A 五折一致 280；B 200/200/180/200/180；C 260/240/260/260/270；L3 220/200/200/200/260（493 点五折跨 yolo26s/yolo26m，选权不稳） |
 | Experiments 4.5 分辨率分析 | 待主批次后执行 | `NEXT_STEPS.md` |
-| Introduction | ✅ 初稿（C3 留占位，等 A/B 臂） | 项目"一句话+主故事线" |
+| Introduction | ✅ 初稿；C3 占位可补（A/B/C 与规模结果已齐） | 项目"一句话+主故事线" + `PROGRESS.md` v4 阶段性结果 |
 | Discussion | ✅ 初稿 | 编辑合成 vs 传统增广的机制 + dev61 域差（小图） |
 | Experiments 4.6 第二目标 | ⛔ 等素材 | 跨目标证据，三级定位第 2 级的门槛 |
 | Experiments 4.7 消融与稳健性 | 待主批次完成后排序 | `NEXT_STEPS.md` |
@@ -64,9 +64,11 @@
 
    | 臂 | 训练数据 | 状态 |
    |---|---|---|
-   | A 真实基线 | real93 全量 **93 张** | 待训（`v4\data_real93.yaml`） |
-   | B 真实+传统增广 | 93 → **1085 张** | 生成脚本已实现，待重建核对与训练 |
-   | C 编辑合成 | gen1085 全量 **1085 张** | 待按统一协议训练 |
+   | A 真实基线 | real93 全量 **93 张** | 已完成（联合 OOF mAP50-95 0.4320） |
+   | B 真实+传统增广 | 93 → **1085 张** | 已完成（0.3349） |
+   | C 编辑合成 | gen1085 全量 **1085 张** | 已完成（0.6429） |
+
+   - **实际结果与解读预案的对齐**：C > B 与 C > A 均成立且 CI 不含 0；但 **B 与 A 无法区分**（主终点 Δ −0.097，CI [−0.197, +0.017]；逐 detector 4/6 跨 0，2/6 反而 B 更好，无一项显著偏向 A）。因此落点不是「C > B > A」，而是「**编辑合成显著优于传统增广，而传统增广相对不扩的 93 张真实图无可检测增益**」——即传统增广能补量、补不了状态多样性，且补量本身在本数据规模上不产生可检出收益。写论文时不要写成「B 比 A 差」。
 
    - 协议：300 epoch / imgsz 640 / batch 16，`patience=0`，`save_period=10`；报告 fixed endpoint、5 折 pooled OOF 和部署选择。
    - 增广类型：hflip、±10° 旋转、缩放平移、亮度/对比度/HSV；**不用上下翻转**（工地实景有重力方向）；几何变换同步变框。
