@@ -239,6 +239,15 @@ panels show the augmented arm significantly ahead at two of the six detectors an
 significantly behind, which is exactly why the arm-level estimate, rather than a
 best-detector score, is what gets reported.
 
+Figure~\ref{fig:detections} shows what those aggregates are made of. Its four columns are
+hand-picked, one outcome each, so they illustrate rather than sample, and the intervals in
+Figure~\ref{fig:ci} remain the evidence. Two panels show behaviour the arm-level means hide:
+on the first image only the edited-synthesis arm detects the cylinder lying on the ground, at
+a confidence neither of the other two arms reaches, and on the third the real-only arm fires
+twice on a single labelled cylinder. The last panel is the opposite case, in which all three
+arms recover all three labels, and is included so that the figure is not read as a catalogue
+of failures.
+
 % Fig.4 由 paper/make_figures.py --fig bootstrap-ci 生成；区间来自
 % experiments/v4_protocol/bootstrap_paired.json（预注册参数见 EXPERIMENTS.md）。
 \begin{figure}[t]
@@ -255,6 +264,29 @@ best-detector score, is what gets reported.
   estimates; the per-detector panels are what shows whether an ordering survives changing
   the detector.}
   \label{fig:ci}
+\end{figure}
+
+% Fig.5 由 paper/render_dev61_detections.py 渲染逐图面板（GT + 三臂，告警配色）后人工拼版；
+% 面板框线取自缓存 experiments/v4_protocol/qualitative_detections.json，显示阈值为 0.25。
+% 四列对应的 dev61 图片，按序为 new_test_set_0049 / 0037 / 0005 / 0012（核对记录见 NEXT_STEPS.md）。
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{fig5_detection_comparison.pdf}
+  \caption{What the arm-level numbers are made of, on four hand-picked benchmark images, one
+  outcome per column. Every panel in a column is the same image, shown at its source scale in
+  all four rows, which is why the columns are of unequal width. The rows are the reviewed human
+  labels --- drawn dashed and without a confidence, because a label carries no score --- and
+  then each arm's deployment checkpoint; all three arms selected \texttt{yolo26s}, at epoch 280
+  (A), 200 (B) and 260 (C). Predicted boxes are drawn at confidence $\ge 0.25$ and dropped
+  below it, so a dashed box with no solid box over it was either missed or fell short of the
+  threshold --- on the first image the real-only arm does respond, at 0.21. The columns are
+  named in their headers by the outcome they were chosen to pin, and are not a random sample:
+  only the edited-synthesis arm finds the fallen cylinder; on an image whose label file is
+  empty, the real-only and the classically augmented arm each raise a box and the edited arm
+  raises none; on a single labelled cylinder only the real-only arm fires twice, once with no
+  overlap with the label; and on an image with three labelled cylinders all three arms recover
+  all three.}
+  \label{fig:detections}
 \end{figure}
 
 \subsection{Data-scale ablation}\label{sec:scale}

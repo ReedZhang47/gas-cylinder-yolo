@@ -47,15 +47,19 @@
 ## 论文图表（2026-09-23）
 
 - [x] 图三 选权曲线升级为三臂：`paper/make_figures.py --fig selection-curve`（3 臂 × 6 detector，每行独立 y 标尺）→ `paper/figures/fig3_selection_curve.pdf`；已由 `working_paper.tex` 引用，编译通过、无 Overfull。
-- [x] 图四 主结果 CI 图：`--fig bootstrap-ci` → `paper/figures/fig4_bootstrap_ci.pdf`（左＝arm 级联合 OOF 两个指标，右＝三个对比的逐 detector pooled OOF）。**尚未在 `working_paper.tex` 中接线。**
+- [x] 图四 主结果 CI 图：`--fig bootstrap-ci` → `paper/figures/fig4_bootstrap_ci.pdf`（左＝arm 级联合 OOF 两个指标，右＝三个对比的逐 detector pooled OOF）。已在 `working_paper.tex` §4.2 中接线（渲染编号 Figure 3），编译通过。
 - [x] 选权表扩到三臂：`--fig tab-selection` → `paper/tables/tab_selection.tex`（tex 已 `\input`，编译通过）。
 - [x] 图六 规模曲线：`--fig scale-curve` → `paper/figures/fig6_scale_curve.pdf`（mAP50-95 与 mAP50 各一 panel，共享一根分数轴；93 点为真实照片、画成**空心蓝圈且不与任何点连线**——它不属规模序列也不是通往 1085 的中间点；预注册实验是 493 → 1085，粗线段＋段下直接标注 Δ 与 95% CI，数值读自 `bootstrap_paired_L3.json`）。已在 `working_paper.tex` 中引用，编译通过。
-- [ ] 图四、图六尚未接线；图二去留未定且现为 26 MB，投稿前必须压缩。
+- [x] 图二已由 26 MB 压到 1.15 MB（`ed15f19`），去留仍未定；图四、图六、图五均已接线。
+- [ ] 图号与文件名不一致：文件名按计划顺序（图3 选权、图4 CI、图5 检出、图6 规模），但渲染编号按正文出现顺序（管线 1、样例 2、CI 3、检出 4、规模 5、选权 6）。若要求两者一致，需移动选权图位置或重命名文件，二选一，投稿前定。
 - [ ] 数据构成、生成图来源审计、来源独立性：**写入正文作为表与数字，不做成图**（2026-09-23 决定）。
 - [x] 全部表格：`paper/make_figures.py --fig tables` 生成 8 张并 `\input`（主表 18 行·两指标两角色、arm 级嵌套选择、bootstrap 对照、规模消融、数据集清单、独立性、协议、训练成本）；tex 中两张 `\todo` 占位表已替换为生成表，正文数字改为引表。编译 0 Overfull / 0 未定义引用 / 0 错误。
 - [ ] 表数已达 9 张（含原有的选权表），**超出 `PAPER_PLAN.md` 的 4–6 张目标**。可选合并：协议表＋成本表合成一张、数据集清单＋独立性合成一张、或把成本表移入补充材料。待定。
 - [ ] 正文仍有大量 `\todo`，8 表 + 6 图的浮动体目前堆积在文档后半（第 10–14 页）；正文补齐后自然分散。
-- [ ] 图五 定性检出图：脚本（`--fig detections`）与推理缓存 `experiments/v4_protocol/qualitative_detections.json` 已就绪，但 `paper/figures/fig5_detections_dev61.pdf` 尚未生成。目的＝补检测类论文必需的定性证据——同一批 dev61 图上三条臂的预测框与 GT 并排、含失败案例，让读者直接看到「编辑合成学到的是违规状态而非场景」；四行分别钉住一种结局（各臂都找到／只有 C 找到／C 准而 A 过报 B 漏／都没找到）。
+- [x] 图五 定性检出图：`paper/figures/fig5_detection_comparison.pdf`，由 `paper/render_dev61_detections.py` 渲染 dev61 × (GT + 三臂) 面板后**人工拼版**；不是 `make_figures.py --fig detections` 的输出（后者写 `fig5_detections_dev61.pdf`，版面为「一图一行、结局写在行首」的旧版式，未采用，勿混）。已在 `working_paper.tex` §4.2 中接线（渲染编号 Figure 4），编译 0 Overfull / 0 未定义引用。
+  - 接线时核对（2026-09-24）：四列对应 dev61 图片 `new_test_set_0049 / 0037 / 0005 / 0012`（按 GT 面板与其 PNG 素材做 48×48 灰度匹配，四列均 0.999）；逐框与 `experiments/v4_protocol/qualitative_detections.json` 在 conf≥0.25 下一致——0049 仅 C 出框 0.90（A 有 0.21，低于阈值；B 无）；0037 空标图上 A 0.53、B 0.79、C 无；0005 单框图上 A 出 2 框（其一与标框 IoU 0）、B 0.96（IoU 0.79）、C 0.97（IoU 0.95）；0012 三框图上三臂各 3 框（IoU 0.65–0.89）。配色为 render 脚本的告警色（A 红 / B 黄 / C 橙），非 `ARM_COLOR`。
+  - [ ] 待定：画布 26.7 in 宽，缩到 `\linewidth` 后置信度注释约 3.0–3.6 pt（其余脚本图约 5.3 pt）。要么放大面板与字号重拼，要么接受现状。逐面板素材可复现（`render_dev61_detections.py`，默认写 `D:\gas_cylinders\detection_dev61\`），拼版步骤目前无脚本。
+  - [ ] 可选补充（未做）：空标图上的假阳性计数可作误差分析素材——dev61 的 31 张空标图在 conf≥0.25 下 A 命中 6 张、B 2 张、C 2 张（读自上述缓存）。要写进正文必须先落盘为 `experiments/` 产物并核验口径。
 
 ## 完成条件
 
@@ -68,3 +72,4 @@
 
 - 安全帽第二目标：等待更多素材。
 - 多种子、PR 工作点、分辨率扫描、误差分析：主批次完成后排序。
+- D 臂（93 张训 LoRA + Z-Image 文生图）：设计稿与提示词库已就绪（`docs/LORA_ARM_PROMPTS.md`、`scripts/prompts_lora_t2i.json`，90 条英文短提示词：72 正 + 18 负），未排期、未生成任何图。
