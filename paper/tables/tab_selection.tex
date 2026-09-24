@@ -11,30 +11,30 @@
   Arms: A: 93 real photos \quad B: 1085 classical-augmented \quad C: 1085 edited.}
   \label{tab:selection}
   \setlength{\tabcolsep}{4pt}
-  \begin{tabular}{llcccc}
+  \begin{tabular}{llcp{0.16\linewidth}cc}
   \toprule
   Arm & Detector & Deploy.\ epoch & Fold-selected epochs & Fixed endpoint & Pooled OOF \\
   \midrule
-  A & yolov8s & 290 & 290 $\times$ 5 & 0.2940 & 0.2843 \\
-  A & yolov8m & 300 & 300 $\times$ 4, 290 & 0.2095 & 0.2010 \\
-  A & yolo11s & 300 & 300 $\times$ 4, 270 & 0.3008 & 0.2864 \\
-  A & yolo11m$^{\dagger}$ & 280 & 280 $\times$ 3, 260, 300 & 0.0764 & 0.0611 \\
-  A & yolo26s & 280 & 280 $\times$ 5 & 0.3938 & 0.4320 \\
-  A & yolo26m & 280 & 280 $\times$ 4, 270 & 0.2287 & 0.2753 \\
+  A & yolov8s & 290 & 290~$\times$~5 & 0.2940 & 0.2843 \\
+  A & yolov8m & 300 & 300~$\times$~4, 290 & 0.2095 & 0.2010 \\
+  A & yolo11s & 300 & 300~$\times$~4, 270 & 0.3008 & 0.2864 \\
+  A & yolo11m$^{\dagger}$ & 280 & 280~$\times$~3, 260, 300 & 0.0764 & 0.0611 \\
+  A & yolo26s & 280 & 280~$\times$~5 & 0.3938 & 0.4320 \\
+  A & yolo26m & 280 & 280~$\times$~4, 270 & 0.2287 & 0.2753 \\
   \midrule
-  B & yolov8s & 250 & 250 $\times$ 2, 140, 150, 270 & 0.2404 & 0.2253 \\
-  B & yolov8m & 120 & 120 $\times$ 4, 130 & 0.3102 & 0.3723 \\
-  B & yolo11s & 250 & 250 $\times$ 4, 120 & 0.2427 & 0.2658 \\
-  B & yolo11m & 150 & 150 $\times$ 4, 160 & 0.2548 & 0.3527 \\
-  B & yolo26s & 200 & 200 $\times$ 3, 180 $\times$ 2 & 0.3311 & 0.3349 \\
-  B & yolo26m & 250 & 250 $\times$ 5 & 0.2965 & 0.3142 \\
+  B & yolov8s & 250 & 250~$\times$~2, 140, 150, 270 & 0.2404 & 0.2253 \\
+  B & yolov8m & 120 & 120~$\times$~4, 130 & 0.3102 & 0.3723 \\
+  B & yolo11s & 250 & 250~$\times$~4, 120 & 0.2427 & 0.2658 \\
+  B & yolo11m & 150 & 150~$\times$~4, 160 & 0.2548 & 0.3527 \\
+  B & yolo26s & 200 & 200~$\times$~3, 180~$\times$~2 & 0.3311 & 0.3349 \\
+  B & yolo26m & 250 & 250~$\times$~5 & 0.2965 & 0.3142 \\
   \midrule
-  C & yolov8s & 300 & 300 $\times$ 5 & 0.5989 & 0.5989 \\
-  C & yolov8m & 300 & 300 $\times$ 3, 240, 280 & 0.5646 & 0.5554 \\
-  C & yolo11s & 210 & 210 $\times$ 4, 190 & 0.5555 & 0.5561 \\
-  C & yolo11m & 290 & 290 $\times$ 2, 240, 270, 280 & 0.5713 & 0.5637 \\
-  C & yolo26s & 260 & 260 $\times$ 3, 240, 270 & 0.6099 & 0.6429 \\
-  C & yolo26m & 150 & 150 $\times$ 4, 170 & 0.5662 & 0.5606 \\
+  C & yolov8s & 300 & 300~$\times$~5 & 0.5989 & 0.5989 \\
+  C & yolov8m & 300 & 300~$\times$~3, 240, 280 & 0.5646 & 0.5554 \\
+  C & yolo11s & 210 & 210~$\times$~4, 190 & 0.5555 & 0.5561 \\
+  C & yolo11m & 290 & 290~$\times$~2, 240, 270, 280 & 0.5713 & 0.5637 \\
+  C & yolo26s & 260 & 260~$\times$~3, 240, 270 & 0.6099 & 0.6429 \\
+  C & yolo26m & 150 & 150~$\times$~4, 170 & 0.5662 & 0.5606 \\
   \bottomrule
   \end{tabular}
 \end{table}

@@ -148,6 +148,14 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 % 编写（素材：PROGRESS.md；口径见 EXPERIMENTS.md）
 \todo{TODO}
 
+% 表体由 paper/make_figures.py --fig tab-independence 生成并 \input。
+The benchmark's independence is a precondition of the protocol rather than a footnote to it,
+and it is checked rather than asserted (Table~\ref{tab:independence}): similarity is measured
+between the benchmark and both the seed set and the synthesized images, each measured against
+the internal similarity the sets already carry, and the generator's own per-image metadata is
+parsed to confirm that no synthesized image was edited from a benchmark image.
+\input{tables/tab_independence.tex}
+
 % Fig.1 由 figures/fig1_pipeline.tex 编译而来（TikZ 重绘，替代早先的 mermaid 草图）。
 \begin{figure}[t]
   \centering
@@ -175,6 +183,17 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 % bochkovskiy2020yolov4, wang2023yolov7, wang2024yolov9, wang2024yolov10, ultralytics2025}）
 \todo{TODO}
 
+% 表体由 paper/make_figures.py --fig tab-protocol / tab-cost / tab-data 生成并 \input。
+Every arm and scale point shares one training recipe and one evaluation protocol
+(Table~\ref{tab:protocol}); the only thing that differs between runs is the image list. Each
+run is a single-shot training on one consumer-grade GPU (Table~\ref{tab:cost}), which is what
+makes training six detectors per arm affordable in the first place.
+Table~\ref{tab:data} counts every set that enters a run and every set that scores one, from
+the same lists the training runs consumed.
+\input{tables/tab_protocol.tex}
+\input{tables/tab_cost.tex}
+\input{tables/tab_data.tex}
+
 % Fig.2 由 paper/make_figures.py --fig arms-samples 生成（--seed-photo / --generated 选定图）。
 % 图与图注目前由作者手工在 PDF 编辑器里定稿，脚本只作候选生成与复现入口。
 \begin{figure}[t]
@@ -196,40 +215,11 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 \subsection{Main comparison: three same-source arms}\label{sec:main}
 % 主结果表：每 detector、每 arm 各报 fixed endpoint 和 pooled OOF mAP50-95。
 % v4 待完成：A 真实 93 / B 传统增广 1085 / C 编辑合成 1085，统一协议。
-\begin{table}[t]
-  \centering
-  \caption{\todo{Detection performance on dev61 (61 independently sourced web images).
-  A: real-only (93 photos); B: classical offline augmentation (1085); C: state-editing
-  synthesis (1085). Report fixed endpoint and pooled out-of-fold estimates separately.}}
-  \begin{tabular}{lcccccc}
-  \toprule
-  Detector & \multicolumn{2}{c}{A: real 93} & \multicolumn{2}{c}{B: aug 1085} & \multicolumn{2}{c}{C: synth 1085} \\
-  \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
-   & Fixed & OOF & Fixed & OOF & Fixed & OOF \\
-  \midrule
-  % 6 行数据
-\todo{TODO} & & & & & & \\
-  \bottomrule
-  \end{tabular}
-  \label{tab:main}
-\end{table}
-
-\begin{table}[t]
-  \centering
-  \caption{\todo{Arm-level nested selection over both detector and checkpoint. OOF is
-  computed once from pooled held-out predictions. Deployment scores are measured on
-  the same dev61 set used for selection and are not generalization estimates.}}
-  \begin{tabular}{lcccc}
-  \toprule
-  Arm & OOF mAP50 & OOF mAP50--95 & Deployment detector & Epoch \\
-  \midrule
-  A: real 93 & & & & \\
-  B: aug 1085 & & & & \\
-  C: synth 1085 & & & & \\
-  \bottomrule
-  \end{tabular}
-  \label{tab:nested-selection}
-\end{table}
+% 表体（含 caption/label）由 paper/make_figures.py --fig tab-main / tab-nested / tab-bootstrap
+% 生成并 \input；数字不再是手抄。
+\input{tables/tab_main.tex}
+\input{tables/tab_nested_selection.tex}
+\input{tables/tab_bootstrap.tex}
 
 The three arms differ only in how the 93 seed photographs are expanded; the training recipe,
 the snapshot schedule and the evaluation are shared. Because the same 61 development images
@@ -271,20 +261,19 @@ best-detector score, is what gets reported.
 
 The synthesis arm is the only arm whose data can be scaled cheaply, so it carries the
 data-size experiment: the identical recipe is trained on the first 493 edited images and on
-all 1085. The pooled out-of-fold estimate rises from \num{0.5019} to \num{0.6429} under the
-primary metric and from \num{0.7367} to \num{0.8370} under mAP50 (Figure~\ref{fig:scale}).
-The paired cluster bootstrap puts the 493\,$\rightarrow$\,1085 step at $+0.141$ with a 95\%
-interval of $[+0.060, +0.249]$ in mAP50--95 and at $+0.100$ with $[+0.012, +0.218]$ in
-mAP50, so the gain is detectable under either metric. It is not uniformly detectable
-detector by detector --- all twelve point estimates are positive, five intervals clear zero
-and the rest straddle it --- so the scale effect is an arm-level finding on 61 evaluation
-images rather than a claim about any single detector. A larger pool also steadies the
+all 1085. Every reported quantity rises with the pool --- the pooled out-of-fold estimate
+under the primary metric, the same estimate under mAP50, and the deployment score
+(Figure~\ref{fig:scale} and Table~\ref{tab:scale}). The paired cluster bootstrap puts the step
+clear of zero under both metrics (Table~\ref{tab:bootstrap}), so this is a detectable gain
+rather than an artefact of which checkpoint the folds happened to pick. It is not uniformly
+detectable detector by detector --- every per-detector point estimate is positive, but only
+some of the intervals clear zero --- so the scale effect is an arm-level finding on 61
+evaluation images, not a claim about any single detector. A larger pool also steadies the
 selection rule: at 493 images the five folds divide between two detectors and the deployment
 choice lands on \texttt{yolo26m}, whereas at 1085 images they agree on \texttt{yolo26s}.
 
-% 上述数字来源：experiments/v4_protocol/{bootstrap_paired_L3.json, v4_protocol_gen493v4.json,
-% v4_protocol_gen1085v4.json}；逐 detector 规模小表尚未生成，加入后正文应改引该表。
-\todo{Per-detector scale table still to be generated}
+% 表体（含 caption/label）由 paper/make_figures.py --fig tab-scale 生成并 \input。
+\input{tables/tab_scale.tex}
 % Fig.6 由 paper/make_figures.py --fig scale-curve 生成；区间来自 bootstrap_paired_L3.json。
 \begin{figure}[t]
   \centering
