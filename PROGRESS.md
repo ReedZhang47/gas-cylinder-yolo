@@ -9,7 +9,7 @@
 - 关键读数（主指标 mAP50-95，arm 级 detector+checkpoint 联合 OOF）：**C 0.6429 > A 0.4320 > B 0.3349**；C−A +0.211 与 C−B +0.308 的 95% CI 均不含 0，**B−A −0.097 跨 0（无法判定，不写成「B 比 A 差」）**。
 - 规模曲线（同为联合 OOF）：93 张真实 0.4320 → 493 张编辑合成 0.5019 → 1085 张编辑合成 0.6429；493 → 1085 的 Δ +0.1410，CI [+0.060, +0.249] 不含 0。
 - yolo11m 离群只在 A 臂出现（B/C 未复现），按预注册规则记为「多 detector × 稀缺数据的训练方差」。
-- 论文现有图表和数字仍为 v4 三臂版本；待 D 臂有核验结果后扩为 v5。安全帽第二目标待素材。
+- 论文数字与结果图表仍为 v4 三臂版本；Fig. 1 已重绘为 v5 四臂设计示意，Fig. 2 已重绘为数据来源与 C/D 两条生成流程，D 臂待完成步骤均用虚线表示。待 D 有核验结果后再扩充结果图表。安全帽第二目标待素材。
 
 ## v5 D 臂准备记录（2026-09-25）
 
@@ -17,6 +17,7 @@
 |---|---|---|
 | 生成模型 | 本机已部署 | Qwen-Image-2.1 INT8 `qwen_image_2.1_int8_convrot.safetensors`；Qwen3-VL-8B 文本编码器 `qwen3vl_8b_int8_convrot.safetensors`；VAE `qwen_image_2.1_vae_bf16.safetensors`，使用 ComfyUI 封装文件 |
 | real93 LoRA | 已训练 | `D:\yolo\weights\ArmD lora\construction_sites_gas_cylinders.safetensors`，大型权重不入库 |
+| LoRA 训练配置 | 已由作者补录 | Qwen-Image 标准 LoRA 训练流程；2000 steps、learning rate `0.0004`、rank `16`、无裁剪；打标算法“通义千问”，阈值 `0.30`。阈值对应的工作流节点仍待 JSON 固化 |
 | 推理工作流 | 已接入 LoRA 并少量试生成 | 社区四步加速 LoRA `Qwen-Image-2.1-viggle-turbo-4step-lora-r64.safetensors` 本机约 3 秒/张；原生 25 步约 20–30 秒/张。工作流 JSON 尚未入库，速度不代表正式质量评估 |
 | real93 描述 | 93 条已整理 | `docs/Prompts_Based_on_real93.md`，Gemini-3.8-flash 辅助撰写的英文自然语言，正式使用前人工审读 |
 | D 臂数据与检测 | 待完成 | 目标筛选后 1085 张（465 张种子描述变体 + 620 张新场景）；尚无正式数据集、标签、run 或评估 JSON |
@@ -75,6 +76,13 @@ dev61 上的 mAP50-95（主指标）与 mAP50（附加列），来源 `experimen
 - 成本实测：B 臂训练 10 h 09 m（六者 73/123/70/132/80/131 min，batch16 无 OOM）。
 
 ### C 臂 gen1085，2026-09-23
+
+C 臂生成工作流使用 `qwen_image_edit_2509_fp8_e4m3fn.safetensors` 主模型、
+`qwen_2.5_vl_7b_fp8_scaled.safetensors` Text Encoder、
+`qwen_image_vae.safetensors` VAE，以及四步加速 LoRA
+`Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors`。工作流有原始与
+Lightning 模式切换；每张正式图的实际模式仍待工作流 JSON / 元数据核对。
+流程图与精确文件名见 `paper/figures/new fig2/README.md`。
 
 dev61 上的 mAP50-95（主指标）与 mAP50（附加列），来源 `experiments/v4_protocol/v4_protocol_gen1085v4.json`（核验通过：`protocol.json` 折定义与 A/B 臂完全一致、6 detector 无 error、三层齐全、候选为 epoch 10..300）：
 

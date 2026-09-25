@@ -125,8 +125,11 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 % （两批共 1085 张，全部源自 93 张真实照片）。
 % 真实性红线：必须带喷漆磨损/污渍/锈迹（v0 教训）。
 % 逐图来源记录（ComfyUI 元数据留档）只作数据管理，不写成方法学贡献。
+% C 组件精确文件名见 figures/new fig2/README.md；Lightning 四步模式并未逐图核验。
 % 编写（素材：PROGRESS.md 一/二；工具引用 \cite{qwenimage2025, qwenimageedit2025}）
 % v5 D 臂将在单独段落交代：Qwen-Image-2.1 + real93 LoRA 文生图，
+% Qwen-Image 标准 LoRA 训练：2000 steps / LR 0.0004 / rank 16 / 无裁剪；
+% 通义千问打标阈值 0.30（阈值具体节点待工作流 JSON 固化）。
 % 生成候选/质检保留/人工标注及新场景提示词分别报告；引用
 % \cite{qwenimage21_2026,qwen3vl8b2025,comfyqwenimage21_2026}。
 % 当前只有 LoRA 与少量试生成；1085 张数据及检测结果未完成，不能写入正文结果。
@@ -164,20 +167,34 @@ the internal similarity the sets already carry, and the generator's own per-imag
 parsed to confirm that no synthesized image was edited from a benchmark image.
 \input{tables/tab_independence.tex}
 
-% Fig.1 由 figures/fig1_pipeline.tex 编译而来（TikZ 重绘，替代早先的 mermaid 草图）。
+% Fig.1 由 figures/new fig1/draw_fig1.py 生成矢量 PDF；D 臂仍为待完成扩展。
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{fig1_pipeline.pdf}
-  \caption{Overview of the proposed pipeline. A small expert-annotated real seed set is
-  expanded along three same-source arms: no augmentation, classical offline augmentation,
-  and state-editing synthesis. Only the synthesized images pass through auto-labelling with
-  human-in-the-loop review, which is a quality gate rather than a convenience. All arms
-  share one training protocol and are evaluated on an independently sourced development
-  benchmark, reported as a fixed endpoint, cross-fitted held-out predictions pooled for AP,
-  and a separately identified deployment model. Solid arrows are the main flow, dashed
-  arrows are checks and the reuse path, and the two highlighted boxes are the quality gates.
-  Sample counts are given in the text and tables rather than in the figure.}
+  \caption{Study pipeline. The 93 real photographs source four data arms; the dashed D arm
+  is a planned LoRA text-to-image dataset with a target of 1085 images. Each arm follows the
+  same six-detector training schedule. The external dev61 set enters evaluation only, which
+  reports a fixed endpoint, a pooled out-of-fold estimate, and a separate deployment score.
+  Paired bootstrap resamples whole images. Results are complete for A--C; D evaluation is
+  pending.}
   \label{fig:pipeline}
+\end{figure}
+
+% Fig.2 由 figures/new fig2/draw_fig2.py 生成矢量 PDF；旧 A/B/C 样例图仍留在
+% figures/fig2_arms_samples.pdf，作为后续定性素材，不再作为本图。
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{fig2_generation_workflows.pdf}
+  \caption{Data provenance and the two generative workflows. (a) Both arms originate from
+  real93; the photographs shown are on-site examples, and the corpus also includes
+  web-sourced real photographs. (b) Arm C edits a source photograph with
+  Qwen-Image-Edit-2509, then reviews the images and boxes before retaining 1085 training
+  images. (c) Arm D uses Qwen tagging (threshold 0.30) and the uncropped real93
+  images to train a Qwen-Image LoRA for 2000 steps (learning rate 0.0004, rank 16). The
+  trained LoRA is used with Qwen-Image-2.1 for text-to-image generation. The dashed final
+  stage targets 1085 reviewed and annotated images; that dataset is pending. Unlike C,
+  D does not edit a particular reference photograph at inference.}
+  \label{fig:generation}
 \end{figure}
 
 % ==========================================================================
@@ -201,24 +218,6 @@ the same lists the training runs consumed.
 \input{tables/tab_protocol.tex}
 \input{tables/tab_cost.tex}
 \input{tables/tab_data.tex}
-
-% Fig.2 由 paper/make_figures.py --fig arms-samples 生成（--seed-photo / --generated 选定图）。
-% 图与图注目前由作者手工在 PDF 编辑器里定稿，脚本只作候选生成与复现入口。
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{fig2_arms_samples.pdf}
-  \caption{What each same-source arm actually adds. Top: one real seed photo and three
-  variants produced by the exact augmentation function used to build the
-  classical-augmentation arm, with boxes carried through every geometric transform.
-  Bottom: representative state-editing samples. Every synthesized image is an edit of one of
-  the same seed photographs, but the panels are not a matched set: the samples shown are
-  edits of other seeds rather than of the photo above, so the vertical pairing is
-  illustrative only. No synthesized image derives from the development benchmark. All boxes
-  are the reviewed human labels. Classical augmentation changes the geometry and colour of a
-  scene that the seed photo already contains, so it cannot introduce a hazard state that was
-  not annotated there, which caps what this arm can teach; state editing can.}
-  \label{fig:arms}
-\end{figure}
 
 \subsection{Main comparison: three same-source arms}\label{sec:main}
 % 主结果表：每 detector、每 arm 各报 fixed endpoint 和 pooled OOF mAP50-95。

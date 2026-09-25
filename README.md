@@ -15,7 +15,7 @@
 
 - v4 的 A/B/C 三臂、493 张规模点、三层评估和配对 bootstrap 已完成；结果保存在 `experiments/v4_protocol/`。
 - v5 正式启动 D 臂。Qwen-Image-2.1 本机推理、real93 LoRA 训练和少量试生成已完成；批量生成、筛选标注、YOLO 训练与评估尚未完成。
-- 论文现有图表反映 v4，不含 D 臂结果；后续按 `paper/PAPER_PLAN.md` 更新。
+- 论文结果数字仍反映 v4；Fig. 1 已重绘为 v5 四臂设计示意，Fig. 2 已重绘为共同数据来源与 C/D 生成流程，D 的正式数据和检测结果均未完成。后续按 `paper/PAPER_PLAN.md` 更新。
 
 ## 实验主线
 

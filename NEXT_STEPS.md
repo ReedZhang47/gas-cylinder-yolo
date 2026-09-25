@@ -14,10 +14,12 @@
 - [x] real93 的 Qwen-Image-2.1 LoRA 已训练，权重在 `D:\yolo\weights\ArmD lora\construction_sites_gas_cylinders.safetensors`（不入库）。
 - [x] ComfyUI 工作流已接入自训 LoRA 并进行少量试生成；本机社区四步加速 LoRA 约 3 秒/张，原生 25 步约 20–30 秒/张。尚无批量质量统计，工作流 JSON 尚未入库。
 - [x] real93 的 93 条英文描述已存 `docs/Prompts_Based_on_real93.md`，由 Gemini-3.8-flash 辅助撰写，待用于正式生成前人工审读。
+- [x] 论文 Fig. 1 已改为四臂总流程示意：D 臂虚线标示待完成，dev61 仅进入评估；矢量 PDF 与可编辑 SVG/生成脚本位于 `paper/figures/`、`paper/figures/new fig1/`。
+- [x] 论文 Fig. 2 已改为数据来源与 C/D 生成流程示意；精确模型文件及 D 训练参数已记录于 `paper/figures/new fig2/README.md`。正式 D 数据集仍未建立。
 
 ### 待执行
 
-- [ ] 固化 D 臂生成协议与可复现清单：基座/量化文件、LoRA 版本与强度、是否使用四步加速、采样参数、尺寸、随机种子、提示词 ID、原图关联和工作流 JSON；保存试生成与正式批次的区别。
+- [ ] 固化 D 臂生成协议与可复现清单：已有训练参数为 2000 steps、learning rate 0.0004、rank 16、无裁剪、通义千问打标阈值 0.30；仍需核对阈值对应的工作流节点，以及基座/量化文件、LoRA 版本与强度、是否使用四步加速、采样参数、尺寸、随机种子、提示词 ID、原图关联和工作流 JSON；保存试生成与正式批次的区别。
 - [ ] 审读 93 条 real93 描述并设计新场景提示词；目标为 93×5=465 张种子描述变体 + 620 张新场景图，**均为质检后保留数**。批量生成量高于 1085，按预先写定的质量门筛选，记录全部剔除原因。
 - [ ] 对保留图按既有 `Placement Issues` 类别定义预标注并逐张人工复核，包括空标图、框质量和近重复；核对 1085 张的图像/标签一一对应、真实种子来源及 dev61 独立性。D 臂从文本生成新场景的能力只作为假设，待结果和来源审计支持后再写成结论。
 - [ ] 建立 D 臂训练 YAML 和独立 run 名称，先核对 `EXPERIMENTS.md` 的 v5 扩展口径；再按六个 detector、300 epochs、imgsz 640、batch 16、`patience=0`、`save_period=10` 训练。现有 `run_v4_arms.ps1` **尚不支持 D 臂**，不得直接传 `-Arm D`。
