@@ -1,6 +1,22 @@
-# Commands v4
+# Commands v5
 
-协议定义见 `EXPERIMENTS.md`，执行顺序见 `NEXT_STEPS.md`。
+协议定义见 `EXPERIMENTS.md`，执行顺序见 `NEXT_STEPS.md`。以下已验证命令复现 **v4**；D 臂数据配置、训练和评测入口尚未实现，不得把 `-Arm D` 传给 `run_v4_arms.ps1`，也不得把 v4 结果文件当作 D 臂结果。
+
+## v5 D 臂当前可核对项
+
+```powershell
+# 已训练的 LoRA 与已入库的 real93 描述
+Get-Item -LiteralPath 'D:\yolo\weights\ArmD lora\construction_sites_gas_cylinders.safetensors'
+Get-Item -LiteralPath 'D:\yolo\docs\Prompts_Based_on_real93.md'
+
+# D 臂命令就绪前，先检查现有脚本允许的 Arm 值及工作区状态
+git status --short
+Get-Content D:\yolo\scripts\run_v4_arms.ps1 -TotalCount 45
+```
+
+ComfyUI 工作流已在本机接入 Qwen-Image-2.1、real93 LoRA 和少量试生成，但正式工作流 JSON、批量生成清单及 D 臂 YAML 尚未入库，当前没有可复现的一键生成命令。生成和标注完成后，先按 `NEXT_STEPS.md` 核对 1085 张、来源、标签与 dev61 独立性，再增加独立的 D 臂训练/评估命令，并将实测命令回写本文件。
+
+## v4 已验证命令（历史复现）
 
 ## 环境检查
 

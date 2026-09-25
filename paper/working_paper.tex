@@ -1,5 +1,8 @@
 %% ==========================================================================
 %% working_paper.tex — 正文工作文件
+%% v5 状态（2026-09-25）：本稿当前可见结果、图表仍是已完成的 v4 A/B/C 三臂。
+%% D 臂 Qwen-Image-2.1 + real93 LoRA 只有模型与少量试生成；数据/检测结果完成后再
+%% 扩充方法和实验段落、重新生成图表。不得把下列三臂数字标成四臂结论。
 %% 首投：Automation in Construction (Elsevier)，模板 elsarticle
 %% 结构说明见 paper/PAPER_PLAN.md；参考文献 paper/references.bib
 %% 编译：latexmk -pdf -bibtex- working_paper.tex
@@ -40,8 +43,8 @@
 \begin{abstract}
 \todo{Abstract (<=200 words): problem (scarce dangerous samples, can't stage violations safely) ->
 pipeline (diffusion generation + auto-labeling + human review) ->
-evidence (YOLO detectors trained on generated data outperform real-only baseline on clean real test;
-quantity-over-quality scaling) -> implication (reusable for other scarce targets).}
+evidence (cross-fitted dev61 estimates and a data-scale ablation) ->
+implication (reusable for other scarce targets).}
 \end{abstract}
 
 \begin{keyword}
@@ -123,6 +126,10 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 % 真实性红线：必须带喷漆磨损/污渍/锈迹（v0 教训）。
 % 逐图来源记录（ComfyUI 元数据留档）只作数据管理，不写成方法学贡献。
 % 编写（素材：PROGRESS.md 一/二；工具引用 \cite{qwenimage2025, qwenimageedit2025}）
+% v5 D 臂将在单独段落交代：Qwen-Image-2.1 + real93 LoRA 文生图，
+% 生成候选/质检保留/人工标注及新场景提示词分别报告；引用
+% \cite{qwenimage21_2026,qwen3vl8b2025,comfyqwenimage21_2026}。
+% 当前只有 LoRA 与少量试生成；1085 张数据及检测结果未完成，不能写入正文结果。
 \todo{TODO}
 
 \subsection{Auto-labeling with human-in-the-loop review}
@@ -144,7 +151,8 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 %  - 三层报告：last.pt fixed-endpoint benchmark；分层 5-fold cross-fitted pooled OOF AP
 %    作为选权泛化估计；全 dev61 选出的 detector/checkpoint 仅作部署，分数为 development score；
 %  - detector 与 checkpoint 的联合选择必须一起放进内层选择，不能事后挑最高 detector；
-%  - 三臂同源对照（同一批 93 张真实照片：原样 / 传统增广 / 编辑合成）。
+%  - v4 三臂同源对照（同一批 93 张真实照片：原样 / 传统增广 / 编辑合成）。
+%    v5 D 臂在 v4 结果已知后新增，沿用 dev61 时须说明重复使用带来的局限。
 % 编写（素材：PROGRESS.md；口径见 EXPERIMENTS.md）
 \todo{TODO}
 
@@ -214,7 +222,7 @@ the same lists the training runs consumed.
 
 \subsection{Main comparison: three same-source arms}\label{sec:main}
 % 主结果表：每 detector、每 arm 各报 fixed endpoint 和 pooled OOF mAP50-95。
-% v4 待完成：A 真实 93 / B 传统增广 1085 / C 编辑合成 1085，统一协议。
+% v4 已完成：A 真实 93 / B 传统增广 1085 / C 编辑合成 1085，统一协议。
 % 表体（含 caption/label）由 paper/make_figures.py --fig tab-main / tab-nested / tab-bootstrap
 % 生成并 \input；数字不再是手抄。
 \input{tables/tab_main.tex}
@@ -291,7 +299,7 @@ of failures.
 
 \subsection{Data-scale ablation}\label{sec:scale}
 
-The synthesis arm is the only arm whose data can be scaled cheaply, so it carries the
+Within the completed v4 comparison, the edited-synthesis arm carries the
 data-size experiment: the identical recipe is trained on the first 493 edited images and on
 all 1085. Every reported quantity rises with the pool --- the pooled out-of-fold estimate
 under the primary metric, the same estimate under mAP50, and the deployment score

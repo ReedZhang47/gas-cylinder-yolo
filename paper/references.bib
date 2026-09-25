@@ -34,15 +34,31 @@
       note={See also the Qwen-Image Technical Report (arXiv:2508.02324)},
 }
 
-% Z-Image 生成基础模型 [LK]
-@misc{zimage2026,
-      title={Z-Image: An Efficient Image Generation Foundation Model with Single-Stream Diffusion Transformer},
-      author={Z-Image Team and Cai, Huanqia and Cao, Sihan and Du, Ruoyi and Gao, Peng and Hao, Aiming and Hoi, Steven and Hou, Zhaohui and Huang, Shijie and Jiang, Dengyang and Jiang, Yuming and Jin, Xin and Li, Liangchen and Li, Zhen and Li, Zhong-Yu and Liu, David and Liu, Dongyang and Wu, Qilong and Yu, Feng and Zhan, Zechao and Zhang, Chi and Zhang, Shifeng and Zhou, Ruikai and Zhou, Shilin},
+% v5 D 臂：Qwen-Image-2.1 官方模型卡 [MAN]；截至 2026-09-25 不臆造独立 2.1 论文
+@misc{qwenimage21_2026,
+      title={{Qwen-Image-2.1}},
+      author={{Qwen Team}},
       year={2026},
-      eprint={2511.22699},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2511.22699},
+      howpublished={Hugging Face model card},
+      url={https://huggingface.co/Qwen/Qwen-Image-2.1},
+}
+
+% D 臂文本编码器的原模型 [MAN]；本机使用的是 ComfyUI INT8 封装文件
+@misc{qwen3vl8b2025,
+      title={{Qwen3-VL-8B-Instruct}},
+      author={{Qwen Team}},
+      year={2025},
+      howpublished={Hugging Face model card},
+      url={https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct},
+}
+
+% D 臂所用 INT8 生成模型、文本编码器及 BF16 VAE 的 ComfyUI 封装来源 [MAN]
+@misc{comfyqwenimage21_2026,
+      title={{Qwen-Image-2.1} model files for {ComfyUI}},
+      author={{Comfy-Org}},
+      year={2026},
+      howpublished={Hugging Face model repository},
+      url={https://huggingface.co/Comfy-Org/Qwen-Image-2.1},
 }
 
 % DMD 蒸馏（生成效率方向） [LK]

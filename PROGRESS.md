@@ -1,14 +1,27 @@
-# Progress v4
+# Progress v5
 
-更新时间：2026-09-24
+更新时间：2026-09-25
 
 ## 当前状态
 
-- **第一目标（单目标气瓶 / Placement Issues）主线结束**：A/B/C 三臂与 L3 规模点的训练、三层评测、逐图缓存与配对聚类 bootstrap 全部完成，产物在 `experiments/v4_protocol/`（无 missing run、无 error，四臂共用同一折定义）。
+- **v5 已启动，D 臂尚未形成检测结果**：Qwen-Image-2.1 LoRA 文生图路线已定，本机模型部署、real93 LoRA 训练与少量试生成完成；1085 张正式数据、标注、六 detector 训练及评估待做。执行板见 `NEXT_STEPS.md`。
+- **v4 第一目标主线已完成**：A/B/C 三臂与 L3 规模点的训练、三层评测、逐图缓存与配对聚类 bootstrap 全部完成，产物在 `experiments/v4_protocol/`（无 missing run、无 error，四个数据设置共用同一折定义）。
 - 关键读数（主指标 mAP50-95，arm 级 detector+checkpoint 联合 OOF）：**C 0.6429 > A 0.4320 > B 0.3349**；C−A +0.211 与 C−B +0.308 的 95% CI 均不含 0，**B−A −0.097 跨 0（无法判定，不写成「B 比 A 差」）**。
 - 规模曲线（同为联合 OOF）：93 张真实 0.4320 → 493 张编辑合成 0.5019 → 1085 张编辑合成 0.6429；493 → 1085 的 Δ +0.1410，CI [+0.060, +0.249] 不含 0。
 - yolo11m 离群只在 A 臂出现（B/C 未复现），按预注册规则记为「多 detector × 稀缺数据的训练方差」。
-- 下一步：论文阶段（见 `paper/PAPER_PLAN.md`）；第二目标（安全帽）待素材。执行板见 `NEXT_STEPS.md`。
+- 论文现有图表和数字仍为 v4 三臂版本；待 D 臂有核验结果后扩为 v5。安全帽第二目标待素材。
+
+## v5 D 臂准备记录（2026-09-25）
+
+| 项目 | 状态 | 位置或说明 |
+|---|---|---|
+| 生成模型 | 本机已部署 | Qwen-Image-2.1 INT8 `qwen_image_2.1_int8_convrot.safetensors`；Qwen3-VL-8B 文本编码器 `qwen3vl_8b_int8_convrot.safetensors`；VAE `qwen_image_2.1_vae_bf16.safetensors`，使用 ComfyUI 封装文件 |
+| real93 LoRA | 已训练 | `D:\yolo\weights\ArmD lora\construction_sites_gas_cylinders.safetensors`，大型权重不入库 |
+| 推理工作流 | 已接入 LoRA 并少量试生成 | 社区四步加速 LoRA `Qwen-Image-2.1-viggle-turbo-4step-lora-r64.safetensors` 本机约 3 秒/张；原生 25 步约 20–30 秒/张。工作流 JSON 尚未入库，速度不代表正式质量评估 |
+| real93 描述 | 93 条已整理 | `docs/Prompts_Based_on_real93.md`，Gemini-3.8-flash 辅助撰写的英文自然语言，正式使用前人工审读 |
+| D 臂数据与检测 | 待完成 | 目标筛选后 1085 张（465 张种子描述变体 + 620 张新场景）；尚无正式数据集、标签、run 或评估 JSON |
+
+D 臂改用文本生成，停止早期 Z-Image-Turbo 和 ControlNet 生图计划。它的 LoRA 仍来自 real93；相对 C 臂能否扩展场景覆盖与提高检测效果，须等待来源审计和同协议评估。D 是 v4 结果已知后的新增实验，不追溯写成 v4 预注册结果。发布 LoRA、YOLO 部署权重、带标签数据集及 C/D 工作流是后续开源计划，尚未发布；版本与授权审查见 `NEXT_STEPS.md`。
 
 ## v4 决策
 
@@ -21,7 +34,7 @@
 
 完整定义见 `EXPERIMENTS.md`。
 
-## v4 阶段性结果
+## v4 已完成结果
 ### A 臂 real93，2026-09-21
 
 dev61 上的 mAP50-95（主指标，与选权同一指标）与 mAP50（附加列，COCO 惯例），来源 `experiments/v4_protocol/v4_protocol_real93v4.json`（核验通过：折定义与预注册一致、6 detector 无 error、曲线为 epoch 10..300）：
@@ -151,6 +164,7 @@ dev61 上的 mAP50-95（主指标）与 mAP50（附加列），来源 `experimen
 | real93 | 93 | 已标注，可训练 |
 | gen1085 | 1085 | 已标注，可训练 |
 | aug1085 | 1085 | 已建立，可训练 |
+| D 臂文生图 | 目标 1085 | 尚未批量筛选、标注；只有 LoRA 与少量试生成 |
 | dev61 | 61 张 / 72 框 | 30 有框、31 空标；来源独立性检查已通过 |
 | 安全帽素材 | 2 张 | 暂不启动第二目标 |
 
@@ -173,7 +187,7 @@ v4 配置写入 `D:\gas_cylinders\v4\`。
 - v4 run：`runs\detect\real93v4|aug1085v4|gen1085v4|gen493v4\<weight>\`。
 - 可复核 v4 结果：`experiments\v4_protocol\`。
 - `runs/` 和 `logs/` 中的数字只有写入 `experiments/` 并核验后才算完成。
-- v3 run 和脚本只用于复现，不作为 v4 正式结果。
+- v3 run 和脚本只用于复现，不作为 v4 正式结果；v4 已完成产物不会因 v5 启动而改名或覆盖。
 
 ## 工具状态
 

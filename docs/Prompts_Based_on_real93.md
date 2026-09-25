@@ -1,3 +1,9 @@
+# D 臂 real93 场景描述素材
+
+本文件收录 93 张 real93 照片各一条英文自然语言描述，由 Gemini-3.8-flash 辅助生成。它们是 v5 D 臂提示词素材，尚未逐条人工审读或作为正式批量生成的最终提示词；描述可能有物体、违规状态或场景细节误判。正式使用前按原图核对并记录修订版本。
+
+计划每条描述生成并质检保留 5 张，共 465 张；另编写新场景提示词，质检保留 620 张。两部分合计 1085 张均指保留的 D 臂训练图，原始生成数量应另行记录。正式生成参数、图像/提示词关联、筛选和标注记录见 `NEXT_STEPS.md` 的 v5 执行板。
+
 ```real_photo_1.png
 A documentary-style close-up photo of a construction site ground. A red portable fire extinguisher lies horizontally on muddy ground amid scattered timber, rebar, a crumpled empty plastic water bottle, and debris. Shot with realistic natural lighting and gritty textures.
 ```
