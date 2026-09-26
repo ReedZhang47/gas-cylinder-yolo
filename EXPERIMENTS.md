@@ -9,7 +9,7 @@
 | L1 三臂对照 | 编辑合成是否优于真实数据和等量传统增广 | 训练数据来源 | v4 已完成 |
 | L2 选权协议 | 使用小型独立开发集选 checkpoint，能否稳定改善新图表现 | 选权规则 | v4 已完成 |
 | L3 规模实验 | 编辑合成数据从 493 增至 1085 是否继续获益 | 合成训练图数量 | v4 已完成 |
-| L4 D 臂扩展 | 以 real93 微调的文生图是否能补充新场景并改善外部图检测 | 生成路径：文本生成 vs 真实图编辑 | v5 已启动，数据与 YOLO 结果待完成 |
+| L4 D 臂扩展 | 以 real93 微调的文生图是否能补充新场景并改善外部图检测 | 生成路径：文本生成 vs 真实图编辑 | 兼容 LoRA 云训中；数据与 YOLO 结果待完成 |
 
 L2 不增加训练臂，只复用 L1/L3 每 10 轮保存的快照。gen493 是 gen1085 的子集，不能合并计数。
 
@@ -128,8 +128,8 @@ D 臂使用 Qwen-Image-2.1 文生图，以 real93 训练的 LoRA 迁移工地气
 
 ### 已完成与待固化的生成口径
 
-- 已完成：本机 ComfyUI 部署 Qwen-Image-2.1 INT8 生成模型、Qwen3-VL-8B INT8 文本编码器和 BF16 VAE；real93 LoRA 训练；LoRA 接入与少量试生成。试用社区四步加速 LoRA 约 3 秒/张，原生 25 步约 20–30 秒/张，速度仅为本机观察。
-- LoRA 路径为 `D:\yolo\weights\ArmD lora\construction_sites_gas_cylinders.safetensors`；93 条 real93 英文描述素材在 `docs/Prompts_Based_on_real93.md`，由 Gemini-3.8-flash 辅助撰写，使用前人工审读。
+- 本机 ComfyUI 已部署 Qwen-Image-2.1 INT8 生成模型、Qwen3-VL-8B INT8 文本编码器和 BF16 VAE。旧 Liblib LoRA 与 2.1 底模维度不兼容，其七张试图不算 D 臂证据。兼容 LoRA 正在 Runpod 训练；最近核验状态与下载路径见 `docs/v5_prompts/runpod_qwen21_handoff.md`。
+- 93 条原始英文描述素材在 `docs/Prompts_Based_on_real93.md`；93 条优化提示词和 150 条新场景草案在 `docs/v5_prompts/`，正式生成前须人工审读。云端 LoRA 的训练 caption 已单独人工复核，不等同于生图提示词获批。
 - 初步目标为 93 条描述各保留 5 张（465）和新场景提示词保留 620 张。1085 是筛选后的训练集规模，不是原始生成张数；提示词、负面词、随机种子、尺寸、采样器/步数、LoRA 及加速 LoRA 的版本与强度、工作流、每张图的取舍理由均须留档。正式生成前确定质检标准，不根据 dev61 检测成绩反向筛图或改提示词。
 - 保留图按 `Placement Issues` 类别口径预标注并逐张人工复核；同时检查空标、框、明显生成缺陷、近重复和与 dev61 的来源独立性。工作流 JSON、数据清单与核验结果落盘后才视为数据准备完成。
 

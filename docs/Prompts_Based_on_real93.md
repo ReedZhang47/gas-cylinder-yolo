@@ -11,10 +11,10 @@ A documentary-style close-up photo of a construction site ground. A red portable
 An industrial site photo showing a construction worker in a high-visibility orange jacket welding in a dim indoor area, casting bright sparks. Nearby stands a blue metal cage holding multiple industrial gas cylinders connected with hoses, surrounded by steel structural frames.
 ```
 ```real_photo_3.png
-A daytime outdoor construction site photo under harsh sunlight. In the foreground, a large weathered black gas cylinder and steel equipment boxes stand on a concrete floor. In the background are heavy steel frameworks, scaffolding, and rows of blue and silver gas cylinders.
+A daytime outdoor construction site photo under harsh sunlight. In the foreground, a large weathered dark brown gas cylinder and steel equipment boxes stand on a concrete floor. In the background are heavy steel frameworks, scaffolding, and rows of blue and silver gas cylinders.
 ```
 ```real_photo_4.png
-A realistic inspection photo of an underground or dim construction area. Three tall, weathered dark industrial gas cylinders stand upright beside a gray fabric partition fence, accompanied by a small red fire extinguisher placed haphazardly on the dirty concrete ground.
+A realistic inspection photo of an underground or dim construction area. Three tall, weathered dark brown industrial gas cylinders stand upright beside a gray fabric partition fence, accompanied by a small red fire extinguisher placed haphazardly on the dirty concrete ground.
 ```
 ```real_photo_5.png
 An outdoor shot of an active construction site under daylight. In the foreground sits a metal rack filled with upright blue industrial gas cylinders near scrap wooden planks. In the background are temporary container walls, scaffolding covered with green tarps, and towering construction cranes.
@@ -128,7 +128,7 @@ A detailed high-angle close-up of a dark brown industrial gas cylinder topped wi
 A daytime documentary photograph of an upper-level construction deck surrounded by heavy steel I-beam frameworks and structural columns against a blue sky with light clouds. In the midground, multiple blue metal manifold cages hold clusters of silver and blue industrial gas cylinders interconnected with hoses. A red ladder leans on the left near a white water storage tank, with various construction cables scattered across the concrete deck.
 ```
 ```real_photo_42.png
-An atmospheric documentary photograph inside a deep underground construction shaft or concrete pit with a flooded floor reflecting the sparse ceiling openings. Murky standing water covers the concrete ground littered with floating timber palettes and debris. In the background, orange safety barriers encircle a large tunnel entrance, with several dark gas cylinders standing against a massive structural pillar in the dim interior.
+An atmospheric documentary photograph inside a deep underground construction shaft or concrete pit with a flooded floor reflecting the sparse ceiling openings. Murky standing water covers the concrete ground littered with floating timber palettes and debris. In the background, orange safety barriers encircle a large tunnel entrance, with several dark blue gas cylinders standing against a massive structural pillar in the dim interior.
 ```
 ```real_photo_43.png
 An eye-level documentary shot looking into a small metal storage shed with corrugated iron walls. Inside, rows of tall, weathered blue gas cylinders stand upright on both sides of the concrete floor. The metal bodies show worn blue paint and slight rust. Wet tire marks and moisture stain the floor under cool interior lighting.
@@ -194,7 +194,7 @@ A full shot of an industrial construction corridor featuring structural columns 
 A documentary-style photograph of an unfinished subterranean concrete passage. In the center, three heavily scuffed and weathered white industrial gas cylinders stand upright on the grey concrete floor. Behind them are yellow safety mesh barriers and a large green construction debris net framing an opening to a rebar-filled shaft, with a rugged wheelbarrow resting on the right side.
 ```
 ```real_photo_64.png
-A high-angle documentary view of a cluttered workbench area in a dim construction zone. In the foreground, a tall, weathered metal gas cylinder stands surrounded by scattered welding supplies, an inverter welding unit, blue paint buckets, tools, and upright shovels leaning against a concrete ledge. In the background, smaller dark gas tanks and coiled cables sit on the dusty ledge under natural diffused light.
+A high-angle documentary view of a cluttered workbench area in a dim construction zone. In the foreground, a tall, weathered metal gas cylinder stands surrounded by scattered welding supplies, an inverter welding unit, blue paint buckets, tools, and upright shovels leaning against a concrete ledge. In the background, smaller dark blue gas cylinders and coiled cables sit on the dusty ledge under natural diffused light.
 ```
 ```real_photo_65.png
 A wide documentary shot looking down into a muddy subterranean tunnel construction site with standing murky water. A compact red forklift is parked on the wet concrete pad, while blue industrial gas cylinders stand near exposed rebar grids and puddles. In the dim background, a massive circular tunnel boring machine entrance looms against raw concrete walls.
@@ -215,7 +215,7 @@ A documentary shot captured in a dimly lit underground tunnel construction site.
 An eye-level photograph of four weathered white gas cylinders with blue valves standing tightly clustered in muddy water on a concrete floor. The tanks have peeling paint, scuffs, and dirt marks, positioned directly against an unfinished concrete pillar. Two small metal paint cans with yellow lids sit nearby in the puddle under cool, dim basement lighting.
 ```
 ```real_photo_71.png
-A realistic documentary photo taken in a dim, cavernous underground construction basement at night. In the foreground, wet steel floor plates and muddy ground reflect artificial work lights. A single tall dark gas cylinder stands upright near tangled red and blue welding cables, with scattered construction debris and concrete pillars visible in the dark background.
+A realistic documentary photo taken in a dim, cavernous underground construction basement at night. In the foreground, wet steel floor plates and muddy ground reflect artificial work lights. A single tall dark brown gas cylinder stands upright near tangled red and blue welding cables, with scattered construction debris and concrete pillars visible in the dark background.
 ```
 ```real_photo_72.png
 An eye-level documentary shot on a sunny concrete construction floor. Two red portable fire extinguishers lie haphazardly on the dusty ground along the base of a rusty yellow steel mesh safety fence. Tangled red cables and a blue hose run across the concrete, with a worker's dark boot visible on the left.

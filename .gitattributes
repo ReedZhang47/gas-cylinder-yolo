@@ -1,0 +1,2 @@
+# Rendered figures and manuscript PDFs are binary artifacts.
+*.pdf binary

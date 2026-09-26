@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="704pt" height="454pt" viewBox="0 0 704 454" role="img" aria-label="Four-arm data preparation, training, and development evaluation pipeline">
+<rect x="0" y="0" width="704" height="454" fill="#ffffff"/>
+<text x="24" y="24" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#1B3448">STUDY DESIGN</text>
+<text x="680" y="25" dominant-baseline="middle" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="10.8" font-weight="400" fill="#566C7D">real93  /  four arms  /  dev61</text>
+<polyline points="24,43 680,43" fill="none" stroke="#C7D4DC" stroke-width="0.85" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="24" y="63" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="10.9" font-weight="700" fill="#566C7D">01   DATA CONSTRUCTION</text>
+<rect x="24" y="85" width="153" height="149" rx="4" fill="#F3F7F9" stroke="#D8E3EA" stroke-width="0.9"/>
+<rect x="125" y="105" width="26" height="19" rx="1" fill="#FFFFFF" stroke="#9AAEBB" stroke-width="0.9"/>
+<rect x="131" y="112" width="26" height="19" rx="1" fill="#FFFFFF" stroke="#8099AA" stroke-width="0.9"/>
+<polyline points="136,125 142,119 148,124" fill="none" stroke="#426F96" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="38" y="121" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700" fill="#426F96">93</text>
+<text x="39" y="153" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11.8" font-weight="700" fill="#1B3448">REAL PHOTOS</text>
+<text x="39" y="170" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="10.8" font-weight="400" fill="#566C7D">annotated seed set</text>
+<polyline points="39,185 160,185" fill="none" stroke="#B8C8D2" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="39" y="208" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#1B3448">real93</text>
+<text x="39" y="224" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="10.6" font-weight="400" fill="#566C7D">shared origin</text>
+<polyline points="177,158 198,158" fill="none" stroke="#426F96" stroke-width="1.15" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="198,104 198,215" fill="none" stroke="#426F96" stroke-width="1.15" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="198,103.5 215,103.5" fill="none" stroke="#426F96" stroke-width="1.15" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="215,103.5 208.8,106.5 208.8,100.5" fill="#426F96"/>
+<rect x="215" y="86" width="465" height="35" rx="2" fill="#FFFFFF" stroke="#DBE5EB" stroke-width="0.75"/>
+<circle cx="232" cy="103.5" r="10" fill="#426F96"/>
+<text x="232" y="104.2" dominant-baseline="middle" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.1" font-weight="700" fill="#FFFFFF">A</text>
+<text x="251" y="98" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#1B3448">Real-only baseline</text>
+<text x="251" y="113" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#566C7D">manual labels</text>
+<text x="667" y="104.7" dominant-baseline="middle" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15.2" font-weight="700" fill="#426F96">93</text>
+<polyline points="198,140.5 215,140.5" fill="none" stroke="#B88232" stroke-width="1.15" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="215,140.5 208.8,143.5 208.8,137.5" fill="#B88232"/>
+<rect x="215" y="123" width="465" height="35" rx="2" fill="#FFFFFF" stroke="#DBE5EB" stroke-width="0.75"/>
+<circle cx="232" cy="140.5" r="10" fill="#B88232"/>
+<text x="232" y="141.2" dominant-baseline="middle" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.1" font-weight="700" fill="#FFFFFF">B</text>
+<text x="251" y="135" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#1B3448">Offline augmentation</text>
+<text x="251" y="150" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#566C7D">geometry and colour</text>
+<text x="667" y="141.7" dominant-baseline="middle" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15.2" font-weight="700" fill="#B88232">1,085</text>
+<polyline points="198,177.5 215,177.5" fill="none" stroke="#178A93" stroke-width="1.15" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="215,177.5 208.8,180.5 208.8,174.5" fill="#178A93"/>
+<rect x="215" y="160" width="465" height="35" rx="2" fill="#FFFFFF" stroke="#DBE5EB" stroke-width="0.75"/>
+<circle cx="232" cy="177.5" r="10" fill="#178A93"/>
+<text x="232" y="178.2" dominant-baseline="middle" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.1" font-weight="700" fill="#FFFFFF">C</text>
+<text x="251" y="172" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#1B3448">Image editing</text>
+<text x="251" y="187" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#566C7D">human-reviewed boxes</text>
+<text x="667" y="178.7" dominant-baseline="middle" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15.2" font-weight="700" fill="#178A93">1,085</text>
+<polyline points="198,214.5 215,214.5" fill="none" stroke="#755CAD" stroke-width="1.15" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 3"/>
+<polygon points="215,214.5 208.8,217.5 208.8,211.5" fill="#755CAD"/>
+<rect x="215" y="197" width="465" height="35" rx="2" fill="#FFFFFF" stroke="#755CAD" stroke-width="1" stroke-dasharray="4 3"/>
+<circle cx="232" cy="214.5" r="10" fill="#755CAD"/>
+<text x="232" y="215.2" dominant-baseline="middle" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.1" font-weight="700" fill="#FFFFFF">D</text>
+<text x="251" y="209" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#1B3448">LoRA text-to-image</text>
+<text x="251" y="224" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#566C7D">formal dataset pending</text>
+<text x="667" y="215.7" dominant-baseline="middle" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="12.9" font-weight="700" fill="#755CAD">1,085 target</text>
+<polyline points="352,234 352,266" fill="none" stroke="#206C78" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="352,266 349,259.8 355,259.8" fill="#206C78"/>
+<text x="365" y="250" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#566C7D">independent run per arm</text>
+<rect x="24" y="269" width="656" height="68" rx="4" fill="#203746" stroke="#203746" stroke-width="0.6"/>
+<text x="40" y="285" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="10.8" font-weight="700" fill="#C3DCE0">02   CONTROLLED TRAINING</text>
+<text x="40" y="315" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="16.7" font-weight="700" fill="#FFFFFF">Six YOLO detectors  /  300 epochs</text>
+<rect x="492" y="303" width="4" height="18" rx="0.6" fill="#86BCC2" stroke="#86BCC2" stroke-width="0.2"/>
+<rect x="500" y="297" width="4" height="24" rx="0.6" fill="#86BCC2" stroke="#86BCC2" stroke-width="0.2"/>
+<rect x="508" y="305" width="4" height="16" rx="0.6" fill="#86BCC2" stroke="#86BCC2" stroke-width="0.2"/>
+<rect x="516" y="294" width="4" height="27" rx="0.6" fill="#86BCC2" stroke="#86BCC2" stroke-width="0.2"/>
+<rect x="524" y="300" width="4" height="21" rx="0.6" fill="#86BCC2" stroke="#86BCC2" stroke-width="0.2"/>
+<rect x="532" y="291" width="4" height="30" rx="0.6" fill="#86BCC2" stroke="#86BCC2" stroke-width="0.2"/>
+<text x="665" y="297" dominant-baseline="middle" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="11.3" font-weight="700" fill="#FFFFFF">v8  /  v11  /  v26</text>
+<text x="665" y="316" dominant-baseline="middle" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="10.8" font-weight="400" fill="#D4E2E7">s, m  ·  save /10</text>
+<text x="24" y="358" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="10.9" font-weight="700" fill="#566C7D">03   DEVELOPMENT EVALUATION</text>
+<rect x="507" y="345" width="173" height="25" rx="12" fill="#F1F5F7" stroke="#72879A" stroke-width="0.9" stroke-dasharray="4 3"/>
+<text x="593.5" y="358" dominant-baseline="middle" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10.6" font-weight="400" fill="#1B3448">dev61  ·  61 external images</text>
+<polyline points="352,337 352,381" fill="none" stroke="#206C78" stroke-width="1.15" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="352,381 349,374.8 355,374.8" fill="#206C78"/>
+<polyline points="593.5,370 593.5,381" fill="none" stroke="#72879A" stroke-width="0.9" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 3"/>
+<polyline points="24,383 680,383" fill="none" stroke="#B9CAD4" stroke-width="0.85" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="242,391 242,431" fill="none" stroke="#D1DDE4" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="461,391 461,431" fill="none" stroke="#D1DDE4" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="34" y="399" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#1B3448">Fixed endpoint</text>
+<text x="34" y="416" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11.1" font-weight="400" fill="#1B3448">last.pt on dev61</text>
+<text x="34" y="431" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="10.9" font-weight="400" fill="#566C7D">transparent benchmark</text>
+<text x="253" y="399" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#1B3448">Cross-fitted OOF</text>
+<text x="253" y="416" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11.1" font-weight="400" fill="#1B3448">five held-out folds; pooled AP</text>
+<text x="253" y="431" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="10.9" font-weight="400" fill="#566C7D">joint model + checkpoint</text>
+<text x="472" y="399" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#1B3448">Deployment choice</text>
+<text x="472" y="416" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11.1" font-weight="400" fill="#1B3448">selected on all dev61</text>
+<text x="472" y="431" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="10.9" font-weight="400" fill="#566C7D">development score only</text>
+<text x="352" y="443" dominant-baseline="middle" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#566C7D">Paired image-cluster bootstrap  ·  10,000 resamples</text>
+</svg>

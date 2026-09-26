@@ -5,6 +5,9 @@ weights/
 _trash/
 .tmp/
 annotator_demo_data/
+docs/archive/*
+!docs/archive/runpod_qwen21_2026-09-26.md
+!docs/archive/runcomfy_qwen21_setup_draft.md
 
 # 私有 prompt 台账
 Prompt.md

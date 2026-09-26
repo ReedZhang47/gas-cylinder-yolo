@@ -1,7 +1,7 @@
 %% ==========================================================================
 %% working_paper.tex — 正文工作文件
-%% v5 状态（2026-09-25）：本稿当前可见结果、图表仍是已完成的 v4 A/B/C 三臂。
-%% D 臂 Qwen-Image-2.1 + real93 LoRA 只有模型与少量试生成；数据/检测结果完成后再
+%% v5 状态（2026-09-26）：Fig. 1/2 为 v5 方法示意；结果数字与后续结果图表仍属 v4 A/B/C。
+%% D 臂现有 real93 LoRA 与 Qwen-Image-2.1 不兼容；七张试图不能算 LoRA 结果，数据/检测结果完成后再
 %% 扩充方法和实验段落、重新生成图表。不得把下列三臂数字标成四臂结论。
 %% 首投：Automation in Construction (Elsevier)，模板 elsarticle
 %% 结构说明见 paper/PAPER_PLAN.md；参考文献 paper/references.bib
@@ -27,7 +27,7 @@
 % 占位标记：红字 TODO，定稿前全文清零
 \newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
 
-\graphicspath{{figures/}}
+\graphicspath{{figures/fig01/}{figures/fig02/}{figures/fig03/}{figures/fig04/}{figures/fig05/}{figures/fig07/}{figures/fig10/}{figures/archive/v4/}}
 
 \journal{Automation in Construction}
 
@@ -125,14 +125,14 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 % （两批共 1085 张，全部源自 93 张真实照片）。
 % 真实性红线：必须带喷漆磨损/污渍/锈迹（v0 教训）。
 % 逐图来源记录（ComfyUI 元数据留档）只作数据管理，不写成方法学贡献。
-% C 组件精确文件名见 figures/new fig2/README.md；Lightning 四步模式并未逐图核验。
+% C 组件精确文件名见 figures/fig02/README.md；Lightning 四步模式并未逐图核验。
 % 编写（素材：PROGRESS.md 一/二；工具引用 \cite{qwenimage2025, qwenimageedit2025}）
-% v5 D 臂将在单独段落交代：Qwen-Image-2.1 + real93 LoRA 文生图，
-% Qwen-Image 标准 LoRA 训练：2000 steps / LR 0.0004 / rank 16 / 无裁剪；
-% 通义千问打标阈值 0.30（阈值具体节点待工作流 JSON 固化）。
+% v5 D 臂将在单独段落交代：Qwen-Image-2.1 + real93 LoRA 文生图；
+% 旧 Liblib 权重与 2.1 不兼容，兼容权重正在以 93 组审阅图文对云端训练。
+% 当前脚本：repeat 5 x 4 epochs = 1860 steps、rank 16、LR 1e-4。
 % 生成候选/质检保留/人工标注及新场景提示词分别报告；引用
 % \cite{qwenimage21_2026,qwen3vl8b2025,comfyqwenimage21_2026}。
-% 当前只有 LoRA 与少量试生成；1085 张数据及检测结果未完成，不能写入正文结果。
+% 1085 张数据及检测结果未完成，不能写入正文结果。
 \todo{TODO}
 
 \subsection{Auto-labeling with human-in-the-loop review}
@@ -167,7 +167,7 @@ the internal similarity the sets already carry, and the generator's own per-imag
 parsed to confirm that no synthesized image was edited from a benchmark image.
 \input{tables/tab_independence.tex}
 
-% Fig.1 由 figures/new fig1/draw_fig1.py 生成矢量 PDF；D 臂仍为待完成扩展。
+% Fig.1 由 figures/fig01/draw_fig1.py 生成矢量 PDF；D 臂仍为待完成扩展。
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{fig1_pipeline.pdf}
@@ -180,20 +180,19 @@ parsed to confirm that no synthesized image was edited from a benchmark image.
   \label{fig:pipeline}
 \end{figure}
 
-% Fig.2 由 figures/new fig2/draw_fig2.py 生成矢量 PDF；旧 A/B/C 样例图仍留在
-% figures/fig2_arms_samples.pdf，作为后续定性素材，不再作为本图。
+% Fig.2 由 figures/fig02/draw_fig2.py 生成矢量 PDF；旧 v4 样例图位于
+% figures/archive/v4/fig2_arms_samples.pdf，不再作为本图。
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{fig2_generation_workflows.pdf}
-  \caption{Data provenance and the two generative workflows. (a) Both arms originate from
-  real93; the photographs shown are on-site examples, and the corpus also includes
-  web-sourced real photographs. (b) Arm C edits a source photograph with
-  Qwen-Image-Edit-2509, then reviews the images and boxes before retaining 1085 training
-  images. (c) Arm D uses Qwen tagging (threshold 0.30) and the uncropped real93
-  images to train a Qwen-Image LoRA for 2000 steps (learning rate 0.0004, rank 16). The
-  trained LoRA is used with Qwen-Image-2.1 for text-to-image generation. The dashed final
-  stage targets 1085 reviewed and annotated images; that dataset is pending. Unlike C,
-  D does not edit a particular reference photograph at inference.}
+  \caption{Shared real93 source and two synthetic-data routes. The photographs are on-site
+  examples, not a matched edit pair; real93 also contains web-sourced photographs. (a) Arm C
+  combines a reference photo and edit instruction in Qwen-Image-Edit-2509, then reviews
+  candidates and boxes before retaining 1085 training images. (b) Arm D shows the planned
+  LoRA text-to-image route. The Qwen-Image-2.1-specific LoRA fit uses 93 reviewed
+  image--caption pairs (1860 planned steps, learning rate 0.0001, rank 16);
+  training and compatibility verification are pending as of this draft.
+  The dashed output is a target of 1085 screened and annotated images.}
   \label{fig:generation}
 \end{figure}
 

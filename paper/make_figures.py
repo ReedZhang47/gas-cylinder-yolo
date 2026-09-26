@@ -16,7 +16,8 @@ r"""Paper figures, rebuilt from experiments/ JSON so no number is hand-copied in
   tab-cost        : wall clock and detector time per training run
   tab-selection   : per-detector checkpoint selection, three arms
 
-All write into paper/figures/ or paper/tables/. `--png PATH` additionally writes a raster
+This is the v4 figure/table generator. Figures go to paper/figures/archive/v4/;
+tables go to paper/tables/. `--png PATH` additionally writes a raster
 copy, which is handy for eyeballing the result in a viewer that does not render PDF.
 
 Usage:
@@ -55,7 +56,7 @@ from matplotlib.patches import Rectangle
 from PIL import Image
 
 ROOT = Path(r"D:/yolo")
-FIG_DIR = ROOT / "paper" / "figures"
+FIG_DIR = ROOT / "paper" / "figures" / "archive" / "v4"
 TABLE_DIR = ROOT / "paper" / "tables"
 SCRIPTS = ROOT / "scripts"
 V4_JSON = ROOT / "experiments" / "v4_protocol" / "v4_protocol_real93v4.json"  # cited by the tex figure it backs
