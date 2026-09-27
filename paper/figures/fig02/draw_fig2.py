@@ -298,7 +298,7 @@ def make_figure() -> None:
     f.text(218, 218, "PHOTO-REFERENCED EDITS", size=10.3,
            bold=True, color=TEAL)
 
-    # D: reviewed captions feed the currently running Qwen-Image-2.1 LoRA fit.
+    # D: reviewed captions fed the completed Qwen-Image-2.1 LoRA fit.
     # The screened and annotated dataset is prospective, so the output is dashed.
     f.text(218, 260, "(b)  D  /  LORA TEXT-TO-IMAGE", size=14.4,
            bold=True, color=PURPLE)

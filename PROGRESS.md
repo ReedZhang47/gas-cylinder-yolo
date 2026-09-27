@@ -1,12 +1,13 @@
 # 已核验进展 · v5
 
-最近本地交接核验：2026-09-27 00:07（中国标准时间）。训练后续状态以 Runpod 日志为准。
+最近核验：2026-09-27（中国标准时间）；训练、归档和本机固定输入验证已完成。
 
 ## 当前状态
 
 - v4：A/B/C 三臂、C 臂 493→1085 规模点、六 detector 的三层评估及配对聚类 bootstrap 已完成；原始结果在 experiments/v4_protocol/。
-- v5 D：Qwen-Image-2.1 兼容 LoRA 在 Runpod Pod wde9ui6l50nveo 训练。最近核验为 684/1860 步，step-250 和 step-500 检查点存在；详见 docs/v5_prompts/runpod_qwen21_handoff.md。尚无正式 D 生成集、标签、YOLO run 或检测结果。
-- 旧 Liblib“千问图像”权重的关键层为 3072 维，本机 2.1 底模为 4096 维；此前七张试图不能视为有效 LoRA 验证。93 条 real93 优化提示词与 150 条新场景提示词仍待人工批准。
+- v5 D：Qwen-Image-2.1 LoRA 已在 Runpod A6000 上以 93 张审阅图文对完成 1860 步训练（repeat 5、4 epochs、rank 16）。最终权重和八个检查点已归档并校验 SHA256；Pod/远端卷已删除。训练方法、完整参数、loss 及文件哈希见 docs/v5_prompts/qwen21_lora_training_validation.md。
+- 新 LoRA 的 224 组矩阵均与本机 4096 维 2.1 底模对应；固定 N114 提示词、seed 99999 的五张对照中，底模直连为 0 个补丁，强度 0.2/0.5/0.8/1.0 的四张各为 192 个补丁。加载与连接已验证；画质、过拟合程度及 D 数据集可用性尚未量化。93 条 real93 优化提示词与 150 条新场景提示词仍待人工批准。
+- 尚无正式 D 生成集、标签、YOLO run 或检测结果。
 - 论文 Fig. 1–5、7、10 已绘制或重绘，结果图中的 D 位置留空；当前 TeX 正文仍引用部分 v4 结果图。图件接线状态见 paper/FIGURES.md。
 
 ## v4 主结果

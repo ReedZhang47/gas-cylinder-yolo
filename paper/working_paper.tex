@@ -1,7 +1,7 @@
 %% ==========================================================================
 %% working_paper.tex — 正文工作文件
-%% v5 状态（2026-09-26）：Fig. 1/2 为 v5 方法示意；结果数字与后续结果图表仍属 v4 A/B/C。
-%% D 臂现有 real93 LoRA 与 Qwen-Image-2.1 不兼容；七张试图不能算 LoRA 结果，数据/检测结果完成后再
+%% v5 状态（2026-09-27）：Fig. 1/2 为 v5 方法示意；结果数字与后续结果图表仍属 v4 A/B/C。
+%% D 臂 Qwen-Image-2.1 LoRA 已完成训练及固定 N114/seed 99999 加载验证；正式数据/检测结果完成后再
 %% 扩充方法和实验段落、重新生成图表。不得把下列三臂数字标成四臂结论。
 %% 首投：Automation in Construction (Elsevier)，模板 elsarticle
 %% 结构说明见 paper/PAPER_PLAN.md；参考文献 paper/references.bib
@@ -128,8 +128,10 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 % C 组件精确文件名见 figures/fig02/README.md；Lightning 四步模式并未逐图核验。
 % 编写（素材：PROGRESS.md 一/二；工具引用 \cite{qwenimage2025, qwenimageedit2025}）
 % v5 D 臂将在单独段落交代：Qwen-Image-2.1 + real93 LoRA 文生图；
-% 旧 Liblib 权重与 2.1 不兼容，兼容权重正在以 93 组审阅图文对云端训练。
-% 当前脚本：repeat 5 x 4 epochs = 1860 steps、rank 16、LR 1e-4。
+% 旧 Liblib 权重与 2.1 不兼容；新 LoRA 已用 93 组审阅图文对完成训练并通过本机加载验证。
+% 实际参数：repeat 5 x 4 epochs = 1860 steps、rank 16、LR 1e-4、max_pixels 1048576。
+% 固定 N114 / seed 99999 的 0、0.2、0.5、0.8、1.0 对照和原始哈希见
+% docs/v5_prompts/qwen21_lora_training_validation.md；该单提示词对照不是生成质量或检测收益结果。
 % 生成候选/质检保留/人工标注及新场景提示词分别报告；引用
 % \cite{qwenimage21_2026,qwen3vl8b2025,comfyqwenimage21_2026}。
 % 1085 张数据及检测结果未完成，不能写入正文结果。
@@ -189,9 +191,9 @@ parsed to confirm that no synthesized image was edited from a benchmark image.
   examples, not a matched edit pair; real93 also contains web-sourced photographs. (a) Arm C
   combines a reference photo and edit instruction in Qwen-Image-Edit-2509, then reviews
   candidates and boxes before retaining 1085 training images. (b) Arm D shows the planned
-  LoRA text-to-image route. The Qwen-Image-2.1-specific LoRA fit uses 93 reviewed
-  image--caption pairs (1860 planned steps, learning rate 0.0001, rank 16);
-  training and compatibility verification are pending as of this draft.
+  LoRA text-to-image route. The completed Qwen-Image-2.1-specific LoRA fit used 93
+  reviewed image--caption pairs (1860 steps, learning rate 0.0001, rank 16);
+  local model compatibility and LoRA loading were verified with a fixed prompt and seed.
   The dashed output is a target of 1085 screened and annotated images.}
   \label{fig:generation}
 \end{figure}

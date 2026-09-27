@@ -2,14 +2,14 @@
 
 本项目以 93 张工地真实照片为源研究气瓶违规放置检测。v4 已完成 A 真实图、B 传统增广、C 图像编辑合成三臂及 C 臂规模实验；v5 正在加入 D：以 real93 训练的 Qwen-Image-2.1 LoRA 文生图，质检后目标为 1085 张。
 
-截至 2026-09-27 00:07（最近一次写入本地交接的核验），D 臂兼容 LoRA 正在 Runpod 训练，进度 684/1860 步。此后状态应以云端日志为准。原 Liblib 权重与 2.1 底模维度不兼容；此前七张试图不能证明 LoRA 生效。D 数据集、YOLO 结果和最终外部测试均尚未形成。
+截至 2026-09-27，D 臂的 Qwen-Image-2.1 LoRA 已完成 1860 步训练，权重与完整归档已校验并备份；本机固定提示词 N114、固定 seed 99999 的五张开/关及强度对照证明新 LoRA 被实际加载。训练、参数、loss、权重哈希和验证数据见 `docs/v5_prompts/qwen21_lora_training_validation.md`。D 正式生成集、YOLO 结果和最终外部测试均尚未形成。
 
 ## 接手入口
 
 | 需要做什么 | 入口 |
 |---|---|
 | 当前执行队列 | NEXT_STEPS.md |
-| Runpod 训练交接 | docs/v5_prompts/runpod_qwen21_handoff.md |
+| LoRA 训练与验证证据 | docs/v5_prompts/qwen21_lora_training_validation.md |
 | 已核验结果 | PROGRESS.md；原始 JSON 在 experiments/v4_protocol/ |
 | 实验与统计口径 | EXPERIMENTS.md |
 | 常用命令 | COMMANDS.md |

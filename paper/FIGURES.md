@@ -5,7 +5,7 @@
 | 图 | 目的 | 当前文件 / 状态 |
 |---:|---|---|
 | 1 | 四臂研究总流程 | figures/fig01/fig1_pipeline.pdf；D 为计划态；已接入 TeX |
-| 2 | C 编辑与 D LoRA 文生图工作流 | figures/fig02/fig2_generation_workflows.pdf；D 正式生成待核验；已接入 TeX |
+| 2 | C 编辑与 D LoRA 文生图工作流 | figures/fig02/fig2_generation_workflows.pdf；D LoRA 拟合与加载已验证，正式数据集仍待生成；已接入 TeX |
 | 3 | 四臂训练图像样例 | figures/fig03/fig3_training_examples.pdf；A/B/C 实图，D 留空 |
 | 4 | 四臂联合 OOF 主结果与配对区间 | figures/fig04/fig4_arm_level_comparison.pdf；A/B/C 已填，D 留空 |
 | 5 | 六 detector 在各臂的固定终点表现 | figures/fig05/fig5_detector_consistency.pdf；A/B/C 已填，D 留空 |
@@ -15,7 +15,7 @@
 | 9 | 困难条件分层结果 | 待 Fig. 8 数据；预先定义小目标、遮挡或场景分层并标样本数 |
 | 10 | 检出与失败案例 | figures/fig10/fig10_detection_cases.pdf；dev61 精选案例，D 留空 |
 | 11 | 漏检、背景误报、定位与重复框构成 | 待四臂逐图结果和统一错误分类 |
-| 12 | LoRA 开/关或标注复核消融 | 待受控实验；检测收益须重新训练验证 |
+| 12 | LoRA 开/关或标注复核消融 | 已有 N114 固定提示词/seed 的技术对照；正式消融与检测收益仍待受控实验 |
 
 Fig. 4、7 使用 dev61 交叉拟合 held-out 结果；Fig. 5 是固定终点开发集分数；Fig. 10 是部署权重的示例展示，不估计案例发生率。D 的结果不得从 A/B/C 外推。
 

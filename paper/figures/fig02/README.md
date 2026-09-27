@@ -30,16 +30,19 @@ assert that every retained C image used four-step sampling.
 
 ### D: real93-trained Qwen-Image-2.1 LoRA
 
-- The active Runpod training uses 93 reviewed image-caption pairs with
-  Qwen-Image-2.1, dataset repeat `5`, `4` epochs (`1,860` planned steps),
-  rank `16`, and learning rate `1e-4`. The latest verified progress and exact
-  script are in `docs/v5_prompts/runpod_qwen21_handoff.md` and
-  `runpod_qwen21/run_train.sh`.
+- The completed Runpod training used 93 reviewed image-caption pairs with
+  Qwen-Image-2.1, dataset repeat `5`, `4` epochs (`1,860` completed steps),
+  rank `16`, and learning rate `1e-4`. The training configuration, loss,
+  checkpoint hashes, architecture check, and fixed-prompt N114/seed 99999
+  inference record are in `docs/v5_prompts/qwen21_lora_training_validation.md`.
+  The executable script is `runpod_qwen21/run_train.sh`.
 - The earlier Liblib template used 2,000 steps, learning rate `0.0004`,
   rank `16`, no cropping, and Qwen tagging threshold `0.30`; that weight is
   incompatible with the current 2.1 model. Its seven trial PNGs are not D
-  evidence. The dashed dataset target remains prospective pending a compatible
-  checkpoint, synthesis, screening, and reviewed boxes.
+  evidence. The dashed dataset target remains prospective pending formal
+  synthesis, screening, and reviewed boxes. The N114 strength comparison
+  establishes that the new LoRA loads and changes the inference graph; it is
+  not evidence of dataset quality or downstream detector benefit.
 
 ## Regeneration
 
