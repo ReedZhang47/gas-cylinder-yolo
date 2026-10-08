@@ -1,0 +1,71 @@
+{
+  "checked_date": "2026-10-08",
+  "c_counts": {
+    "D:\\gas_cylinders\\Placement_Issues\\images": 493,
+    "D:\\gas_cylinders\\Placement_Issues_2\\images": 592
+  },
+  "d_source_counts": {
+    "real93": 421,
+    "new150": 551,
+    "new24": 113
+  },
+  "d_final_png_count": 1085,
+  "d_final_txt_count": 0,
+  "metadata_rows": 2170,
+  "missing_seed_or_prompt": 0,
+  "d_numbered_filename_count": 1085,
+  "d_other_filenames": [],
+  "exact_new24_prompts": 24,
+  "d_unique_sha256": 1085,
+  "d_copy_hash_matches": 1085,
+  "d_actual_filename_source_runs": [
+    {
+      "set": "new150",
+      "first": "D_0001.png",
+      "last": "D_0551.png",
+      "count": 551
+    },
+    {
+      "set": "real93",
+      "first": "D_0552.png",
+      "last": "D_0972.png",
+      "count": 421
+    },
+    {
+      "set": "new24",
+      "first": "D_0973.png",
+      "last": "D_1085.png",
+      "count": 113
+    }
+  ],
+  "rename_log": null,
+  "rename_log_matches_hash_sources": null,
+  "effective_loras_by_source": {
+    "real93": {
+      "[{\"name\": \"step-1860.safetensors\", \"strength\": 0.8}]": 421
+    },
+    "new150": {
+      "[{\"name\": \"step-1860.safetensors\", \"strength\": 0.8}]": 551
+    },
+    "new24": {
+      "[{\"name\": \"step-1860.safetensors\", \"strength\": 0.8}]": 113
+    }
+  },
+  "d_sizes": {
+    "[1184, 896]": 1085
+  },
+  "csv_verified_against_current_pngs": 2170,
+  "csv_columns": [
+    "image_name",
+    "seed",
+    "prompt"
+  ],
+  "csv_data_rows": 2170,
+  "export_sha256": {
+    "cd1085_seed_prompts.csv": "c8ad288ace6fe2e0fef479f9661f96e67fe1097dbac6eeac8b47bc950ed66418",
+    "new24_prompts.csv": "57707cc692338872ac306eebc0259adef3d036299bbbe7583774119bd8a24b34",
+    "d_prompt_catalog.csv": "9db6be92188540f9a0a5bbde44977e0db440d2762e14a51bf47d5974ef77774e",
+    "new24_prompts.jsonl": "eab44c4f9376a415f000250f18a175fadc51eb6a4176bf6aaba950e44875f3e6",
+    "d1085_source_mapping.json": "56a56a3932e87f880ad2f0864182430fd2e01dadff9acd646c187caa8e9d842a"
+  }
+}

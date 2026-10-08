@@ -1,6 +1,6 @@
 # real93 → Qwen-Image-2.1 LoRA：训练与本机验证记录
 
-状态：2026-09-27 完成训练、权重归档和本机兼容性验证。本文是 v5 D 臂方法与图件的证据索引；D 臂 1085 张正式训练图、框标注及检测实验尚未完成。云端资源已删除；运维过程与文件交接见 `runpod_qwen21_handoff.md`。
+状态：2026-09-27 完成训练、权重归档和本机兼容性验证。本文是 v5 D 臂训练方法与图件的证据索引；2026-10-08 D 人工筛选和补充批次完成，最终 1085 张在 `D:\gas_cylinders\D1085\images`，待框标注，检测实验尚未完成。C/D seed、提示词和 new24 入表已完成，核验见 `d1085_review_and_metadata_20261008.md`；原两组候选生成记录见 `full_generation_20261004.md`。其它逐图参数仍使用 PNG 元数据、工作流使用工作区 JSON，不重复读取 Comfy Desktop 日志。云端资源已删除；运维过程与文件交接见 `../archive/runpod_qwen21_handoff.md`。
 
 ## 训练输入和环境
 
@@ -10,6 +10,8 @@
 - 平台：Runpod Secure RTX A6000 48 GB（EU-SE-1），镜像 `runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404`；单 GPU 进程。先用两张图完成技术烟测，再执行完整训练。源模型通过 DiffSynth-Studio 从 `Qwen/Qwen-Image-2.1` 读取 transformer、text encoder 和 VAE；训练脚本对这些模型路径传入 `--fp8_models`。
 
 ## 实际训练配置
+
+后续生成审核补充（2026-10-04）：real93 部分照片含底部检查表/水印，实际训练输入未去除。例如 real_photo_8 的原始文件与训练副本 SHA256 均为 `97bb0ff0e7b9fffd318f289aaeb25ad062b8996f8ca84e709cacb5d851095652`，图中蓝白表格条完整保留。此类版式会随训练进入 LoRA，后续生成已观察到类似页脚；提示词修正与来源核对见 `full_generation_20261004.md`。这一观察不改变既有训练记录或权重，也不构成过拟合程度的定量评估。
 
 配置以本地归档的 `weights/qwen21_real93_r16/training_args.json` 和 `runpod_qwen21/run_train.sh` 为准。
 

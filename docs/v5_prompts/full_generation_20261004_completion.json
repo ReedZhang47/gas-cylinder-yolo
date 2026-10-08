@@ -1,0 +1,29 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-04T07:26:51.887913+00:00",
+  "finished_utc": "2026-10-04T14:11:48.831379+00:00",
+  "expected_total": 1308,
+  "batches": [
+    {
+      "set": "real93",
+      "expected": 558,
+      "completed": 558
+    },
+    {
+      "set": "new150",
+      "expected": 750,
+      "completed": 750
+    }
+  ],
+  "candidate_directory": "D:\\gas_cylinders\\D1085",
+  "copied_png_counts": {
+    "real93": 558,
+    "new150": 750,
+    "total": 1308
+  },
+  "screening_status": "pending_manual_screening",
+  "annotation_status": "pending",
+  "metadata_source": "PNG prompt metadata",
+  "workflow_directory": "D:\\yolo\\docs\\v5_prompts",
+  "comfy_desktop_logs_policy": "Do not reread; generation stage completed."
+}

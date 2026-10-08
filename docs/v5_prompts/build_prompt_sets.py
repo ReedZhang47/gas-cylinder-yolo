@@ -16,6 +16,9 @@ STYLE = (
     "A realistic, unstaged construction-site inspection photograph with natural "
     "camera perspective and believable materials. "
 )
+STYLE_OVERRIDES = {
+    "R001": "A realistic full-frame construction-site camera photograph, one continuous edge-to-edge photographic scene with natural perspective and believable materials. ",
+}
 COUNT_RULES = {
     0: "No gas cylinders are visible anywhere in the frame.",
     1: (
@@ -50,7 +53,7 @@ def build(stem: str, expected: int, prefix: str) -> list[dict[str, object]]:
             assert row["placement"] == "none", row
         else:
             assert row["placement"] != "none", row
-        prompt = STYLE + row["prompt_core"].strip() + " " + COUNT_RULES[count] + " " + FINISH
+        prompt = STYLE_OVERRIDES.get(row["id"], STYLE) + row["prompt_core"].strip() + " " + COUNT_RULES[count] + " " + FINISH
         item: dict[str, object] = {
             "id": row["id"],
             "set": stem,

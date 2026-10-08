@@ -8,15 +8,19 @@
 
 ## 正文状态
 
-paper/working_paper.tex 是英文工作稿。方法与 v4 三臂、规模实验可依据已落盘 JSON 写实；D 的 LoRA 拟合方法已可写实，正式生成、筛选、检测训练和统计结论待完成后加入。当前正文 Fig. 1/2 为 v5 设计图，后续结果段仍引用 v4 旧图；新 Fig. 3–5、7、10 是可扩充 D 的预绘稿，未全面接入正文。12 图清单、源文件和接线状态集中在 paper/FIGURES.md。
+paper/working_paper.tex 是英文工作稿。方法与 v4 三臂、规模实验可依据已落盘 JSON 写实；D 的 LoRA 拟合、候选生成和人工筛选已可写实：2026-10-04 原两组生成 1308 张候选，随后筛选并补充 new24；2026-10-08 核验最终 new150 551＋real93 421＋new24 113＝1085 张，位于 `D:\gas_cylinders\D1085\images`。框标注、检测训练和统计结论仍待完成。C/D 2170 张的 seed/提示词和 24 段新增提示词已归档，方法与来源映射见 `docs/v5_prompts/d1085_review_and_metadata_20261008.md`；原候选生成参数和冻结哈希见 `docs/v5_prompts/full_generation_20261004.md`。逐图参数以 PNG 元数据为准，工作流使用工作区 JSON，不再重复读取 Comfy Desktop 日志。本次仅更新计划和数据证据入口，正文及图件内容待后续统一同步。
+
+2026-10-06 图件改为可人工调整的 PowerPoint COM 工作稿，入口为 `paper/figures/ppt_editable/`。原 Fig. 2 拆为新 Fig. 2 Image-Edit 与新 Fig. 3 LoRA T2I，后续编号顺延；已重绘新 Fig. 1–8、11，包括原 v4 规模图，原 Fig. 4 的结果改为新 Fig. 5 柱形图。原约 12 图规划暂为 13 图，清单与映射见 `paper/FIGURES.md`。本轮只制作 PPT 草稿，不导出 PDF、不改正文图号与 LaTeX 引用；当前 TeX 仍使用旧图。
 
 | 部分 | 当前工作 |
 |---|---|
 | Introduction / Related Work | 围绕稀缺危险样本、真实来源、合成路径和人工复核整理文献；避免先行宣称 D 扩展场景 |
-| Methods | 记录 C/D 模型与工作流、来源、质检和三层评估；C 精确模型文件见 figures/fig02/README.md |
+| Methods | 记录 C/D 模型与工作流、来源、质检和三层评估；C 精确模型文件见 ../docs/v5_prompts/generation_models.md |
 | Results | 保留 v4 A/B/C 和 493→1085 实测值；D 完成后补四臂结果、配对区间及错误分析 |
 | Discussion | 讨论 dev61 规模与适应性决策、生成缺陷、来源依赖、许可与人工标注成本 |
 | Conclusion | 等 D 与独立外部测试证据确定后写 |
+
+同日完成前三张重排和合并稿首页目录；其余图件保持不变。目录整理将旧图移入 `figures/archive/v5_vector/`，仅同步 TeX 的旧 PDF 查找路径，正文图号和图注保持原样。
 
 图表进入正文前逐项核对源数据、指标、统计角色和图注。现有九张表为 v4 版本，应在投稿排版时合并或移入补充材料，不以增加图表数量代替论证。
 

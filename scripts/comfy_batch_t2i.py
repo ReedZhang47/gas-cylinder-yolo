@@ -10,6 +10,8 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
+import secrets
 import struct
 import sys
 import time
@@ -19,7 +21,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
-DEFAULT_WORKFLOW = REPO / "docs/v5_prompts/trial_workflow_api.json"
+DEFAULT_WORKFLOW = REPO / "docs/v5_prompts/pilot_workflow_api.json"
 DEFAULT_PROMPTS = REPO / "docs/v5_prompts/new150_prompts.jsonl"
 DEFAULT_MODEL = Path(
     r"D:\Comfy-Desktop\ComfyUI-Shared\models\diffusion_models"
@@ -27,11 +29,11 @@ DEFAULT_MODEL = Path(
 )
 DEFAULT_LORA = Path(
     r"E:\Comfy-Desktop\ComfyUI-Shared\models\loras"
-    r"\construction_sites_gas_cylinders.safetensors"
+    r"\step-1860.safetensors"
 )
 DEFAULT_OUTPUT = Path(r"D:\Comfy-Desktop\ComfyUI-Shared\output")
 DEFAULT_LOG = Path(
-    r"E:\Comfy-Desktop\ComfyUI-Installs\ComfyUI\ComfyUI\user\comfyui.log"
+    r"E:\Comfy-Desktop\ComfyUI-Installs\ComfyUI\logs\comfyui.log"
 )
 
 
@@ -46,11 +48,42 @@ def safetensors_header(path: Path) -> dict:
 def check_weights(model_path: Path, lora_path: Path) -> tuple[bool, str]:
     model = safetensors_header(model_path)
     lora = safetensors_header(lora_path)
-    w = model["transformer_blocks.0.attn.to_q.weight"]["shape"]
-    a = lora["transformer.transformer_blocks.0.attn.to_q.lora_A.weight"]["shape"]
-    b = lora["transformer.transformer_blocks.0.attn.to_q.lora_B.weight"]["shape"]
-    compatible = a[1] == w[1] and b[0] == w[0] and a[0] == b[1]
-    detail = f"model to_q={w}; LoRA A={a}, B={b}; compatible={compatible}"
+    direct = fused = 0
+    failures = []
+    for key, tensor in lora.items():
+        match = re.fullmatch(r"(.+)\.lora_A(\.default)?\.weight", key)
+        if not match:
+            continue
+        module, adapter = match.group(1), match.group(2) or ""
+        b_key = f"{module}.lora_B{adapter}.weight"
+        if b_key not in lora:
+            failures.append(f"Missing B matrix: {key}")
+            continue
+        module = module.removeprefix("transformer.")
+        a, b = tensor["shape"], lora[b_key]["shape"]
+        weight = model.get(f"{module}.weight")
+        is_fused = False
+        if weight is None and module.endswith((".img_mlp.gate_layer", ".img_mlp.proj")):
+            weight = model.get(f"{module.rsplit('.', 1)[0]}.gate_up.weight")
+            is_fused = True
+        if weight is None or len(a) != 2 or len(b) != 2:
+            failures.append(f"Unmatched module: {module}")
+            continue
+        w = weight["shape"]
+        expected_out = w[0] // 2 if is_fused else w[0]
+        if a[1] != w[1] or b[0] != expected_out or a[0] != b[1]:
+            failures.append(f"{module}: model={w}, A={a}, B={b}")
+        elif is_fused:
+            fused += 1
+        else:
+            direct += 1
+    b_count = sum(bool(re.fullmatch(r".+\.lora_B(?:\.default)?\.weight", k)) for k in lora)
+    if direct + fused == 0 or direct + fused + len(failures) != b_count:
+        failures.append("Incomplete or empty LoRA matrix pairs")
+    compatible = not failures
+    detail = f"LoRA pairs: direct={direct}, fused={fused}; mismatches={len(failures)}; compatible={compatible}"
+    if failures:
+        detail += f"; first: {failures[0]}"
     return compatible, detail
 
 
@@ -73,18 +106,32 @@ def validate_workflow(graph: dict, model_path: Path, lora_path: Path) -> dict:
         raise ValueError("Workflow model filename differs from --model-path")
     if graph[ids["lora"]]["inputs"]["lora_name"] != lora_path.name:
         raise ValueError("Workflow LoRA filename differs from --lora-path")
+    if graph[ids["lora"]]["inputs"]["model"] != [ids["model"], 0]:
+        raise ValueError("LoRA input must connect to the checked base model")
+    if graph[ids["sampler"]]["inputs"]["model"] != [ids["lora"], 0]:
+        raise ValueError("Sampler bypasses the LoRA loader")
+    if graph[ids["lora"]]["inputs"]["strength_model"] <= 0:
+        raise ValueError("LoRA strength must be positive")
+    latent = one_node(graph, "EmptyLatentImage")
+    if graph[latent]["inputs"]["batch_size"] != 1:
+        raise ValueError("Use batch_size=1; --variants controls image count")
     text_inputs = graph[ids["text"]]["inputs"]
     if any(key.startswith("images.") for key in text_inputs):
         raise ValueError("Workflow contains reference images; this is not text-to-image")
     return ids
 
 
-def load_prompts(path: Path) -> list[dict]:
+def load_prompts(path: Path, prompt_ids: list[str], require_approved: bool) -> list[dict]:
     records = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
     if not records or len({r["id"] for r in records}) != len(records):
         raise ValueError("Prompt file is empty or contains duplicate IDs")
+    if prompt_ids:
+        missing = set(prompt_ids) - {r["id"] for r in records}
+        if missing:
+            raise ValueError(f"Unknown prompt IDs: {sorted(missing)}")
+        records = [r for r in records if r["id"] in prompt_ids]
     for record in records:
-        if record.get("review_status") != "approved":
+        if require_approved and record.get("review_status") != "approved":
             raise ValueError(
                 f"{record['id']} is not approved. Review the image-specific prompt "
                 "and change review_status to approved before queueing."
@@ -113,7 +160,9 @@ def http_json(url: str, data: dict | None = None) -> dict:
         url, data=body, headers={"Content-Type": "application/json"}
     )
     try:
-        with urllib.request.urlopen(request, timeout=30) as response:
+        # Local ComfyUI traffic must bypass the machine's Clash proxy.
+        opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+        with opener.open(request, timeout=30) as response:
             return json.loads(response.read())
     except urllib.error.URLError as exc:
         raise RuntimeError(f"ComfyUI request failed: {url}: {exc}") from exc
@@ -164,6 +213,26 @@ def completed_keys(manifest: Path) -> set[tuple[str, int]]:
     return {(row["id"], row["variant"]) for row in rows if row.get("status") == "completed"}
 
 
+def pending_submissions(manifest: Path) -> dict[tuple[str, int], dict]:
+    pending = {}
+    if manifest.exists():
+        for line in manifest.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            key = (row["id"], row["variant"])
+            if row.get("status") == "submitted":
+                pending[key] = row
+            elif row.get("status") == "completed":
+                pending.pop(key, None)
+    return pending
+
+
+def append_manifest(path: Path, row: dict) -> None:
+    with path.open("a", encoding="utf-8", newline="\n") as handle:
+        handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+
 def output_records(entry: dict, save_node: str, output_root: Path) -> list[dict]:
     images = entry.get("outputs", {}).get(save_node, {}).get("images", [])
     if len(images) != 1:
@@ -188,16 +257,21 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--workflow", type=Path, default=DEFAULT_WORKFLOW)
     parser.add_argument("--prompts", type=Path, default=DEFAULT_PROMPTS)
+    parser.add_argument("--prompt-id", action="append", default=[], help="Select an ID; repeat for multiple IDs")
     parser.add_argument("--model-path", type=Path, default=DEFAULT_MODEL)
     parser.add_argument("--lora-path", type=Path, default=DEFAULT_LORA)
     parser.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--filename-prefix", default="v5", help="Relative output subfolder for this batch")
     parser.add_argument("--comfy-log", type=Path, default=DEFAULT_LOG)
     parser.add_argument("--server", default="http://127.0.0.1:8188")
     parser.add_argument("--variants", type=int, default=5)
     parser.add_argument("--seed-base", type=int, default=20260926)
+    parser.add_argument("--seed-mode", choices=("deterministic", "random"), default="deterministic",
+                        help="random implements GUI randomize by choosing a fresh seed per submission")
     parser.add_argument("--limit", type=int, default=0, help="Limit total new images; 0 means all")
-    parser.add_argument("--timeout", type=int, default=600)
+    parser.add_argument("--timeout", type=int, default=1800)
     parser.add_argument("--manifest", type=Path, default=REPO / "docs/v5_prompts/batch_manifest.jsonl")
+    parser.add_argument("--stop-file", type=Path, help="Stop between images if this file exists")
     parser.add_argument("--run", action="store_true", help="Actually queue; default is preflight only")
     args = parser.parse_args()
     if args.variants < 1 or args.limit < 0:
@@ -208,21 +282,23 @@ def main() -> int:
     compatible, detail = check_weights(args.model_path, args.lora_path)
     print(detail)
     print("Workflow nodes:", ids)
-    print("Sampler:", template[ids["sampler"]]["inputs"])
+    print("Sampler:", {k: v for k, v in template[ids["sampler"]]["inputs"].items() if k != "seed"})
     if not compatible:
         print("BLOCKED: LoRA and base model have incompatible dimensions.", file=sys.stderr)
         return 2
 
-    prompts = load_prompts(args.prompts)
+    prompts = load_prompts(args.prompts, args.prompt_id, require_approved=args.run)
     done = completed_keys(args.manifest)
+    pending = pending_submissions(args.manifest)
     planned = [(r, v) for r in prompts for v in range(1, args.variants + 1) if (r["id"], v) not in done]
     if args.limit:
         planned = planned[: args.limit]
-    print(f"Approved prompts: {len(prompts)}; already complete: {len(done)}; to queue: {len(planned)}")
+    draft_count = sum(r.get("review_status") != "approved" for r in prompts)
+    print(f"Selected prompts: {len(prompts)}; unapproved: {draft_count}; already complete: {len(done)}; planned: {len(planned)}")
     if not args.run:
         if planned:
             r, v = planned[0]
-            print("First:", r["id"], "variant", v, "seed", deterministic_seed(args.seed_base, r["id"], v))
+            print("First:", r["id"], "variant", v, "seed mode", args.seed_mode)
         print("Dry run only. Add --run after preflight passes and ComfyUI is running.")
         return 0
 
@@ -233,12 +309,32 @@ def main() -> int:
     args.manifest.parent.mkdir(parents=True, exist_ok=True)
     server = args.server.rstrip("/")
     for index, (record, variant) in enumerate(planned, 1):
-        seed = deterministic_seed(args.seed_base, record["id"], variant)
-        prefix = f"v5_{record['id']}_v{variant:02d}_s{seed}"
+        if args.stop_file and args.stop_file.exists():
+            print("Stop requested; completed images preserved.", flush=True)
+            return 0
+        seed = secrets.randbelow(2**63 - 1) if args.seed_mode == "random" else deterministic_seed(args.seed_base, record["id"], variant)
+        prefix = f"{args.filename_prefix}/{record['id']}_v{variant:02d}"
         graph = make_graph(template, ids, record["prompt"], seed, prefix)
         offset = log_offset(args.comfy_log)
-        queued = http_json(f"{server}/prompt", {"prompt": graph})
-        prompt_id = queued["prompt_id"]
+        fingerprint = {
+            "workflow_sha256": workflow_hash,
+            "prompt_sha256": hashlib.sha256(record["prompt"].encode("utf-8")).hexdigest(),
+            "model_sha256": model_hash,
+            "lora_sha256": lora_hash,
+        }
+        existing = pending.get((record["id"], variant))
+        if existing:
+            if any(existing.get(k) != v for k, v in fingerprint.items()):
+                raise RuntimeError("Pending submission uses different inputs; inspect it before resuming")
+            prompt_id = existing["prompt_id"]
+            print(f"Recovering existing submission: {record['id']} v{variant:02d}", flush=True)
+        else:
+            queued = http_json(f"{server}/prompt", {"prompt": graph})
+            prompt_id = queued["prompt_id"]
+            append_manifest(args.manifest, {
+                "status": "submitted", "submitted_utc": datetime.now(timezone.utc).isoformat(),
+                "id": record["id"], "variant": variant, "prompt_id": prompt_id, **fingerprint,
+            })
         entry = wait_history(server, prompt_id, args.timeout)
         check_new_log(args.comfy_log, offset)
         outputs = output_records(entry, ids["save"], args.output_root)
@@ -252,7 +348,6 @@ def main() -> int:
             "intended_cylinder_count": record["intended_cylinder_count"],
             "placement": record["placement"],
             "variant": variant,
-            "seed": seed,
             "prompt": record["prompt"],
             "prompt_id": prompt_id,
             "workflow_sha256": workflow_hash,
@@ -267,8 +362,7 @@ def main() -> int:
             },
             "outputs": outputs,
         }
-        with args.manifest.open("a", encoding="utf-8", newline="\n") as handle:
-            handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+        append_manifest(args.manifest, row)
         print(f"{index}/{len(planned)} {record['id']} v{variant:02d} -> {outputs[0]['path']}", flush=True)
     return 0
 

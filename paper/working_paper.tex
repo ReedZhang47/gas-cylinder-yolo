@@ -27,7 +27,7 @@
 % 占位标记：红字 TODO，定稿前全文清零
 \newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
 
-\graphicspath{{figures/fig01/}{figures/fig02/}{figures/fig03/}{figures/fig04/}{figures/fig05/}{figures/fig07/}{figures/fig10/}{figures/archive/v4/}}
+\graphicspath{{figures/manuscript/}}
 
 \journal{Automation in Construction}
 
@@ -125,7 +125,7 @@ object detection \sep diffusion models \sep human-in-the-loop annotation
 % （两批共 1085 张，全部源自 93 张真实照片）。
 % 真实性红线：必须带喷漆磨损/污渍/锈迹（v0 教训）。
 % 逐图来源记录（ComfyUI 元数据留档）只作数据管理，不写成方法学贡献。
-% C 组件精确文件名见 figures/fig02/README.md；Lightning 四步模式并未逐图核验。
+% C 组件精确文件名见 ../docs/v5_prompts/generation_models.md；Lightning 四步模式并未逐图核验。
 % 编写（素材：PROGRESS.md 一/二；工具引用 \cite{qwenimage2025, qwenimageedit2025}）
 % v5 D 臂将在单独段落交代：Qwen-Image-2.1 + real93 LoRA 文生图；
 % 旧 Liblib 权重与 2.1 不兼容；新 LoRA 已用 93 组审阅图文对完成训练并通过本机加载验证。
@@ -169,7 +169,7 @@ the internal similarity the sets already carry, and the generator's own per-imag
 parsed to confirm that no synthesized image was edited from a benchmark image.
 \input{tables/tab_independence.tex}
 
-% Fig.1 由 figures/fig01/draw_fig1.py 生成矢量 PDF；D 臂仍为待完成扩展。
+% Fig.1 由 figures/archive/v5_vector/fig01/draw_fig1.py 生成矢量 PDF；D 臂仍为待完成扩展。
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{fig1_pipeline.pdf}
@@ -182,7 +182,7 @@ parsed to confirm that no synthesized image was edited from a benchmark image.
   \label{fig:pipeline}
 \end{figure}
 
-% Fig.2 由 figures/fig02/draw_fig2.py 生成矢量 PDF；旧 v4 样例图位于
+% Fig.2 由 figures/archive/v5_vector/fig02/draw_fig2.py 生成矢量 PDF；旧 v4 样例图位于
 % figures/archive/v4/fig2_arms_samples.pdf，不再作为本图。
 \begin{figure}[t]
   \centering

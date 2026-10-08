@@ -3,19 +3,28 @@
 runs/
 weights/
 _trash/
+/_archive/
 .tmp/
 annotator_demo_data/
-docs/archive/*
-!docs/archive/runpod_qwen21_2026-09-26.md
-!docs/archive/runcomfy_qwen21_setup_draft.md
+
+# 本地历史归档；正式方法、结果与正文资源放在归档目录之外
+**/archive/
+/scripts/legacy/
+
+# 依赖、可再生预览与本地缓存
+node_modules/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+/paper/figures/ppt_editable/previews/
 
 # 私有 prompt 台账
 Prompt.md
 
 # 大二进制（论文 PDF / 文献库 PDF 等本地缓存）
 *.pdf
-# 例外：论文插图必须入库，否则克隆后 working_paper.tex 编译不出来（反例须写在排除模式之后）
-!/paper/figures/**/*.pdf
+# 例外：正文当前引用的 PDF 是必要资源，随仓库保存
+!/paper/figures/manuscript/*.pdf
 
 # 日志
 *.log
