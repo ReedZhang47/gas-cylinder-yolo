@@ -55,3 +55,4 @@ paper/reference/
 
 # agent 运行日志与一次性测量产物
 logs/
+/experiments/v5_d/pipeline.lock

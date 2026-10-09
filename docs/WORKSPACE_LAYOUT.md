@@ -1,6 +1,6 @@
 # 工作区与 Git 边界
 
-2026-10-08 整理。当前阶段为 D1085 框标注与复核；提交和推送由作者手动完成。
+2026-10-08 整理。2026-10-09 当前阶段为 D 六 detector 训练、评估及统计已完成验收，进入论文整合；提交和推送由作者手动完成。
 
 ## 继续纳入 Git
 
@@ -10,7 +10,7 @@
 | `annotator/`、`scripts/`（除 legacy） | 标注、数据整理、生成复现、YOLO 训练及评估脚本 |
 | `docs/v5_prompts/` | 正式提示词、C/D 元数据、来源映射、工作流与训练/生成方法证据 |
 | `runpod_qwen21/` | 已使用的 LoRA 训练脚本；保留用于方法复现，云端任务已经结束 |
-| `experiments/v4_protocol/`、独立性与来源 JSON | 正式实验结果、折定义、逐图预测和统计依据 |
+| `experiments/v4_protocol/`、`experiments/v5_d/`、独立性与来源 JSON | v4 正式结果；D 冻结输入与后续评测；折定义、逐图预测和统计依据 |
 | `paper/` 的 TeX、BibTeX、表格、计划及现用脚本 | 正文、参考文献与写作依据 |
 | `paper/figures/manuscript/` | 正文实际引用的六张 PDF；新克隆仍具有这些编译资源 |
 | `paper/figures/ppt_editable/`（除 previews） | 当前可编辑 PPT、COM 脚本、scene.json 与必要图片素材 |

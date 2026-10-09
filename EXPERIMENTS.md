@@ -9,7 +9,7 @@
 | L1 三臂对照 | 编辑合成是否优于真实数据和等量传统增广 | 训练数据来源 | v4 已完成 |
 | L2 选权协议 | 使用小型独立开发集选 checkpoint，能否稳定改善新图表现 | 选权规则 | v4 已完成 |
 | L3 规模实验 | 编辑合成数据从 493 增至 1085 是否继续获益 | 合成训练图数量 | v4 已完成 |
-| L4 D 臂扩展 | 以 real93 微调的文生图是否能补充新场景并改善外部图检测 | 生成路径：文本生成 vs 真实图编辑 | LoRA 训练与验证、人工筛选后的 1085 张及 C/D seed/提示词归档已完成；框标注与 YOLO 结果待完成 |
+| L4 D 臂扩展 | 以 real93 微调的文生图是否能补充新场景并改善外部图检测 | 生成路径：文本生成 vs 真实图编辑 | LoRA 训练与验证、人工筛选后的 1085 张及 C/D seed/提示词归档已完成；六 detector 训练、三层评估、配对 bootstrap 已完成并验收 |
 
 L2 不增加训练臂，只复用 L1/L3 每 10 轮保存的快照。gen493 是 gen1085 的子集，不能合并计数。
 
@@ -21,7 +21,7 @@ L2 不增加训练臂，只复用 L1/L3 每 10 轮保存的快照。gen493 是 g
 | aug1085 | 1085 | B 臂训练集 |
 | gen1085 | 1085 | C 臂和规模实验大点 |
 | gen493 | 493 | 规模实验小点 |
-| D1085 文生图集 | 已审核保留 1085 | `D:\gas_cylinders\D1085\images`；new150 551＋real93 421＋new24 113，待框标注，尚不是可训练的图像/标签集 |
+| D1085 文生图集 | 已审核保留 1085 | `D:\gas_cylinders\D1085\images`；new150 551＋real93 421＋new24 113；1085 标签/1357 框已冻结 |
 | dev61 | 61 张 / 72 框 | 外部来源开发 benchmark；30 张有框、31 张空标 |
 
 `dev61` 的图片来自 `D:\gas_cylinders\new_test_set\`。该集合与 real93 及其编辑产物无来源/场景重叠，但它已经用于预算和协议判断，不能再称为从未查看的最终 test。路径 `D:\gas_cylinders\v3\test61.txt` 仅作为历史兼容路径；v4 正式配置使用 `D:\gas_cylinders\v4\dev61.txt`。
@@ -39,6 +39,8 @@ L2 不增加训练臂，只复用 L1/L3 每 10 轮保存的快照。gen493 是 g
 | seed | 0 |
 | close_mosaic | 10 |
 | 训练侧 val | 指向 train，仅满足接口，不参与决策 |
+
+快照映射补记（2026-10-09、D 训练前）：既有实现使用 `epoch10.pt`…`epoch290.pt` 加 `last.pt`；文件名为 Ultralytics 内部零基 epoch，前者实际完成第 11…291 轮，last 完成 300 轮。D 保持这一候选映射，图表中的 10…300 作为既有候选标签，不单独更改 D 的选权时点。
 
 每个数据设置训练 `yolov8s`、`yolov8m`、`yolo11s`、`yolo11m`、`yolo26s`、`yolo26m`。正式比较不得混用旧的 100 轮、划分训练集或 v3 run。
 
@@ -126,21 +128,21 @@ B 臂由 `scripts/make_aug1085_dataset.py` 确定性生成。几何变换同步�
 
 D 臂使用 Qwen-Image-2.1 文生图，以 real93 训练的 LoRA 迁移工地气瓶外观与场景特征，目标是质检后保留 1085 张训练图。C 臂由真实图编辑得到；D 臂由文本直接生成，虽然没有逐图编辑底图，但仍通过 LoRA 与 real93 有训练来源关系，不能称为与真实种子完全独立。新增场景可能扩大场景覆盖，这是**待验证假设**，不是已证实的结果。早期 Z-Image-Turbo 和 ControlNet 生图方案停止执行；相关论文可作为背景文献，不能写成实际 D 臂工具。
 
-### 已完成生成与待完成数据整理
+### 已完成生成与输入冻结
 
 - 本机 ComfyUI 已部署 Qwen-Image-2.1 INT8 生成模型、Qwen3-VL-8B INT8 文本编码器和 BF16 VAE。旧 Liblib LoRA 与 2.1 底模维度不兼容。兼容 LoRA 已完成 Runpod 训练，最终权重和完整归档已校验；固定 N114/seed 99999 的底模与四档强度对照确认权重实际加载。方法和五张 PNG 的元数据索引见 `docs/v5_prompts/qwen21_lora_training_validation.md`。
 - 93 条原始英文描述素材在 `docs/Prompts_Based_on_real93.md`；93 条优化提示词和 150 条新场景提示词在 `docs/v5_prompts/`。作者接受小批其余问题，仅修正 R001/N092 后授权完整候选生成；使用 approved 冻结副本，源 JSONL 的 draft 是编辑状态。云端训练 caption 是独立的人工复核产物。
 - 2026-10-04 北京时间 15:26–22:11 已完成 93×6=558 与 150×5=750，共 1308 张候选，复制到 `D:\gas_cylinders\D1085`。生成使用 step-1860 LoRA 0.8、随机 seed、1184×896、25 步、CFG 1、Euler/simple、denoise 1、batch_size 1；完成记录和冻结输入哈希见 `docs/v5_prompts/full_generation_20261004.md`。
-- 2026-10-08 人工筛选已完成，原两组保留 new150 551、real93 421，补充 new24 113，最终 1085 张统一命名为 `D_0001.png`–`D_1085.png`，位于 `D:\gas_cylinders\D1085\images`。原 465＋620 是初始预算，实际组成以本次筛选为准；框标注待完成。来源 SHA256 映射见 `docs/v5_prompts/d1085_source_mapping.json`，1085 张与审核源图一对一匹配。
+- 2026-10-08 人工筛选已完成，原两组保留 new150 551、real93 421，补充 new24 113，最终 1085 张统一命名为 `D_0001.png`–`D_1085.png`，位于 `D:\gas_cylinders\D1085\images`。原 465＋620 是初始预算，实际组成以本次筛选为准；2026-10-09 已核验 1085 标签、713 张有框、372 张空标、1357 框并冻结输入。来源 SHA256 映射见 `docs/v5_prompts/d1085_source_mapping.json`，1085 张与审核源图一对一匹配。
 - new24 的 24 段实际正向文本从 PNG 提取，编号 N151–N174，合并后的 `d_prompt_catalog.csv` 含 267 条。C/D 各 1085 张的图名、seed、提示词已归档为 `cd1085_seed_prompts.csv`（3 列/2170 行），全部与当前 PNG 复核；方法见 `docs/v5_prompts/d1085_review_and_metadata_20261008.md`。其它参数仍以 PNG、工作流以工作区 JSON 为准，不重复读取 Comfy Desktop 日志。每张图的取舍理由须留档，不根据 dev61 检测成绩反向筛图或改提示词。
-- 保留图按 `Placement Issues` 类别口径预标注并逐张人工复核；同时检查空标、框、明显生成缺陷、近重复和与 dev61 的来源独立性。工作流 JSON、数据清单与核验结果落盘后才视为数据准备完成。
+- 作者已确认 `Placement Issues` 标注就绪；自动检查验证图像/标签配对、格式、坐标和重复框，未替代语义审核。图片完整解码、来源哈希和缩略图近重复筛查通过；冻结证据见 `experiments/v5_d/`，执行交接见 `docs/D_DETECTOR_RUNBOOK.md`。
 
 ### 可比性与报告边界
 
-- D 臂计划沿用 v4 六个 detector、300 轮、640 输入、batch 16（OOM 时记录降为 8）、`patience=0`、`save_period=10`，独立 run 名称和数据 YAML。D 数据不能进入 dev61；训练侧 `val` 仍只满足接口。训练实现和 D 配置目前尚不存在。
-- 沿用 v4 的 dev61 五折定义、checkpoint 与 detector 联合选择、fixed endpoint / pooled OOF / deployment 三层报告和 mAP50-95 主指标；复用既有 A/B/C 结果，不重新挑选对照。D 与 A/B/C 的配对 bootstrap 计划沿用 10000 次、seed 0、按 dev61 图片聚类、同次重抽配对。开始正式训练前核对脚本实现与此处口径。
+- D 臂计划沿用 v4 六个 detector、300 轮、640 输入、batch 16（OOM 时记录降为 8）、`patience=0`、`save_period=10`，独立 run 名称和数据 YAML。D 数据不能进入 dev61；训练侧 `val` 仍只满足接口。执行入口 `scripts/run_v5_d.py` 默认只显示计划，D 配置与输入冻结清单在 `experiments/v5_d/`；评测入口 `scripts/eval_v5_d.py` 复用 v4 实现和既有折定义。作者于 2026-10-09 回复“继续”，00:18 启动、10:04 完整结束；六模型/评估/配对统计已验收，见 `experiments/v5_d/acceptance.md`。
+- 沿用 v4 的 dev61 五折定义、checkpoint 与 detector 联合选择、fixed endpoint / pooled OOF / deployment 三层报告和 mAP50-95 主指标；复用既有 A/B/C 结果，不重新挑选对照。D 与 A/B/C 的配对 bootstrap 计划沿用 10000 次、seed 0、按 dev61 图片聚类、同次重抽配对。2026-10-09 训练前准备已核对脚本实现与此处口径；A/B/C 结果保持原样，D 结果写入 `experiments/v5_d/`。
 - D 是在 v4 结果已知后提出。D−A、D−B、D−C 为 v5 新增比较，不能称为 v4 预注册验证；同一 dev61 继续复用也增加适应性决策风险。报告选择规则与每一层的统计角色，最终确认仍需新收集且冻结的外部 test。
-- 仅在逐图缓存、完整六 detector 结果与配对区间均落盘后讨论 D 是否优于 C；生成效果主观试验和批量筛选通过率不能代替外部图检测证据。
+- 当前六 detector、逐图缓存与三组配对区间已落盘并验收。D 联合 OOF mAP50-95 0.647895；D−A=+0.215854（95% CI [0.064166,0.354281]）、D−B=+0.313030（[0.185851,0.424481]）、D−C=+0.004998（[−0.135745,0.133783]）。C/D 无法区分，不能推断等效；生成场景覆盖仍须独立审计支持。
 
 ## 不确定性与后续数据
 

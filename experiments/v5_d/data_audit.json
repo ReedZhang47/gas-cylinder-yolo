@@ -1,0 +1,21 @@
+{
+  "images": 1085,
+  "labels": 1085,
+  "boxes": 1357,
+  "positive": 713,
+  "empty": 372,
+  "sources": {
+    "new150": 551,
+    "real93": 421,
+    "new24": 113
+  },
+  "dev61_max_thumbnail_similarity": 0.748569,
+  "most_similar_dev_D_pair": [
+    "new_test_set_0058.jpg",
+    "D_0162.png"
+  ],
+  "dev61_D_pairs_above_0.90": 0,
+  "D_internal_pairs_above_0.90": [],
+  "method": "48x48 mean-centered grayscale cosine; screening only, not proof of source independence",
+  "manual_labels": "Author reports annotations ready; automatic checks verify structure, not semantics."
+}

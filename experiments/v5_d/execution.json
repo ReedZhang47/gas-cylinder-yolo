@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "started_at": "2026-10-09T00:18:32+08:00",
+  "pipeline_pid": 29856,
+  "authorization": "Author replied 继续 in this fork after reviewing preparation.",
+  "command": "D:/yolo/.venv/Scripts/python.exe -u D:/yolo/scripts/run_v5_d.py --execute",
+  "stdout": "logs/v5_d/20261009_001832_pipeline.stdout.log",
+  "stderr": "logs/v5_d/20261009_001832_pipeline.stderr.log",
+  "current_stage_at_update": "all stages complete; acceptance passed with diagnostic notes",
+  "updated_at": "2026-10-09T15:07:00.014873+08:00",
+  "finished_at": "2026-10-09T10:04:37.100454+08:00",
+  "accepted_at": "2026-10-09T15:07:00.014873+08:00",
+  "acceptance_status": "passed_with_notes",
+  "acceptance_report": "experiments/v5_d/acceptance.md"
+}

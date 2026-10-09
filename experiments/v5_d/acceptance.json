@@ -1,0 +1,343 @@
+{
+  "status": "passed_with_notes",
+  "audited_at": "2026-10-09T15:07:00.014873+08:00",
+  "pipeline_finished_at": "2026-10-09T10:04:37.100454+08:00",
+  "training": {
+    "yolov8s": {
+      "epochs": 300,
+      "batch_history": [
+        16
+      ],
+      "training_hours": 1.021,
+      "finished_at": "2026-10-09T01:21:05.929481+08:00",
+      "checkpoint_candidates": 30
+    },
+    "yolov8m": {
+      "epochs": 300,
+      "batch_history": [
+        16
+      ],
+      "training_hours": 1.8842,
+      "finished_at": "2026-10-09T03:15:22.924943+08:00",
+      "checkpoint_candidates": 30
+    },
+    "yolo11s": {
+      "epochs": 300,
+      "batch_history": [
+        16
+      ],
+      "training_hours": 1.0468,
+      "finished_at": "2026-10-09T04:19:16.605777+08:00",
+      "checkpoint_candidates": 30
+    },
+    "yolo11m": {
+      "epochs": 300,
+      "batch_history": [
+        16
+      ],
+      "training_hours": 2.069,
+      "finished_at": "2026-10-09T06:24:31.790388+08:00",
+      "checkpoint_candidates": 30
+    },
+    "yolo26s": {
+      "epochs": 300,
+      "batch_history": [
+        16
+      ],
+      "training_hours": 1.2166,
+      "finished_at": "2026-10-09T07:38:30.291891+08:00",
+      "checkpoint_candidates": 30
+    },
+    "yolo26m": {
+      "epochs": 300,
+      "batch_history": [
+        16
+      ],
+      "training_hours": 2.2637,
+      "finished_at": "2026-10-09T09:55:33.779098+08:00",
+      "checkpoint_candidates": 30
+    }
+  },
+  "raw_prediction_caches": 180,
+  "bootstrap_comparisons": 39,
+  "bootstrap_draws_per_comparison": 10000,
+  "selection_and_AP_recomputed_from_cached_predictions": true,
+  "checkpoint_and_frozen_input_hashes_verified": true,
+  "v4_controls_unchanged": true,
+  "metrics": [
+    {
+      "detector": "yolov8s",
+      "fixed_mAP50_95": 0.685146,
+      "fixed_mAP50": 0.852123,
+      "oof_mAP50_95": 0.660895,
+      "oof_mAP50": 0.837722,
+      "deployment_epoch_label": 240,
+      "non_convergent": false
+    },
+    {
+      "detector": "yolov8m",
+      "fixed_mAP50_95": 0.642509,
+      "fixed_mAP50": 0.840832,
+      "oof_mAP50_95": 0.603487,
+      "oof_mAP50": 0.803864,
+      "deployment_epoch_label": 290,
+      "non_convergent": false
+    },
+    {
+      "detector": "yolo11s",
+      "fixed_mAP50_95": 0.698026,
+      "fixed_mAP50": 0.875542,
+      "oof_mAP50_95": 0.698026,
+      "oof_mAP50": 0.875542,
+      "deployment_epoch_label": 300,
+      "non_convergent": false
+    },
+    {
+      "detector": "yolo11m",
+      "fixed_mAP50_95": 0.644376,
+      "fixed_mAP50": 0.841324,
+      "oof_mAP50_95": 0.624107,
+      "oof_mAP50": 0.838209,
+      "deployment_epoch_label": 300,
+      "non_convergent": false
+    },
+    {
+      "detector": "yolo26s",
+      "fixed_mAP50_95": 0.696072,
+      "fixed_mAP50": 0.881153,
+      "oof_mAP50_95": 0.682278,
+      "oof_mAP50": 0.847403,
+      "deployment_epoch_label": 270,
+      "non_convergent": false
+    },
+    {
+      "detector": "yolo26m",
+      "fixed_mAP50_95": 0.614904,
+      "fixed_mAP50": 0.780901,
+      "oof_mAP50_95": 0.599699,
+      "oof_mAP50": 0.787384,
+      "deployment_epoch_label": 250,
+      "non_convergent": false
+    }
+  ],
+  "joint": {
+    "cross_fitted_model_selection": {
+      "official_pooled_oof_metrics": {
+        "P": 0.828416,
+        "R": 0.804689,
+        "mAP50": 0.820871,
+        "mAP50-95": 0.647895
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "selected_detector": "yolo11s",
+          "selected_epoch": 300,
+          "heldout_diagnostic": {
+            "P": 0.816028,
+            "R": 0.888155,
+            "mAP50": 0.832374,
+            "mAP50-95": 0.596791
+          }
+        },
+        {
+          "fold": 1,
+          "selected_detector": "yolo26s",
+          "selected_epoch": 270,
+          "heldout_diagnostic": {
+            "P": 0.801823,
+            "R": 0.818182,
+            "mAP50": 0.879286,
+            "mAP50-95": 0.736161
+          }
+        },
+        {
+          "fold": 2,
+          "selected_detector": "yolo26s",
+          "selected_epoch": 270,
+          "heldout_diagnostic": {
+            "P": 0.922662,
+            "R": 0.883899,
+            "mAP50": 0.945801,
+            "mAP50-95": 0.736077
+          }
+        },
+        {
+          "fold": 3,
+          "selected_detector": "yolo26s",
+          "selected_epoch": 270,
+          "heldout_diagnostic": {
+            "P": 0.928319,
+            "R": 0.99646,
+            "mAP50": 0.973571,
+            "mAP50-95": 0.870779
+          }
+        },
+        {
+          "fold": 4,
+          "selected_detector": "yolo11s",
+          "selected_epoch": 300,
+          "heldout_diagnostic": {
+            "P": 0.564489,
+            "R": 0.354804,
+            "mAP50": 0.350113,
+            "mAP50-95": 0.211635
+          }
+        }
+      ]
+    },
+    "deployment_model": {
+      "detector": "yolo26s",
+      "epoch": 270,
+      "development_metrics": {
+        "P": 0.82952,
+        "R": 0.819444,
+        "mAP50": 0.860974,
+        "mAP50-95": 0.689061
+      },
+      "warning": "development score; not a generalization estimate"
+    }
+  },
+  "joint_comparisons": [
+    {
+      "target": "joint",
+      "detector": null,
+      "arm_a": "real93v4",
+      "arm_b": "D1085v5",
+      "point_a": {
+        "mAP50-95": 0.432041,
+        "mAP50": 0.673754
+      },
+      "point_b": {
+        "mAP50-95": 0.647895,
+        "mAP50": 0.820871
+      },
+      "observed_delta": {
+        "mAP50-95": 0.215854,
+        "mAP50": 0.147117
+      },
+      "n_boot": 10000,
+      "n_degenerate_resamples": 0,
+      "mAP50-95": {
+        "mean_delta": 0.217902,
+        "ci95": [
+          0.064166,
+          0.354281
+        ],
+        "prob_delta_gt0": 0.9956
+      },
+      "mAP50": {
+        "mean_delta": 0.149357,
+        "ci95": [
+          -0.022704,
+          0.309859
+        ],
+        "prob_delta_gt0": 0.9594
+      }
+    },
+    {
+      "target": "joint",
+      "detector": null,
+      "arm_a": "aug1085v4",
+      "arm_b": "D1085v5",
+      "point_a": {
+        "mAP50-95": 0.334865,
+        "mAP50": 0.658814
+      },
+      "point_b": {
+        "mAP50-95": 0.647895,
+        "mAP50": 0.820871
+      },
+      "observed_delta": {
+        "mAP50-95": 0.31303,
+        "mAP50": 0.162057
+      },
+      "n_boot": 10000,
+      "n_degenerate_resamples": 0,
+      "mAP50-95": {
+        "mean_delta": 0.311077,
+        "ci95": [
+          0.185851,
+          0.424481
+        ],
+        "prob_delta_gt0": 1.0
+      },
+      "mAP50": {
+        "mean_delta": 0.160945,
+        "ci95": [
+          -0.0082,
+          0.331524
+        ],
+        "prob_delta_gt0": 0.9691
+      }
+    },
+    {
+      "target": "joint",
+      "detector": null,
+      "arm_a": "gen1085v4",
+      "arm_b": "D1085v5",
+      "point_a": {
+        "mAP50-95": 0.642897,
+        "mAP50": 0.836973
+      },
+      "point_b": {
+        "mAP50-95": 0.647895,
+        "mAP50": 0.820871
+      },
+      "observed_delta": {
+        "mAP50-95": 0.004998,
+        "mAP50": -0.016102
+      },
+      "n_boot": 10000,
+      "n_degenerate_resamples": 0,
+      "mAP50-95": {
+        "mean_delta": 0.00554,
+        "ci95": [
+          -0.135745,
+          0.133783
+        ],
+        "prob_delta_gt0": 0.5507
+      },
+      "mAP50": {
+        "mean_delta": -0.014641,
+        "ci95": [
+          -0.172274,
+          0.119301
+        ],
+        "prob_delta_gt0": 0.4466
+      }
+    }
+  ],
+  "diagnostic_notes": [
+    {
+      "detector": "yolo11m",
+      "issue": "transient nonfinite train-set validation losses",
+      "rows": [
+        {
+          "epoch": 3,
+          "fields": {
+            "val/box_loss": "nan",
+            "val/cls_loss": "nan",
+            "val/dfl_loss": "nan"
+          }
+        },
+        {
+          "epoch": 4,
+          "fields": {
+            "val/box_loss": "nan",
+            "val/cls_loss": "nan",
+            "val/dfl_loss": "nan"
+          }
+        }
+      ],
+      "resolution": "training losses and metrics finite; terminal self-validation losses finite; diagnostic self-val never used for selection; retain original run"
+    },
+    {
+      "issue": "single-image dummy NMS warmup timeout",
+      "count": 1,
+      "resolution": "budget 2.050s identifies AutoBackend warmup; real dev61 batches use 16/13 images; no real-batch timeout",
+      "source": "ultralytics/nn/autobackend.py:AutoBackend.warmup; ultralytics/utils/nms.py:time_limit"
+    }
+  ],
+  "limitations": "dev61 is a reused development benchmark; one detector-training seed; no new frozen external test yet."
+}
