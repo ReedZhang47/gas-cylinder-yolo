@@ -1,0 +1,11 @@
+{
+  "version": "v2",
+  "title": "Qwen-Image-Edit synthesis workflow (arm C)",
+  "size": [
+    1380,
+    650
+  ],
+  "pages": [
+    "pages/figure.page"
+  ]
+}

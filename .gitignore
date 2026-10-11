@@ -66,3 +66,6 @@ logs/
 !/paper/figures/lora_compare/*.pdf
 
 /experiments/lora_compare/versions/v2/*.zip
+
+# Local visual references, not project inputs
+/paper/figures/ppt_editable/style reference/

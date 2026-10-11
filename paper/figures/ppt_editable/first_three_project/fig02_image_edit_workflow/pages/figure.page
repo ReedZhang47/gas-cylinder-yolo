@@ -1,0 +1,1568 @@
+{
+  "pageType": "research_figure",
+  "background": {
+    "type": "solid",
+    "color": "#FFFFFF"
+  },
+  "notes": "Image-Edit workflow. Styling only adapted from supplied Li2025 reference: pale-blue field, separated input/processing regions, pastel modules and direct arrows. No reference scientific content is reused. C example Placement_Issues_0301.png: PNG prompt nodes 23 and 25 explicitly load real_photo_12.png and real_photo_36.png; node 7 conditions on both. The displayed instruction is an English summary, not a verbatim prompt. Model and encoders: docs/v5_prompts/generation_models.md. Lightning is optional across C; do not infer all 1085 images used the same sampling settings. Final C dataset has 1085 retained and annotated images.",
+  "elements": [
+    {
+      "elementId": "roundrect_001",
+      "bounds": [
+        12,
+        12,
+        1356,
+        626
+      ],
+      "elementType": "shape",
+      "shapeName": "roundRect",
+      "adjustments": [
+        8000
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#E2EDF6"
+      }
+    },
+    {
+      "elementId": "line_002",
+      "elementType": "line",
+      "bounds": [
+        378,
+        36,
+        0,
+        575
+      ],
+      "viewBox": [
+        1,
+        575
+      ],
+      "points": "0,0 0,575",
+      "curve": "sharp",
+      "border": {
+        "style": "dash",
+        "width": 1.25,
+        "color": "#748595"
+      }
+    },
+    {
+      "elementId": "text_003",
+      "bounds": [
+        36,
+        31,
+        316,
+        36
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "(a) Reference composition",
+        "fontFamily": "Times New Roman",
+        "fontSize": 22,
+        "color": "#181818",
+        "bold": true,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "text_004",
+      "bounds": [
+        414,
+        31,
+        918,
+        36
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "(b) Conditioned image editing and dataset assembly",
+        "fontFamily": "Times New Roman",
+        "fontSize": 22,
+        "color": "#181818",
+        "bold": true,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "picture_005",
+      "bounds": [
+        40.0,
+        126.27549824150059,
+        174.0,
+        130.44900351699883
+      ],
+      "elementType": "image",
+      "src": "media/real_photo_12.png",
+      "fit": {
+        "mode": "contain"
+      }
+    },
+    {
+      "elementId": "rect_006",
+      "bounds": [
+        40.0,
+        126.27549824150059,
+        174.0,
+        130.44900351699883
+      ],
+      "elementType": "shape",
+      "shapeName": "rect",
+      "border": {
+        "style": "solid",
+        "width": 0.65,
+        "color": "#696969"
+      }
+    },
+    {
+      "elementId": "picture_007",
+      "bounds": [
+        254.0,
+        118.50638297872341,
+        106.0,
+        142.98723404255318
+      ],
+      "elementType": "image",
+      "src": "media/real_photo_36.png",
+      "fit": {
+        "mode": "contain"
+      }
+    },
+    {
+      "elementId": "rect_008",
+      "bounds": [
+        254.0,
+        118.50638297872341,
+        106.0,
+        142.98723404255318
+      ],
+      "elementType": "shape",
+      "shapeName": "rect",
+      "border": {
+        "style": "solid",
+        "width": 0.65,
+        "color": "#696969"
+      }
+    },
+    {
+      "elementId": "text_009",
+      "bounds": [
+        216,
+        160,
+        34,
+        48
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "+",
+        "fontFamily": "Times New Roman",
+        "fontSize": 30,
+        "color": "#181818",
+        "bold": true,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "text_010",
+      "bounds": [
+        44,
+        286,
+        168,
+        24
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Reference 12",
+        "fontFamily": "Arial",
+        "fontSize": 12,
+        "color": "#181818",
+        "bold": false,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "text_011",
+      "bounds": [
+        243,
+        286,
+        125,
+        24
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Reference 36",
+        "fontFamily": "Arial",
+        "fontSize": 12,
+        "color": "#181818",
+        "bold": false,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "line_012",
+      "elementType": "line",
+      "bounds": [
+        124,
+        316,
+        0,
+        18
+      ],
+      "viewBox": [
+        1,
+        18
+      ],
+      "points": "0,0 0,18",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1,
+        "color": "#202020"
+      }
+    },
+    {
+      "elementId": "line_013",
+      "elementType": "line",
+      "bounds": [
+        124,
+        334,
+        181,
+        0
+      ],
+      "viewBox": [
+        181,
+        1
+      ],
+      "points": "0,0 181,0",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1,
+        "color": "#202020"
+      }
+    },
+    {
+      "elementId": "line_014",
+      "elementType": "line",
+      "bounds": [
+        305,
+        316,
+        0,
+        18
+      ],
+      "viewBox": [
+        1,
+        18
+      ],
+      "points": "0,18 0,0",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1,
+        "color": "#202020"
+      }
+    },
+    {
+      "elementId": "line_015",
+      "elementType": "line",
+      "bounds": [
+        214,
+        334,
+        0,
+        20
+      ],
+      "viewBox": [
+        1,
+        20
+      ],
+      "points": "0,0 0,20",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 0.75,
+        "color": "#202020"
+      },
+      "arrow": [
+        null,
+        "arrow"
+      ]
+    },
+    {
+      "elementId": "text_016",
+      "bounds": [
+        43,
+        354,
+        303,
+        28
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Joint visual conditioning",
+        "fontFamily": "Times New Roman",
+        "fontSize": 18,
+        "color": "#181818",
+        "bold": true,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "rect_017",
+      "bounds": [
+        41,
+        414,
+        313,
+        115
+      ],
+      "elementType": "shape",
+      "shapeName": "rect",
+      "fill": {
+        "type": "solid",
+        "color": "#FFF4D5"
+      }
+    },
+    {
+      "elementId": "text_018",
+      "bounds": [
+        52,
+        424,
+        291,
+        30
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Edit instruction",
+        "fontFamily": "Times New Roman",
+        "fontSize": 20,
+        "color": "#181818",
+        "bold": true,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "text_019",
+      "bounds": [
+        59,
+        462,
+        277,
+        54
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Combine the cage and cylinders\nwith the reference scene",
+        "fontFamily": "Times New Roman",
+        "fontSize": 17,
+        "color": "#181818",
+        "bold": false,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "text_020",
+      "bounds": [
+        42,
+        555,
+        311,
+        44
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Two reference photographs\ncontribute to image 301",
+        "fontFamily": "Times New Roman",
+        "fontSize": 16,
+        "color": "#181818",
+        "bold": false,
+        "italic": true,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "line_021",
+      "elementType": "line",
+      "bounds": [
+        354,
+        471,
+        64,
+        0
+      ],
+      "viewBox": [
+        64,
+        1
+      ],
+      "points": "0,0 64,0",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1.1,
+        "color": "#202020"
+      }
+    },
+    {
+      "elementId": "line_022",
+      "elementType": "line",
+      "bounds": [
+        418,
+        172,
+        0,
+        299
+      ],
+      "viewBox": [
+        1,
+        299
+      ],
+      "points": "0,299 0,0",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1.1,
+        "color": "#202020"
+      }
+    },
+    {
+      "elementId": "line_023",
+      "elementType": "line",
+      "bounds": [
+        418,
+        172,
+        16,
+        0
+      ],
+      "viewBox": [
+        16,
+        1
+      ],
+      "points": "0,0 16,0",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1.1,
+        "color": "#202020"
+      },
+      "arrow": [
+        null,
+        "arrow"
+      ]
+    },
+    {
+      "elementId": "line_024",
+      "elementType": "line",
+      "bounds": [
+        354,
+        367,
+        48,
+        0
+      ],
+      "viewBox": [
+        48,
+        1
+      ],
+      "points": "0,0 48,0",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1.1,
+        "color": "#202020"
+      }
+    },
+    {
+      "elementId": "line_025",
+      "elementType": "line",
+      "bounds": [
+        402,
+        143,
+        0,
+        224
+      ],
+      "viewBox": [
+        1,
+        224
+      ],
+      "points": "0,224 0,0",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1.1,
+        "color": "#202020"
+      }
+    },
+    {
+      "elementId": "line_026",
+      "elementType": "line",
+      "bounds": [
+        402,
+        143,
+        32,
+        0
+      ],
+      "viewBox": [
+        32,
+        1
+      ],
+      "points": "0,0 32,0",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1.1,
+        "color": "#202020"
+      },
+      "arrow": [
+        null,
+        "arrow"
+      ]
+    },
+    {
+      "elementId": "roundrect_027",
+      "bounds": [
+        434,
+        105,
+        338,
+        80
+      ],
+      "elementType": "shape",
+      "shapeName": "roundRect",
+      "adjustments": [
+        8000
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#F5E6D5"
+      },
+      "border": {
+        "style": "solid",
+        "width": 1,
+        "color": "#181818"
+      }
+    },
+    {
+      "elementId": "text_028",
+      "bounds": [
+        444,
+        112,
+        318,
+        29
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Multimodal encoder",
+        "fontFamily": "Times New Roman",
+        "fontSize": 18,
+        "color": "#181818",
+        "bold": true,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "text_029",
+      "bounds": [
+        444,
+        143,
+        318,
+        36
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Qwen2.5-VL 7B · FP8",
+        "fontFamily": "Times New Roman",
+        "fontSize": 14,
+        "color": "#181818",
+        "bold": false,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "text_030",
+      "bounds": [
+        475,
+        189,
+        256,
+        26
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Visual + text conditioning",
+        "fontFamily": "Times New Roman",
+        "fontSize": 15,
+        "color": "#181818",
+        "bold": false,
+        "italic": true,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "line_031",
+      "elementType": "line",
+      "bounds": [
+        772,
+        145,
+        85,
+        0
+      ],
+      "viewBox": [
+        85,
+        1
+      ],
+      "points": "0,0 85,0",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1.2,
+        "color": "#202020"
+      }
+    },
+    {
+      "elementId": "line_032",
+      "elementType": "line",
+      "bounds": [
+        857,
+        145,
+        0,
+        98
+      ],
+      "viewBox": [
+        1,
+        98
+      ],
+      "points": "0,0 0,98",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1.2,
+        "color": "#202020"
+      },
+      "arrow": [
+        null,
+        "arrow"
+      ]
+    },
+    {
+      "elementId": "roundrect_033",
+      "bounds": [
+        435,
+        285,
+        187,
+        78
+      ],
+      "elementType": "shape",
+      "shapeName": "roundRect",
+      "adjustments": [
+        8000
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#E0EEEE"
+      },
+      "border": {
+        "style": "solid",
+        "width": 1,
+        "color": "#181818"
+      }
+    },
+    {
+      "elementId": "text_034",
+      "bounds": [
+        445,
+        292,
+        167,
+        29
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Image encoding",
+        "fontFamily": "Times New Roman",
+        "fontSize": 18,
+        "color": "#181818",
+        "bold": true,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "text_035",
+      "bounds": [
+        445,
+        323,
+        167,
+        34
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Scale + Qwen VAE",
+        "fontFamily": "Times New Roman",
+        "fontSize": 14,
+        "color": "#181818",
+        "bold": false,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "line_036",
+      "elementType": "line",
+      "bounds": [
+        402,
+        327,
+        33,
+        0
+      ],
+      "viewBox": [
+        33,
+        1
+      ],
+      "points": "0,0 33,0",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1.1,
+        "color": "#202020"
+      },
+      "arrow": [
+        null,
+        "arrow"
+      ]
+    },
+    {
+      "elementId": "line_037",
+      "elementType": "line",
+      "bounds": [
+        622,
+        327,
+        61,
+        0
+      ],
+      "viewBox": [
+        61,
+        1
+      ],
+      "points": "0,0 61,0",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1.3,
+        "color": "#202020"
+      },
+      "arrow": [
+        null,
+        "arrow"
+      ]
+    },
+    {
+      "elementId": "text_038",
+      "bounds": [
+        438,
+        370,
+        179,
+        25
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Reference latent",
+        "fontFamily": "Times New Roman",
+        "fontSize": 15,
+        "color": "#181818",
+        "bold": false,
+        "italic": true,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "roundrect_039",
+      "bounds": [
+        683,
+        243,
+        348,
+        203
+      ],
+      "elementType": "shape",
+      "shapeName": "roundRect",
+      "adjustments": [
+        8000
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#BFD3E8"
+      },
+      "border": {
+        "style": "solid",
+        "width": 1.2,
+        "color": "#536F8E"
+      }
+    },
+    {
+      "elementId": "text_040",
+      "bounds": [
+        697,
+        251,
+        320,
+        32
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Qwen-Image-Edit-2509",
+        "fontFamily": "Times New Roman",
+        "fontSize": 22,
+        "color": "#181818",
+        "bold": true,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "text_041",
+      "bounds": [
+        705,
+        286,
+        304,
+        27
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "FP8 diffusion backbone",
+        "fontFamily": "Times New Roman",
+        "fontSize": 17,
+        "color": "#181818",
+        "bold": false,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "rect_042",
+      "bounds": [
+        702,
+        328,
+        310,
+        54
+      ],
+      "elementType": "shape",
+      "shapeName": "rect",
+      "fill": {
+        "type": "solid",
+        "color": "#F7FAFD"
+      },
+      "border": {
+        "style": "solid",
+        "width": 0.7,
+        "color": "#536F8E"
+      }
+    },
+    {
+      "elementId": "text_043",
+      "bounds": [
+        712,
+        336,
+        290,
+        35
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Conditioned denoising",
+        "fontFamily": "Times New Roman",
+        "fontSize": 20,
+        "color": "#181818",
+        "bold": true,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "text_044",
+      "bounds": [
+        706,
+        401,
+        302,
+        24
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "KSampler · Euler / simple",
+        "fontFamily": "Arial",
+        "fontSize": 14,
+        "color": "#181818",
+        "bold": false,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "roundrect_045",
+      "bounds": [
+        683,
+        497,
+        348,
+        74
+      ],
+      "elementType": "shape",
+      "shapeName": "roundRect",
+      "adjustments": [
+        8000
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#F3F0E7"
+      },
+      "border": {
+        "style": "solid",
+        "width": 1,
+        "color": "#181818"
+      }
+    },
+    {
+      "elementId": "text_046",
+      "bounds": [
+        693,
+        504,
+        328,
+        29
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Sampling configuration",
+        "fontFamily": "Times New Roman",
+        "fontSize": 19,
+        "color": "#181818",
+        "bold": true,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "text_047",
+      "bounds": [
+        693,
+        535,
+        328,
+        30
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Standard / optional Lightning path",
+        "fontFamily": "Times New Roman",
+        "fontSize": 14,
+        "color": "#181818",
+        "bold": false,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "line_048",
+      "elementType": "line",
+      "bounds": [
+        857,
+        446,
+        0,
+        51
+      ],
+      "viewBox": [
+        1,
+        51
+      ],
+      "points": "0,51 0,0",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1,
+        "color": "#181818"
+      },
+      "arrow": [
+        null,
+        "arrow"
+      ]
+    },
+    {
+      "elementId": "roundrect_049",
+      "bounds": [
+        438,
+        493,
+        183,
+        78
+      ],
+      "elementType": "shape",
+      "shapeName": "roundRect",
+      "adjustments": [
+        8000
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#F4F4F4"
+      },
+      "border": {
+        "style": "solid",
+        "width": 1,
+        "color": "#181818"
+      }
+    },
+    {
+      "elementId": "text_050",
+      "bounds": [
+        448,
+        500,
+        163,
+        29
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Noise latent",
+        "fontFamily": "Times New Roman",
+        "fontSize": 17,
+        "color": "#181818",
+        "bold": true,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "text_051",
+      "bounds": [
+        448,
+        531,
+        163,
+        34
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Seed + output size",
+        "fontFamily": "Times New Roman",
+        "fontSize": 14,
+        "color": "#181818",
+        "bold": false,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "line_052",
+      "elementType": "line",
+      "bounds": [
+        621,
+        532,
+        27,
+        0
+      ],
+      "viewBox": [
+        27,
+        1
+      ],
+      "points": "0,0 27,0",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1.1,
+        "color": "#202020"
+      }
+    },
+    {
+      "elementId": "line_053",
+      "elementType": "line",
+      "bounds": [
+        648,
+        417,
+        0,
+        115
+      ],
+      "viewBox": [
+        1,
+        115
+      ],
+      "points": "0,115 0,0",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1.1,
+        "color": "#202020"
+      }
+    },
+    {
+      "elementId": "line_054",
+      "elementType": "line",
+      "bounds": [
+        648,
+        417,
+        35,
+        0
+      ],
+      "viewBox": [
+        35,
+        1
+      ],
+      "points": "0,0 35,0",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1.1,
+        "color": "#202020"
+      },
+      "arrow": [
+        null,
+        "arrow"
+      ]
+    },
+    {
+      "elementId": "line_055",
+      "elementType": "line",
+      "bounds": [
+        1031,
+        355,
+        29,
+        0
+      ],
+      "viewBox": [
+        29,
+        1
+      ],
+      "points": "0,0 29,0",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1.2,
+        "color": "#202020"
+      }
+    },
+    {
+      "elementId": "line_056",
+      "elementType": "line",
+      "bounds": [
+        1060,
+        147,
+        0,
+        208
+      ],
+      "viewBox": [
+        1,
+        208
+      ],
+      "points": "0,208 0,0",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1.2,
+        "color": "#202020"
+      }
+    },
+    {
+      "elementId": "line_057",
+      "elementType": "line",
+      "bounds": [
+        1060,
+        147,
+        30,
+        0
+      ],
+      "viewBox": [
+        30,
+        1
+      ],
+      "points": "0,0 30,0",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1.2,
+        "color": "#202020"
+      },
+      "arrow": [
+        null,
+        "arrow"
+      ]
+    },
+    {
+      "elementId": "roundrect_058",
+      "bounds": [
+        1090,
+        109,
+        242,
+        76
+      ],
+      "elementType": "shape",
+      "shapeName": "roundRect",
+      "adjustments": [
+        8000
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#E0EEEE"
+      },
+      "border": {
+        "style": "solid",
+        "width": 1,
+        "color": "#181818"
+      }
+    },
+    {
+      "elementId": "text_059",
+      "bounds": [
+        1100,
+        116,
+        222,
+        29
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "VAE decoding",
+        "fontFamily": "Times New Roman",
+        "fontSize": 20,
+        "color": "#181818",
+        "bold": true,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "text_060",
+      "bounds": [
+        1100,
+        147,
+        222,
+        32
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Qwen image VAE",
+        "fontFamily": "Times New Roman",
+        "fontSize": 14,
+        "color": "#181818",
+        "bold": false,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "line_061",
+      "elementType": "line",
+      "bounds": [
+        1211,
+        185,
+        0,
+        48
+      ],
+      "viewBox": [
+        1,
+        48
+      ],
+      "points": "0,0 0,48",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1,
+        "color": "#181818"
+      },
+      "arrow": [
+        null,
+        "arrow"
+      ]
+    },
+    {
+      "elementId": "picture_062",
+      "bounds": [
+        1087.0,
+        234.83783783783784,
+        248.0,
+        184.32432432432432
+      ],
+      "shadow": {
+        "blur": 4,
+        "color": "#0000002E",
+        "offset": [
+          2,
+          3
+        ]
+      },
+      "elementType": "image",
+      "src": "media/Placement_Issues_0301.png",
+      "fit": {
+        "mode": "contain"
+      }
+    },
+    {
+      "elementId": "rect_063",
+      "bounds": [
+        1087.0,
+        234.83783783783784,
+        248.0,
+        184.32432432432432
+      ],
+      "elementType": "shape",
+      "shapeName": "rect",
+      "border": {
+        "style": "solid",
+        "width": 0.65,
+        "color": "#696969"
+      }
+    },
+    {
+      "elementId": "text_064",
+      "bounds": [
+        1087,
+        429,
+        248,
+        28
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Generated image 301",
+        "fontFamily": "Times New Roman",
+        "fontSize": 18,
+        "color": "#181818",
+        "bold": true,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "line_065",
+      "elementType": "line",
+      "bounds": [
+        1211,
+        465,
+        0,
+        31
+      ],
+      "viewBox": [
+        1,
+        31
+      ],
+      "points": "0,0 0,31",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1,
+        "color": "#181818"
+      },
+      "arrow": [
+        null,
+        "arrow"
+      ]
+    },
+    {
+      "elementId": "text_066",
+      "bounds": [
+        1076,
+        500,
+        270,
+        51
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Human review\nand YOLO annotation",
+        "fontFamily": "Times New Roman",
+        "fontSize": 18,
+        "color": "#181818",
+        "bold": true,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "line_067",
+      "elementType": "line",
+      "bounds": [
+        1211,
+        559,
+        0,
+        22
+      ],
+      "viewBox": [
+        1,
+        22
+      ],
+      "points": "0,0 0,22",
+      "curve": "sharp",
+      "border": {
+        "style": "solid",
+        "width": 1,
+        "color": "#181818"
+      },
+      "arrow": [
+        null,
+        "arrow"
+      ]
+    },
+    {
+      "elementId": "text_068",
+      "bounds": [
+        1048,
+        585,
+        309,
+        29
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Arm C: 1,085 images",
+        "fontFamily": "Times New Roman",
+        "fontSize": 22,
+        "color": "#181818",
+        "bold": true,
+        "italic": false,
+        "align": [
+          "center",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    },
+    {
+      "elementId": "text_069",
+      "bounds": [
+        414,
+        598,
+        610,
+        24
+      ],
+      "elementType": "text",
+      "content": {
+        "text": "Reference pairing shown for image 301; sampling settings can vary across C.",
+        "fontFamily": "Times New Roman",
+        "fontSize": 12,
+        "color": "#181818",
+        "bold": false,
+        "italic": true,
+        "align": [
+          "left",
+          "middle"
+        ],
+        "lineHeight": 1,
+        "wrap": true
+      }
+    }
+  ]
+}

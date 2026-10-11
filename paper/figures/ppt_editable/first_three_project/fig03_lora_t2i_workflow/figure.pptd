@@ -1,0 +1,11 @@
+{
+  "version": "v2",
+  "title": "real93 LoRA training and text-to-image synthesis (arm D)",
+  "size": [
+    1340,
+    850
+  ],
+  "pages": [
+    "pages/figure.page"
+  ]
+}

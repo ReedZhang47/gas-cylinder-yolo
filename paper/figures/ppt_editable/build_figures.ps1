@@ -53,9 +53,10 @@ function Add-Object($slide, $o) {
             if ($o.orientation -eq 'upward') { $shape.TextFrame2.Orientation = 3 }
             if ($o.rotation) { $shape.Rotation = [single]$o.rotation }
         }
-        { $_ -in 'rect','ellipse' } {
-            $type = $(if ($o.kind -eq 'ellipse') { 9 } else { 1 })
+        { $_ -in 'rect','ellipse','roundrect' } {
+            $type = $(if ($o.kind -eq 'ellipse') { 9 } elseif ($o.kind -eq 'roundrect') { 5 } else { 1 })
             $shape = $slide.Shapes.AddShape($type, [single]$o.x, [single]$o.y, [single]$o.w, [single]$o.h)
+            if ($o.kind -eq 'roundrect') { $shape.Adjustments.Item(1) = 0.08 }
             if ($o.fill) { $shape.Fill.Solid(); $shape.Fill.ForeColor.RGB = Rgb $o.fill } else { $shape.Fill.Visible = 0 }
             if ($o.stroke) {
                 $shape.Line.ForeColor.RGB = Rgb $o.stroke
@@ -76,6 +77,15 @@ function Add-Object($slide, $o) {
             $shape.Line.Visible = 0
         }
         default { throw "Unknown object kind: $($o.kind)" }
+    }
+    if ($o.rotation) { $shape.Rotation = [single]$o.rotation }
+    if ($o.shadow) {
+        $shape.Shadow.Visible = -1
+        $shape.Shadow.ForeColor.RGB = Rgb '#000000'
+        $shape.Shadow.Transparency = 0.82
+        $shape.Shadow.Blur = 4
+        $shape.Shadow.OffsetX = 2
+        $shape.Shadow.OffsetY = 3
     }
     $shape.Name = $o.name
     return $shape
@@ -102,6 +112,7 @@ function Add-FigureSlide($deck,$figure,[bool]$fit = $false) {
         Add-Object $slide $draw | Out-Null
     }
     $slide.Tags.Add('FigureNumber',[string]$figure.number)
+    $slide.SlideShowTransition.EntryEffect = 1793
     foreach($shape in $slide.NotesPage.Shapes) {
         if($shape.Type -eq 14 -and $shape.PlaceholderFormat.Type -eq 2) {
             $shape.TextFrame.TextRange.Text = $figure.notes
@@ -120,7 +131,7 @@ foreach($figure in $selected) {
     $deck.PageSetup.SlideHeight = [single]$figure.height
     $slide = Add-FigureSlide $deck $figure
     $path = Join-Path $taskRoot "$($figure.stem).pptx"
-    $deck.SaveAs($path,24)
+    $deck.SaveAs($path,24,-1)
     $previewHeight = [int][Math]::Round(1920*$figure.height/$figure.width)
     $slide.Export((Join-Path $previewRoot "$($figure.stem).png"),'PNG',1920,$previewHeight)
     $overflow = @()
