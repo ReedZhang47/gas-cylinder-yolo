@@ -8,6 +8,8 @@
 
 ## 正文状态
 
+2026-10-09 新增 D 的 493→1085 规模实验：D493 从全部 D1085 等概率、无放回随机抽一次（seed 42），已冻结 493 图/621 框，六 detector 沿用 C493 的训练与评测。完整流水线于 2026-10-10 北京时间 01:44 启动、06:20 完成，D493 结果已落盘，数值待独立验收；随后补 C/D 两条规模曲线及 D1085−D493 配对区间。C493 是早期批次而 D493 是随机子集，方法与图注须说明构造差别；本项是 D1085 结果已知后的扩展。证据与入口见 `experiments/v5_d_scale/`、`docs/D_SCALE_RUNBOOK.md`。
+
 paper/working_paper.tex 是英文工作稿。方法与 v4 三臂、规模实验可依据已落盘 JSON 写实；D 的 LoRA 拟合、候选生成和人工筛选已可写实：2026-10-04 原两组生成 1308 张候选，随后筛选并补充 new24；2026-10-08 核验最终 new150 551＋real93 421＋new24 113＝1085 张，位于 `D:\gas_cylinders\D1085\images`。2026-10-09 D 标注、六 detector 训练、三层评估与统计已完成验收（1085 图、1357 框）。联合 OOF mAP50-95 0.6479，D−A/B 的区间为正，D−C 区间跨零；结论不可写为 D 优于 C。完整数字与诊断见 `experiments/v5_d/acceptance.md`。C/D 2170 张的 seed/提示词和 24 段新增提示词已归档，方法与来源映射见 `docs/v5_prompts/d1085_review_and_metadata_20261008.md`；原候选生成参数和冻结哈希见 `docs/v5_prompts/full_generation_20261004.md`。逐图参数以 PNG 元数据为准，工作流使用工作区 JSON，不再重复读取 Comfy Desktop 日志。本次仅更新计划和数据证据入口，正文及图件内容待后续统一同步。
 
 2026-10-06 图件改为可人工调整的 PowerPoint COM 工作稿，入口为 `paper/figures/ppt_editable/`。原 Fig. 2 拆为新 Fig. 2 Image-Edit 与新 Fig. 3 LoRA T2I，后续编号顺延；已重绘新 Fig. 1–8、11，包括原 v4 规模图，原 Fig. 4 的结果改为新 Fig. 5 柱形图。原约 12 图规划暂为 13 图，清单与映射见 `paper/FIGURES.md`。本轮只制作 PPT 草稿，不导出 PDF、不改正文图号与 LaTeX 引用；当前 TeX 仍使用旧图。

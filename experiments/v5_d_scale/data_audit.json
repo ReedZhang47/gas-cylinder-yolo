@@ -1,0 +1,15 @@
+{
+  "images": 493,
+  "labels": 493,
+  "positive": 321,
+  "empty": 172,
+  "boxes": 621,
+  "sources": {
+    "new150": 248,
+    "real93": 190,
+    "new24": 55
+  },
+  "unique_image_hashes": 493,
+  "composition_role": "observed after the single random draw; no quotas, filtering or redraw",
+  "parent_audit": "D:/yolo/experiments/v5_d/data_audit.json"
+}

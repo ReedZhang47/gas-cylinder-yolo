@@ -1,0 +1,7 @@
+# Frozen random D493 subset; val=train is diagnostic only.
+path: D:/gas_cylinders/D1085
+train: D:/yolo/experiments/v5_d_scale/D493_train.txt
+val: D:/yolo/experiments/v5_d_scale/D493_train.txt
+nc: 1
+names:
+  0: Placement Issues

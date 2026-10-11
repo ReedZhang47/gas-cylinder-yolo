@@ -1,0 +1,495 @@
+{
+  "params": {
+    "primary_metric": "mAP50-95",
+    "reported_metrics": [
+      "mAP50-95",
+      "mAP50"
+    ],
+    "n_boot": 10000,
+    "seed": 0,
+    "cluster": "dev61 image (no scene-group metadata available; boxes are never resampled alone)",
+    "design": "paired: both arms scored on the same resampled image set"
+  },
+  "arms": {
+    "D493v5": "D_LoRA493",
+    "D1085v5": "D_LoRA1085"
+  },
+  "comparisons": [
+    {
+      "target": "joint",
+      "detector": null,
+      "arm_a": "D493v5",
+      "arm_b": "D1085v5",
+      "point_a": {
+        "mAP50-95": 0.549635,
+        "mAP50": 0.739902
+      },
+      "point_b": {
+        "mAP50-95": 0.647895,
+        "mAP50": 0.820871
+      },
+      "observed_delta": {
+        "mAP50-95": 0.09826,
+        "mAP50": 0.080969
+      },
+      "n_boot": 10000,
+      "n_degenerate_resamples": 0,
+      "mAP50-95": {
+        "mean_delta": 0.097693,
+        "ci95": [
+          -0.02678,
+          0.260817
+        ],
+        "prob_delta_gt0": 0.9164
+      },
+      "mAP50": {
+        "mean_delta": 0.077949,
+        "ci95": [
+          -0.046928,
+          0.245023
+        ],
+        "prob_delta_gt0": 0.8394
+      }
+    },
+    {
+      "target": "fixed_endpoint",
+      "detector": "yolov8s",
+      "arm_a": "D493v5",
+      "arm_b": "D1085v5",
+      "point_a": {
+        "mAP50-95": 0.636802,
+        "mAP50": 0.846164
+      },
+      "point_b": {
+        "mAP50-95": 0.685146,
+        "mAP50": 0.852123
+      },
+      "observed_delta": {
+        "mAP50-95": 0.048344,
+        "mAP50": 0.005959
+      },
+      "n_boot": 10000,
+      "n_degenerate_resamples": 0,
+      "mAP50-95": {
+        "mean_delta": 0.047711,
+        "ci95": [
+          -0.01618,
+          0.111991
+        ],
+        "prob_delta_gt0": 0.933
+      },
+      "mAP50": {
+        "mean_delta": 0.00349,
+        "ci95": [
+          -0.053906,
+          0.057465
+        ],
+        "prob_delta_gt0": 0.5605
+      }
+    },
+    {
+      "target": "fixed_endpoint",
+      "detector": "yolov8m",
+      "arm_a": "D493v5",
+      "arm_b": "D1085v5",
+      "point_a": {
+        "mAP50-95": 0.594124,
+        "mAP50": 0.82905
+      },
+      "point_b": {
+        "mAP50-95": 0.642509,
+        "mAP50": 0.840832
+      },
+      "observed_delta": {
+        "mAP50-95": 0.048385,
+        "mAP50": 0.011782
+      },
+      "n_boot": 10000,
+      "n_degenerate_resamples": 0,
+      "mAP50-95": {
+        "mean_delta": 0.048468,
+        "ci95": [
+          -0.01769,
+          0.106907
+        ],
+        "prob_delta_gt0": 0.9355
+      },
+      "mAP50": {
+        "mean_delta": 0.011539,
+        "ci95": [
+          -0.040854,
+          0.067036
+        ],
+        "prob_delta_gt0": 0.661
+      }
+    },
+    {
+      "target": "fixed_endpoint",
+      "detector": "yolo11s",
+      "arm_a": "D493v5",
+      "arm_b": "D1085v5",
+      "point_a": {
+        "mAP50-95": 0.601906,
+        "mAP50": 0.793528
+      },
+      "point_b": {
+        "mAP50-95": 0.698026,
+        "mAP50": 0.875542
+      },
+      "observed_delta": {
+        "mAP50-95": 0.09612,
+        "mAP50": 0.082014
+      },
+      "n_boot": 10000,
+      "n_degenerate_resamples": 0,
+      "mAP50-95": {
+        "mean_delta": 0.097422,
+        "ci95": [
+          0.023093,
+          0.185758
+        ],
+        "prob_delta_gt0": 0.9962
+      },
+      "mAP50": {
+        "mean_delta": 0.0792,
+        "ci95": [
+          0.00967,
+          0.160253
+        ],
+        "prob_delta_gt0": 0.9872
+      }
+    },
+    {
+      "target": "fixed_endpoint",
+      "detector": "yolo11m",
+      "arm_a": "D493v5",
+      "arm_b": "D1085v5",
+      "point_a": {
+        "mAP50-95": 0.60217,
+        "mAP50": 0.792259
+      },
+      "point_b": {
+        "mAP50-95": 0.644376,
+        "mAP50": 0.841324
+      },
+      "observed_delta": {
+        "mAP50-95": 0.042206,
+        "mAP50": 0.049065
+      },
+      "n_boot": 10000,
+      "n_degenerate_resamples": 0,
+      "mAP50-95": {
+        "mean_delta": 0.039806,
+        "ci95": [
+          -0.021065,
+          0.099827
+        ],
+        "prob_delta_gt0": 0.8966
+      },
+      "mAP50": {
+        "mean_delta": 0.046463,
+        "ci95": [
+          0.003935,
+          0.092222
+        ],
+        "prob_delta_gt0": 0.9835
+      }
+    },
+    {
+      "target": "fixed_endpoint",
+      "detector": "yolo26s",
+      "arm_a": "D493v5",
+      "arm_b": "D1085v5",
+      "point_a": {
+        "mAP50-95": 0.536056,
+        "mAP50": 0.737835
+      },
+      "point_b": {
+        "mAP50-95": 0.696072,
+        "mAP50": 0.881153
+      },
+      "observed_delta": {
+        "mAP50-95": 0.160016,
+        "mAP50": 0.143318
+      },
+      "n_boot": 10000,
+      "n_degenerate_resamples": 0,
+      "mAP50-95": {
+        "mean_delta": 0.158821,
+        "ci95": [
+          0.066043,
+          0.265294
+        ],
+        "prob_delta_gt0": 0.9999
+      },
+      "mAP50": {
+        "mean_delta": 0.139953,
+        "ci95": [
+          0.022901,
+          0.272172
+        ],
+        "prob_delta_gt0": 0.9905
+      }
+    },
+    {
+      "target": "fixed_endpoint",
+      "detector": "yolo26m",
+      "arm_a": "D493v5",
+      "arm_b": "D1085v5",
+      "point_a": {
+        "mAP50-95": 0.57276,
+        "mAP50": 0.765788
+      },
+      "point_b": {
+        "mAP50-95": 0.614904,
+        "mAP50": 0.780901
+      },
+      "observed_delta": {
+        "mAP50-95": 0.042144,
+        "mAP50": 0.015113
+      },
+      "n_boot": 10000,
+      "n_degenerate_resamples": 0,
+      "mAP50-95": {
+        "mean_delta": 0.041735,
+        "ci95": [
+          -0.063781,
+          0.160674
+        ],
+        "prob_delta_gt0": 0.7598
+      },
+      "mAP50": {
+        "mean_delta": 0.012262,
+        "ci95": [
+          -0.125695,
+          0.167609
+        ],
+        "prob_delta_gt0": 0.5469
+      }
+    },
+    {
+      "target": "oof",
+      "detector": "yolov8s",
+      "arm_a": "D493v5",
+      "arm_b": "D1085v5",
+      "point_a": {
+        "mAP50-95": 0.607615,
+        "mAP50": 0.809385
+      },
+      "point_b": {
+        "mAP50-95": 0.660895,
+        "mAP50": 0.837722
+      },
+      "observed_delta": {
+        "mAP50-95": 0.05328,
+        "mAP50": 0.028337
+      },
+      "n_boot": 10000,
+      "n_degenerate_resamples": 0,
+      "mAP50-95": {
+        "mean_delta": 0.052723,
+        "ci95": [
+          -0.000876,
+          0.111091
+        ],
+        "prob_delta_gt0": 0.9727
+      },
+      "mAP50": {
+        "mean_delta": 0.027341,
+        "ci95": [
+          -0.028907,
+          0.081838
+        ],
+        "prob_delta_gt0": 0.8416
+      }
+    },
+    {
+      "target": "oof",
+      "detector": "yolov8m",
+      "arm_a": "D493v5",
+      "arm_b": "D1085v5",
+      "point_a": {
+        "mAP50-95": 0.587618,
+        "mAP50": 0.814886
+      },
+      "point_b": {
+        "mAP50-95": 0.603487,
+        "mAP50": 0.803864
+      },
+      "observed_delta": {
+        "mAP50-95": 0.015869,
+        "mAP50": -0.011022
+      },
+      "n_boot": 10000,
+      "n_degenerate_resamples": 0,
+      "mAP50-95": {
+        "mean_delta": 0.016274,
+        "ci95": [
+          -0.073387,
+          0.080753
+        ],
+        "prob_delta_gt0": 0.6943
+      },
+      "mAP50": {
+        "mean_delta": -0.010418,
+        "ci95": [
+          -0.10387,
+          0.063594
+        ],
+        "prob_delta_gt0": 0.4321
+      }
+    },
+    {
+      "target": "oof",
+      "detector": "yolo11s",
+      "arm_a": "D493v5",
+      "arm_b": "D1085v5",
+      "point_a": {
+        "mAP50-95": 0.614839,
+        "mAP50": 0.791537
+      },
+      "point_b": {
+        "mAP50-95": 0.698026,
+        "mAP50": 0.875542
+      },
+      "observed_delta": {
+        "mAP50-95": 0.083187,
+        "mAP50": 0.084005
+      },
+      "n_boot": 10000,
+      "n_degenerate_resamples": 0,
+      "mAP50-95": {
+        "mean_delta": 0.084237,
+        "ci95": [
+          0.032856,
+          0.146816
+        ],
+        "prob_delta_gt0": 0.9995
+      },
+      "mAP50": {
+        "mean_delta": 0.082311,
+        "ci95": [
+          0.026689,
+          0.15197
+        ],
+        "prob_delta_gt0": 0.9985
+      }
+    },
+    {
+      "target": "oof",
+      "detector": "yolo11m",
+      "arm_a": "D493v5",
+      "arm_b": "D1085v5",
+      "point_a": {
+        "mAP50-95": 0.608985,
+        "mAP50": 0.812715
+      },
+      "point_b": {
+        "mAP50-95": 0.624107,
+        "mAP50": 0.838209
+      },
+      "observed_delta": {
+        "mAP50-95": 0.015122,
+        "mAP50": 0.025494
+      },
+      "n_boot": 10000,
+      "n_degenerate_resamples": 0,
+      "mAP50-95": {
+        "mean_delta": 0.014231,
+        "ci95": [
+          -0.051989,
+          0.077784
+        ],
+        "prob_delta_gt0": 0.6644
+      },
+      "mAP50": {
+        "mean_delta": 0.023112,
+        "ci95": [
+          -0.038322,
+          0.073027
+        ],
+        "prob_delta_gt0": 0.8094
+      }
+    },
+    {
+      "target": "oof",
+      "detector": "yolo26s",
+      "arm_a": "D493v5",
+      "arm_b": "D1085v5",
+      "point_a": {
+        "mAP50-95": 0.611364,
+        "mAP50": 0.825005
+      },
+      "point_b": {
+        "mAP50-95": 0.682278,
+        "mAP50": 0.847403
+      },
+      "observed_delta": {
+        "mAP50-95": 0.070914,
+        "mAP50": 0.022398
+      },
+      "n_boot": 10000,
+      "n_degenerate_resamples": 0,
+      "mAP50-95": {
+        "mean_delta": 0.07106,
+        "ci95": [
+          -0.017704,
+          0.177101
+        ],
+        "prob_delta_gt0": 0.931
+      },
+      "mAP50": {
+        "mean_delta": 0.019131,
+        "ci95": [
+          -0.09601,
+          0.145162
+        ],
+        "prob_delta_gt0": 0.6188
+      }
+    },
+    {
+      "target": "oof",
+      "detector": "yolo26m",
+      "arm_a": "D493v5",
+      "arm_b": "D1085v5",
+      "point_a": {
+        "mAP50-95": 0.577387,
+        "mAP50": 0.79275
+      },
+      "point_b": {
+        "mAP50-95": 0.599699,
+        "mAP50": 0.787384
+      },
+      "observed_delta": {
+        "mAP50-95": 0.022312,
+        "mAP50": -0.005366
+      },
+      "n_boot": 10000,
+      "n_degenerate_resamples": 0,
+      "mAP50-95": {
+        "mean_delta": 0.020422,
+        "ci95": [
+          -0.083679,
+          0.132876
+        ],
+        "prob_delta_gt0": 0.6332
+      },
+      "mAP50": {
+        "mean_delta": -0.007212,
+        "ci95": [
+          -0.147804,
+          0.141576
+        ],
+        "prob_delta_gt0": 0.4523
+      }
+    }
+  ],
+  "provenance": {
+    "input_manifest_sha256": "dbdc1a30ac4e987db1e27afb92f0fac8e0cec25d92d2dd0c44a9b5e3c015e58a",
+    "D493_result_sha256": "46470319828b6f59e3deaa5c183395a8a3dedc4b7855cb0561157b3a03b7bc94",
+    "D493_cache_sha256": "98e5585b671f20bf5b631bc8c66b0170ccced065313460b2225265e1647e37de",
+    "D1085_result_sha256": "d72de987b2c1fb77a08a1dd5715c74630e6c6a76da10734d9a437d222747529a",
+    "D1085_cache_sha256": "c8ea5ba68a96b0b465e4974af7f71d9542f24e574569f9b2247ba018e20e1286"
+  },
+  "status": "v5 scale extension after D1085 results; one subset and one training seed"
+}

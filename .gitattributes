@@ -11,3 +11,9 @@ scripts/present_lora_task_evaluation.py -text
 scripts/audit_lora_compare.py -text
 # Matplotlib SVG paths contain generated trailing spaces.
 *.svg whitespace=-trailing-space
+
+# D493 frozen manifests and source retain their recorded hashes.
+experiments/v5_d_scale/** -text
+scripts/prepare_v5_d_scale.py -text
+scripts/run_v5_d_scale.py -text
+scripts/eval_v5_d_scale.py -text

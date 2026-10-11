@@ -1,6 +1,22 @@
 # 已核验进展 · v5
 
-最近核验：2026-10-09（中国标准时间）。D 六 detector 训练、dev61 三层评估及 D−A/B/C 配对统计全部完成，验收通过并保留两条诊断记录。完整流水线于 00:18:32 启动、10:04:37 结束，耗时 9 小时 46 分钟；当前进入四臂论文整合阶段。
+最近核验：2026-10-11（中国标准时间）。D1085 六 detector 训练、dev61 三层评估及 D−A/B/C 配对统计已完成验收。D493 完整流水线于 2026-10-10 01:44:16 启动、06:20:50 完成，训练、评测及规模配对统计已落盘；执行记录为 completed，独立验收待完成。LoRA 参数评价已完成最终验收。
+
+## LoRA 参数评价最终验收（2026-10-11）
+
+153 张输入矩阵及 PNG 有效采样连线已核验，协议在评分前冻结。官方 OpenAI CLIP ViT-L/14（224）以 CUDA float32 完成全部 153 个 CLIP-T 分数；三条评价短文本为 45/38/44 token，无截断。17 行汇总表、匹配差值、排名敏感性、主图 PDF/SVG/300 dpi PNG 和九页完整网格已生成；两套匿名包每人 153 张，PNG 元数据已去除，像素与原图一致。原图前后哈希不变。
+
+双人各 153 张评分及 110 张分歧人工裁决均已完成；43 张使用双方一致答案，共 153 张最终标签，无剩余人工评分。原始 JSON 位于 `experiments/lora_compare/review/`，不可变导入副本在 `restricted/raw/`，最终标签在 `restricted/final_labels.json`。冻结原图、CLIP 分数和协议保持不变。
+
+现用 1860 / 0.8：CLIP 30.41±1.51（16 个 LoRA 配置中第 2），训练可用 6/9，很真实 6/9（观察最高）。相较 1500 / 0.8，CLIP 低 0.35、可用和很真实均多 2；相较 1860 / 0.2，CLIP 高 0.83、可用少 1、很真实多 3。三指标呈现支持其作为目标检测数据的优先候选；完整提示词满足结果仍保留。主图调整是阅览结果后的呈现选择，未修改原始指标或标签。
+
+正式报告：[report.md](experiments/lora_compare/report.md)；论文文本：[methods_results.md](experiments/lora_compare/methods_results.md)；主图：[lora_final_evaluation.pdf](paper/figures/lora_compare/lora_final_evaluation.pdf)；主表：[lora_task_evaluation.tex](paper/tables/lora_task_evaluation.tex)；符合性补充图：[lora_prompt_compliance_supplement.pdf](paper/figures/lora_compare/lora_prompt_compliance_supplement.pdf)。完整数据为 [summary.csv](experiments/lora_compare/summary.csv) 和 [final_results.json](experiments/lora_compare/human_analysis/final_results.json)，验收哈希在 [acceptance.json](experiments/lora_compare/acceptance.json)。
+
+一次性脚本、渲染预览及废弃 v1/v2 评审 ZIP 已清理；版本源码、协议、旧评审页面、真实评分及当前匿名包保留。删除明细和哈希见 [cleanup_manifest.json](experiments/lora_compare/cleanup_manifest.json)，只读复核见 [audit_lora_compare.py](scripts/audit_lora_compare.py)。此项是补充参数评价，不改变 D 检测实验。
+
+## D 规模实验准备（既有记录）
+
+从 D1085 按文件名排序的总体中，用 Python `random.Random(42).sample` 等概率、无放回抽取 493 张，一次冻结、不分层、不重抽。实际 321 张有框、172 张空标、621 框；来源 new150 248＋real93 190＋new24 55。C493 与 D1085 六模型训练参数已逐项核对一致，D493 使用相同 300 轮和 dev61 三层协议；规模统计为 D1085−D493，复用大点结果。冻结与执行状态在 `experiments/v5_d_scale/`，命令和恢复见 `docs/D_SCALE_RUNBOOK.md`；日志位于 `logs/v5_d_scale/`；六模型流水线已完成，结果在 `v5_protocol_D493v5.json` 和 `bootstrap_D1085_minus_D493.json`，独立验收待完成。C493 是早期批次，D493 是随机子集，写作需说明构造差别。
 
 ## D 验收
 

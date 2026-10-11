@@ -1,0 +1,13 @@
+{
+  "launched_at": "2026-10-10T01:44:16.0944042+08:00",
+  "pipeline_started_at": "2026-10-10T01:44:19.391841+08:00",
+  "launcher_pid": 36732,
+  "pipeline_pid": 30272,
+  "command": "D:\\yolo\\.venv\\Scripts\\python.exe -u D:\\yolo\\scripts\\run_v5_d_scale.py --execute",
+  "window_style": "Hidden",
+  "stdout": "D:/yolo/logs/v5_d_scale/20261010_014416_pipeline.stdout.log",
+  "stderr": "D:/yolo/logs/v5_d_scale/20261010_014416_pipeline.stderr.log",
+  "first_training_log": "D:/yolo/logs/v5_d_scale/20261010_014419_train_yolov8s.log",
+  "first_batch": 16,
+  "live_status": "execution.json and runtime logs; this file is launch evidence"
+}

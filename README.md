@@ -6,13 +6,17 @@
 
 后续接手不再重复读取 Comfy Desktop 日志：逐图提示词、seed 和参数以 PNG 元数据为准，工作流使用工作区 `docs/v5_prompts/` 中保存的 JSON。历史加载验证已留档；C/D 的 seed 与提示词统一导出已完成。
 
+新增 D493 规模实验已从 D1085 随机无放回冻结 493 张（抽样 seed 42），六模型训练和评测与 C493 对齐。作者回复“继续”后，完整流水线于 2026-10-10 北京时间 01:44 启动、06:20 完成，训练、评测与配对统计结果已落盘，独立验收待完成；入口见 `docs/D_SCALE_RUNBOOK.md`。
+
 ## 接手入口
 
 | 需要做什么 | 入口 |
 |---|---|
 | 当前执行队列 | NEXT_STEPS.md |
 | D 六 detector 启动与恢复 | docs/D_DETECTOR_RUNBOOK.md |
+| D493 规模实验准备与执行 | docs/D_SCALE_RUNBOOK.md；experiments/v5_d_scale/ |
 | LoRA 训练与验证证据 | docs/v5_prompts/qwen21_lora_training_validation.md |
+| LoRA 参数评价最终报告、数据与图件 | [最终报告](experiments/lora_compare/report.md)；[主图](paper/figures/lora_compare/lora_final_evaluation.pdf)；[验收](experiments/lora_compare/acceptance.json) |
 | 已核验结果 | PROGRESS.md；experiments/v4_protocol/、experiments/v5_d/ |
 | 实验与统计口径 | EXPERIMENTS.md |
 | 常用命令 | COMMANDS.md |
@@ -20,6 +24,21 @@
 | C/D seed 与提示词、D 审核来源 | docs/v5_prompts/cd1085_seed_prompts.csv；docs/v5_prompts/d1085_review_and_metadata_20261008.md |
 | 论文与图件状态、可编辑 PPT | paper/PAPER_PLAN.md、paper/FIGURES.md；paper/figures/ppt_editable/ |
 | 正文工作稿 | paper/working_paper.tex |
+
+## LoRA 参数评价产物（2026-10-11 已完成）
+
+153 张图的 CLIP 自动评价、双人各 153 张评分和 110 张分歧人工裁决已完成。主图聚焦 CLIP、训练可用性和真实性，1860 / 0.8 为目标检测数据的优先候选；提示词满足指标保留在补充图和完整结果中。该呈现调整发生在阅览结果之后，记录见 [呈现修订](experiments/lora_compare/human_analysis/presentation_amendment.json)。
+
+| 产物 | 位置 |
+|---|---|
+| 最终结论、论文方法与结果文本 | [report.md](experiments/lora_compare/report.md)、[methods_results.md](experiments/lora_compare/methods_results.md) |
+| 三指标主图与正文表 | [主图 PDF](paper/figures/lora_compare/lora_final_evaluation.pdf)、[主表 TeX](paper/tables/lora_task_evaluation.tex)；同目录保留 SVG / 300 dpi PNG |
+| 提示词符合性补充图、图像对照与完整网格 | [符合性补充图](paper/figures/lora_compare/lora_prompt_compliance_supplement.pdf)、[图像对照](paper/figures/lora_compare/lora_parameter_sensitivity.pdf)、[九页网格](paper/figures/lora_compare/lora_parameter_sensitivity_supplement.pdf) |
+| 完整指标、逐提示词和 seed 结果 | [summary.csv](experiments/lora_compare/summary.csv)、[final_results.json](experiments/lora_compare/human_analysis/final_results.json)、[完整表 TeX](paper/tables/lora_parameter_sensitivity.tex) |
+| 真实评分、裁决与最终逐图标签 | [原始 JSON 目录](experiments/lora_compare/review/)、[最终标签](experiments/lora_compare/restricted/final_labels.json)；原始导入副本在 `experiments/lora_compare/restricted/raw/` |
+| 冻结协议、验收与清理记录 | [自动协议](experiments/lora_compare/protocol.json)、[人工协议](experiments/lora_compare/review_protocol.json)、[验收](experiments/lora_compare/acceptance.json)、[清理清单](experiments/lora_compare/cleanup_manifest.json) |
+
+只读复核入口为 [scripts/audit_lora_compare.py](scripts/audit_lora_compare.py)，复现顺序见 [COMMANDS.md](COMMANDS.md)。旧协议与呈现版本保留在 `experiments/lora_compare/versions/`；已清理一次性脚本、渲染预览和已废弃的 v1/v2 评审 ZIP，保留旧评审页面和说明。`.tmp/lora-eval/` 是复现 CLIP 所需的本地模型与依赖，继续保留。
 
 ## 数据与解释边界
 

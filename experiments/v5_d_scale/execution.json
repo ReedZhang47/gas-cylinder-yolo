@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "prepared_at": "2026-10-09T23:35:13.711810+08:00",
+  "started_at": "2026-10-10T01:44:19.391841+08:00",
+  "finished_at": "2026-10-10T06:20:50.259060+08:00",
+  "stage": "all",
+  "last_launch_at": "2026-10-10T01:44:19.391851+08:00",
+  "input_manifest_sha256": "dbdc1a30ac4e987db1e27afb92f0fac8e0cec25d92d2dd0c44a9b5e3c015e58a",
+  "current_stage": "bootstrap",
+  "last_finished_stage": "all"
+}
