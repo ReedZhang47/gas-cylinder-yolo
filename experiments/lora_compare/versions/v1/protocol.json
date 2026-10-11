@@ -1,0 +1,147 @@
+{
+  "version": "lora_compare_v1",
+  "prepared_at": "2026-10-10T19:06:24.082547+08:00",
+  "input_path": "D:\\gas_cylinders\\lora-compare",
+  "n": 153,
+  "configs": [
+    "no-lora",
+    "500-0.2",
+    "500-0.5",
+    "500-0.8",
+    "500-1.0",
+    "1000-0.2",
+    "1000-0.5",
+    "1000-0.8",
+    "1000-1.0",
+    "1500-0.2",
+    "1500-0.5",
+    "1500-0.8",
+    "1500-1.0",
+    "1860-0.2",
+    "1860-0.5",
+    "1860-0.8",
+    "1860-1.0"
+  ],
+  "prompts": [
+    "new150_010",
+    "new24_001",
+    "new24_010"
+  ],
+  "seeds": [
+    99999,
+    88888,
+    77777
+  ],
+  "full_prompts": {
+    "new150_010": "A realistic, unstaged construction-site inspection photograph with natural camera perspective and believable materials. A blue gas cylinder lies horizontally on a roof deck beside insulated ductwork, with a clear gap from all other materials. Exactly one complete industrial gas cylinder is visible; its full body has a clear outline, with no object crossing it. No other gas cylinders. No collage, illustration, watermark, captions, or legible brand text.",
+    "new24_001": "A realistic documentary photograph of a large group of twelve tall blue industrial gas cylinders stored upright inside a rectangular blue-painted steel cylinder storage cage at a Chinese construction site. The cage has four vertical steel posts, sturdy horizontal crossbars, an open top, and a clearly visible rectangular frame surrounding the entire group of cylinders. The cylinders are densely arranged in two rows, with weathered blue paint, rust marks, and individual metal valves. Wet concrete ground with puddles and reflections, reinforcing steel bars, concrete structures, and a tower crane in the background. Overcast rainy weather, eye-level three-quarter view, natural industrial lighting, realistic construction site photography.",
+    "new24_010": "A highly realistic photograph of eight tall silver-gray industrial gas cylinders standing closely together on the concrete floor of a partially covered construction storage area. The cylinders form a compact irregular cluster near an unfinished concrete column, with their individual valves and rounded metal shoulders visible at slightly different heights. Their surfaces show scratches, dirt, oxidation, and faded industrial markings. There is no enclosing gas cylinder cage, no steel storage frame, and no shared securing structure around the group. Timber planks, coiled electrical cables, metal scaffolding pipes, cement bags, and construction equipment appear nearby. Soft natural daylight entering from the open side of the shed, medium-distance eye-level photograph, realistic construction environment."
+  },
+  "clip_texts": {
+    "new150_010": "A realistic construction-site photograph of exactly one complete blue industrial gas cylinder lying horizontally on a roof deck beside insulated ductwork, with a clear gap, an unobstructed body, and no other cylinders.",
+    "new24_001": "A realistic construction-site photograph of twelve tall blue industrial gas cylinders standing upright in two rows inside an open-top rectangular blue steel storage cage, on wet concrete in rainy weather.",
+    "new24_010": "A realistic construction-site photograph of eight tall silver-gray industrial gas cylinders standing in a compact irregular cluster beside a concrete column in a partially covered storage area, with no enclosing cage or shared securing frame."
+  },
+  "token_counts": {
+    "new150_010": 45,
+    "new24_001": 38,
+    "new24_010": 44
+  },
+  "clip": {
+    "model": "ViT-L/14",
+    "resolution": 224,
+    "formula": "100*cosine(L2(image),L2(text))",
+    "dtype": "float32",
+    "source_commit": "d05afc436d78f1c48dc0dbf8e5980a9d471f35f6",
+    "preprocess": "official resize shortest edge, center crop 224, RGB, normalize",
+    "truncate": false
+  },
+  "prompt_checks": {
+    "new150_010": [
+      "恰好一个气瓶且无其它气瓶",
+      "蓝色、横卧",
+      "瓶身完整在画内、轮廓可辨、无物体横穿遮挡",
+      "屋面施工场景，邻近保温风管，气瓶与其它材料有可见间隙"
+    ],
+    "new24_001": [
+      "可确认恰好十二个气瓶",
+      "蓝色且竖直",
+      "呈两排排列",
+      "整组位于蓝色矩形钢制储存笼架内，开放顶、立柱与横杆可辨",
+      "湿混凝土地面及阴雨环境外观"
+    ],
+    "new24_010": [
+      "可确认恰好八个气瓶",
+      "银灰色且竖直",
+      "紧凑不规则聚集",
+      "整组无围合储瓶笼架、无共同固定框架",
+      "混凝土柱附近、部分遮盖的施工储存场景"
+    ]
+  },
+  "usable_checks": [
+    "至少一个可识别工业气瓶；可见瓶体、瓶肩或阀门无破坏身份的明显畸形或不可能融合。",
+    "达到标注可见性要求的气瓶，实例与边界足够清楚，可一致标注。合理透视、遮挡、边缘截断不单独否决。",
+    "可作为真实施工场景照片；无妨碍标注的严重拼贴、浮空、重复结构、伪文字覆盖或画质缺陷。"
+  ],
+  "reason_codes": [
+    "no_target",
+    "malformed_target",
+    "fused_instances",
+    "ambiguous_annotation",
+    "severe_scene_artifact",
+    "other"
+  ],
+  "human": {
+    "anonymous_seed": 20261010,
+    "order_seeds": {
+      "R1": 20261011,
+      "R2": 20261012
+    },
+    "positive": "all criteria pass",
+    "uncertain": "0 with uncertain status retained",
+    "pending": "NA, never zero",
+    "count": "integer or uncertain"
+  },
+  "ranking": {
+    "tolerance": 1e-06,
+    "order": "descending unrounded mean",
+    "ties": "rank interval; numerical tolerance is not equivalence"
+  },
+  "figure": {
+    "name": "lora_parameter_sensitivity",
+    "seed": 99999,
+    "prompts": [
+      "new150_010",
+      "new24_001"
+    ],
+    "panel_a": {
+      "strength": 0.8,
+      "steps": [
+        500,
+        1000,
+        1500,
+        1860
+      ]
+    },
+    "panel_b": {
+      "step": 1860,
+      "strengths": [
+        "no-lora",
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ]
+    },
+    "heatmap": "all 9 matched images/config; baseline outside grid",
+    "supplementary": "3 prompts x 3 seeds; all 153 images"
+  },
+  "input_digest": "2c28ffb82143ec905407114533553d5249c3f6201937e381d2db98927a7f86a0",
+  "code_hashes": {
+    "eval_lora_compare.py": "975a6355df9f521716335da83244fc19bda0e9b83f1b8c7d0e1f18cfe413869b",
+    "lora_review.html": "0b642d0ce2f553a95b7c7bd5d7286491efbd58644018fc691a6be2c309a1b827"
+  },
+  "plan_sha256": "0baf7d2645c429e6727a9286b3c11eb4d52a425a60d8559242e03fe2622223f8",
+  "base_alias": "Author confirmed qwen_image_2.1.safetensors is renamed qwen_image_2.1_int8_convrot.safetensors; not independently dual-file hash verified",
+  "role": "supplementary analysis specified before scores; some images previously seen; not generation preregistration"
+}

@@ -1,0 +1,17 @@
+{
+  "new150_010": {
+    "full": "A realistic, unstaged construction-site inspection photograph with natural camera perspective and believable materials. A blue gas cylinder lies horizontally on a roof deck beside insulated ductwork, with a clear gap from all other materials. Exactly one complete industrial gas cylinder is visible; its full body has a clear outline, with no object crossing it. No other gas cylinders. No collage, illustration, watermark, captions, or legible brand text.",
+    "evaluation": "A realistic construction-site photograph of exactly one complete blue industrial gas cylinder lying horizontally on a roof deck beside insulated ductwork, with a clear gap, an unobstructed body, and no other cylinders.",
+    "token_count": 45
+  },
+  "new24_001": {
+    "full": "A realistic documentary photograph of a large group of twelve tall blue industrial gas cylinders stored upright inside a rectangular blue-painted steel cylinder storage cage at a Chinese construction site. The cage has four vertical steel posts, sturdy horizontal crossbars, an open top, and a clearly visible rectangular frame surrounding the entire group of cylinders. The cylinders are densely arranged in two rows, with weathered blue paint, rust marks, and individual metal valves. Wet concrete ground with puddles and reflections, reinforcing steel bars, concrete structures, and a tower crane in the background. Overcast rainy weather, eye-level three-quarter view, natural industrial lighting, realistic construction site photography.",
+    "evaluation": "A realistic construction-site photograph of twelve tall blue industrial gas cylinders standing upright in two rows inside an open-top rectangular blue steel storage cage, on wet concrete in rainy weather.",
+    "token_count": 38
+  },
+  "new24_010": {
+    "full": "A highly realistic photograph of eight tall silver-gray industrial gas cylinders standing closely together on the concrete floor of a partially covered construction storage area. The cylinders form a compact irregular cluster near an unfinished concrete column, with their individual valves and rounded metal shoulders visible at slightly different heights. Their surfaces show scratches, dirt, oxidation, and faded industrial markings. There is no enclosing gas cylinder cage, no steel storage frame, and no shared securing structure around the group. Timber planks, coiled electrical cables, metal scaffolding pipes, cement bags, and construction equipment appear nearby. Soft natural daylight entering from the open side of the shed, medium-distance eye-level photograph, realistic construction environment.",
+    "evaluation": "A realistic construction-site photograph of eight tall silver-gray industrial gas cylinders standing in a compact irregular cluster beside a concrete column in a partially covered storage area, with no enclosing cage or shared securing frame.",
+    "token_count": 44
+  }
+}

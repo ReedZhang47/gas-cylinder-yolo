@@ -1,0 +1,5673 @@
+[
+  {
+    "blind_id": "LC001",
+    "R1": {
+      "blind_id": "LC001",
+      "usability": [
+        "uncertain",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:08:32.155Z"
+    },
+    "R2": {
+      "blind_id": "LC001",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:50:04.038Z"
+    }
+  },
+  {
+    "blind_id": "LC002",
+    "R1": {
+      "blind_id": "LC002",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:51:55.181Z"
+    },
+    "R2": {
+      "blind_id": "LC002",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:58:07.293Z"
+    }
+  },
+  {
+    "blind_id": "LC003",
+    "R1": {
+      "blind_id": "LC003",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:54:50.386Z"
+    },
+    "R2": {
+      "blind_id": "LC003",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:50:17.290Z"
+    }
+  },
+  {
+    "blind_id": "LC007",
+    "R1": {
+      "blind_id": "LC007",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:08:39.105Z"
+    },
+    "R2": {
+      "blind_id": "LC007",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact",
+          "unrealistic_scene"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:46:28.307Z"
+    }
+  },
+  {
+    "blind_id": "LC009",
+    "R1": {
+      "blind_id": "LC009",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:04:56.446Z"
+    },
+    "R2": {
+      "blind_id": "LC009",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:42:24.111Z"
+    }
+  },
+  {
+    "blind_id": "LC010",
+    "R1": {
+      "blind_id": "LC010",
+      "usability": [
+        "uncertain",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:09:52.611Z"
+    },
+    "R2": {
+      "blind_id": "LC010",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:35:41.068Z"
+    }
+  },
+  {
+    "blind_id": "LC013",
+    "R1": {
+      "blind_id": "LC013",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:00:44.078Z"
+    },
+    "R2": {
+      "blind_id": "LC013",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:50:11.152Z"
+    }
+  },
+  {
+    "blind_id": "LC014",
+    "R1": {
+      "blind_id": "LC014",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:05:36.497Z"
+    },
+    "R2": {
+      "blind_id": "LC014",
+      "usability": [
+        "pass",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:10:11.718Z"
+    }
+  },
+  {
+    "blind_id": "LC015",
+    "R1": {
+      "blind_id": "LC015",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:10:24.963Z"
+    },
+    "R2": {
+      "blind_id": "LC015",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:55:34.081Z"
+    }
+  },
+  {
+    "blind_id": "LC016",
+    "R1": {
+      "blind_id": "LC016",
+      "usability": [
+        "pass",
+        "fail"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:03:21.007Z"
+    },
+    "R2": {
+      "blind_id": "LC016",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:38:46.742Z"
+    }
+  },
+  {
+    "blind_id": "LC019",
+    "R1": {
+      "blind_id": "LC019",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:54:05.406Z"
+    },
+    "R2": {
+      "blind_id": "LC019",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:00:59.676Z"
+    }
+  },
+  {
+    "blind_id": "LC021",
+    "R1": {
+      "blind_id": "LC021",
+      "usability": [
+        "uncertain",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:05:18.118Z"
+    },
+    "R2": {
+      "blind_id": "LC021",
+      "usability": [
+        "fail",
+        "uncertain"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T06:34:57.474Z"
+    }
+  },
+  {
+    "blind_id": "LC023",
+    "R1": {
+      "blind_id": "LC023",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:02:18.485Z"
+    },
+    "R2": {
+      "blind_id": "LC023",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:42:50.485Z"
+    }
+  },
+  {
+    "blind_id": "LC024",
+    "R1": {
+      "blind_id": "LC024",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:59:23.274Z"
+    },
+    "R2": {
+      "blind_id": "LC024",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "fail"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:08:59.957Z"
+    }
+  },
+  {
+    "blind_id": "LC026",
+    "R1": {
+      "blind_id": "LC026",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:06:23.524Z"
+    },
+    "R2": {
+      "blind_id": "LC026",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "fail"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:32:29.689Z"
+    }
+  },
+  {
+    "blind_id": "LC027",
+    "R1": {
+      "blind_id": "LC027",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:00:01.827Z"
+    },
+    "R2": {
+      "blind_id": "LC027",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:40:31.299Z"
+    }
+  },
+  {
+    "blind_id": "LC028",
+    "R1": {
+      "blind_id": "LC028",
+      "usability": [
+        "uncertain",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:01:31.157Z"
+    },
+    "R2": {
+      "blind_id": "LC028",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:54:43.159Z"
+    }
+  },
+  {
+    "blind_id": "LC029",
+    "R1": {
+      "blind_id": "LC029",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:06:05.776Z"
+    },
+    "R2": {
+      "blind_id": "LC029",
+      "usability": [
+        "pass",
+        "fail"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:10:45.756Z"
+    }
+  },
+  {
+    "blind_id": "LC031",
+    "R1": {
+      "blind_id": "LC031",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:54:32.542Z"
+    },
+    "R2": {
+      "blind_id": "LC031",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "fail"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "unrealistic_scene"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:36:54.771Z"
+    }
+  },
+  {
+    "blind_id": "LC032",
+    "R1": {
+      "blind_id": "LC032",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:02:35.667Z"
+    },
+    "R2": {
+      "blind_id": "LC032",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:38:35.892Z"
+    }
+  },
+  {
+    "blind_id": "LC033",
+    "R1": {
+      "blind_id": "LC033",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:09:04.599Z"
+    },
+    "R2": {
+      "blind_id": "LC033",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:48:05.253Z"
+    }
+  },
+  {
+    "blind_id": "LC034",
+    "R1": {
+      "blind_id": "LC034",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:01:51.491Z"
+    },
+    "R2": {
+      "blind_id": "LC034",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:59:51.241Z"
+    }
+  },
+  {
+    "blind_id": "LC035",
+    "R1": {
+      "blind_id": "LC035",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:59:31.196Z"
+    },
+    "R2": {
+      "blind_id": "LC035",
+      "usability": [
+        "uncertain",
+        "pass"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:50:31.363Z"
+    }
+  },
+  {
+    "blind_id": "LC037",
+    "R1": {
+      "blind_id": "LC037",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:04:18.898Z"
+    },
+    "R2": {
+      "blind_id": "LC037",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "fail"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:36:09.760Z"
+    }
+  },
+  {
+    "blind_id": "LC039",
+    "R1": {
+      "blind_id": "LC039",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:08:04.360Z"
+    },
+    "R2": {
+      "blind_id": "LC039",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:27:22.175Z"
+    }
+  },
+  {
+    "blind_id": "LC040",
+    "R1": {
+      "blind_id": "LC040",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:58:09.298Z"
+    },
+    "R2": {
+      "blind_id": "LC040",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:47:31.990Z"
+    }
+  },
+  {
+    "blind_id": "LC043",
+    "R1": {
+      "blind_id": "LC043",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:51:49.608Z"
+    },
+    "R2": {
+      "blind_id": "LC043",
+      "usability": [
+        "pass",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "unrealistic_scene"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:41:27.884Z"
+    }
+  },
+  {
+    "blind_id": "LC045",
+    "R1": {
+      "blind_id": "LC045",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:06:42.446Z"
+    },
+    "R2": {
+      "blind_id": "LC045",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T06:31:57.620Z"
+    }
+  },
+  {
+    "blind_id": "LC046",
+    "R1": {
+      "blind_id": "LC046",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:05:50.300Z"
+    },
+    "R2": {
+      "blind_id": "LC046",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T06:35:43.585Z"
+    }
+  },
+  {
+    "blind_id": "LC048",
+    "R1": {
+      "blind_id": "LC048",
+      "usability": [
+        "pass",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:58:46.695Z"
+    },
+    "R2": {
+      "blind_id": "LC048",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:57:10.417Z"
+    }
+  },
+  {
+    "blind_id": "LC049",
+    "R1": {
+      "blind_id": "LC049",
+      "usability": [
+        "uncertain",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:51:30.418Z"
+    },
+    "R2": {
+      "blind_id": "LC049",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "fail"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:46:20.470Z"
+    }
+  },
+  {
+    "blind_id": "LC052",
+    "R1": {
+      "blind_id": "LC052",
+      "usability": [
+        "pass",
+        "fail"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:02:24.950Z"
+    },
+    "R2": {
+      "blind_id": "LC052",
+      "usability": [
+        "uncertain",
+        "uncertain"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:34:36.353Z"
+    }
+  },
+  {
+    "blind_id": "LC054",
+    "R1": {
+      "blind_id": "LC054",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:07:00.820Z"
+    },
+    "R2": {
+      "blind_id": "LC054",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:51:22.538Z"
+    }
+  },
+  {
+    "blind_id": "LC055",
+    "R1": {
+      "blind_id": "LC055",
+      "usability": [
+        "uncertain",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:53:42.171Z"
+    },
+    "R2": {
+      "blind_id": "LC055",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "fail"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "unrealistic_scene",
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:40:14.893Z"
+    }
+  },
+  {
+    "blind_id": "LC057",
+    "R1": {
+      "blind_id": "LC057",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:56:47.949Z"
+    },
+    "R2": {
+      "blind_id": "LC057",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:49:24.445Z"
+    }
+  },
+  {
+    "blind_id": "LC060",
+    "R1": {
+      "blind_id": "LC060",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:04:02.094Z"
+    },
+    "R2": {
+      "blind_id": "LC060",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:48:49.552Z"
+    }
+  },
+  {
+    "blind_id": "LC061",
+    "R1": {
+      "blind_id": "LC061",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:04:48.576Z"
+    },
+    "R2": {
+      "blind_id": "LC061",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:59:25.252Z"
+    }
+  },
+  {
+    "blind_id": "LC062",
+    "R1": {
+      "blind_id": "LC062",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:08:13.944Z"
+    },
+    "R2": {
+      "blind_id": "LC062",
+      "usability": [
+        "pass",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:09:20.152Z"
+    }
+  },
+  {
+    "blind_id": "LC063",
+    "R1": {
+      "blind_id": "LC063",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:54:20.360Z"
+    },
+    "R2": {
+      "blind_id": "LC063",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "unrealistic_scene",
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:54:07.062Z"
+    }
+  },
+  {
+    "blind_id": "LC064",
+    "R1": {
+      "blind_id": "LC064",
+      "usability": [
+        "uncertain",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:57:42.160Z"
+    },
+    "R2": {
+      "blind_id": "LC064",
+      "usability": [
+        "pass",
+        "fail"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "unrealistic_scene"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T06:33:49.974Z"
+    }
+  },
+  {
+    "blind_id": "LC065",
+    "R1": {
+      "blind_id": "LC065",
+      "usability": [
+        "pass",
+        "fail"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:02:43.880Z"
+    },
+    "R2": {
+      "blind_id": "LC065",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:32:54.290Z"
+    }
+  },
+  {
+    "blind_id": "LC066",
+    "R1": {
+      "blind_id": "LC066",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:05:44.421Z"
+    },
+    "R2": {
+      "blind_id": "LC066",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "unrealistic_scene"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:04:02.756Z"
+    }
+  },
+  {
+    "blind_id": "LC067",
+    "R1": {
+      "blind_id": "LC067",
+      "usability": [
+        "uncertain",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:59:46.168Z"
+    },
+    "R2": {
+      "blind_id": "LC067",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:11:18.136Z"
+    }
+  },
+  {
+    "blind_id": "LC069",
+    "R1": {
+      "blind_id": "LC069",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:57:33.829Z"
+    },
+    "R2": {
+      "blind_id": "LC069",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:48:54.541Z"
+    }
+  },
+  {
+    "blind_id": "LC070",
+    "R1": {
+      "blind_id": "LC070",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:03:13.288Z"
+    },
+    "R2": {
+      "blind_id": "LC070",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:26:04.698Z"
+    }
+  },
+  {
+    "blind_id": "LC071",
+    "R1": {
+      "blind_id": "LC071",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:58:14.775Z"
+    },
+    "R2": {
+      "blind_id": "LC071",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:38:22.962Z"
+    }
+  },
+  {
+    "blind_id": "LC072",
+    "R1": {
+      "blind_id": "LC072",
+      "usability": [
+        "uncertain",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:10:35.497Z"
+    },
+    "R2": {
+      "blind_id": "LC072",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:44:56.597Z"
+    }
+  },
+  {
+    "blind_id": "LC073",
+    "R1": {
+      "blind_id": "LC073",
+      "usability": [
+        "pass",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T05:42:35.867Z"
+    },
+    "R2": {
+      "blind_id": "LC073",
+      "usability": [
+        "uncertain",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:34:16.194Z"
+    }
+  },
+  {
+    "blind_id": "LC074",
+    "R1": {
+      "blind_id": "LC074",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:52:32.790Z"
+    },
+    "R2": {
+      "blind_id": "LC074",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:47:04.110Z"
+    }
+  },
+  {
+    "blind_id": "LC075",
+    "R1": {
+      "blind_id": "LC075",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:07:33.411Z"
+    },
+    "R2": {
+      "blind_id": "LC075",
+      "usability": [
+        "fail",
+        "uncertain"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:37:47.860Z"
+    }
+  },
+  {
+    "blind_id": "LC077",
+    "R1": {
+      "blind_id": "LC077",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "fail"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T05:42:17.566Z"
+    },
+    "R2": {
+      "blind_id": "LC077",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:43:59.853Z"
+    }
+  },
+  {
+    "blind_id": "LC078",
+    "R1": {
+      "blind_id": "LC078",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:59:05.450Z"
+    },
+    "R2": {
+      "blind_id": "LC078",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:05:47.523Z"
+    }
+  },
+  {
+    "blind_id": "LC079",
+    "R1": {
+      "blind_id": "LC079",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:58:37.721Z"
+    },
+    "R2": {
+      "blind_id": "LC079",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:35:23.354Z"
+    }
+  },
+  {
+    "blind_id": "LC080",
+    "R1": {
+      "blind_id": "LC080",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:02:51.216Z"
+    },
+    "R2": {
+      "blind_id": "LC080",
+      "usability": [
+        "uncertain",
+        "pass"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "fail"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:57:47.274Z"
+    }
+  },
+  {
+    "blind_id": "LC082",
+    "R1": {
+      "blind_id": "LC082",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T05:41:58.457Z"
+    },
+    "R2": {
+      "blind_id": "LC082",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:02:26.002Z"
+    }
+  },
+  {
+    "blind_id": "LC083",
+    "R1": {
+      "blind_id": "LC083",
+      "usability": [
+        "uncertain",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:57:24.969Z"
+    },
+    "R2": {
+      "blind_id": "LC083",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:55:10.448Z"
+    }
+  },
+  {
+    "blind_id": "LC084",
+    "R1": {
+      "blind_id": "LC084",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:56:40.462Z"
+    },
+    "R2": {
+      "blind_id": "LC084",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:37:45.065Z"
+    }
+  },
+  {
+    "blind_id": "LC085",
+    "R1": {
+      "blind_id": "LC085",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:00:51.395Z"
+    },
+    "R2": {
+      "blind_id": "LC085",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "unrealistic_scene"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T06:32:38.463Z"
+    }
+  },
+  {
+    "blind_id": "LC087",
+    "R1": {
+      "blind_id": "LC087",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:10:41.728Z"
+    },
+    "R2": {
+      "blind_id": "LC087",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:39:34.422Z"
+    }
+  },
+  {
+    "blind_id": "LC088",
+    "R1": {
+      "blind_id": "LC088",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T05:41:16.435Z"
+    },
+    "R2": {
+      "blind_id": "LC088",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "unrealistic_scene"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:47:34.563Z"
+    }
+  },
+  {
+    "blind_id": "LC090",
+    "R1": {
+      "blind_id": "LC090",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:01:19.243Z"
+    },
+    "R2": {
+      "blind_id": "LC090",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:45:51.508Z"
+    }
+  },
+  {
+    "blind_id": "LC091",
+    "R1": {
+      "blind_id": "LC091",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:57:02.455Z"
+    },
+    "R2": {
+      "blind_id": "LC091",
+      "usability": [
+        "pass",
+        "fail"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:33:25.938Z"
+    }
+  },
+  {
+    "blind_id": "LC092",
+    "R1": {
+      "blind_id": "LC092",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:10:10.275Z"
+    },
+    "R2": {
+      "blind_id": "LC092",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:45:30.446Z"
+    }
+  },
+  {
+    "blind_id": "LC093",
+    "R1": {
+      "blind_id": "LC093",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:03:45.392Z"
+    },
+    "R2": {
+      "blind_id": "LC093",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:06:02.419Z"
+    }
+  },
+  {
+    "blind_id": "LC094",
+    "R1": {
+      "blind_id": "LC094",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:06:31.611Z"
+    },
+    "R2": {
+      "blind_id": "LC094",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "fail"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:31:10.574Z"
+    }
+  },
+  {
+    "blind_id": "LC096",
+    "R1": {
+      "blind_id": "LC096",
+      "usability": [
+        "uncertain",
+        "uncertain"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:52:50.113Z"
+    },
+    "R2": {
+      "blind_id": "LC096",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:05:11.440Z"
+    }
+  },
+  {
+    "blind_id": "LC097",
+    "R1": {
+      "blind_id": "LC097",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:53:58.017Z"
+    },
+    "R2": {
+      "blind_id": "LC097",
+      "usability": [
+        "fail",
+        "uncertain"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "fail",
+        "pass",
+        "fail",
+        "fail"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:43:13.857Z"
+    }
+  },
+  {
+    "blind_id": "LC098",
+    "R1": {
+      "blind_id": "LC098",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:53:10.561Z"
+    },
+    "R2": {
+      "blind_id": "LC098",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:58:35.094Z"
+    }
+  },
+  {
+    "blind_id": "LC099",
+    "R1": {
+      "blind_id": "LC099",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:06:36.558Z"
+    },
+    "R2": {
+      "blind_id": "LC099",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:54:08.297Z"
+    }
+  },
+  {
+    "blind_id": "LC100",
+    "R1": {
+      "blind_id": "LC100",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:56:30.028Z"
+    },
+    "R2": {
+      "blind_id": "LC100",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "poor_quality"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:55:23.252Z"
+    }
+  },
+  {
+    "blind_id": "LC101",
+    "R1": {
+      "blind_id": "LC101",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:03:37.922Z"
+    },
+    "R2": {
+      "blind_id": "LC101",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:49:18.689Z"
+    }
+  },
+  {
+    "blind_id": "LC102",
+    "R1": {
+      "blind_id": "LC102",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:51:11.212Z"
+    },
+    "R2": {
+      "blind_id": "LC102",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:47:01.003Z"
+    }
+  },
+  {
+    "blind_id": "LC103",
+    "R1": {
+      "blind_id": "LC103",
+      "usability": [
+        "uncertain",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:59:54.272Z"
+    },
+    "R2": {
+      "blind_id": "LC103",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "unrealistic_scene"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:48:01.815Z"
+    }
+  },
+  {
+    "blind_id": "LC104",
+    "R1": {
+      "blind_id": "LC104",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:01:57.390Z"
+    },
+    "R2": {
+      "blind_id": "LC104",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:56:22.184Z"
+    }
+  },
+  {
+    "blind_id": "LC105",
+    "R1": {
+      "blind_id": "LC105",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:01:10.611Z"
+    },
+    "R2": {
+      "blind_id": "LC105",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:50:23.913Z"
+    }
+  },
+  {
+    "blind_id": "LC106",
+    "R1": {
+      "blind_id": "LC106",
+      "usability": [
+        "uncertain",
+        "uncertain"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:55:38.695Z"
+    },
+    "R2": {
+      "blind_id": "LC106",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "fail"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:37:55.079Z"
+    }
+  },
+  {
+    "blind_id": "LC107",
+    "R1": {
+      "blind_id": "LC107",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:04:33.168Z"
+    },
+    "R2": {
+      "blind_id": "LC107",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:37:14.652Z"
+    }
+  },
+  {
+    "blind_id": "LC108",
+    "R1": {
+      "blind_id": "LC108",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:55:46.160Z"
+    },
+    "R2": {
+      "blind_id": "LC108",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "fail"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:56:11.111Z"
+    }
+  },
+  {
+    "blind_id": "LC111",
+    "R1": {
+      "blind_id": "LC111",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T05:43:40.507Z"
+    },
+    "R2": {
+      "blind_id": "LC111",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "unrealistic_scene"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:02:51.637Z"
+    }
+  },
+  {
+    "blind_id": "LC112",
+    "R1": {
+      "blind_id": "LC112",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T05:41:40.953Z"
+    },
+    "R2": {
+      "blind_id": "LC112",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:48:22.413Z"
+    }
+  },
+  {
+    "blind_id": "LC113",
+    "R1": {
+      "blind_id": "LC113",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:05:08.904Z"
+    },
+    "R2": {
+      "blind_id": "LC113",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:52:24.908Z"
+    }
+  },
+  {
+    "blind_id": "LC114",
+    "R1": {
+      "blind_id": "LC114",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T05:44:11.894Z"
+    },
+    "R2": {
+      "blind_id": "LC114",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:50:55.943Z"
+    }
+  },
+  {
+    "blind_id": "LC115",
+    "R1": {
+      "blind_id": "LC115",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:59:36.923Z"
+    },
+    "R2": {
+      "blind_id": "LC115",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:33:04.150Z"
+    }
+  },
+  {
+    "blind_id": "LC117",
+    "R1": {
+      "blind_id": "LC117",
+      "usability": [
+        "uncertain",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:07:45.646Z"
+    },
+    "R2": {
+      "blind_id": "LC117",
+      "usability": [
+        "uncertain",
+        "uncertain"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:49:28.580Z"
+    }
+  },
+  {
+    "blind_id": "LC118",
+    "R1": {
+      "blind_id": "LC118",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:03:54.916Z"
+    },
+    "R2": {
+      "blind_id": "LC118",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:45:55.333Z"
+    }
+  },
+  {
+    "blind_id": "LC120",
+    "R1": {
+      "blind_id": "LC120",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:55:59.511Z"
+    },
+    "R2": {
+      "blind_id": "LC120",
+      "usability": [
+        "pass",
+        "fail"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:33:13.237Z"
+    }
+  },
+  {
+    "blind_id": "LC121",
+    "R1": {
+      "blind_id": "LC121",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:08:48.243Z"
+    },
+    "R2": {
+      "blind_id": "LC121",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:08:44.095Z"
+    }
+  },
+  {
+    "blind_id": "LC122",
+    "R1": {
+      "blind_id": "LC122",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:56:20.348Z"
+    },
+    "R2": {
+      "blind_id": "LC122",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:32:08.267Z"
+    }
+  },
+  {
+    "blind_id": "LC123",
+    "R1": {
+      "blind_id": "LC123",
+      "usability": [
+        "uncertain",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:10:00.905Z"
+    },
+    "R2": {
+      "blind_id": "LC123",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:55:45.416Z"
+    }
+  },
+  {
+    "blind_id": "LC124",
+    "R1": {
+      "blind_id": "LC124",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:05:27.524Z"
+    },
+    "R2": {
+      "blind_id": "LC124",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "unrealistic_scene"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:59:04.811Z"
+    }
+  },
+  {
+    "blind_id": "LC126",
+    "R1": {
+      "blind_id": "LC126",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:11:03.647Z"
+    },
+    "R2": {
+      "blind_id": "LC126",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:34:42.113Z"
+    }
+  },
+  {
+    "blind_id": "LC127",
+    "R1": {
+      "blind_id": "LC127",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:10:52.024Z"
+    },
+    "R2": {
+      "blind_id": "LC127",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:04:26.024Z"
+    }
+  },
+  {
+    "blind_id": "LC129",
+    "R1": {
+      "blind_id": "LC129",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:00:08.382Z"
+    },
+    "R2": {
+      "blind_id": "LC129",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:03:38.225Z"
+    }
+  },
+  {
+    "blind_id": "LC130",
+    "R1": {
+      "blind_id": "LC130",
+      "usability": [
+        "uncertain",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:52:06.956Z"
+    },
+    "R2": {
+      "blind_id": "LC130",
+      "usability": [
+        "pass",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:34:47.283Z"
+    }
+  },
+  {
+    "blind_id": "LC131",
+    "R1": {
+      "blind_id": "LC131",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:54:41.603Z"
+    },
+    "R2": {
+      "blind_id": "LC131",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T08:47:22.559Z"
+    }
+  },
+  {
+    "blind_id": "LC133",
+    "R1": {
+      "blind_id": "LC133",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:06:18.064Z"
+    },
+    "R2": {
+      "blind_id": "LC133",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:43:56.935Z"
+    }
+  },
+  {
+    "blind_id": "LC134",
+    "R1": {
+      "blind_id": "LC134",
+      "usability": [
+        "uncertain",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:00:20.477Z"
+    },
+    "R2": {
+      "blind_id": "LC134",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:07:11.963Z"
+    }
+  },
+  {
+    "blind_id": "LC135",
+    "R1": {
+      "blind_id": "LC135",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:59:11.820Z"
+    },
+    "R2": {
+      "blind_id": "LC135",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:11:08.947Z"
+    }
+  },
+  {
+    "blind_id": "LC136",
+    "R1": {
+      "blind_id": "LC136",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:09:22.796Z"
+    },
+    "R2": {
+      "blind_id": "LC136",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:49:40.656Z"
+    }
+  },
+  {
+    "blind_id": "LC138",
+    "R1": {
+      "blind_id": "LC138",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:52:58.693Z"
+    },
+    "R2": {
+      "blind_id": "LC138",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:06:10.430Z"
+    }
+  },
+  {
+    "blind_id": "LC142",
+    "R1": {
+      "blind_id": "LC142",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:06:52.331Z"
+    },
+    "R2": {
+      "blind_id": "LC142",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "fail"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:35:52.427Z"
+    }
+  },
+  {
+    "blind_id": "LC144",
+    "R1": {
+      "blind_id": "LC144",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:00:38.678Z"
+    },
+    "R2": {
+      "blind_id": "LC144",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:49:49.458Z"
+    }
+  },
+  {
+    "blind_id": "LC145",
+    "R1": {
+      "blind_id": "LC145",
+      "usability": [
+        "fail",
+        "pass"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:00:29.950Z"
+    },
+    "R2": {
+      "blind_id": "LC145",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact",
+          "unrealistic_scene"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:52:50.741Z"
+    }
+  },
+  {
+    "blind_id": "LC146",
+    "R1": {
+      "blind_id": "LC146",
+      "usability": [
+        "uncertain",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:58:55.935Z"
+    },
+    "R2": {
+      "blind_id": "LC146",
+      "usability": [
+        "fail",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "fail",
+        "fail"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:48:40.751Z"
+    }
+  },
+  {
+    "blind_id": "LC147",
+    "R1": {
+      "blind_id": "LC147",
+      "usability": [
+        "pass",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:52:16.590Z"
+    },
+    "R2": {
+      "blind_id": "LC147",
+      "usability": [
+        "pass",
+        "fail"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:01:35.955Z"
+    }
+  },
+  {
+    "blind_id": "LC148",
+    "R1": {
+      "blind_id": "LC148",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:54:11.725Z"
+    },
+    "R2": {
+      "blind_id": "LC148",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:09:33.949Z"
+    }
+  },
+  {
+    "blind_id": "LC149",
+    "R1": {
+      "blind_id": "LC149",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:01:46.490Z"
+    },
+    "R2": {
+      "blind_id": "LC149",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:37:29.719Z"
+    }
+  },
+  {
+    "blind_id": "LC151",
+    "R1": {
+      "blind_id": "LC151",
+      "usability": [
+        "pass",
+        "fail"
+      ],
+      "realism": "not_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "unrealistic_scene",
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T05:43:03.755Z"
+    },
+    "R2": {
+      "blind_id": "LC151",
+      "usability": [
+        "uncertain",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [
+          "malformed_target"
+        ],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:49:11.889Z"
+    }
+  },
+  {
+    "blind_id": "LC152",
+    "R1": {
+      "blind_id": "LC152",
+      "usability": [
+        "pass",
+        "uncertain"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T10:09:37.994Z"
+    },
+    "R2": {
+      "blind_id": "LC152",
+      "usability": [
+        "pass",
+        "fail"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        [
+          "severe_scene_artifact"
+        ]
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T06:36:51.020Z"
+    }
+  },
+  {
+    "blind_id": "LC153",
+    "R1": {
+      "blind_id": "LC153",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "very_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T09:55:07.681Z"
+    },
+    "R2": {
+      "blind_id": "LC153",
+      "usability": [
+        "pass",
+        "pass"
+      ],
+      "realism": "somewhat_realistic",
+      "requirements": [
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "usability_reasons": [
+        [],
+        []
+      ],
+      "usability_other": [
+        "",
+        ""
+      ],
+      "revealed_at": "2026-10-11T07:42:17.483Z"
+    }
+  }
+]

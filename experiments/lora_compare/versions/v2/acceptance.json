@@ -1,0 +1,184 @@
+{
+  "checked_at": "2026-10-10T21:38:05.414725+08:00",
+  "status": "automatic_complete_human_pending",
+  "inputs_unchanged": 153,
+  "clip_rows": 153,
+  "summary_rows": 17,
+  "independent_summary": {
+    "no-lora": {
+      "mean": 28.99237738715278,
+      "sd": 2.1395295296705323,
+      "n": 9
+    },
+    "500-0.2": {
+      "mean": 28.646503554450142,
+      "sd": 1.560562825427,
+      "n": 9
+    },
+    "500-0.5": {
+      "mean": 29.925902353392708,
+      "sd": 2.371721675692847,
+      "n": 9
+    },
+    "500-0.8": {
+      "mean": 30.22176788912879,
+      "sd": 1.0432692245570463,
+      "n": 9
+    },
+    "500-1.0": {
+      "mean": 29.855917890866596,
+      "sd": 1.5858321605918066,
+      "n": 9
+    },
+    "1000-0.2": {
+      "mean": 29.05702061123318,
+      "sd": 1.5343211189813004,
+      "n": 9
+    },
+    "1000-0.5": {
+      "mean": 28.67750856611464,
+      "sd": 2.5081218594067893,
+      "n": 9
+    },
+    "1000-0.8": {
+      "mean": 29.564770062764484,
+      "sd": 2.604923980690028,
+      "n": 9
+    },
+    "1000-1.0": {
+      "mean": 29.854641689194573,
+      "sd": 2.0735969414893174,
+      "n": 9
+    },
+    "1500-0.2": {
+      "mean": 29.22133505344391,
+      "sd": 1.6818465925664658,
+      "n": 9
+    },
+    "1500-0.5": {
+      "mean": 29.04344830248091,
+      "sd": 2.6731544671955456,
+      "n": 9
+    },
+    "1500-0.8": {
+      "mean": 30.760045184029472,
+      "sd": 2.017116308088201,
+      "n": 9
+    },
+    "1500-1.0": {
+      "mean": 29.418408539560104,
+      "sd": 1.6664549804631257,
+      "n": 9
+    },
+    "1860-0.2": {
+      "mean": 29.57925730281406,
+      "sd": 1.7161273127936068,
+      "n": 9
+    },
+    "1860-0.5": {
+      "mean": 28.960233595636154,
+      "sd": 3.4349660023762114,
+      "n": 9
+    },
+    "1860-0.8": {
+      "mean": 30.407935712072586,
+      "sd": 1.5085884086248238,
+      "n": 9
+    },
+    "1860-1.0": {
+      "mean": 30.227836304240757,
+      "sd": 1.618626588499605,
+      "n": 9
+    }
+  },
+  "packages": {
+    "R1": {
+      "images": 153,
+      "html_config_leaks": 0,
+      "png_metadata_leaks": 0,
+      "source_pixel_matches": 153,
+      "review_rule": "LC-review-v2",
+      "questions_per_image": 4
+    },
+    "R2": {
+      "images": 153,
+      "html_config_leaks": 0,
+      "png_metadata_leaks": 0,
+      "source_pixel_matches": 153,
+      "review_rule": "LC-review-v2",
+      "questions_per_image": 4
+    }
+  },
+  "protocol_sha256": "b3d8732f94796fb88ff3be6a3726b8929110cb0aa7b69e0802c11fa9656c47d5",
+  "review_protocol_sha256": "8f8025b2e649342533fc7366e275fcae2211a267109b408f232eaa28dcf66f37",
+  "source_hashes": {
+    "eval_lora_compare.py": "26eb1e0e1ec72893123b309783945d37be903456ce2acc0a62f30ddf6fba482b",
+    "lora_review.html": "f94c6f9d3e0b02f9768753856c57eb25d41a2d005595d593d3af569bb5396f1e"
+  },
+  "environment_sha256": "b1c749cd0a720b87f67a4d3e350312b5fc67c0840b4cb3505f532e38b39bac5c",
+  "outputs": {
+    "experiments/lora_compare/clip_scores.csv": "5a2cb5073dc931e0b31788532a26982c9d4b0c78d876a2f8d45814783ec0e6a1",
+    "experiments/lora_compare/summary.csv": "8c7c1c8220ad587c2f1689be372842190458f3011a0a4cd92bc5dd2e8de6af88",
+    "paper/figures/lora_compare/lora_parameter_sensitivity.pdf": "46cdd1b10bb72502ab121f4bc322f7a620a237a2ff53dbde5db123dec4215c16",
+    "paper/figures/lora_compare/lora_parameter_sensitivity.svg": "cc6a80057889a071b7cd46f9b30e08991fb2535b8238a51017c70689d29ca4bf",
+    "paper/figures/lora_compare/lora_parameter_sensitivity.png": "6be597159c7cc3036b625693eba1cff7ce00865cc1a70c501899e98aea1b9326",
+    "paper/figures/lora_compare/lora_parameter_sensitivity_supplement.pdf": "d7ccc803683c2b8fe8badfc794c1f367f7bff4fceb08675c5af9f0d604eedf41"
+  },
+  "human_labels": "not generated; pending",
+  "visual_qa": {
+    "status": "passed",
+    "renderer": "Poppler pdftoppm",
+    "main": "120 dpi render inspected; no clipping/overlap; text >=7pt at 180mm",
+    "supplement": "all nine page renders inspected in contact sheet; all 153 images covered",
+    "font_embedding": "pdffonts: all main-figure TrueType subsets embedded",
+    "png_dpi": 300,
+    "source_images": "full extent and original aspect ratio; no selected crop",
+    "evidence": [
+      "experiments/lora_compare/previews/main.png",
+      "experiments/lora_compare/previews/supplement_contact.png",
+      "experiments/lora_compare/previews/main_svg.png"
+    ],
+    "svg_fonts": "Poppler pdftocairo conversion from embedded-font PDF; vector glyph paths embedded, no external font dependency",
+    "svg_render": "Sharp/libvips raster of final SVG inspected; layout and glyphs match PDF"
+  },
+  "browser_qa": {
+    "status": "passed",
+    "rule": "LC-review-v2",
+    "surface": "Codex in-app browser, isolated localhost test origin",
+    "checked": [
+      "short three-item usability form",
+      "item-specific reasons shown only for fail/uncertain",
+      "Other blank prevents reveal",
+      "common reason with no free text allows reveal",
+      "exactly four binary questions and eight radio controls",
+      "all four No responses complete without quantity or explanation",
+      "first stage remains locked",
+      "reload preserves answer state",
+      "real browser JSON export validated against Python v2 schema",
+      "empty backup import restored 0/153"
+    ],
+    "human_labels": "UI test values never imported into formal results; test browser reset to blank"
+  },
+  "logic_tests": {
+    "passed": 13,
+    "failed": 0,
+    "command": "python -m unittest discover -s scripts/tests -p test_lora_compare.py -v"
+  },
+  "review_archives": {
+    "R1": {
+      "path": "D:\\yolo\\experiments\\lora_compare\\review\\R1.zip",
+      "bytes": 258133220,
+      "sha256": "fce54b0e90938b249af27ba48606e249a4009c52a76526e7178901be77ce9d44",
+      "members": 155,
+      "rule": "LC-review-v2"
+    },
+    "R2": {
+      "path": "D:\\yolo\\experiments\\lora_compare\\review\\R2.zip",
+      "bytes": 258133220,
+      "sha256": "b16df05d58b342044edfef41135c0c2d3a48bb8331ebef7539298b71f5242a2b",
+      "members": 155,
+      "rule": "LC-review-v2"
+    }
+  },
+  "automatic_evidence_unchanged": true
+}

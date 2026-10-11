@@ -1,0 +1,71 @@
+{
+  "checked_at": "2026-10-11T19:58:00.719017+08:00",
+  "status": "complete",
+  "human_status": "two_raters_adjudicated",
+  "final_checks": [
+    "153 final labels reconstructed independently from agreed and adjudicated source records",
+    "17 summaries match labels, all n=9",
+    "CLIP means and sample SD independently recomputed",
+    "all matched 2x2 human tables checked",
+    "original input exports equal retained imports",
+    "frozen 153 image inputs verified",
+    "no pending final result cells"
+  ],
+  "logic_tests": {
+    "passed": 18,
+    "failed": 0
+  },
+  "pdf_checks": {
+    "lora_final_evaluation.pdf": {
+      "pages": 1,
+      "pending_text": false,
+      "human_completion_annotation": true
+    },
+    "lora_parameter_sensitivity.pdf": {
+      "pages": 1,
+      "pending_text": false,
+      "human_completion_annotation": true
+    },
+    "lora_parameter_sensitivity_supplement.pdf": {
+      "pages": 9,
+      "pending_text": false,
+      "human_completion_annotation": true
+    }
+  },
+  "visual_qa": "passed: final four-panel figure, qualitative main figure, all 9 supplementary grid pages rendered and inspected",
+  "original_clip_unchanged": true,
+  "finalization_source_hashes": {
+    "finalize_lora_evaluation.py": "8a6ec55ff48a0e5889a2c7c5f0712a34ee52ce05e6c1b20b926b6354a443986b",
+    "analyze_lora_reviews.py": "e2456cb3dc15f95dcc62de6feecd819e347d72c31dcdd7628d58447676f4e41e"
+  },
+  "final_totals": {
+    "usable": 80,
+    "prompt_pass": 84
+  },
+  "final_realism_totals": {
+    "not_realistic": 30,
+    "somewhat_realistic": 70,
+    "very_realistic": 53
+  },
+  "presentation_amendment": {
+    "rule": "post-results task-oriented presentation",
+    "main_panels": [
+      "CLIP-T",
+      "training usability",
+      "very realistic"
+    ],
+    "prompt_endpoint": "retained in supplement and original full tables",
+    "pareto_front": [
+      "1500-0.8",
+      "1860-0.2",
+      "1860-0.8"
+    ],
+    "all_final_data_unchanged": true,
+    "source_sha256": "1b8b940ab571bbadfaccc009d7c75dba87aaeef708551471a2a4603fea69f470",
+    "tests": {
+      "passed": 2,
+      "failed": 0
+    },
+    "visual_qa": "main three-panel PDF and supplementary endpoint PDF rendered and visually verified"
+  }
+}

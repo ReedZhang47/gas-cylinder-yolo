@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-11",
+  "requested_by": "author after inspecting all evaluation results",
+  "scope": "presentation only; endpoints and all original labels unchanged",
+  "main_metrics": [
+    "clip_t_mean",
+    "usable_n",
+    "very_realistic_n"
+  ],
+  "supplementary_metric": "prompt_pass_n",
+  "reason": "Detection-data utility is the main goal; prompt arrangement constraints can fail without preventing bounding-box training. Storage-cage two-row question has zero passes among 51 images.",
+  "decision": "Retain 1860/0.8 as the task-oriented preferred candidate; not a proven global optimum or a weighted composite winner",
+  "pareto_front": [
+    "1500-0.8",
+    "1860-0.2",
+    "1860-0.8"
+  ],
+  "counts": {
+    "no-lora": [
+      28.99237738715278,
+      6,
+      1
+    ],
+    "500-0.2": [
+      28.646503554450142,
+      6,
+      4
+    ],
+    "500-0.5": [
+      29.925902353392708,
+      4,
+      3
+    ],
+    "500-0.8": [
+      30.22176788912879,
+      5,
+      3
+    ],
+    "500-1.0": [
+      29.855917890866596,
+      3,
+      2
+    ],
+    "1000-0.2": [
+      29.05702061123318,
+      6,
+      3
+    ],
+    "1000-0.5": [
+      28.67750856611464,
+      6,
+      5
+    ],
+    "1000-0.8": [
+      29.564770062764484,
+      3,
+      3
+    ],
+    "1000-1.0": [
+      29.854641689194573,
+      3,
+      2
+    ],
+    "1500-0.2": [
+      29.22133505344391,
+      6,
+      2
+    ],
+    "1500-0.5": [
+      29.04344830248091,
+      5,
+      4
+    ],
+    "1500-0.8": [
+      30.760045184029472,
+      4,
+      4
+    ],
+    "1500-1.0": [
+      29.418408539560104,
+      2,
+      2
+    ],
+    "1860-0.2": [
+      29.57925730281406,
+      7,
+      3
+    ],
+    "1860-0.5": [
+      28.960233595636154,
+      5,
+      4
+    ],
+    "1860-0.8": [
+      30.407935712072586,
+      6,
+      6
+    ],
+    "1860-1.0": [
+      30.227836304240757,
+      3,
+      2
+    ]
+  },
+  "analysis_script_sha256": "1b8b940ab571bbadfaccc009d7c75dba87aaeef708551471a2a4603fea69f470",
+  "preserved_data_sha256": {
+    "experiments/lora_compare/protocol.json": "b3d8732f94796fb88ff3be6a3726b8929110cb0aa7b69e0802c11fa9656c47d5",
+    "experiments/lora_compare/review_protocol.json": "8dc28e4abe035cbb733e6822e5756f7b1f7db68930f40a845538e1126c1a4127",
+    "experiments/lora_compare/clip_scores.csv": "5a2cb5073dc931e0b31788532a26982c9d4b0c78d876a2f8d45814783ec0e6a1",
+    "experiments/lora_compare/summary.csv": "6b38fee07aba1b839afd18c284739f4a9c5089c3543e708f195667ae74b4b5ca",
+    "experiments/lora_compare/restricted/final_labels.json": "369729f4453db1cb5b7f62f9992adfe61ea1267b8022910c4ca475479dae44d6",
+    "experiments/lora_compare/review/anonymous_review_v3_R1.json": "b32d3c41278d6ef7dbd831287f15cc5d86c1885949050b1da22e4c7dba8df48d",
+    "experiments/lora_compare/review/anonymous_review_v3_R2.json": "b0c29080c05649160fe52c64999264932d529ada3affac285087f2f9cd34c7b0",
+    "experiments/lora_compare/review/anonymous_adjudication_v3.json": "1a4056dba56adb427648b6f8b78fe9654d01e205276e3d9688151f35d003cd85"
+  }
+}

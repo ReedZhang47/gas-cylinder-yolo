@@ -1,2 +1,13 @@
 # Rendered figures and manuscript PDFs are binary artifacts.
 *.pdf binary
+# Frozen evaluation evidence and hashed source must keep their exact bytes.
+experiments/lora_compare/** -text
+paper/figures/lora_compare/** -text
+scripts/eval_lora_compare.py -text
+scripts/lora_review.html -text
+scripts/analyze_lora_reviews.py -text
+scripts/finalize_lora_evaluation.py -text
+scripts/present_lora_task_evaluation.py -text
+scripts/audit_lora_compare.py -text
+# Matplotlib SVG paths contain generated trailing spaces.
+*.svg whitespace=-trailing-space

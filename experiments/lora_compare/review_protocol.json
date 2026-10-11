@@ -1,0 +1,112 @@
+{
+  "rule": "LC-review-v3",
+  "revised_at": "2026-10-11T00:31:51.620819+08:00",
+  "author_request_date": "2026-10-11",
+  "automatic_protocol_sha256": "b3d8732f94796fb88ff3be6a3726b8929110cb0aa7b69e0802c11fa9656c47d5",
+  "clip_scores_sha256": "5a2cb5073dc931e0b31788532a26982c9d4b0c78d876a2f8d45814783ec0e6a1",
+  "clip_cache_sha256": "27dde50031b2ed37626d092a17f0bb4863f0952efc2103bd80863b76cc8eeb49",
+  "code_hashes": {
+    "eval_lora_compare.py": "f31692b6bddff56cb9a0240e746fca33e40a3d89d885663c778d0538ee34ab14",
+    "lora_review.html": "3e016822b931859c38e0ccdd88f8ef81dc2c304d48dc8645ab1349295b633741"
+  },
+  "prompt_checks": {
+    "new150_010": [
+      "气瓶是否为蓝色？",
+      "气瓶是否横卧？",
+      "瓶身是否完整、轮廓清楚且无遮挡横穿？",
+      "是否位于屋面风管旁，且与其它材料有间隙？"
+    ],
+    "new24_001": [
+      "气瓶是否为蓝色且竖直摆放？",
+      "气瓶是否呈两排排列？",
+      "气瓶是否位于开放顶部的蓝色矩形笼架内？",
+      "是否呈现湿混凝土地面和阴雨场景？"
+    ],
+    "new24_010": [
+      "气瓶是否为银灰色且竖直摆放？",
+      "气瓶是否紧凑、不规则地聚集？",
+      "气瓶周围是否没有围笼或共同固定框架？",
+      "是否靠近混凝土柱，且场地部分遮盖？"
+    ]
+  },
+  "usable_checks": [
+    "是否有气瓶，气瓶是否正常？",
+    "场景是否真实，有无重大缺陷？"
+  ],
+  "reason_options": [
+    [
+      {
+        "code": "no_target",
+        "label": "无气瓶"
+      },
+      {
+        "code": "malformed_target",
+        "label": "气瓶畸变"
+      },
+      {
+        "code": "other",
+        "label": "其它：请说明"
+      }
+    ],
+    [
+      {
+        "code": "unrealistic_scene",
+        "label": "场景不真实"
+      },
+      {
+        "code": "severe_scene_artifact",
+        "label": "明显拼贴、浮空或重复结构"
+      },
+      {
+        "code": "poor_quality",
+        "label": "画质差，影响使用"
+      },
+      {
+        "code": "other",
+        "label": "其它：请说明"
+      }
+    ]
+  ],
+  "realism_question": "以工地照片的角度来看，你如何评价这张图的真实性？",
+  "realism_options": [
+    {
+      "code": "not_realistic",
+      "label": "不太真实"
+    },
+    {
+      "code": "somewhat_realistic",
+      "label": "还算真实"
+    },
+    {
+      "code": "very_realistic",
+      "label": "很真实"
+    }
+  ],
+  "human": {
+    "stage1_values": [
+      "pass",
+      "fail",
+      "uncertain"
+    ],
+    "stage2_values": [
+      "pass",
+      "fail"
+    ],
+    "count": "not collected or scored",
+    "reasons": "per usability item on fail/uncertain; only other requires text",
+    "stage2_notes": "not collected",
+    "prompt_pass": "all four binary requirements pass",
+    "usable": "both usability items pass; realism is separately recorded, not a pass/fail gate",
+    "realism_values": [
+      "not_realistic",
+      "somewhat_realistic",
+      "very_realistic"
+    ],
+    "missing": "pending, never zero"
+  },
+  "change_reason": "Author requested removal of boundary question and a separate three-level construction-photo realism rating; discard previously rated data and restart.",
+  "timing": "Requested after the author rated about a dozen images; those ratings are discarded by explicit request. Automatic CLIP evidence remains frozen.",
+  "clip_scope": "Existing CLIP texts and scores retained, including original count wording; removal of number assessment applies to human stage 2.",
+  "previous_review_rule": "LC-review-v2",
+  "migration": "Discard previous ratings; restart in separate v3 browser storage; v1/v2 JSON cannot be imported"
+}

@@ -1,0 +1,14 @@
+{
+  "not_realistic": {
+    "n": 30,
+    "label": "不太真实"
+  },
+  "somewhat_realistic": {
+    "n": 70,
+    "label": "还算真实"
+  },
+  "very_realistic": {
+    "n": 53,
+    "label": "很真实"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "started_at": "2026-10-10T19:06:24.147353+08:00",
+  "status": "complete",
+  "updated_at": "2026-10-11T19:58:00.771720+08:00",
+  "input_count": 153,
+  "token_counts": {
+    "new150_010": 45,
+    "new24_001": 38,
+    "new24_010": 44
+  },
+  "human_status": "two_raters_adjudicated",
+  "raters": [
+    "R1",
+    "R2"
+  ],
+  "images_per_rater": 153,
+  "clip_count": 153,
+  "automatic_report_completed_at": "2026-10-10T19:26:07.224096+08:00",
+  "review_rule": "LC-review-v3",
+  "review_revision_at": "2026-10-11T00:31:51.620819+08:00",
+  "complete_human_raters": [
+    "R1",
+    "R2"
+  ],
+  "human_review_images": 153,
+  "disagreement_images": 110,
+  "human_analysis_report": "D:\\yolo\\experiments\\lora_compare\\human_analysis\\report.md",
+  "adjudication_entry": "D:\\yolo\\experiments\\lora_compare\\review\\ADJ\\index.html",
+  "final_report_completed_at": "2026-10-11T19:58:00.771709+08:00",
+  "adjudicated_images": 110,
+  "remaining_adjudication_images": 0
+}

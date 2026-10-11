@@ -1,0 +1,2450 @@
+{
+  "500-0.5_new150_010_99999": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.8_new150_010_99999": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.2_new150_010_88888": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.8_new24_001_77777": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-1.0_new150_010_99999": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.8_new24_010_88888": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-1.0_new24_010_88888": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.8_new24_010_77777": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.8_new24_001_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.5_new150_010_88888": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.2_new24_010_77777": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.2_new24_010_88888": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.2_new24_010_99999": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-1.0_new24_001_99999": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "no-lora_new24_010_99999": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.5_new24_001_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.2_new24_010_88888": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.8_new24_001_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "fail",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-1.0_new24_001_77777": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.2_new24_001_88888": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-1.0_new150_010_88888": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.8_new24_001_77777": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.2_new24_001_77777": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.8_new150_010_77777": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "fail"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.8_new24_010_77777": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.8_new24_010_77777": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "no-lora_new150_010_88888": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "fail",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "no-lora_new150_010_77777": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-1.0_new24_001_77777": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.8_new150_010_99999": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.5_new150_010_99999": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "fail",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "fail",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.8_new150_010_88888": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.5_new150_010_77777": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "no-lora_new24_001_77777": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.8_new24_010_88888": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-1.0_new24_010_77777": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.5_new150_010_99999": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.2_new150_010_77777": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.5_new24_001_77777": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.2_new24_001_99999": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.5_new150_010_77777": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.5_new24_010_77777": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.8_new24_010_99999": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.2_new150_010_77777": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "no-lora_new24_001_99999": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.8_new24_001_77777": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.5_new24_001_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-1.0_new24_001_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.2_new150_010_99999": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "no-lora_new24_010_88888": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-1.0_new24_001_99999": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.5_new24_001_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "uncertain",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.5_new24_001_99999": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-1.0_new150_010_77777": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "fail",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "fail",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-1.0_new150_010_77777": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-1.0_new24_010_77777": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "no-lora_new24_001_88888": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.2_new24_010_77777": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.5_new24_010_88888": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.8_new24_010_99999": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.2_new24_010_77777": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.8_new150_010_77777": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.5_new24_010_77777": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "fail",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.5_new150_010_77777": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-1.0_new24_001_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "fail",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-1.0_new24_010_99999": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.2_new150_010_99999": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.8_new24_010_77777": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-1.0_new24_010_77777": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-1.0_new24_001_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.5_new24_010_99999": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.5_new150_010_88888": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.8_new150_010_77777": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.5_new150_010_77777": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.8_new150_010_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "fail",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "fail",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.5_new24_010_88888": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.8_new150_010_77777": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "fail",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "fail",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-1.0_new24_001_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.2_new24_001_77777": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.8_new150_010_99999": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "fail",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "fail",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-1.0_new24_010_99999": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "fail",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-1.0_new24_010_99999": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-1.0_new150_010_88888": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.8_new24_010_99999": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.2_new150_010_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "fail",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "fail",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.5_new24_010_88888": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.5_new24_001_77777": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.8_new150_010_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "fail",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "fail",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.5_new24_010_77777": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-1.0_new24_001_99999": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.8_new24_001_99999": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.8_new24_010_99999": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "fail",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-1.0_new24_001_77777": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-1.0_new24_010_88888": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.8_new24_010_88888": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.5_new150_010_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "uncertain",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "fail",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-1.0_new150_010_99999": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "fail",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "fail",
+      "fail"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-1.0_new24_001_99999": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "uncertain",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.2_new24_001_77777": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-1.0_new24_010_88888": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.5_new24_001_99999": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.2_new24_010_99999": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-1.0_new150_010_99999": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.8_new24_001_77777": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.2_new24_001_99999": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.8_new150_010_99999": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "fail",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "fail",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.5_new24_010_99999": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.2_new150_010_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "fail",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "fail",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.2_new24_001_99999": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-1.0_new24_010_77777": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-1.0_new24_010_99999": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "fail",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.5_new24_001_77777": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.8_new24_001_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "uncertain",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.2_new150_010_77777": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.5_new24_010_99999": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.8_new24_010_88888": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.8_new24_001_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "uncertain",
+      "uncertain"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "fail",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.2_new24_010_88888": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.5_new24_001_99999": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.2_new150_010_88888": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.5_new24_001_99999": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.2_new24_001_99999": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.2_new150_010_99999": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-1.0_new150_010_77777": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "fail",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "fail",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.2_new24_001_88888": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-1.0_new24_010_88888": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "no-lora_new24_010_77777": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.5_new24_010_77777": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.8_new24_001_99999": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-1.0_new150_010_77777": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.2_new24_001_88888": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.2_new150_010_99999": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.5_new24_010_88888": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.5_new24_001_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.2_new24_010_88888": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.2_new24_001_88888": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "no-lora_new150_010_99999": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.2_new24_001_77777": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.8_new24_001_99999": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.2_new150_010_77777": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "500-0.2_new24_010_99999": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-1.0_new150_010_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "fail",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "fail",
+      "fail"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.2_new24_010_77777": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.2_new24_010_99999": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-1.0_new150_010_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "fail",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "fail",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.8_new150_010_88888": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "fail",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "fail",
+      "fail"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.5_new150_010_99999": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-1.0_new24_001_77777": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.5_new24_001_77777": {
+    "usable": 1,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-1.0_new150_010_99999": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "very_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1000-0.5_new150_010_88888": {
+    "usable": 0,
+    "prompt_pass": 1,
+    "usability": [
+      "uncertain",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "not_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1500-0.8_new24_001_99999": {
+    "usable": 0,
+    "prompt_pass": 0,
+    "usability": [
+      "pass",
+      "fail"
+    ],
+    "requirements": [
+      "pass",
+      "fail",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  },
+  "1860-0.5_new24_010_99999": {
+    "usable": 1,
+    "prompt_pass": 1,
+    "usability": [
+      "pass",
+      "pass"
+    ],
+    "requirements": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "realism": "somewhat_realistic",
+    "review_rule": "LC-review-v3"
+  }
+}

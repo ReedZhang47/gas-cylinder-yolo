@@ -1,0 +1,2070 @@
+{
+  "provenance": {
+    "completed_at": "2026-10-11T19:56:57.636560+08:00",
+    "status": "complete",
+    "human_status": "two_raters_adjudicated",
+    "original_protocol_sha256": "b3d8732f94796fb88ff3be6a3726b8929110cb0aa7b69e0802c11fa9656c47d5",
+    "human_protocol_sha256": "8dc28e4abe035cbb733e6822e5756f7b1f7db68930f40a845538e1126c1a4127",
+    "clip_scores_sha256": "5a2cb5073dc931e0b31788532a26982c9d4b0c78d876a2f8d45814783ec0e6a1",
+    "analysis_code_sha256": "8a6ec55ff48a0e5889a2c7c5f0712a34ee52ce05e6c1b20b926b6354a443986b",
+    "input_exports": {
+      "anonymous_adjudication_v3.json": "1a4056dba56adb427648b6f8b78fe9654d01e205276e3d9688151f35d003cd85",
+      "anonymous_review_v3_R1.json": "b32d3c41278d6ef7dbd831287f15cc5d86c1885949050b1da22e4c7dba8df48d",
+      "anonymous_review_v3_R2.json": "b0c29080c05649160fe52c64999264932d529ada3affac285087f2f9cd34c7b0"
+    },
+    "human_records": {
+      "R1": "dce4fa0acbaa234edec5e03a82dc34305236311c5c12e2b4e60279b2ddd541f5",
+      "R2": "234ee519b243aa1549e880d0f01a370ac1fd2a4c9ffe01470c02662bd891b24e",
+      "ADJ": "6308f8316493cfed0857d06b656e05ef3182891cc995956e1ab031e4517d27f6"
+    }
+  },
+  "summary": [
+    {
+      "config": "no-lora",
+      "step": "",
+      "strength": "",
+      "n": "9",
+      "clip_t_mean": "28.99237738715278",
+      "clip_t_sd": "2.1395295296705323",
+      "prompt_pass_n": "6",
+      "usable_n": "6",
+      "human_status": "two_raters_adjudicated",
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 7,
+        "very_realistic": 1
+      },
+      "ranks": {
+        "clip_t_mean": null,
+        "usable_n": null,
+        "prompt_pass_n": null
+      }
+    },
+    {
+      "config": "500-0.2",
+      "step": "500",
+      "strength": "0.2",
+      "n": "9",
+      "clip_t_mean": "28.646503554450142",
+      "clip_t_sd": "1.560562825427",
+      "prompt_pass_n": "5",
+      "usable_n": "6",
+      "human_status": "two_raters_adjudicated",
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 4,
+        "very_realistic": 4
+      },
+      "ranks": {
+        "clip_t_mean": [
+          16,
+          16
+        ],
+        "usable_n": [
+          2,
+          6
+        ],
+        "prompt_pass_n": [
+          6,
+          11
+        ]
+      }
+    },
+    {
+      "config": "500-0.5",
+      "step": "500",
+      "strength": "0.5",
+      "n": "9",
+      "clip_t_mean": "29.925902353392708",
+      "clip_t_sd": "2.371721675692847",
+      "prompt_pass_n": "5",
+      "usable_n": "4",
+      "human_status": "two_raters_adjudicated",
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 5,
+        "very_realistic": 3
+      },
+      "ranks": {
+        "clip_t_mean": [
+          5,
+          5
+        ],
+        "usable_n": [
+          10,
+          11
+        ],
+        "prompt_pass_n": [
+          6,
+          11
+        ]
+      }
+    },
+    {
+      "config": "500-0.8",
+      "step": "500",
+      "strength": "0.8",
+      "n": "9",
+      "clip_t_mean": "30.22176788912879",
+      "clip_t_sd": "1.0432692245570463",
+      "prompt_pass_n": "3",
+      "usable_n": "5",
+      "human_status": "two_raters_adjudicated",
+      "realism": {
+        "not_realistic": 3,
+        "somewhat_realistic": 3,
+        "very_realistic": 3
+      },
+      "ranks": {
+        "clip_t_mean": [
+          4,
+          4
+        ],
+        "usable_n": [
+          7,
+          9
+        ],
+        "prompt_pass_n": [
+          15,
+          16
+        ]
+      }
+    },
+    {
+      "config": "500-1.0",
+      "step": "500",
+      "strength": "1.0",
+      "n": "9",
+      "clip_t_mean": "29.855917890866596",
+      "clip_t_sd": "1.5858321605918066",
+      "prompt_pass_n": "3",
+      "usable_n": "3",
+      "human_status": "two_raters_adjudicated",
+      "realism": {
+        "not_realistic": 5,
+        "somewhat_realistic": 2,
+        "very_realistic": 2
+      },
+      "ranks": {
+        "clip_t_mean": [
+          6,
+          6
+        ],
+        "usable_n": [
+          12,
+          15
+        ],
+        "prompt_pass_n": [
+          15,
+          16
+        ]
+      }
+    },
+    {
+      "config": "1000-0.2",
+      "step": "1000",
+      "strength": "0.2",
+      "n": "9",
+      "clip_t_mean": "29.05702061123318",
+      "clip_t_sd": "1.5343211189813004",
+      "prompt_pass_n": "5",
+      "usable_n": "6",
+      "human_status": "two_raters_adjudicated",
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 5,
+        "very_realistic": 3
+      },
+      "ranks": {
+        "clip_t_mean": [
+          12,
+          12
+        ],
+        "usable_n": [
+          2,
+          6
+        ],
+        "prompt_pass_n": [
+          6,
+          11
+        ]
+      }
+    },
+    {
+      "config": "1000-0.5",
+      "step": "1000",
+      "strength": "0.5",
+      "n": "9",
+      "clip_t_mean": "28.67750856611464",
+      "clip_t_sd": "2.5081218594067893",
+      "prompt_pass_n": "6",
+      "usable_n": "6",
+      "human_status": "two_raters_adjudicated",
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 3,
+        "very_realistic": 5
+      },
+      "ranks": {
+        "clip_t_mean": [
+          15,
+          15
+        ],
+        "usable_n": [
+          2,
+          6
+        ],
+        "prompt_pass_n": [
+          1,
+          5
+        ]
+      }
+    },
+    {
+      "config": "1000-0.8",
+      "step": "1000",
+      "strength": "0.8",
+      "n": "9",
+      "clip_t_mean": "29.564770062764484",
+      "clip_t_sd": "2.604923980690028",
+      "prompt_pass_n": "4",
+      "usable_n": "3",
+      "human_status": "two_raters_adjudicated",
+      "realism": {
+        "not_realistic": 4,
+        "somewhat_realistic": 2,
+        "very_realistic": 3
+      },
+      "ranks": {
+        "clip_t_mean": [
+          9,
+          9
+        ],
+        "usable_n": [
+          12,
+          15
+        ],
+        "prompt_pass_n": [
+          12,
+          14
+        ]
+      }
+    },
+    {
+      "config": "1000-1.0",
+      "step": "1000",
+      "strength": "1.0",
+      "n": "9",
+      "clip_t_mean": "29.854641689194573",
+      "clip_t_sd": "2.0735969414893174",
+      "prompt_pass_n": "6",
+      "usable_n": "3",
+      "human_status": "two_raters_adjudicated",
+      "realism": {
+        "not_realistic": 2,
+        "somewhat_realistic": 5,
+        "very_realistic": 2
+      },
+      "ranks": {
+        "clip_t_mean": [
+          7,
+          7
+        ],
+        "usable_n": [
+          12,
+          15
+        ],
+        "prompt_pass_n": [
+          1,
+          5
+        ]
+      }
+    },
+    {
+      "config": "1500-0.2",
+      "step": "1500",
+      "strength": "0.2",
+      "n": "9",
+      "clip_t_mean": "29.22133505344391",
+      "clip_t_sd": "1.6818465925664658",
+      "prompt_pass_n": "6",
+      "usable_n": "6",
+      "human_status": "two_raters_adjudicated",
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 7,
+        "very_realistic": 2
+      },
+      "ranks": {
+        "clip_t_mean": [
+          11,
+          11
+        ],
+        "usable_n": [
+          2,
+          6
+        ],
+        "prompt_pass_n": [
+          1,
+          5
+        ]
+      }
+    },
+    {
+      "config": "1500-0.5",
+      "step": "1500",
+      "strength": "0.5",
+      "n": "9",
+      "clip_t_mean": "29.04344830248091",
+      "clip_t_sd": "2.6731544671955456",
+      "prompt_pass_n": "5",
+      "usable_n": "5",
+      "human_status": "two_raters_adjudicated",
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 4,
+        "very_realistic": 4
+      },
+      "ranks": {
+        "clip_t_mean": [
+          13,
+          13
+        ],
+        "usable_n": [
+          7,
+          9
+        ],
+        "prompt_pass_n": [
+          6,
+          11
+        ]
+      }
+    },
+    {
+      "config": "1500-0.8",
+      "step": "1500",
+      "strength": "0.8",
+      "n": "9",
+      "clip_t_mean": "30.760045184029472",
+      "clip_t_sd": "2.017116308088201",
+      "prompt_pass_n": "5",
+      "usable_n": "4",
+      "human_status": "two_raters_adjudicated",
+      "realism": {
+        "not_realistic": 3,
+        "somewhat_realistic": 2,
+        "very_realistic": 4
+      },
+      "ranks": {
+        "clip_t_mean": [
+          1,
+          1
+        ],
+        "usable_n": [
+          10,
+          11
+        ],
+        "prompt_pass_n": [
+          6,
+          11
+        ]
+      }
+    },
+    {
+      "config": "1500-1.0",
+      "step": "1500",
+      "strength": "1.0",
+      "n": "9",
+      "clip_t_mean": "29.418408539560104",
+      "clip_t_sd": "1.6664549804631257",
+      "prompt_pass_n": "4",
+      "usable_n": "2",
+      "human_status": "two_raters_adjudicated",
+      "realism": {
+        "not_realistic": 3,
+        "somewhat_realistic": 4,
+        "very_realistic": 2
+      },
+      "ranks": {
+        "clip_t_mean": [
+          10,
+          10
+        ],
+        "usable_n": [
+          16,
+          16
+        ],
+        "prompt_pass_n": [
+          12,
+          14
+        ]
+      }
+    },
+    {
+      "config": "1860-0.2",
+      "step": "1860",
+      "strength": "0.2",
+      "n": "9",
+      "clip_t_mean": "29.57925730281406",
+      "clip_t_sd": "1.7161273127936068",
+      "prompt_pass_n": "6",
+      "usable_n": "7",
+      "human_status": "two_raters_adjudicated",
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 6,
+        "very_realistic": 3
+      },
+      "ranks": {
+        "clip_t_mean": [
+          8,
+          8
+        ],
+        "usable_n": [
+          1,
+          1
+        ],
+        "prompt_pass_n": [
+          1,
+          5
+        ]
+      }
+    },
+    {
+      "config": "1860-0.5",
+      "step": "1860",
+      "strength": "0.5",
+      "n": "9",
+      "clip_t_mean": "28.960233595636154",
+      "clip_t_sd": "3.4349660023762114",
+      "prompt_pass_n": "6",
+      "usable_n": "5",
+      "human_status": "two_raters_adjudicated",
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 5,
+        "very_realistic": 4
+      },
+      "ranks": {
+        "clip_t_mean": [
+          14,
+          14
+        ],
+        "usable_n": [
+          7,
+          9
+        ],
+        "prompt_pass_n": [
+          1,
+          5
+        ]
+      }
+    },
+    {
+      "config": "1860-0.8",
+      "step": "1860",
+      "strength": "0.8",
+      "n": "9",
+      "clip_t_mean": "30.407935712072586",
+      "clip_t_sd": "1.5085884086248238",
+      "prompt_pass_n": "4",
+      "usable_n": "6",
+      "human_status": "two_raters_adjudicated",
+      "realism": {
+        "not_realistic": 2,
+        "somewhat_realistic": 1,
+        "very_realistic": 6
+      },
+      "ranks": {
+        "clip_t_mean": [
+          2,
+          2
+        ],
+        "usable_n": [
+          2,
+          6
+        ],
+        "prompt_pass_n": [
+          12,
+          14
+        ]
+      }
+    },
+    {
+      "config": "1860-1.0",
+      "step": "1860",
+      "strength": "1.0",
+      "n": "9",
+      "clip_t_mean": "30.227836304240757",
+      "clip_t_sd": "1.618626588499605",
+      "prompt_pass_n": "5",
+      "usable_n": "3",
+      "human_status": "two_raters_adjudicated",
+      "realism": {
+        "not_realistic": 2,
+        "somewhat_realistic": 5,
+        "very_realistic": 2
+      },
+      "ranks": {
+        "clip_t_mean": [
+          3,
+          3
+        ],
+        "usable_n": [
+          12,
+          15
+        ],
+        "prompt_pass_n": [
+          6,
+          11
+        ]
+      }
+    }
+  ],
+  "by_prompt": [
+    {
+      "config": "no-lora",
+      "prompt_id": "new150_010",
+      "n": 3,
+      "usable": 0,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 3,
+        "very_realistic": 0
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "no-lora",
+      "prompt_id": "new24_001",
+      "n": 3,
+      "usable": 3,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 1,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "no-lora",
+      "prompt_id": "new24_010",
+      "n": 3,
+      "usable": 3,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 3,
+        "very_realistic": 0
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "500-0.2",
+      "prompt_id": "new150_010",
+      "n": 3,
+      "usable": 0,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 2,
+        "very_realistic": 0
+      },
+      "requirements_pass": [
+        3,
+        3,
+        2,
+        3
+      ]
+    },
+    {
+      "config": "500-0.2",
+      "prompt_id": "new24_001",
+      "n": 3,
+      "usable": 3,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "500-0.2",
+      "prompt_id": "new24_010",
+      "n": 3,
+      "usable": 3,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 0,
+        "very_realistic": 3
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "500-0.5",
+      "prompt_id": "new150_010",
+      "n": 3,
+      "usable": 0,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 2,
+        "very_realistic": 0
+      },
+      "requirements_pass": [
+        3,
+        3,
+        2,
+        3
+      ]
+    },
+    {
+      "config": "500-0.5",
+      "prompt_id": "new24_001",
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 1,
+        "very_realistic": 2
+      },
+      "requirements_pass": [
+        3,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "500-0.5",
+      "prompt_id": "new24_010",
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "500-0.8",
+      "prompt_id": "new150_010",
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 2,
+        "somewhat_realistic": 1,
+        "very_realistic": 0
+      },
+      "requirements_pass": [
+        3,
+        2,
+        1,
+        3
+      ]
+    },
+    {
+      "config": "500-0.8",
+      "prompt_id": "new24_001",
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 1,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "500-0.8",
+      "prompt_id": "new24_010",
+      "n": 3,
+      "usable": 3,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 1,
+        "very_realistic": 2
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "500-1.0",
+      "prompt_id": "new150_010",
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 2,
+        "somewhat_realistic": 1,
+        "very_realistic": 0
+      },
+      "requirements_pass": [
+        3,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "config": "500-1.0",
+      "prompt_id": "new24_001",
+      "n": 3,
+      "usable": 0,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 1,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "500-1.0",
+      "prompt_id": "new24_010",
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 2,
+        "somewhat_realistic": 0,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1000-0.2",
+      "prompt_id": "new150_010",
+      "n": 3,
+      "usable": 0,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 2,
+        "very_realistic": 0
+      },
+      "requirements_pass": [
+        3,
+        3,
+        2,
+        3
+      ]
+    },
+    {
+      "config": "1000-0.2",
+      "prompt_id": "new24_001",
+      "n": 3,
+      "usable": 3,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1000-0.2",
+      "prompt_id": "new24_010",
+      "n": 3,
+      "usable": 3,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 1,
+        "very_realistic": 2
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1000-0.5",
+      "prompt_id": "new150_010",
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 2,
+        "very_realistic": 0
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1000-0.5",
+      "prompt_id": "new24_001",
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 0,
+        "very_realistic": 3
+      },
+      "requirements_pass": [
+        3,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1000-0.5",
+      "prompt_id": "new24_010",
+      "n": 3,
+      "usable": 3,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 1,
+        "very_realistic": 2
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1000-0.8",
+      "prompt_id": "new150_010",
+      "n": 3,
+      "usable": 0,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 3,
+        "somewhat_realistic": 0,
+        "very_realistic": 0
+      },
+      "requirements_pass": [
+        3,
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "config": "1000-0.8",
+      "prompt_id": "new24_001",
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 1,
+        "very_realistic": 2
+      },
+      "requirements_pass": [
+        3,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1000-0.8",
+      "prompt_id": "new24_010",
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 1,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1000-1.0",
+      "prompt_id": "new150_010",
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 1,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1000-1.0",
+      "prompt_id": "new24_001",
+      "n": 3,
+      "usable": 0,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 2,
+        "very_realistic": 0
+      },
+      "requirements_pass": [
+        3,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1000-1.0",
+      "prompt_id": "new24_010",
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1500-0.2",
+      "prompt_id": "new150_010",
+      "n": 3,
+      "usable": 0,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 3,
+        "very_realistic": 0
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1500-0.2",
+      "prompt_id": "new24_001",
+      "n": 3,
+      "usable": 3,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1500-0.2",
+      "prompt_id": "new24_010",
+      "n": 3,
+      "usable": 3,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1500-0.5",
+      "prompt_id": "new150_010",
+      "n": 3,
+      "usable": 0,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 2,
+        "very_realistic": 0
+      },
+      "requirements_pass": [
+        3,
+        3,
+        2,
+        3
+      ]
+    },
+    {
+      "config": "1500-0.5",
+      "prompt_id": "new24_001",
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 1,
+        "very_realistic": 2
+      },
+      "requirements_pass": [
+        3,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1500-0.5",
+      "prompt_id": "new24_010",
+      "n": 3,
+      "usable": 3,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 1,
+        "very_realistic": 2
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1500-0.8",
+      "prompt_id": "new150_010",
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 2,
+        "somewhat_realistic": 0,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        3,
+        2,
+        3
+      ]
+    },
+    {
+      "config": "1500-0.8",
+      "prompt_id": "new24_001",
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 1,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "config": "1500-0.8",
+      "prompt_id": "new24_010",
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 1,
+        "very_realistic": 2
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1500-1.0",
+      "prompt_id": "new150_010",
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 2,
+        "somewhat_realistic": 0,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "config": "1500-1.0",
+      "prompt_id": "new24_001",
+      "n": 3,
+      "usable": 0,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 3,
+        "very_realistic": 0
+      },
+      "requirements_pass": [
+        3,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1500-1.0",
+      "prompt_id": "new24_010",
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 1,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1860-0.2",
+      "prompt_id": "new150_010",
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 3,
+        "very_realistic": 0
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1860-0.2",
+      "prompt_id": "new24_001",
+      "n": 3,
+      "usable": 3,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1860-0.2",
+      "prompt_id": "new24_010",
+      "n": 3,
+      "usable": 3,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 1,
+        "very_realistic": 2
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1860-0.5",
+      "prompt_id": "new150_010",
+      "n": 3,
+      "usable": 0,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 3,
+        "very_realistic": 0
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1860-0.5",
+      "prompt_id": "new24_001",
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 1,
+        "very_realistic": 2
+      },
+      "requirements_pass": [
+        3,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1860-0.5",
+      "prompt_id": "new24_010",
+      "n": 3,
+      "usable": 3,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 1,
+        "very_realistic": 2
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1860-0.8",
+      "prompt_id": "new150_010",
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 1,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "config": "1860-0.8",
+      "prompt_id": "new24_001",
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 0,
+        "very_realistic": 2
+      },
+      "requirements_pass": [
+        3,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1860-0.8",
+      "prompt_id": "new24_010",
+      "n": 3,
+      "usable": 3,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 0,
+        "very_realistic": 3
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1860-1.0",
+      "prompt_id": "new150_010",
+      "n": 3,
+      "usable": 0,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 2,
+        "somewhat_realistic": 1,
+        "very_realistic": 0
+      },
+      "requirements_pass": [
+        3,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "config": "1860-1.0",
+      "prompt_id": "new24_001",
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 0,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "config": "1860-1.0",
+      "prompt_id": "new24_010",
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 3,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      },
+      "requirements_pass": [
+        3,
+        3,
+        3,
+        3
+      ]
+    }
+  ],
+  "by_seed": [
+    {
+      "config": "no-lora",
+      "seed": 99999,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 2,
+        "very_realistic": 0
+      }
+    },
+    {
+      "config": "no-lora",
+      "seed": 88888,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "no-lora",
+      "seed": 77777,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 3,
+        "very_realistic": 0
+      }
+    },
+    {
+      "config": "500-0.2",
+      "seed": 99999,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "500-0.2",
+      "seed": 88888,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 0,
+        "very_realistic": 2
+      }
+    },
+    {
+      "config": "500-0.2",
+      "seed": 77777,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "500-0.5",
+      "seed": 99999,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "500-0.5",
+      "seed": 88888,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 1,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "500-0.5",
+      "seed": 77777,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "500-0.8",
+      "seed": 99999,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 1,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "500-0.8",
+      "seed": 88888,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 1,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "500-0.8",
+      "seed": 77777,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 1,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "500-1.0",
+      "seed": 99999,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 2,
+        "somewhat_realistic": 1,
+        "very_realistic": 0
+      }
+    },
+    {
+      "config": "500-1.0",
+      "seed": 88888,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 2,
+        "somewhat_realistic": 1,
+        "very_realistic": 0
+      }
+    },
+    {
+      "config": "500-1.0",
+      "seed": 77777,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 0,
+        "very_realistic": 2
+      }
+    },
+    {
+      "config": "1000-0.2",
+      "seed": 99999,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 3,
+        "very_realistic": 0
+      }
+    },
+    {
+      "config": "1000-0.2",
+      "seed": 88888,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 0,
+        "very_realistic": 2
+      }
+    },
+    {
+      "config": "1000-0.2",
+      "seed": 77777,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1000-0.5",
+      "seed": 99999,
+      "n": 3,
+      "usable": 3,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1000-0.5",
+      "seed": 88888,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 0,
+        "very_realistic": 2
+      }
+    },
+    {
+      "config": "1000-0.5",
+      "seed": 77777,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 1,
+        "very_realistic": 2
+      }
+    },
+    {
+      "config": "1000-0.8",
+      "seed": 99999,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 2,
+        "somewhat_realistic": 0,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1000-0.8",
+      "seed": 88888,
+      "n": 3,
+      "usable": 0,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 2,
+        "very_realistic": 0
+      }
+    },
+    {
+      "config": "1000-0.8",
+      "seed": 77777,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 0,
+        "very_realistic": 2
+      }
+    },
+    {
+      "config": "1000-1.0",
+      "seed": 99999,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 1,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1000-1.0",
+      "seed": 88888,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 3,
+        "very_realistic": 0
+      }
+    },
+    {
+      "config": "1000-1.0",
+      "seed": 77777,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 1,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1500-0.2",
+      "seed": 99999,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 3,
+        "very_realistic": 0
+      }
+    },
+    {
+      "config": "1500-0.2",
+      "seed": 88888,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1500-0.2",
+      "seed": 77777,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1500-0.5",
+      "seed": 99999,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 1,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1500-0.5",
+      "seed": 88888,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1500-0.5",
+      "seed": 77777,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 1,
+        "very_realistic": 2
+      }
+    },
+    {
+      "config": "1500-0.8",
+      "seed": 99999,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1500-0.8",
+      "seed": 88888,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 2,
+        "somewhat_realistic": 0,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1500-0.8",
+      "seed": 77777,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 0,
+        "very_realistic": 2
+      }
+    },
+    {
+      "config": "1500-1.0",
+      "seed": 99999,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 1,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1500-1.0",
+      "seed": 88888,
+      "n": 3,
+      "usable": 0,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 2,
+        "very_realistic": 0
+      }
+    },
+    {
+      "config": "1500-1.0",
+      "seed": 77777,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 1,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1860-0.2",
+      "seed": 99999,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1860-0.2",
+      "seed": 88888,
+      "n": 3,
+      "usable": 3,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1860-0.2",
+      "seed": 77777,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1860-0.5",
+      "seed": 99999,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1860-0.5",
+      "seed": 88888,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 2,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1860-0.5",
+      "seed": 77777,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 1,
+        "very_realistic": 2
+      }
+    },
+    {
+      "config": "1860-0.8",
+      "seed": 99999,
+      "n": 3,
+      "usable": 3,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 0,
+        "very_realistic": 3
+      }
+    },
+    {
+      "config": "1860-0.8",
+      "seed": 88888,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 2,
+        "somewhat_realistic": 0,
+        "very_realistic": 1
+      }
+    },
+    {
+      "config": "1860-0.8",
+      "seed": 77777,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 1,
+        "very_realistic": 2
+      }
+    },
+    {
+      "config": "1860-1.0",
+      "seed": 99999,
+      "n": 3,
+      "usable": 0,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 0,
+        "somewhat_realistic": 3,
+        "very_realistic": 0
+      }
+    },
+    {
+      "config": "1860-1.0",
+      "seed": 88888,
+      "n": 3,
+      "usable": 1,
+      "prompt_pass": 1,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 2,
+        "very_realistic": 0
+      }
+    },
+    {
+      "config": "1860-1.0",
+      "seed": 77777,
+      "n": 3,
+      "usable": 2,
+      "prompt_pass": 2,
+      "realism": {
+        "not_realistic": 1,
+        "somewhat_realistic": 0,
+        "very_realistic": 2
+      }
+    }
+  ],
+  "n_images": 153,
+  "n_raters": 2,
+  "n_adjudicated_images": 110,
+  "totals": {
+    "usable": 80,
+    "prompt_pass": 84
+  },
+  "realism_totals": {
+    "not_realistic": 30,
+    "somewhat_realistic": 70,
+    "very_realistic": 53
+  }
+}

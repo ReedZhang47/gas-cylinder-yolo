@@ -1,0 +1,376 @@
+{
+  "date": "2026-10-11T21:01:30.743985+08:00",
+  "status": "complete",
+  "scope": "LoRA comparison disposable process files only",
+  "targets": [
+    ".tmp/clip_score_review",
+    ".tmp/lora_compare_review",
+    ".tmp/lora_final_render",
+    "experiments/lora_compare/previews",
+    ".tmp/finalize_review_v3.py",
+    ".tmp/finish_task_presentation.py",
+    ".tmp/inspect_final_pdfs.py",
+    ".tmp/inspect_human.py",
+    ".tmp/lora_delivery_qa.py",
+    ".tmp/lora_final_acceptance.py",
+    ".tmp/lora_human_handoff.py",
+    ".tmp/lora_review_v2_empty.json",
+    ".tmp/lora_review_v2_finalize.py",
+    ".tmp/test_update_v3.py",
+    ".tmp/update_review_v3.py",
+    ".tmp/validate_task_presentation.py",
+    "experiments/lora_compare/versions/v1/R1.zip",
+    "experiments/lora_compare/versions/v1/R2.zip",
+    "experiments/lora_compare/versions/v2/R1.zip",
+    "experiments/lora_compare/versions/v2/R2.zip"
+  ],
+  "deleted_file_count": 53,
+  "deleted_bytes": 1059974706,
+  "files": [
+    {
+      "path": ".tmp/clip_score_review/page-1.png",
+      "bytes": 535811,
+      "sha256": "c7c8736009ab1a81a05158d3a2e48d9b3e491878dbc3d4f93b449680e2da807e"
+    },
+    {
+      "path": ".tmp/clip_score_review/page-2.png",
+      "bytes": 1068935,
+      "sha256": "f8be0b8710254b235ce22d6c0dcffc76d7be4d49381b169d4c1a9a99729145ef"
+    },
+    {
+      "path": ".tmp/clip_score_review/page-3.png",
+      "bytes": 710236,
+      "sha256": "1bbb81e824644d3d73d2b51b112cb9d167edf87e3af9ac02f1bd1e8c2615399e"
+    },
+    {
+      "path": ".tmp/clip_score_review/page-4.png",
+      "bytes": 536870,
+      "sha256": "a8c4659c04a41504c77194811774aedc4a8c9cb4b626516c4d6a8567804a1aed"
+    },
+    {
+      "path": ".tmp/clip_score_review/paper.txt",
+      "bytes": 23754,
+      "sha256": "3eacc0a2a640f17e9c7ce102d871a3e2b76f1ce653a2b315efe9f0586fcc29d0"
+    },
+    {
+      "path": ".tmp/lora_compare_review/group1.jpg",
+      "bytes": 438338,
+      "sha256": "c00d31106a6135e7cbd822807e97a34756dff7eff8797078c2b849e950025997"
+    },
+    {
+      "path": ".tmp/lora_compare_review/group2.jpg",
+      "bytes": 505023,
+      "sha256": "15eb06e705421c614341e7698f2d4cbfe494c41408aa557957477db224a291a6"
+    },
+    {
+      "path": ".tmp/lora_compare_review/group3.jpg",
+      "bytes": 473641,
+      "sha256": "d876b0df315973f00df4055c934b6dcaf518b448d078cd608a4160a6de90ed49"
+    },
+    {
+      "path": ".tmp/lora_compare_review/metadata.json",
+      "bytes": 52154,
+      "sha256": "c06b16cb06f2035c77d3f6a735f374443baf4d588a4efd074d88728769eb200b"
+    },
+    {
+      "path": ".tmp/lora_final_render/final-1.png",
+      "bytes": 224352,
+      "sha256": "ccd6c0135c73ea7d234f6dd89e4fdc61ccf5fef6a25b55c0566074a342aac7ed"
+    },
+    {
+      "path": ".tmp/lora_final_render/main-1.png",
+      "bytes": 1366201,
+      "sha256": "71edf1a60a13d9c577a7f53dba77a49bc4dbb2b5902d4101b8a5e6f8761cbc67"
+    },
+    {
+      "path": ".tmp/lora_final_render/pdf_checks.json",
+      "bytes": 402,
+      "sha256": "22ffec538c2d7a122da72be1e2dfdeff957433e762f3595923e00b29c08127c8"
+    },
+    {
+      "path": ".tmp/lora_final_render/pixels-before.json",
+      "bytes": 1452,
+      "sha256": "e7e53694c9c94d372726aa2c11227da21d8192f7e52e4b9beca2a7dcef2bc79f"
+    },
+    {
+      "path": ".tmp/lora_final_render/prompt-1.png",
+      "bytes": 140635,
+      "sha256": "1c010c419a79f76f14266e592e7233887f429f99d101259b7bc13ab0947d3b1d"
+    },
+    {
+      "path": ".tmp/lora_final_render/supp-1.png",
+      "bytes": 557073,
+      "sha256": "b94e8f619ee92c7460c44815daa127986faa143043a783db2b02e352001c82dd"
+    },
+    {
+      "path": ".tmp/lora_final_render/supp-2.png",
+      "bytes": 517578,
+      "sha256": "f2be86cf072507d77c469f43d5dd76cb4c8484bc1c3a08effe2061d6823fc7e7"
+    },
+    {
+      "path": ".tmp/lora_final_render/supp-3.png",
+      "bytes": 530951,
+      "sha256": "a00165c68f90c7ea71a9b13452ce6b840abc886bb5ddd16919f8e7c94e619371"
+    },
+    {
+      "path": ".tmp/lora_final_render/supp-4.png",
+      "bytes": 544648,
+      "sha256": "8b9f5c4f04182b471cf4811d298c428a7643de5896095f4cecc55f515bf9f136"
+    },
+    {
+      "path": ".tmp/lora_final_render/supp-5.png",
+      "bytes": 525931,
+      "sha256": "83edbb28af21c068a38ca52aca18c6bde760274e3f8bc424ed82dc359f46e1d5"
+    },
+    {
+      "path": ".tmp/lora_final_render/supp-6.png",
+      "bytes": 553904,
+      "sha256": "fd76e61be2d106648ffea95fae95313bbc8e52eee61a19a3250d31ec5f871b1d"
+    },
+    {
+      "path": ".tmp/lora_final_render/supp-7.png",
+      "bytes": 524750,
+      "sha256": "93f35e48807042e2cfb5b50f2759d0637196ee7fff743cfc225b1c00b1ab2e6d"
+    },
+    {
+      "path": ".tmp/lora_final_render/supp-8.png",
+      "bytes": 518970,
+      "sha256": "4bbfda61e5ba5ce3bdda54a13889671389b231be964b4a76fbc12f32c1218019"
+    },
+    {
+      "path": ".tmp/lora_final_render/supp-9.png",
+      "bytes": 512562,
+      "sha256": "419cf601e0d37bcb47886934d349b6e3956411e884a9fa8e38f9e9f45343e2c1"
+    },
+    {
+      "path": ".tmp/lora_final_render/supp-contact.png",
+      "bytes": 3159276,
+      "sha256": "52ff243ddb55d07583c3cdd05ac95e91ab6fb35975d2d8b7ead69e2b55902934"
+    },
+    {
+      "path": ".tmp/lora_final_render/task-1.png",
+      "bytes": 228061,
+      "sha256": "3e0043bfc9c7c51f4b0cc4a5ba7cfda1cfd4c9d15f606e9840190f4ed44185e8"
+    },
+    {
+      "path": "experiments/lora_compare/previews/main.png",
+      "bytes": 796696,
+      "sha256": "1596216a0486f66c41af332447e6f34b7a2859648b85a8b0de0958e843899179"
+    },
+    {
+      "path": "experiments/lora_compare/previews/main_svg.png",
+      "bytes": 1113483,
+      "sha256": "c2d44fcc61351360c05ba5058ae70f91d854cb37a8b4c893668edaa0edc34860"
+    },
+    {
+      "path": "experiments/lora_compare/previews/supplement-1.png",
+      "bytes": 905591,
+      "sha256": "affae2e5a2bd9b0e8f4535eaf886e3091a3a714fb0b99525597c4a7767ed96ad"
+    },
+    {
+      "path": "experiments/lora_compare/previews/supplement-2.png",
+      "bytes": 836176,
+      "sha256": "1ede2e0e4c000ec25d8bb4095f07af711165679fb72a6450235fcb2ccd3dc453"
+    },
+    {
+      "path": "experiments/lora_compare/previews/supplement-3.png",
+      "bytes": 868078,
+      "sha256": "8d48afe2635bb35828eee8f0243228dc25bd63131255ebd623e08a05856169cf"
+    },
+    {
+      "path": "experiments/lora_compare/previews/supplement-4.png",
+      "bytes": 893094,
+      "sha256": "c004304b28b0c869405056ed0fe87bbf5f91434ad61c939a11d692c38c65f404"
+    },
+    {
+      "path": "experiments/lora_compare/previews/supplement-5.png",
+      "bytes": 855001,
+      "sha256": "cb9cc689a88064ea0e519eb67e2dc570d3bf748a4724700b76d3d2a62c8852c2"
+    },
+    {
+      "path": "experiments/lora_compare/previews/supplement-6.png",
+      "bytes": 905389,
+      "sha256": "053e7a48fc7a88aba99c623f8f719e528c2c59bfb5e66e7fb7e780f29b4b64ca"
+    },
+    {
+      "path": "experiments/lora_compare/previews/supplement-7.png",
+      "bytes": 855341,
+      "sha256": "e1be53b6c79da3c056a92e2b3d2978fe95fffe099f46da2b7ab9f8523f42027d"
+    },
+    {
+      "path": "experiments/lora_compare/previews/supplement-8.png",
+      "bytes": 846723,
+      "sha256": "0494e610d5a001081a7cbf6176e734aafa707ceffc3285f2a2deb420931a25f0"
+    },
+    {
+      "path": "experiments/lora_compare/previews/supplement-9.png",
+      "bytes": 839481,
+      "sha256": "08e543af24dc0dfd3eede52f80a6ef3a6cea8b25e7fb16cf58a7728013f5b6c1"
+    },
+    {
+      "path": "experiments/lora_compare/previews/supplement_contact.png",
+      "bytes": 3166890,
+      "sha256": "dd88489cbfd1818caec58c34d5149fe6e078c9b5c4fe33956e5356f18bf9e516"
+    },
+    {
+      "path": ".tmp/finalize_review_v3.py",
+      "bytes": 4582,
+      "sha256": "be8bed08498ad30b6ece098a95bfb8c2cf3587372f189cf965fe7149a5dfff0a"
+    },
+    {
+      "path": ".tmp/finish_task_presentation.py",
+      "bytes": 1844,
+      "sha256": "2c939d17f996b48cbec5186736c9837100d90704361b033c51405c94dea4eb20"
+    },
+    {
+      "path": ".tmp/inspect_final_pdfs.py",
+      "bytes": 1132,
+      "sha256": "be315c144685e88c1ecbe4d284a714281c77cfc5b24965c3e4410bc5d2ce19a0"
+    },
+    {
+      "path": ".tmp/inspect_human.py",
+      "bytes": 1112,
+      "sha256": "e890643b9e7f0ed6065bfa7703569ab173a1d3ea659d7d525db7dc790af3f091"
+    },
+    {
+      "path": ".tmp/lora_delivery_qa.py",
+      "bytes": 2322,
+      "sha256": "dbb2d43b9408ec27a065692b91c9cd8d1af7353e8ffb0f669f5b847a0b6e5e58"
+    },
+    {
+      "path": ".tmp/lora_final_acceptance.py",
+      "bytes": 8372,
+      "sha256": "caf3957b182fcf441534dbae6e2ed854c7515f390336b68e617e2c0508fbb52e"
+    },
+    {
+      "path": ".tmp/lora_human_handoff.py",
+      "bytes": 4849,
+      "sha256": "8bb8547185d5ff52673d35119b32e313e73176300a381471adec72a8a81d0648"
+    },
+    {
+      "path": ".tmp/lora_review_v2_empty.json",
+      "bytes": 58439,
+      "sha256": "931333732f9f598faa43981db213a914684c22c60a17314bf34ddb4ef1f080a6"
+    },
+    {
+      "path": ".tmp/lora_review_v2_finalize.py",
+      "bytes": 4517,
+      "sha256": "0b980d99e304b70fee30d369fc0b485f34baa05742261b03979a9813359e82ef"
+    },
+    {
+      "path": ".tmp/test_update_v3.py",
+      "bytes": 1883,
+      "sha256": "e71cb80eabf2f9b7501ccca1176482f13af5fbdf1a79db9f1c8408114ca582b0"
+    },
+    {
+      "path": ".tmp/update_review_v3.py",
+      "bytes": 6828,
+      "sha256": "188a25e8d7af49cc5288f286df98e56a8ca98943856f4ed661f1929cb8ecffde"
+    },
+    {
+      "path": ".tmp/validate_task_presentation.py",
+      "bytes": 4559,
+      "sha256": "ba0656f8d88cc23efd4fa0f3768a13e2c957c00c39824eb20b9bb5bd5d59e7e2"
+    },
+    {
+      "path": "experiments/lora_compare/versions/v1/R1.zip",
+      "bytes": 258237188,
+      "sha256": "a507fb5f55f79928482dfd8b50acf29b466c5165af5c2235a82ae29dee82d9ed"
+    },
+    {
+      "path": "experiments/lora_compare/versions/v1/R2.zip",
+      "bytes": 258237188,
+      "sha256": "38f4aa668909c59223d037bb8efb47e15bcae0094460dc3c4dae2115ef9b590b"
+    },
+    {
+      "path": "experiments/lora_compare/versions/v2/R1.zip",
+      "bytes": 258133220,
+      "sha256": "fce54b0e90938b249af27ba48606e249a4009c52a76526e7178901be77ce9d44"
+    },
+    {
+      "path": "experiments/lora_compare/versions/v2/R2.zip",
+      "bytes": 258133220,
+      "sha256": "b16df05d58b342044edfef41135c0c2d3a48bb8331ebef7539298b71f5242a2b"
+    }
+  ],
+  "obsolete_package_checks": [
+    {
+      "archive": "experiments/lora_compare/versions/v1/R1.zip",
+      "image_count": 153,
+      "images_identical_to_current_review": true,
+      "retained_non_image_entries": [
+        {
+          "path": "experiments/lora_compare/versions/v1/review_pages/R1/index.html",
+          "sha256": "cd7784e8533e8371e9d492dfc4312247ffe3b6a7aad9ae111a292f0cd3537e38"
+        },
+        {
+          "path": "experiments/lora_compare/versions/v1/review_pages/R1/README.txt",
+          "sha256": "315c6bba153ea54f2ea5a20d6c36313c3854b1ff08a21e46ae423c9b4cbe9c3f"
+        }
+      ]
+    },
+    {
+      "archive": "experiments/lora_compare/versions/v1/R2.zip",
+      "image_count": 153,
+      "images_identical_to_current_review": true,
+      "retained_non_image_entries": [
+        {
+          "path": "experiments/lora_compare/versions/v1/review_pages/R2/index.html",
+          "sha256": "1b98234f7996e1111fc9e21e5025d3b859ea16d452fbdf579608f35c7b709155"
+        },
+        {
+          "path": "experiments/lora_compare/versions/v1/review_pages/R2/README.txt",
+          "sha256": "315c6bba153ea54f2ea5a20d6c36313c3854b1ff08a21e46ae423c9b4cbe9c3f"
+        }
+      ]
+    },
+    {
+      "archive": "experiments/lora_compare/versions/v2/R1.zip",
+      "image_count": 153,
+      "images_identical_to_current_review": true,
+      "retained_non_image_entries": [
+        {
+          "path": "experiments/lora_compare/versions/v2/review_pages/R1/index.html",
+          "sha256": "d36b1105fb71470e7fd4e36f8fdab653aa1d6210e611b40a2c5ef0d245eec3b3"
+        },
+        {
+          "path": "experiments/lora_compare/versions/v2/review_pages/R1/README.txt",
+          "sha256": "c49e7f7ebbaf3ae86d09e98544b731ab91ac3000525c0667f8ce23af9dd92fbe"
+        }
+      ]
+    },
+    {
+      "archive": "experiments/lora_compare/versions/v2/R2.zip",
+      "image_count": 153,
+      "images_identical_to_current_review": true,
+      "retained_non_image_entries": [
+        {
+          "path": "experiments/lora_compare/versions/v2/review_pages/R2/index.html",
+          "sha256": "19cda5e7d9b286b0f6f7ee3f0591142211d9b365f2c79aae298e7ebc1b0ae7df"
+        },
+        {
+          "path": "experiments/lora_compare/versions/v2/review_pages/R2/README.txt",
+          "sha256": "c49e7f7ebbaf3ae86d09e98544b731ab91ac3000525c0667f8ce23af9dd92fbe"
+        }
+      ]
+    }
+  ],
+  "retained": [
+    "all frozen protocols and source archives",
+    "original v3 human exports and imported raw records",
+    "final labels and statistical results",
+    "current anonymous packages and review image copies",
+    "all current formal figures/tables/reports and acceptance records",
+    "before_final and before_task_presentation provenance",
+    "old v1/v2 review pages and instructions",
+    "CLIP runtime, dependencies and model in .tmp/lora-eval"
+  ],
+  "audit_script": "scripts/audit_lora_compare.py",
+  "completed_at": "2026-10-11T21:02:05.0219998+08:00",
+  "verification": {
+    "audit": "passed after cleanup: frozen inputs, human source records, 17 summaries and all 23 formal output hashes unchanged",
+    "root_document_links": "passed",
+    "retained_old_review_pages": "all hashes passed",
+    "audit_script_sha256": "b4ca976577ece08bd3751a0925a7137483291e66641b20e7807ab664c02a24d4"
+  }
+}

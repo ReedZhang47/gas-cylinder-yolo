@@ -19,4 +19,6 @@
 
 正式生成使用 `qwen_image_2.1_int8_convrot.safetensors`、`qwen3vl_8b_int8_convrot.safetensors`、`qwen_image_2.1_vae_bf16.safetensors` 及 `step-1860.safetensors`，LoRA 强度 0.8。训练方法、权重哈希、固定 N114 对照见 `qwen21_lora_training_validation.md`。
 
+2026-10-10 作者确认：LoRA 参数比较 PNG 中的 `qwen_image_2.1.safetensors` 是上述底模的手动改名，权重未变；此处为作者确认的别名关系，不另称已做双文件哈希比对。现有 153 张参数对照（三提示词、三 seed、16 个 LoRA 配置及无 LoRA 基线）的三维评价执行计划见 [LORA_COMPARE_EVALUATION_PLAN.md](../LORA_COMPARE_EVALUATION_PLAN.md)。本轮 CLIP 自动评价、双人评分及全部分歧人工裁决已于 2026-10-11 完成；最终报告见 [report.md](../../experiments/lora_compare/report.md)，主图聚焦 CLIP、训练可用性与真实性，完整提示词指标保留于补充结果。
+
 工作流保存在 `pilot_workflow_api.json`、`pilot_workflow_ui.json` 和 `new24_workflows/`；前两者虽保留 pilot 文件名，也是完整批次的工作流依据。原两组生成方法见 `full_generation_20261004.md`。实际 D 图名/来源/seed/提示词以 2026-10-08 归档为准，不重复读取 Comfy Desktop 日志。

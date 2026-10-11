@@ -56,3 +56,13 @@ paper/reference/
 # agent 运行日志与一次性测量产物
 logs/
 /experiments/v5_d/pipeline.lock
+/experiments/v5_d_scale/pipeline.lock
+
+# LoRA evaluation: local image copies / caches; formal results and figures tracked
+/experiments/lora_compare/review/*/images/
+/experiments/lora_compare/review/*.zip
+/experiments/lora_compare/versions/v1/*.zip
+/experiments/lora_compare/previews/
+!/paper/figures/lora_compare/*.pdf
+
+/experiments/lora_compare/versions/v2/*.zip

@@ -1,0 +1,15 @@
+{
+  "provenance": {
+    "protocol_sha256": "b3d8732f94796fb88ff3be6a3726b8929110cb0aa7b69e0802c11fa9656c47d5",
+    "manifest_sha256": "e06c4153818a0a0f2647d4ce4a113dd2cadda04ff6e278e2563e779a2db00b59",
+    "model_sha256": "b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836",
+    "source_commit": "d05afc436d78f1c48dc0dbf8e5980a9d471f35f6",
+    "code_hashes": {
+      "eval_lora_compare.py": "975a6355df9f521716335da83244fc19bda0e9b83f1b8c7d0e1f18cfe413869b",
+      "lora_review.html": "0b642d0ce2f553a95b7c7bd5d7286491efbd58644018fc691a6be2c309a1b827"
+    }
+  },
+  "scores_sha256": "5a2cb5073dc931e0b31788532a26982c9d4b0c78d876a2f8d45814783ec0e6a1",
+  "completed_at": "2026-10-10T19:09:49.871132+08:00",
+  "smoke": "first full-data row finite and reused"
+}

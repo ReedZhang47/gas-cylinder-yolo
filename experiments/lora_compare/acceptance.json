@@ -1,0 +1,249 @@
+{
+  "checked_at": "2026-10-11T20:33:48.853227+08:00",
+  "status": "complete",
+  "inputs_unchanged": 153,
+  "clip_rows": 153,
+  "summary_rows": 17,
+  "independent_summary": {
+    "no-lora": {
+      "mean": 28.99237738715278,
+      "sd": 2.1395295296705323,
+      "n": 9
+    },
+    "500-0.2": {
+      "mean": 28.646503554450142,
+      "sd": 1.560562825427,
+      "n": 9
+    },
+    "500-0.5": {
+      "mean": 29.925902353392708,
+      "sd": 2.371721675692847,
+      "n": 9
+    },
+    "500-0.8": {
+      "mean": 30.22176788912879,
+      "sd": 1.0432692245570463,
+      "n": 9
+    },
+    "500-1.0": {
+      "mean": 29.855917890866596,
+      "sd": 1.5858321605918066,
+      "n": 9
+    },
+    "1000-0.2": {
+      "mean": 29.05702061123318,
+      "sd": 1.5343211189813004,
+      "n": 9
+    },
+    "1000-0.5": {
+      "mean": 28.67750856611464,
+      "sd": 2.5081218594067893,
+      "n": 9
+    },
+    "1000-0.8": {
+      "mean": 29.564770062764484,
+      "sd": 2.604923980690028,
+      "n": 9
+    },
+    "1000-1.0": {
+      "mean": 29.854641689194573,
+      "sd": 2.0735969414893174,
+      "n": 9
+    },
+    "1500-0.2": {
+      "mean": 29.22133505344391,
+      "sd": 1.6818465925664658,
+      "n": 9
+    },
+    "1500-0.5": {
+      "mean": 29.04344830248091,
+      "sd": 2.6731544671955456,
+      "n": 9
+    },
+    "1500-0.8": {
+      "mean": 30.760045184029472,
+      "sd": 2.017116308088201,
+      "n": 9
+    },
+    "1500-1.0": {
+      "mean": 29.418408539560104,
+      "sd": 1.6664549804631257,
+      "n": 9
+    },
+    "1860-0.2": {
+      "mean": 29.57925730281406,
+      "sd": 1.7161273127936068,
+      "n": 9
+    },
+    "1860-0.5": {
+      "mean": 28.960233595636154,
+      "sd": 3.4349660023762114,
+      "n": 9
+    },
+    "1860-0.8": {
+      "mean": 30.407935712072586,
+      "sd": 1.5085884086248238,
+      "n": 9
+    },
+    "1860-1.0": {
+      "mean": 30.227836304240757,
+      "sd": 1.618626588499605,
+      "n": 9
+    }
+  },
+  "packages": {
+    "R1": {
+      "images": 153,
+      "html_config_leaks": 0,
+      "png_metadata_leaks": 0,
+      "source_pixel_matches": 153,
+      "review_rule": "LC-review-v3",
+      "questions_per_image": 4
+    },
+    "R2": {
+      "images": 153,
+      "html_config_leaks": 0,
+      "png_metadata_leaks": 0,
+      "source_pixel_matches": 153,
+      "review_rule": "LC-review-v3",
+      "questions_per_image": 4
+    }
+  },
+  "protocol_sha256": "b3d8732f94796fb88ff3be6a3726b8929110cb0aa7b69e0802c11fa9656c47d5",
+  "review_protocol_sha256": "8dc28e4abe035cbb733e6822e5756f7b1f7db68930f40a845538e1126c1a4127",
+  "source_hashes": {
+    "eval_lora_compare.py": "f31692b6bddff56cb9a0240e746fca33e40a3d89d885663c778d0538ee34ab14",
+    "lora_review.html": "3e016822b931859c38e0ccdd88f8ef81dc2c304d48dc8645ab1349295b633741"
+  },
+  "environment_sha256": "b1c749cd0a720b87f67a4d3e350312b5fc67c0840b4cb3505f532e38b39bac5c",
+  "outputs": {
+    "experiments/lora_compare/summary.csv": "6b38fee07aba1b839afd18c284739f4a9c5089c3543e708f195667ae74b4b5ca",
+    "experiments/lora_compare/summary.md": "8d2b125b2d7cdaab736d9cb4aef26f3f93889d0930f8f81adf4423412563b2e6",
+    "experiments/lora_compare/report.md": "232b74c7df0155e48832727c73055b67a73d761fc38b15cf2be4c303eca6ad6d",
+    "experiments/lora_compare/methods_results.md": "2539e6d023d801d077d6aaa95d61d3823546943951d33da54255b514e2c8bce9",
+    "experiments/lora_compare/reference_comparison.csv": "c1ee7fd2fe16b4062edcc89ea6a7f7f9315b4738f2be0724caed7cb6a676003d",
+    "experiments/lora_compare/matched_differences.csv": "2518fc77d99ba6b4a0c43c812800eab54c2ce5340bbb09e77eaaab76c6c228c7",
+    "experiments/lora_compare/reference_rank_sensitivity.csv": "a9493d0cfb88f3de57975d9c7f3c8deb167aa2cca1dab3aa1a55a8d11ea09003",
+    "experiments/lora_compare/human_analysis/final_results.json": "c9d9b224f69ac1774e8bbd7ddf13581d5052b9de722be3c7c03b8a63ce0cf211",
+    "experiments/lora_compare/human_analysis/report.md": "232b74c7df0155e48832727c73055b67a73d761fc38b15cf2be4c303eca6ad6d",
+    "paper/tables/lora_parameter_sensitivity.tex": "e9601f4ad40d0f5a2a11819c4197b19476e39623d26a7e3b55c574408fa7e779",
+    "paper/figures/lora_compare/lora_final_evaluation.pdf": "0419c806fc86e85b59f4a31e740a251a08365e9021461027a465adbfd17ed61c",
+    "paper/figures/lora_compare/lora_final_evaluation.png": "2ac88fb2230166c70c18d19f1005cacd465915d38479d98267715ab9f60db4c4",
+    "paper/figures/lora_compare/lora_final_evaluation.svg": "1b61ec0ebe768bf84051ae599a2720f341a8e9bf1f4a7d5068bc1055a7fceef4",
+    "paper/figures/lora_compare/lora_parameter_sensitivity.pdf": "0f442c2d2499ba0f4045330aceb30f45074c74750a56e337c3243ea42df9da9a",
+    "paper/figures/lora_compare/lora_parameter_sensitivity.png": "1fa76f1acbbe543e68152bf23103a3fc42802c8689828ffb1301636a101a6bd1",
+    "paper/figures/lora_compare/lora_parameter_sensitivity.svg": "2557f58f2bb91f34fea94ac0c6e9f81e26bb5649dbba582423f7eb5212ea0ced",
+    "paper/figures/lora_compare/lora_parameter_sensitivity_supplement.pdf": "fc9d55e6125ec1b50d827cf93f3b79d50ab572fa40d9626c755fdb8e1ea2750f",
+    "experiments/lora_compare/task_summary.md": "f203f91b8d8b7e8da1f787ea4eb3ad804eb0cb8bb1a2228308e8e5db1a8a246e",
+    "experiments/lora_compare/human_analysis/presentation_amendment.json": "3d1dbaef8fc3832289fcf5fed830d4936da56b51f348d4d3cba6399e5736ed39",
+    "paper/tables/lora_task_evaluation.tex": "070afc07459eb6871fa8b044d9a3281720d599e6fbeb0e91ab23101aa507d55f",
+    "paper/figures/lora_compare/lora_prompt_compliance_supplement.pdf": "77b222369955cd68d38fd4b7b32d1bda952a4c7489e2a87a61b23cdb4825aa47",
+    "paper/figures/lora_compare/lora_prompt_compliance_supplement.svg": "97d0a0fb58d93ed0ea7f09867074b27241600c584678e77f57db3e38f65cf05f",
+    "paper/figures/lora_compare/lora_prompt_compliance_supplement.png": "b1dfd671e9a0a1e15809f992eb52f717ca4fdf6f113b92a48b9419a62340d7ac"
+  },
+  "human_labels": "two real raters plus real human adjudication; no machine labels",
+  "visual_qa": "passed: final four-panel figure, qualitative main figure, all 9 supplementary grid pages rendered and inspected",
+  "browser_qa": {
+    "status": "passed",
+    "rule": "LC-review-v3",
+    "checked": [
+      "zero initial progress",
+      "two usability questions; no boundary question",
+      "three realism options",
+      "missing realism blocks reveal",
+      "four binary questions; eight radios; no textareas",
+      "realism locks after confirmation",
+      "four No answers complete",
+      "reload restores progress"
+    ],
+    "human_labels": "synthetic UI values on isolated test port, not imported"
+  },
+  "automatic_evidence_unchanged": "Original protocol, CLIP texts, scores and image inputs unchanged; presentations and human summary columns updated intentionally",
+  "logic_tests": {
+    "passed": 18,
+    "failed": 0
+  },
+  "review_archives": {
+    "R1": {
+      "sha256": "90109b40e696ff60ff1553669b95679d418fdb0e9d925e998a4c01ba56c32535",
+      "members": 155,
+      "rule": "LC-review-v3"
+    },
+    "R2": {
+      "sha256": "8bc6892e840f3fb053f8e68b4de13f52f89ef59bce02b49a44a9c54a70e169c1",
+      "members": 155,
+      "rule": "LC-review-v3"
+    }
+  },
+  "human_status": "two_raters_adjudicated",
+  "human_review_count": 306,
+  "adjudication_count": 110,
+  "final_image_count": 153,
+  "remaining_adjudication_count": 0,
+  "final_totals": {
+    "usable": 80,
+    "prompt_pass": 84
+  },
+  "final_realism_totals": {
+    "not_realistic": 30,
+    "somewhat_realistic": 70,
+    "very_realistic": 53
+  },
+  "final_checks": [
+    "153 final labels reconstructed independently from agreed and adjudicated source records",
+    "17 summaries match labels, all n=9",
+    "CLIP means and sample SD independently recomputed",
+    "all matched 2x2 human tables checked",
+    "original input exports equal retained imports",
+    "frozen 153 image inputs verified",
+    "no pending final result cells"
+  ],
+  "pdf_checks": {
+    "lora_final_evaluation.pdf": {
+      "pages": 1,
+      "main_metrics": 3,
+      "visual_qa": "passed"
+    },
+    "lora_parameter_sensitivity.pdf": {
+      "pages": 1,
+      "pending_text": false,
+      "human_completion_annotation": true
+    },
+    "lora_parameter_sensitivity_supplement.pdf": {
+      "pages": 9,
+      "pending_text": false,
+      "human_completion_annotation": true
+    },
+    "lora_prompt_compliance_supplement.pdf": {
+      "pages": 1,
+      "storage_cage_Q2_passes": "0/51",
+      "visual_qa": "passed"
+    }
+  },
+  "finalization_source_hashes": {
+    "finalize_lora_evaluation.py": "8a6ec55ff48a0e5889a2c7c5f0712a34ee52ce05e6c1b20b926b6354a443986b",
+    "analyze_lora_reviews.py": "e2456cb3dc15f95dcc62de6feecd819e347d72c31dcdd7628d58447676f4e41e"
+  },
+  "original_clip_unchanged": true,
+  "presentation_amendment": {
+    "rule": "post-results task-oriented presentation",
+    "main_panels": [
+      "CLIP-T",
+      "training usability",
+      "very realistic"
+    ],
+    "prompt_endpoint": "retained in supplement and original full tables",
+    "pareto_front": [
+      "1500-0.8",
+      "1860-0.2",
+      "1860-0.8"
+    ],
+    "all_final_data_unchanged": true,
+    "source_sha256": "1b8b940ab571bbadfaccc009d7c75dba87aaeef708551471a2a4603fea69f470",
+    "tests": {
+      "passed": 2,
+      "failed": 0
+    },
+    "visual_qa": "main three-panel PDF and supplementary endpoint PDF rendered and visually verified"
+  }
+}

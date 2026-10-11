@@ -1,0 +1,12 @@
+{
+  "usability": {
+    "n": 153,
+    "raw_agreement": 0.8104575163398693,
+    "cohens_kappa": 0.6125229237621169
+  },
+  "requirements": {
+    "n": 153,
+    "raw_agreement": 0.803921568627451,
+    "cohens_kappa": 0.5988463555322496
+  }
+}

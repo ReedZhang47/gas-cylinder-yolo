@@ -2,6 +2,8 @@
 
 ## 当前入口
 
+2026-10-11：153 张 LoRA checkpoint/强度对照的自动评价、双人评分及人工裁决已完成。最终报告见 [report.md](../../experiments/lora_compare/report.md)，协议见 [LoRA 评价计划](../LORA_COMPARE_EVALUATION_PLAN.md)；底模仅改名、权重未变，见 `generation_models.md`。
+
 截至 2026-10-08，D 人工图像审核已完成；原两组筛选后补充 new24，实际保留 **new150 551＋real93 421＋new24 113＝1085 张**。来源在 `D:\gas_cylinders\D`，最终图片在 `D:\gas_cylinders\D1085\images`，按上述顺序统一命名；截至 2026-10-09 标注及检测实验准备已完成，检测训练、评估与统计已于 2026-10-09 完成验收；见 `../D_DETECTOR_RUNBOOK.md`。核验与映射见 `d1085_review_and_metadata_20261008.md`。2026-10-04 原两组 1308 张候选的运行方法仍见 `full_generation_20261004.md`。
 
 后续不再重复读取 Comfy Desktop 日志。逐图参数以 PNG 元数据为准，工作流使用本目录 JSON；C/D 各 1085 张的 seed、提示词已统一导出到 `cd1085_seed_prompts.csv`（严格 3 列/2170 数据行）。new24 的 24 段原始正向文本已入表，ID N151–N174；提示词总表 `d_prompt_catalog.csv` 含 267 条。既有训练和加载验证留档供引用。
